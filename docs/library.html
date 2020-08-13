@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial</title>
-  <meta name="description" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial" />
+  <title>Chapter 5 Advanced: Library search | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</title>
+  <meta name="description" content="Chapter 5 Advanced: Library search | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial" />
+  <meta property="og:title" content="Chapter 5 Advanced: Library search | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial" />
+  <meta name="twitter:title" content="Chapter 5 Advanced: Library search | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
   
   
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="Intro.html"/>
+<link rel="prev" href="MS-preprocess.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,6 +50,10 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
 
@@ -67,8 +71,17 @@
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
 <li class="chapter" data-level="2" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="library.html"><a href="library.html"><i class="fa fa-check"></i><b>3</b> Library search</a><ul>
-<li class="chapter" data-level="3.1" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>3.1</b> <strong>LIBRARY SEARCH</strong></a></li>
+<li class="chapter" data-level="3" data-path="Experimental-design.html"><a href="Experimental-design.html"><i class="fa fa-check"></i><b>3</b> Experimental design for SSA/NTA analysis</a><ul>
+<li class="chapter" data-level="3.1" data-path="Experimental-design.html"><a href="Experimental-design.html#sampling-design"><i class="fa fa-check"></i><b>3.1</b> Sampling design</a></li>
+<li class="chapter" data-level="3.2" data-path="Experimental-design.html"><a href="Experimental-design.html#instrument-injection"><i class="fa fa-check"></i><b>3.2</b> Instrument injection</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="MS-preprocess.html"><a href="MS-preprocess.html"><i class="fa fa-check"></i><b>4</b> Pre-processing HRMS data</a><ul>
+<li class="chapter" data-level="4.1" data-path="MS-preprocess.html"><a href="MS-preprocess.html#msconvert"><i class="fa fa-check"></i><b>4.1</b> <strong>MSConvert</strong></a></li>
+<li class="chapter" data-level="4.2" data-path="MS-preprocess.html"><a href="MS-preprocess.html#xcms"><i class="fa fa-check"></i><b>4.2</b> <strong>XCMS</strong></a></li>
+<li class="chapter" data-level="4.3" data-path="MS-preprocess.html"><a href="MS-preprocess.html#patroon"><i class="fa fa-check"></i><b>4.3</b> <strong>PatRoon</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="library.html"><a href="library.html"><i class="fa fa-check"></i><b>5</b> Advanced: Library search</a><ul>
+<li class="chapter" data-level="5.1" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>5.1</b> <strong>LIBRARY SEARCH</strong></a></li>
 </ul></li>
 </ul>
 
@@ -79,7 +92,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</a>
           </h1>
         </div>
 
@@ -88,14 +101,16 @@
 
             <section class="normal" id="section-">
 <div id="library" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Library search</h1>
-<p>Currently, NIST widely used to match a spectrum to a list of standard spectra in libraries.<br />
-<br><br><br />
+<h1><span class="header-section-number">Chapter 5</span> Advanced: Library search</h1>
+<p>In environmental analysis, NIST MS library is widely used to match a spectrum to a list of standard spectra. However, a major drawback of the NIST MS Search is that now all chemicals are included and all spectral ions are at unit mass (for EI spectra library, also called mainlib)</p>
+<p><br><br><br />
 ## <strong>IN SILICO FRAGMENTATION</strong></p>
 <p>There are three different models that have recently been published to prdict the fragmentation patterns of GC-EI MS.</p>
 <p><em>CFM-ID</em><br />
 In silico fragmentation:<br />
 Help file: <a href="https://sourceforge.net/p/cfm-id/wiki/Home/" class="uri">https://sourceforge.net/p/cfm-id/wiki/Home/</a></p>
+<p><br>
+<em>Use instructions:</em></p>
 <ul>
 <li>If you are using EI-MS (GC-MS) data, please use the ei_ms_model provided.<br />
 </li>
@@ -119,7 +134,7 @@ Help file: <a href="https://sourceforge.net/p/cfm-id/wiki/Home/" class="uri">htt
 <a href="https://github.com/hcji/DeepEI/blob/master/Usage.ipynb" class="uri">https://github.com/hcji/DeepEI/blob/master/Usage.ipynb</a></p>
 <p><br><br><br></p>
 <div id="library-search" class="section level2">
-<h2><span class="header-section-number">3.1</span> <strong>LIBRARY SEARCH</strong></h2>
+<h2><span class="header-section-number">5.1</span> <strong>LIBRARY SEARCH</strong></h2>
 <p><em>LIB2NIST</em><br />
 Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.<br />
 <br>
@@ -147,7 +162,7 @@ Use MSPepSearch to find similar spectra</p>
           </div>
         </div>
       </div>
-<a href="Intro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="MS-preprocess.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

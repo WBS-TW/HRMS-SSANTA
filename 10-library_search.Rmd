@@ -1,6 +1,8 @@
-# Library search {#library}
+# Advanced: Library search {#library}
 
-Currently, NIST widely used to match a spectrum to a list of standard spectra in libraries.  
+In environmental analysis, NIST MS library is widely used to match a spectrum to a list of standard spectra. However, a major drawback of the NIST MS Search is that now all chemicals are included and all spectral ions are at unit mass (for EI spectra library, also called mainlib)
+
+
 <br><br>  
 ## __IN SILICO FRAGMENTATION__  
 
@@ -9,6 +11,9 @@ There are three different models that have recently been published to prdict the
 _CFM-ID_  
 In silico fragmentation:  
 Help file: https://sourceforge.net/p/cfm-id/wiki/Home/  
+
+<br>
+_Use instructions:_
   
 - If you are using EI-MS (GC-MS) data, please use the ei_ms_model provided.  
 - Note that lpsolve55.dll must also be included in the same directory as the executables. This file can be found in the development version of LPSolve (e.g. lp_solve_5.5.2.0_dev_win32.zip), which can be downloaded from https://sourceforge.net/projects/lpsolve/files/lpsolve/5.5.2.5/lp_solve_5.5.2.5_dev_win32.zip/download.  
@@ -27,8 +32,10 @@ EXAMPLE (naphthalene):
 <br>
 
 EXAMPLE (.txt file as input):  
-`cfm-predict.exe D:/Program/cfm-id-2.4_win32/test/input.txt 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp`
-  
+`cfm-predict.exe D:/Program/cfm-id-2.4_win32/test/input.txt 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp`  
+
+
+
 <br><br><br>
 
 __NEIMS__  

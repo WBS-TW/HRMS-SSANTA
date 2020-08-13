@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Experimental design for SSA/NTA analysis | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</title>
+  <meta name="description" content="Chapter 3 Experimental design for SSA/NTA analysis | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Experimental design for SSA/NTA analysis | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Experimental design for SSA/NTA analysis | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  
+  
+  
+
+<meta name="author" content="Thanh Wang" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Intro.html"/>
+<link rel="next" href="MS-preprocess.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="chapter" data-level="2" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="Experimental-design.html"><a href="Experimental-design.html"><i class="fa fa-check"></i><b>3</b> Experimental design for SSA/NTA analysis</a><ul>
+<li class="chapter" data-level="3.1" data-path="Experimental-design.html"><a href="Experimental-design.html#sampling-design"><i class="fa fa-check"></i><b>3.1</b> Sampling design</a></li>
+<li class="chapter" data-level="3.2" data-path="Experimental-design.html"><a href="Experimental-design.html#instrument-injection"><i class="fa fa-check"></i><b>3.2</b> Instrument injection</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="MS-preprocess.html"><a href="MS-preprocess.html"><i class="fa fa-check"></i><b>4</b> Pre-processing HRMS data</a><ul>
+<li class="chapter" data-level="4.1" data-path="MS-preprocess.html"><a href="MS-preprocess.html#msconvert"><i class="fa fa-check"></i><b>4.1</b> <strong>MSConvert</strong></a></li>
+<li class="chapter" data-level="4.2" data-path="MS-preprocess.html"><a href="MS-preprocess.html#xcms"><i class="fa fa-check"></i><b>4.2</b> <strong>XCMS</strong></a></li>
+<li class="chapter" data-level="4.3" data-path="MS-preprocess.html"><a href="MS-preprocess.html#patroon"><i class="fa fa-check"></i><b>4.3</b> <strong>PatRoon</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="library.html"><a href="library.html"><i class="fa fa-check"></i><b>5</b> Advanced: Library search</a><ul>
+<li class="chapter" data-level="5.1" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>5.1</b> <strong>LIBRARY SEARCH</strong></a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Experimental_design" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Experimental design for SSA/NTA analysis</h1>
+<p><br><br></p>
+<div class="figure">
+<div id="htmlwidget-87e134bdca420568496c" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-87e134bdca420568496c">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = true]\n      \n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 20]\n\nA [label = \"Sample\"]\nB [label = \"Homogenization/filtration\"]\nC [label = \"Extraction\"]\nD1 [label = \"Fraction A\"]\nD2 [label = \"Fraction B\"]\nEA1 [label = \"FA-40\"]\nEA2 [label = \"FA-80\"]\nEA3 [label = \"FA-S\"]\nEB1 [label = \"FB-40\"]\nEB2 [label = \"FB-80\"]\nEB3 [label = \"FB-CIC\"]\nEB4 [label = \"FB-S\"]\n1 [label = \"UPLC-MS/MS\"]\n2 [label = \"UPC2-MS/MS\"]\n3 [label = \"UPLC-MS/MS\"]\n4 [label = \"UPC2-MS/MS\"]\n5 [label = \"CIC\"]\n\n\n# edge statements\nA->B \nB->C\nC-> {D1 D2}\nD1-> {EA1 EA2 EA3}\nD2-> {EB1 EB2 EB3 EB4} \nEA1->1\nEA2-> {1 2}\nEB1->3\nEB2-> {3 4}\nEB3->5\n      \n      }\n    \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+(#fig:diagram_exp.des)Flow charts
+</p>
+</div>
+<div class="figure">
+<div id="htmlwidget-c8d9e9cfe58a9784085a" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c8d9e9cfe58a9784085a">{"x":{"diagram":"\ndigraph Scheme {\n      \n      # graph statement\n      graph [layout = dot, overlap = true]\n      \n      # node statements\n      node [shape = box,\n      fontname = Helvetica, fontsize = 20, style = filled]\n      \n      node [color = black, fillcolor = azure]\n      A [label = \"Sample\"]\n      \n      node [color = black, fillcolor = lavender]\n      B [label = \"Homogenization/filtration\"]\n      \n      node [color = black, fillcolor = pink]      \n      C [label = \"Extraction\"]\n      \n      node [color = black, fillcolor = green]\n      D1 [label = \"Fraction A\"]\n\n      node [color = blue, fillcolor = forestgreen]\n      D2 [label = \"Fraction B\"]\n      \n      node [color = black, fillcolor = yellow]\n      EA1 [label = \"FA-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EA2 [label = \"FA-80\"]\n      \n      node [color = black, fillcolor = yellow]\n      EB1 [label = \"FB-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EB2 [label = \"FB-80\"]\n      \n      node [color = black, fillcolor = orange]\n      EB3 [label = \"FB-CIC\"]\n      \n      node [color = black, fillcolor = lightgrey]\n      EA3 [label = \"FA-S\"]     \n      EB4 [label = \"FB-S\"]\n      \n      node [color = black, fillcolor = cyan]\n      1 [label = \"UPLC-MS/MS\"]\n      \n      node [color = black, fillcolor = royalblue]\n      2 [label = \"UPC2-MS/MS\"]\n\n      node [color = black, fillcolor = cyan]\n      3 [label = \"UPLC-MS/MS\"]\n\n      node [color = black, fillcolor = royalblue]\n      4 [label = \"UPC2-MS/MS\"]\n\n      node [color = black, fillcolor = purple]\n      5 [label = \"CIC\"]\n      \n      \n      # edge statements\n      edge [color = black]\n      A->B \n      B->C\n      C-> {D1 D2}\n      D1-> {EA1 EA2 EA3}\n      D2-> {EB1 EB2 EB3 EB4} \n      EA1->1\n      EA2-> {1 2}\n      EB1->3\n      EB2-> {3 4}\n      EB3->5\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+(#fig:diagram_exp.des)Flow charts
+</p>
+</div>
+<div class="figure">
+<div id="htmlwidget-e2d9df3fcc1c31794fec" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e2d9df3fcc1c31794fec">{"x":{"diagram":"\n      digraph Scheme {\n      \n      # graph statement\n      graph [layout = dot, overlap = false]\n      \n      # node statements\n      node [shape = box,\n      fontname = Helvetica, fontsize = 20, style = filled]\n      \n      node [color = black, fillcolor = azure]\n      A [label = \"Sample\"]\n      \n      node [color = black, fillcolor = lavender]\n      B [label = \"Homogenization/filtration\"]\n      \n      node [color = black, fillcolor = pink]      \n      C [label = \"Extraction\"]\n      \n      node [color = black, fillcolor = green]\n      D1 [label = \"Fraction A\"]\n      \n      node [color = blue, fillcolor = forestgreen]\n      D2 [label = \"Fraction B\"]\n      \n      node [color = black, fillcolor = yellow]\n      EA1 [label = \"FA-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EA2 [label = \"FA-80\"]\n      \n      node [color = black, fillcolor = yellow]\n      EB1 [label = \"FB-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EB2 [label = \"FB-80\"]\n      \n      node [color = black, fillcolor = orange]\n      EB3 [label = \"FB-CIC\"]\n      \n      node [color = black, fillcolor = grey]\n      EA3 [label = \"FA-S\"]     \n      EB4 [label = \"FB-S\"]\n      \n      node [color = black, fillcolor = cyan]\n      1 [label = \"UPLC-MS/MS\"]\n      \n      node [color = black, fillcolor = royalblue]\n      2 [label = \"UPC2-MS/MS\"]\n      \n      node [color = black, fillcolor = purple]\n      3 [label = \"CIC\"]\n      \n      \n      # edge statements\n      edge [color = black]\n      A->B \n      B->C\n      C-> {D1 D2}\n      D1->EA3 D1->EA1 D1->EA2\n      D2->EB4 D2->EB1 D2->EB2 D2->EB3 \n      EA1->1\n      EA2-> {1 2}\n      EB1->1\n      EB2-> {1 2}\n      EB3->3\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+(#fig:diagram_exp.des)Flow charts
+</p>
+</div>
+<div class="figure">
+<div id="htmlwidget-2a2aab7a60f1d2052bee" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2a2aab7a60f1d2052bee">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]\nA [label = \"Total fluorine (TF)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nB1 [label = \"Organic fluorine (OF)\"]\nB2 [label = \"Inorganic Fluorine (IF)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nC1 [label = \"Extractable organic \\n fluorine (EOF)\"]\nC2 [label = \"Non-extractable organic \\n fluorine (NEOF)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nD1 [label = \"Identified \\n organofluorines\"]\nD2 [label = \"Unidentified \\n organofluorines\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1 B2}\nB1 -> {C1 C2}\nC1 -> {D1 D2}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+(#fig:diagram_exp.des)Flow charts
+</p>
+</div>
+<div id="sampling-design" class="section level2">
+<h2><span class="header-section-number">3.1</span> Sampling design</h2>
+</div>
+<div id="instrument-injection" class="section level2">
+<h2><span class="header-section-number">3.2</span> Instrument injection</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="MS-preprocess.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
