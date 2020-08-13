@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial</title>
-  <meta name="description" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial" />
+  <title>Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial</title>
+  <meta name="description" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial" />
+  <meta property="og:title" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial" />
+  <meta name="twitter:title" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial" />
   
   
   
@@ -79,7 +79,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial</a>
           </h1>
         </div>
 
@@ -104,28 +104,40 @@ Help file: <a href="https://sourceforge.net/p/cfm-id/wiki/Home/" class="uri">htt
 <p>Cfm-predict</p>
 <p>COMMAND:<br />
 <code>cfm-predict.exe &lt;smiles_or_inchi_or_file&gt; &lt;prob_thresh&gt; &lt;param_file&gt; &lt;config_file&gt; &lt;annotate_fragments&gt; &lt;output_file_or_dir&gt; &lt;apply_postproc&gt; &lt;suppress_exceptions&gt;</code></p>
+<p><br></p>
 <p>EXAMPLE (naphthalene):<br />
 <code>cfm-predict.exe InChI=1S/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp</code></p>
+<p><br></p>
 <p>EXAMPLE (.txt file as input):<br />
 <code>cfm-predict.exe D:/Program/cfm-id-2.4_win32/test/input.txt 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp</code></p>
+<p><br><br><br></p>
 <p><strong>NEIMS</strong></p>
 <p>Help files: <a href="https://github.com/brain-research/deep-molecular-massspec" class="uri">https://github.com/brain-research/deep-molecular-massspec</a></p>
+<p><br><br><br></p>
 <p><strong>DeepEI</strong></p>
 <p>Help files: <a href="https://github.com/hcji/DeepEI" class="uri">https://github.com/hcji/DeepEI</a><br />
 <a href="https://github.com/hcji/DeepEI/blob/master/Usage.ipynb" class="uri">https://github.com/hcji/DeepEI/blob/master/Usage.ipynb</a></p>
+<p><br><br><br></p>
 <div id="library-search" class="section level2">
 <h2><span class="header-section-number">3.1</span> <strong>LIBRARY SEARCH</strong></h2>
 <p><em>LIB2NIST</em><br />
-Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.</p>
-<p>COMMAND:<br />
-<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code></p>
-<p>EXAMPLES:<br />
+Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.<br />
+<br>
+COMMAND:<br />
+<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code><br />
+<br><br />
+EXAMPLES:<br />
 <code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\LCMs_GC_Orbitrap.msp C:\NIST14\ =LCMs_GC_Orbitrap</code></p>
-<p><em>MSPepSearch</em></p>
-<p>Use MSPepSearch to find similar spectra</p>
+<p><br><br><br>
+<em>MSPepSearch</em><br />
+<br><br />
+Use MSPepSearch to find similar spectra</p>
+<p><br><br></p>
 <p>EXAMPLES:<br />
 <code>D:\Program\MSPepSearch\MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 10 /OnlyFound /HITS 5 /LIB D:\Raw_data\Dust_Florian\GC\test\Mylib /INP D:\Raw_data\Dust_Florian\GC\test\input.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv /OutMW</code></p>
+<p><br></p>
 <p><code>D:\Program\MSPepSearch\MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 100 /OnlyFound /HITS 5 /LIB C:\NIST14\NIST_contaminants_orbitrap /INP D:\Projects\Mexico_Air\NIST_Mexico.msp /OUTMGF D:\Projects\Mexico_Air\test\test.mgf /OUTTAB D:\Projects\Mexico_Air\test\test.tsv</code></p>
+<p><br></p>
 <p><code>D:\Program\MSPepSearch\MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\NIST14\LCMs_GC_Orbitrap /INP D:\Raw_data\Dust_Florian\GC\test\11.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv</code></p>
 
 </div>
