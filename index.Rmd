@@ -1,6 +1,6 @@
 
 ---
-title: "Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial"
+title: "Suspect and nontarget workflows in environmental analysis using HRMS and R: a tutorial"
 author: "Thanh Wang"
 site: bookdown::bookdown_site
 documentclass: book
@@ -14,7 +14,7 @@ output:
 
 This book is intended to be a working book to introduce the concepts of suspect and nontarget analysis with focus on environmental analytical chemistry.  
 
-
+* Basic knowledge of R programming is a prerequisite to understand some of the codes
 * The author do not take responsibility for programs or computer crashing.  
 
 

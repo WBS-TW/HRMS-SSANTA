@@ -1,0 +1,64 @@
+# Library search {#library}
+
+Currently, NIST widely used to match a spectrum to a list of standard spectra in libraries.  
+<br><br>  
+## __IN SILICO FRAGMENTATION__  
+
+There are three different models that have recently been published to prdict the fragmentation patterns of GC-EI MS. 
+
+_CFM-ID_  
+In silico fragmentation:  
+Help file: https://sourceforge.net/p/cfm-id/wiki/Home/  
+  
+- If you are using EI-MS (GC-MS) data, please use the ei_ms_model provided.  
+- Note that lpsolve55.dll must also be included in the same directory as the executables. This file can be found in the development version of LPSolve (e.g. lp_solve_5.5.2.0_dev_win32.zip), which can be downloaded from https://sourceforge.net/projects/lpsolve/files/lpsolve/5.5.2.5/lp_solve_5.5.2.5_dev_win32.zip/download.  
+  
+Cfm-predict  
+
+
+COMMAND:  
+`cfm-predict.exe <smiles_or_inchi_or_file> <prob_thresh> <param_file> <config_file> <annotate_fragments> <output_file_or_dir> <apply_postproc> <suppress_exceptions>`  
+  
+  
+EXAMPLE (naphthalene):  
+`cfm-predict.exe InChI=1S/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp`
+  
+EXAMPLE (.txt file as input):  
+`cfm-predict.exe D:/Program/cfm-id-2.4_win32/test/input.txt 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp`
+  
+  
+  
+  
+__NEIMS__  
+  
+Help files: https://github.com/brain-research/deep-molecular-massspec  
+  
+__DeepEI__  
+  
+Help files: https://github.com/hcji/DeepEI  
+https://github.com/hcji/DeepEI/blob/master/Usage.ipynb  
+
+## __LIBRARY SEARCH__  
+  
+_LIB2NIST_  
+Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.  
+  
+COMMAND:  
+`lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N <path to msp file> <output path> =<new name of library>`  
+  
+EXAMPLES:  
+`lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\LCMs_GC_Orbitrap.msp C:\NIST14\ =LCMs_GC_Orbitrap`  
+  
+
+_MSPepSearch_  
+  
+Use MSPepSearch to find similar spectra  
+
+
+EXAMPLES:  
+`D:\Program\MSPepSearch\MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 10 /OnlyFound /HITS 5 /LIB D:\Raw_data\Dust_Florian\GC\test\Mylib /INP D:\Raw_data\Dust_Florian\GC\test\input.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv /OutMW`
+  
+`D:\Program\MSPepSearch\MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 100 /OnlyFound /HITS 5 /LIB C:\NIST14\NIST_contaminants_orbitrap /INP D:\Projects\Mexico_Air\NIST_Mexico.msp /OUTMGF D:\Projects\Mexico_Air\test\test.mgf /OUTTAB D:\Projects\Mexico_Air\test\test.tsv`  
+  
+`D:\Program\MSPepSearch\MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\NIST14\LCMs_GC_Orbitrap /INP D:\Raw_data\Dust_Florian\GC\test\11.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv`  
+

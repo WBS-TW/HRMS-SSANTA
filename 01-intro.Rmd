@@ -5,12 +5,14 @@
 * Demonstrating subscript: H~2~SO~4~
 * Superscript: ^13^C
 * Inline code: `library(tidyverse)`
-
+<br><br>
 
 ```{r intro, echo = FALSE, fig.cap= "Test of figure"}
 
 1 + 1
+
 rnorm(10)  # 10 random numbers
+
 plot(dist ~ speed, cars)  # a scatterplot
 
 ```

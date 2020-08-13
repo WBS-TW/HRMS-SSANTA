@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial</title>
+  <meta name="description" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Library search | Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial" />
+  
+  
+  
+
+<meta name="author" content="Thanh Wang" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Intro.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="chapter" data-level="2" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="library.html"><a href="library.html"><i class="fa fa-check"></i><b>3</b> Library search</a><ul>
+<li class="chapter" data-level="3.1" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>3.1</b> <strong>LIBRARY SEARCH</strong></a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="library" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Library search</h1>
+<p>Currently, NIST widely used to match a spectrum to a list of standard spectra in libraries.<br />
+<br><br><br />
+## <strong>IN SILICO FRAGMENTATION</strong></p>
+<p>There are three different models that have recently been published to prdict the fragmentation patterns of GC-EI MS.</p>
+<p><em>CFM-ID</em><br />
+In silico fragmentation:<br />
+Help file: <a href="https://sourceforge.net/p/cfm-id/wiki/Home/" class="uri">https://sourceforge.net/p/cfm-id/wiki/Home/</a></p>
+<ul>
+<li>If you are using EI-MS (GC-MS) data, please use the ei_ms_model provided.<br />
+</li>
+<li>Note that lpsolve55.dll must also be included in the same directory as the executables. This file can be found in the development version of LPSolve (e.g. lp_solve_5.5.2.0_dev_win32.zip), which can be downloaded from <a href="https://sourceforge.net/projects/lpsolve/files/lpsolve/5.5.2.5/lp_solve_5.5.2.5_dev_win32.zip/download" class="uri">https://sourceforge.net/projects/lpsolve/files/lpsolve/5.5.2.5/lp_solve_5.5.2.5_dev_win32.zip/download</a>.</li>
+</ul>
+<p>Cfm-predict</p>
+<p>COMMAND:<br />
+<code>cfm-predict.exe &lt;smiles_or_inchi_or_file&gt; &lt;prob_thresh&gt; &lt;param_file&gt; &lt;config_file&gt; &lt;annotate_fragments&gt; &lt;output_file_or_dir&gt; &lt;apply_postproc&gt; &lt;suppress_exceptions&gt;</code></p>
+<p>EXAMPLE (naphthalene):<br />
+<code>cfm-predict.exe InChI=1S/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp</code></p>
+<p>EXAMPLE (.txt file as input):<br />
+<code>cfm-predict.exe D:/Program/cfm-id-2.4_win32/test/input.txt 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp</code></p>
+<p><strong>NEIMS</strong></p>
+<p>Help files: <a href="https://github.com/brain-research/deep-molecular-massspec" class="uri">https://github.com/brain-research/deep-molecular-massspec</a></p>
+<p><strong>DeepEI</strong></p>
+<p>Help files: <a href="https://github.com/hcji/DeepEI" class="uri">https://github.com/hcji/DeepEI</a><br />
+<a href="https://github.com/hcji/DeepEI/blob/master/Usage.ipynb" class="uri">https://github.com/hcji/DeepEI/blob/master/Usage.ipynb</a></p>
+<div id="library-search" class="section level2">
+<h2><span class="header-section-number">3.1</span> <strong>LIBRARY SEARCH</strong></h2>
+<p><em>LIB2NIST</em><br />
+Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.</p>
+<p>COMMAND:<br />
+<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code></p>
+<p>EXAMPLES:<br />
+<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\LCMs_GC_Orbitrap.msp C:\NIST14\ =LCMs_GC_Orbitrap</code></p>
+<p><em>MSPepSearch</em></p>
+<p>Use MSPepSearch to find similar spectra</p>
+<p>EXAMPLES:<br />
+<code>D:\Program\MSPepSearch\MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 10 /OnlyFound /HITS 5 /LIB D:\Raw_data\Dust_Florian\GC\test\Mylib /INP D:\Raw_data\Dust_Florian\GC\test\input.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv /OutMW</code></p>
+<p><code>D:\Program\MSPepSearch\MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 100 /OnlyFound /HITS 5 /LIB C:\NIST14\NIST_contaminants_orbitrap /INP D:\Projects\Mexico_Air\NIST_Mexico.msp /OUTMGF D:\Projects\Mexico_Air\test\test.mgf /OUTTAB D:\Projects\Mexico_Air\test\test.tsv</code></p>
+<p><code>D:\Program\MSPepSearch\MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\NIST14\LCMs_GC_Orbitrap /INP D:\Raw_data\Dust_Florian\GC\test\11.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv</code></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Intro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
