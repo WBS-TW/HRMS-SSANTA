@@ -1,4 +1,4 @@
 [
 ["index.html", "Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial Chapter 1 Preface", " Suspect and nontarget workflows in environmental analysis using HRMS: a tutorial Thanh Wang Chapter 1 Preface This book is intended to be a working book to introduce the concepts of suspect and nontarget analysis with focus on environmental analytical chemistry. The author do not take responsibility for programs or computer crashing. "],
-["Intro.html", "Chapter 2 Introduction", " Chapter 2 Introduction This is italic This is bold Demonstrating subscript: H2SO4 Superscript: 13C Inline code: library(tidyverse) ## [1] 2 ## [1] -1.5737234 1.2271988 1.1705527 0.6173737 -0.8275259 -0.7323718 ## [7] 1.3397618 -1.2177216 -0.3499601 0.8711157 Figure 2.1: Test of figure "]
+["Intro.html", "Chapter 2 Introduction", " Chapter 2 Introduction This is italic This is bold Demonstrating subscript: H2SO4 Superscript: 13C Inline code: library(tidyverse) ## [1] 2 ## [1] -0.09980329 0.26166673 0.54952992 1.10212583 1.11435991 -0.74126235 ## [7] 1.18170241 -0.42390816 0.10019433 -0.75841780 Figure 2.1: Test of figure "]
 ]
