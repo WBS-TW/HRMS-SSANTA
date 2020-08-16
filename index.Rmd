@@ -1,7 +1,9 @@
 
 ---
 title: "Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R"
-author: "Thanh Wang"
+author: Thanh Wang:
+          Örebro University
+          email: thanh.wang@oru.se
 site: bookdown::bookdown_site
 documentclass: book
 output:
