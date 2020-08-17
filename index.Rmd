@@ -1,9 +1,7 @@
 
 ---
 title: "Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R"
-author: Thanh Wang:
-          Örebro University
-          email: thanh.wang@oru.se
+author: Thanh Wang, <br> MTM Research Centre, Örebro University
 site: bookdown::bookdown_site
 documentclass: book
 output:
@@ -14,7 +12,7 @@ output:
 
 # Preface {-}
 
-This book is intended to be a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry.  
+This book is a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry.  
 
 * Basic knowledge of R programming is a prerequisite to understand some of the codes
 * The author do not take responsibility for programs or computer crashing.  
