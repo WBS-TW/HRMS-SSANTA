@@ -4,11 +4,11 @@ In environmental analysis, NIST MS library is widely used to match a spectrum to
 
 
 <br><br>  
-## __IN SILICO FRAGMENTATION__  
+## IN SILICO FRAGMENTATION  
 
 There are three different models that have recently been published to prdict the fragmentation patterns of GC-EI MS. 
 
-_CFM-ID_  
+### CFM-ID  
 In silico fragmentation:  
 Help file: https://sourceforge.net/p/cfm-id/wiki/Home/  
 
@@ -38,22 +38,22 @@ EXAMPLE (.txt file as input):
 
 <br><br><br>
 
-__NEIMS__  
+## NEIMS  
   
 Help files: https://github.com/brain-research/deep-molecular-massspec  
 
 <br><br><br>
 
-__DeepEI__  
+## DeepEI  
   
 Help files: https://github.com/hcji/DeepEI  
 https://github.com/hcji/DeepEI/blob/master/Usage.ipynb  
 
 <br><br><br>
 
-## __LIBRARY SEARCH__  
+## LIBRARY SEARCH  
   
-_LIB2NIST_  
+### LIB2NIST  
 Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.  
 <br>
 COMMAND:  
@@ -63,7 +63,8 @@ EXAMPLES:
 `lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\LCMs_GC_Orbitrap.msp C:\NIST14\ =LCMs_GC_Orbitrap`  
   
 <br><br><br>
-_MSPepSearch_  
+
+### MSPepSearch  
 <br>  
 Use MSPepSearch to find similar spectra  
 

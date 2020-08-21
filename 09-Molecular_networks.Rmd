@@ -1,0 +1,16 @@
+# Molecular networks {#molecular_networks}
+
+This is a chapter about molecular networks
+
+<br><br>  
+
+## MetGem
+
+### GC data
+
+A new option was added to the input data file dialogue. When this option is activated, input spectra are treated as MS1, and thus, the parent m/z ratio is fully ignored
+
+_Metgem webpage:_ https://metgem.github.io/ <br>
+_Metgem handbook:_ https://metgem.readthedocs.io/en/latest/index.html <br>
+
+
