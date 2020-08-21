@@ -1,4 +1,4 @@
-# Advanced: Library search {#library}
+# Library search {#library}
 
 In environmental analysis, NIST MS library is widely used to match a spectrum to a list of standard spectra. However, a major drawback of the NIST MS Search is that now all chemicals are included and all spectral ions are at unit mass (for EI spectra library, also called mainlib)
 
@@ -50,6 +50,15 @@ Help files: https://github.com/hcji/DeepEI
 https://github.com/hcji/DeepEI/blob/master/Usage.ipynb  
 
 <br><br><br>
+
+
+<br><br><br>
+
+## Other prediction algorithms
+
+QCEIMS
+
+
 
 ## LIBRARY SEARCH  
   

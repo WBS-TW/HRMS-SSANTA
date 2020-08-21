@@ -8,9 +8,11 @@ This is a chapter about molecular networks
 
 ### GC data
 
-A new option was added to the input data file dialogue. When this option is activated, input spectra are treated as MS1, and thus, the parent m/z ratio is fully ignored
+<br>
 
 _Metgem webpage:_ https://metgem.github.io/ <br>
 _Metgem handbook:_ https://metgem.readthedocs.io/en/latest/index.html <br>
 
+A new option was added to the input data file dialogue. When this option is activated, input spectra are treated as MS1, and thus, the parent m/z ratio is fully ignored.
 
+The molecular networks were created using MetGem 1.2.2 software (https://metgem.github.io/). EI-MS spectra were window filtered by choosing only the top 6 peaks in the ±50 Da window throughout the spectrum. Cosine scores were calculated using a m/z tolerance of 0.3 Th. Networks were then created where edges were filtered to have a cosine score above 0.7 (or 0.75 in the case of GC-EI-MS data from perfumes) and more than six matched peaks. Furthermore, edges between two nodes were kept in the network if and only if each of the nodes appeared in each other’s respective top 10 most similar nodes. The library spectra were filtered in the same manner as the input data.
