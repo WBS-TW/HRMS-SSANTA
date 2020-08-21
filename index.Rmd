@@ -12,7 +12,7 @@ output:
 
 # Preface {-}
 
-This book is a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry.  
+This book is a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry. The idea is to demonstrate a harmonized pipeline for SSA/NTA.
 
 * Basic knowledge of R programming is a prerequisite to understand some of the codes
 * The author do not take responsibility for programs or computer crashing.  
