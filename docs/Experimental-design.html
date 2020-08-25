@@ -56,6 +56,70 @@
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 </head>
 
@@ -80,24 +144,28 @@
 <li class="chapter" data-level="3.2" data-path="MS-preprocess.html"><a href="MS-preprocess.html#xcms"><i class="fa fa-check"></i><b>3.2</b> <strong>XCMS</strong></a></li>
 <li class="chapter" data-level="3.3" data-path="MS-preprocess.html"><a href="MS-preprocess.html#patroon"><i class="fa fa-check"></i><b>3.3</b> <strong>PatRoon</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="retention-times.html"><a href="retention-times.html"><i class="fa fa-check"></i><b>4</b> Retention time index</a><ul>
-<li class="chapter" data-level="4.1" data-path="retention-times.html"><a href="retention-times.html#lc"><i class="fa fa-check"></i><b>4.1</b> LC</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="retention-times.html"><a href="retention-times.html#retip---retention-time-prediction-for-metabolomics"><i class="fa fa-check"></i><b>4.1.1</b> Retip - Retention Time prediction for Metabolomics</a></li>
+<li class="chapter" data-level="4" data-path="mass-defect.html"><a href="mass-defect.html"><i class="fa fa-check"></i><b>4</b> Mass defect plots</a><ul>
+<li class="chapter" data-level="4.1" data-path="mass-defect.html"><a href="mass-defect.html#mdplotr"><i class="fa fa-check"></i><b>4.1</b> MDPlotR</a></li>
+<li class="chapter" data-level="4.2" data-path="mass-defect.html"><a href="mass-defect.html#findhalo"><i class="fa fa-check"></i><b>4.2</b> findhalo</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="retention-times.html"><a href="retention-times.html"><i class="fa fa-check"></i><b>5</b> Retention time index and prediction</a><ul>
+<li class="chapter" data-level="5.1" data-path="retention-times.html"><a href="retention-times.html#lc"><i class="fa fa-check"></i><b>5.1</b> LC</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="retention-times.html"><a href="retention-times.html#retip---retention-time-prediction-for-metabolomics"><i class="fa fa-check"></i><b>5.1.1</b> Retip - Retention Time prediction for Metabolomics</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="molecular-networks.html"><a href="molecular-networks.html"><i class="fa fa-check"></i><b>5</b> Molecular networks</a><ul>
-<li class="chapter" data-level="5.1" data-path="molecular-networks.html"><a href="molecular-networks.html#metgem"><i class="fa fa-check"></i><b>5.1</b> MetGem</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="molecular-networks.html"><a href="molecular-networks.html#gc-data"><i class="fa fa-check"></i><b>5.1.1</b> GC data</a></li>
+<li class="chapter" data-level="6" data-path="molecular-networks.html"><a href="molecular-networks.html"><i class="fa fa-check"></i><b>6</b> Molecular networks</a><ul>
+<li class="chapter" data-level="6.1" data-path="molecular-networks.html"><a href="molecular-networks.html#metgem"><i class="fa fa-check"></i><b>6.1</b> MetGem</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="molecular-networks.html"><a href="molecular-networks.html#gc-data"><i class="fa fa-check"></i><b>6.1.1</b> GC data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="library.html"><a href="library.html"><i class="fa fa-check"></i><b>6</b> Library search</a><ul>
-<li class="chapter" data-level="6.0.1" data-path="library.html"><a href="library.html#cfm-id"><i class="fa fa-check"></i><b>6.0.1</b> CFM-ID</a></li>
-<li class="chapter" data-level="6.1" data-path="library.html"><a href="library.html#neims"><i class="fa fa-check"></i><b>6.1</b> NEIMS</a></li>
-<li class="chapter" data-level="6.2" data-path="library.html"><a href="library.html#deepei"><i class="fa fa-check"></i><b>6.2</b> DeepEI</a></li>
-<li class="chapter" data-level="6.3" data-path="library.html"><a href="library.html#other-prediction-algorithms"><i class="fa fa-check"></i><b>6.3</b> Other prediction algorithms</a></li>
-<li class="chapter" data-level="6.4" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>6.4</b> LIBRARY SEARCH</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="library.html"><a href="library.html#lib2nist"><i class="fa fa-check"></i><b>6.4.1</b> LIB2NIST</a></li>
-<li class="chapter" data-level="6.4.2" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>6.4.2</b> MSPepSearch</a></li>
+<li class="chapter" data-level="7" data-path="library.html"><a href="library.html"><i class="fa fa-check"></i><b>7</b> Library search</a><ul>
+<li class="chapter" data-level="7.0.1" data-path="library.html"><a href="library.html#cfm-id"><i class="fa fa-check"></i><b>7.0.1</b> CFM-ID</a></li>
+<li class="chapter" data-level="7.1" data-path="library.html"><a href="library.html#neims"><i class="fa fa-check"></i><b>7.1</b> NEIMS</a></li>
+<li class="chapter" data-level="7.2" data-path="library.html"><a href="library.html#deepei"><i class="fa fa-check"></i><b>7.2</b> DeepEI</a></li>
+<li class="chapter" data-level="7.3" data-path="library.html"><a href="library.html#other-prediction-algorithms"><i class="fa fa-check"></i><b>7.3</b> Other prediction algorithms</a></li>
+<li class="chapter" data-level="7.4" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>7.4</b> LIBRARY SEARCH</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="library.html"><a href="library.html#lib2nist"><i class="fa fa-check"></i><b>7.4.1</b> LIB2NIST</a></li>
+<li class="chapter" data-level="7.4.2" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>7.4.2</b> MSPepSearch</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -121,29 +189,29 @@
 <h1><span class="header-section-number">Chapter 2</span> Experimental design for SSA/NTA analysis</h1>
 <p><br><br></p>
 <div class="figure">
-<div id="htmlwidget-7be121299408b89deabd" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7be121299408b89deabd">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = true]\n      \n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 20]\n\nA [label = \"Sample\"]\nB [label = \"Homogenization/filtration\"]\nC [label = \"Extraction\"]\nD1 [label = \"Fraction A\"]\nD2 [label = \"Fraction B\"]\nEA1 [label = \"FA-40\"]\nEA2 [label = \"FA-80\"]\nEA3 [label = \"FA-S\"]\nEB1 [label = \"FB-40\"]\nEB2 [label = \"FB-80\"]\nEB3 [label = \"FB-CIC\"]\nEB4 [label = \"FB-S\"]\n1 [label = \"UPLC-MS/MS\"]\n2 [label = \"UPC2-MS/MS\"]\n3 [label = \"UPLC-MS/MS\"]\n4 [label = \"UPC2-MS/MS\"]\n5 [label = \"CIC\"]\n\n\n# edge statements\nA->B \nB->C\nC-> {D1 D2}\nD1-> {EA1 EA2 EA3}\nD2-> {EB1 EB2 EB3 EB4} \nEA1->1\nEA2-> {1 2}\nEB1->3\nEB2-> {3 4}\nEB3->5\n      \n      }\n    \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a2cb3f5065269936ba10" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a2cb3f5065269936ba10">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = true]\n      \n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 20]\n\nA [label = \"Sample\"]\nB [label = \"Homogenization/filtration\"]\nC [label = \"Extraction\"]\nD1 [label = \"Fraction A\"]\nD2 [label = \"Fraction B\"]\nEA1 [label = \"FA-40\"]\nEA2 [label = \"FA-80\"]\nEA3 [label = \"FA-S\"]\nEB1 [label = \"FB-40\"]\nEB2 [label = \"FB-80\"]\nEB3 [label = \"FB-CIC\"]\nEB4 [label = \"FB-S\"]\n1 [label = \"UPLC-MS/MS\"]\n2 [label = \"UPC2-MS/MS\"]\n3 [label = \"UPLC-MS/MS\"]\n4 [label = \"UPC2-MS/MS\"]\n5 [label = \"CIC\"]\n\n\n# edge statements\nA->B \nB->C\nC-> {D1 D2}\nD1-> {EA1 EA2 EA3}\nD2-> {EB1 EB2 EB3 EB4} \nEA1->1\nEA2-> {1 2}\nEB1->3\nEB2-> {3 4}\nEB3->5\n      \n      }\n    \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 (#fig:diagram_exp.des)Flow charts
 </p>
 </div>
 <div class="figure">
-<div id="htmlwidget-d6527ae2dec452bf3f0b" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d6527ae2dec452bf3f0b">{"x":{"diagram":"\ndigraph Scheme {\n      \n      # graph statement\n      graph [layout = dot, overlap = true]\n      \n      # node statements\n      node [shape = box,\n      fontname = Helvetica, fontsize = 20, style = filled]\n      \n      node [color = black, fillcolor = azure]\n      A [label = \"Sample\"]\n      \n      node [color = black, fillcolor = lavender]\n      B [label = \"Homogenization/filtration\"]\n      \n      node [color = black, fillcolor = pink]      \n      C [label = \"Extraction\"]\n      \n      node [color = black, fillcolor = green]\n      D1 [label = \"Fraction A\"]\n\n      node [color = blue, fillcolor = forestgreen]\n      D2 [label = \"Fraction B\"]\n      \n      node [color = black, fillcolor = yellow]\n      EA1 [label = \"FA-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EA2 [label = \"FA-80\"]\n      \n      node [color = black, fillcolor = yellow]\n      EB1 [label = \"FB-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EB2 [label = \"FB-80\"]\n      \n      node [color = black, fillcolor = orange]\n      EB3 [label = \"FB-CIC\"]\n      \n      node [color = black, fillcolor = lightgrey]\n      EA3 [label = \"FA-S\"]     \n      EB4 [label = \"FB-S\"]\n      \n      node [color = black, fillcolor = cyan]\n      1 [label = \"UPLC-MS/MS\"]\n      \n      node [color = black, fillcolor = royalblue]\n      2 [label = \"UPC2-MS/MS\"]\n\n      node [color = black, fillcolor = cyan]\n      3 [label = \"UPLC-MS/MS\"]\n\n      node [color = black, fillcolor = royalblue]\n      4 [label = \"UPC2-MS/MS\"]\n\n      node [color = black, fillcolor = purple]\n      5 [label = \"CIC\"]\n      \n      \n      # edge statements\n      edge [color = black]\n      A->B \n      B->C\n      C-> {D1 D2}\n      D1-> {EA1 EA2 EA3}\n      D2-> {EB1 EB2 EB3 EB4} \n      EA1->1\n      EA2-> {1 2}\n      EB1->3\n      EB2-> {3 4}\n      EB3->5\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c3e1c3418580d3518f96" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c3e1c3418580d3518f96">{"x":{"diagram":"\ndigraph Scheme {\n      \n      # graph statement\n      graph [layout = dot, overlap = true]\n      \n      # node statements\n      node [shape = box,\n      fontname = Helvetica, fontsize = 20, style = filled]\n      \n      node [color = black, fillcolor = azure]\n      A [label = \"Sample\"]\n      \n      node [color = black, fillcolor = lavender]\n      B [label = \"Homogenization/filtration\"]\n      \n      node [color = black, fillcolor = pink]      \n      C [label = \"Extraction\"]\n      \n      node [color = black, fillcolor = green]\n      D1 [label = \"Fraction A\"]\n\n      node [color = blue, fillcolor = forestgreen]\n      D2 [label = \"Fraction B\"]\n      \n      node [color = black, fillcolor = yellow]\n      EA1 [label = \"FA-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EA2 [label = \"FA-80\"]\n      \n      node [color = black, fillcolor = yellow]\n      EB1 [label = \"FB-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EB2 [label = \"FB-80\"]\n      \n      node [color = black, fillcolor = orange]\n      EB3 [label = \"FB-CIC\"]\n      \n      node [color = black, fillcolor = lightgrey]\n      EA3 [label = \"FA-S\"]     \n      EB4 [label = \"FB-S\"]\n      \n      node [color = black, fillcolor = cyan]\n      1 [label = \"UPLC-MS/MS\"]\n      \n      node [color = black, fillcolor = royalblue]\n      2 [label = \"UPC2-MS/MS\"]\n\n      node [color = black, fillcolor = cyan]\n      3 [label = \"UPLC-MS/MS\"]\n\n      node [color = black, fillcolor = royalblue]\n      4 [label = \"UPC2-MS/MS\"]\n\n      node [color = black, fillcolor = purple]\n      5 [label = \"CIC\"]\n      \n      \n      # edge statements\n      edge [color = black]\n      A->B \n      B->C\n      C-> {D1 D2}\n      D1-> {EA1 EA2 EA3}\n      D2-> {EB1 EB2 EB3 EB4} \n      EA1->1\n      EA2-> {1 2}\n      EB1->3\n      EB2-> {3 4}\n      EB3->5\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 (#fig:diagram_exp.des)Flow charts
 </p>
 </div>
 <div class="figure">
-<div id="htmlwidget-f7f43eabf2de7539fc1d" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f7f43eabf2de7539fc1d">{"x":{"diagram":"\n      digraph Scheme {\n      \n      # graph statement\n      graph [layout = dot, overlap = false]\n      \n      # node statements\n      node [shape = box,\n      fontname = Helvetica, fontsize = 20, style = filled]\n      \n      node [color = black, fillcolor = azure]\n      A [label = \"Sample\"]\n      \n      node [color = black, fillcolor = lavender]\n      B [label = \"Homogenization/filtration\"]\n      \n      node [color = black, fillcolor = pink]      \n      C [label = \"Extraction\"]\n      \n      node [color = black, fillcolor = green]\n      D1 [label = \"Fraction A\"]\n      \n      node [color = blue, fillcolor = forestgreen]\n      D2 [label = \"Fraction B\"]\n      \n      node [color = black, fillcolor = yellow]\n      EA1 [label = \"FA-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EA2 [label = \"FA-80\"]\n      \n      node [color = black, fillcolor = yellow]\n      EB1 [label = \"FB-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EB2 [label = \"FB-80\"]\n      \n      node [color = black, fillcolor = orange]\n      EB3 [label = \"FB-CIC\"]\n      \n      node [color = black, fillcolor = grey]\n      EA3 [label = \"FA-S\"]     \n      EB4 [label = \"FB-S\"]\n      \n      node [color = black, fillcolor = cyan]\n      1 [label = \"UPLC-MS/MS\"]\n      \n      node [color = black, fillcolor = royalblue]\n      2 [label = \"UPC2-MS/MS\"]\n      \n      node [color = black, fillcolor = purple]\n      3 [label = \"CIC\"]\n      \n      \n      # edge statements\n      edge [color = black]\n      A->B \n      B->C\n      C-> {D1 D2}\n      D1->EA3 D1->EA1 D1->EA2\n      D2->EB4 D2->EB1 D2->EB2 D2->EB3 \n      EA1->1\n      EA2-> {1 2}\n      EB1->1\n      EB2-> {1 2}\n      EB3->3\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-12976f7015d34a93863e" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-12976f7015d34a93863e">{"x":{"diagram":"\n      digraph Scheme {\n      \n      # graph statement\n      graph [layout = dot, overlap = false]\n      \n      # node statements\n      node [shape = box,\n      fontname = Helvetica, fontsize = 20, style = filled]\n      \n      node [color = black, fillcolor = azure]\n      A [label = \"Sample\"]\n      \n      node [color = black, fillcolor = lavender]\n      B [label = \"Homogenization/filtration\"]\n      \n      node [color = black, fillcolor = pink]      \n      C [label = \"Extraction\"]\n      \n      node [color = black, fillcolor = green]\n      D1 [label = \"Fraction A\"]\n      \n      node [color = blue, fillcolor = forestgreen]\n      D2 [label = \"Fraction B\"]\n      \n      node [color = black, fillcolor = yellow]\n      EA1 [label = \"FA-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EA2 [label = \"FA-80\"]\n      \n      node [color = black, fillcolor = yellow]\n      EB1 [label = \"FB-40\"]\n      \n      node [color = black, fillcolor = gold]\n      EB2 [label = \"FB-80\"]\n      \n      node [color = black, fillcolor = orange]\n      EB3 [label = \"FB-CIC\"]\n      \n      node [color = black, fillcolor = grey]\n      EA3 [label = \"FA-S\"]     \n      EB4 [label = \"FB-S\"]\n      \n      node [color = black, fillcolor = cyan]\n      1 [label = \"UPLC-MS/MS\"]\n      \n      node [color = black, fillcolor = royalblue]\n      2 [label = \"UPC2-MS/MS\"]\n      \n      node [color = black, fillcolor = purple]\n      3 [label = \"CIC\"]\n      \n      \n      # edge statements\n      edge [color = black]\n      A->B \n      B->C\n      C-> {D1 D2}\n      D1->EA3 D1->EA1 D1->EA2\n      D2->EB4 D2->EB1 D2->EB2 D2->EB3 \n      EA1->1\n      EA2-> {1 2}\n      EB1->1\n      EB2-> {1 2}\n      EB3->3\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 (#fig:diagram_exp.des)Flow charts
 </p>
 </div>
 <div class="figure">
-<div id="htmlwidget-46a3440d6565311083ae" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-46a3440d6565311083ae">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]\nA [label = \"Total fluorine (TF)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nB1 [label = \"Organic fluorine (OF)\"]\nB2 [label = \"Inorganic Fluorine (IF)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nC1 [label = \"Extractable organic \\n fluorine (EOF)\"]\nC2 [label = \"Non-extractable organic \\n fluorine (NEOF)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nD1 [label = \"Identified \\n organofluorines\"]\nD2 [label = \"Unidentified \\n organofluorines\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1 B2}\nB1 -> {C1 C2}\nC1 -> {D1 D2}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a17f3b7ac43cbb2c6bb4" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a17f3b7ac43cbb2c6bb4">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]\nA [label = \"Total fluorine (TF)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nB1 [label = \"Organic fluorine (OF)\"]\nB2 [label = \"Inorganic Fluorine (IF)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nC1 [label = \"Extractable organic \\n fluorine (EOF)\"]\nC2 [label = \"Non-extractable organic \\n fluorine (NEOF)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nD1 [label = \"Identified \\n organofluorines\"]\nD2 [label = \"Unidentified \\n organofluorines\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1 B2}\nB1 -> {C1 C2}\nC1 -> {D1 D2}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 (#fig:diagram_exp.des)Flow charts
 </p>

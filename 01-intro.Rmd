@@ -17,3 +17,8 @@ plot(dist ~ speed, cars)  # a scatterplot
 
 ```
 
+```{r rumsfeldt}
+knitr::include_graphics("images/rumsfeldt_quadrant.png")
+
+```
+
