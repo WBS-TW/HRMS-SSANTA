@@ -1,216 +1,10 @@
-```{r startup, echo=FALSE, warning=FALSE, message=FALSE}
-# Diagrammer
-# http://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html
-library(DiagrammeR)
-
-```
-
-# Experimental design for SSA/NTA analysis {#Experimental_design}
+# Experimental design for SSA/NTA environmental analysis {#Experimental_design}
 
 <br><br>
 
-```{r diagram_exp.des, echo=FALSE, fig.cap= "Flow charts"}
+```{r diagram_exp_des, echo=FALSE, fig.cap= "Design workFlow"}
 
-
-
-grViz("
-digraph Scheme {
-      
-# graph statement
-graph [layout = dot, overlap = true]
-      
-# node statements
-node [shape = box,
-fontname = Helvetica, fontsize = 20]
-
-A [label = 'Sample']
-B [label = 'Homogenization/filtration']
-C [label = 'Extraction']
-D1 [label = 'Fraction A']
-D2 [label = 'Fraction B']
-EA1 [label = 'FA-40']
-EA2 [label = 'FA-80']
-EA3 [label = 'FA-S']
-EB1 [label = 'FB-40']
-EB2 [label = 'FB-80']
-EB3 [label = 'FB-CIC']
-EB4 [label = 'FB-S']
-1 [label = 'UPLC-MS/MS']
-2 [label = 'UPC2-MS/MS']
-3 [label = 'UPLC-MS/MS']
-4 [label = 'UPC2-MS/MS']
-5 [label = 'CIC']
-
-
-# edge statements
-A->B 
-B->C
-C-> {D1 D2}
-D1-> {EA1 EA2 EA3}
-D2-> {EB1 EB2 EB3 EB4} 
-EA1->1
-EA2-> {1 2}
-EB1->3
-EB2-> {3 4}
-EB3->5
-      
-      }
-    
-")
-
-
-####color schemes####
-grViz("
-digraph Scheme {
-      
-      # graph statement
-      graph [layout = dot, overlap = true]
-      
-      # node statements
-      node [shape = box,
-      fontname = Helvetica, fontsize = 20, style = filled]
-      
-      node [color = black, fillcolor = azure]
-      A [label = 'Sample']
-      
-      node [color = black, fillcolor = lavender]
-      B [label = 'Homogenization/filtration']
-      
-      node [color = black, fillcolor = pink]      
-      C [label = 'Extraction']
-      
-      node [color = black, fillcolor = green]
-      D1 [label = 'Fraction A']
-
-      node [color = blue, fillcolor = forestgreen]
-      D2 [label = 'Fraction B']
-      
-      node [color = black, fillcolor = yellow]
-      EA1 [label = 'FA-40']
-      
-      node [color = black, fillcolor = gold]
-      EA2 [label = 'FA-80']
-      
-      node [color = black, fillcolor = yellow]
-      EB1 [label = 'FB-40']
-      
-      node [color = black, fillcolor = gold]
-      EB2 [label = 'FB-80']
-      
-      node [color = black, fillcolor = orange]
-      EB3 [label = 'FB-CIC']
-      
-      node [color = black, fillcolor = lightgrey]
-      EA3 [label = 'FA-S']     
-      EB4 [label = 'FB-S']
-      
-      node [color = black, fillcolor = cyan]
-      1 [label = 'UPLC-MS/MS']
-      
-      node [color = black, fillcolor = royalblue]
-      2 [label = 'UPC2-MS/MS']
-
-      node [color = black, fillcolor = cyan]
-      3 [label = 'UPLC-MS/MS']
-
-      node [color = black, fillcolor = royalblue]
-      4 [label = 'UPC2-MS/MS']
-
-      node [color = black, fillcolor = purple]
-      5 [label = 'CIC']
-      
-      
-      # edge statements
-      edge [color = black]
-      A->B 
-      B->C
-      C-> {D1 D2}
-      D1-> {EA1 EA2 EA3}
-      D2-> {EB1 EB2 EB3 EB4} 
-      EA1->1
-      EA2-> {1 2}
-      EB1->3
-      EB2-> {3 4}
-      EB3->5
-      
-      }
-      ")
-
-
-#### Same instruments ###
-grViz("
-      digraph Scheme {
-      
-      # graph statement
-      graph [layout = dot, overlap = false]
-      
-      # node statements
-      node [shape = box,
-      fontname = Helvetica, fontsize = 20, style = filled]
-      
-      node [color = black, fillcolor = azure]
-      A [label = 'Sample']
-      
-      node [color = black, fillcolor = lavender]
-      B [label = 'Homogenization/filtration']
-      
-      node [color = black, fillcolor = pink]      
-      C [label = 'Extraction']
-      
-      node [color = black, fillcolor = green]
-      D1 [label = 'Fraction A']
-      
-      node [color = blue, fillcolor = forestgreen]
-      D2 [label = 'Fraction B']
-      
-      node [color = black, fillcolor = yellow]
-      EA1 [label = 'FA-40']
-      
-      node [color = black, fillcolor = gold]
-      EA2 [label = 'FA-80']
-      
-      node [color = black, fillcolor = yellow]
-      EB1 [label = 'FB-40']
-      
-      node [color = black, fillcolor = gold]
-      EB2 [label = 'FB-80']
-      
-      node [color = black, fillcolor = orange]
-      EB3 [label = 'FB-CIC']
-      
-      node [color = black, fillcolor = grey]
-      EA3 [label = 'FA-S']     
-      EB4 [label = 'FB-S']
-      
-      node [color = black, fillcolor = cyan]
-      1 [label = 'UPLC-MS/MS']
-      
-      node [color = black, fillcolor = royalblue]
-      2 [label = 'UPC2-MS/MS']
-      
-      node [color = black, fillcolor = purple]
-      3 [label = 'CIC']
-      
-      
-      # edge statements
-      edge [color = black]
-      A->B 
-      B->C
-      C-> {D1 D2}
-      D1->EA3 D1->EA1 D1->EA2
-      D2->EB4 D2->EB1 D2->EB2 D2->EB3 
-      EA1->1
-      EA2-> {1 2}
-      EB1->1
-      EB2-> {1 2}
-      EB3->3
-      
-      }
-      ")
-
-
-###### TF-TOF-EOF...#####
-
+# Diagrammer: rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html
 
 grViz("
 digraph Scheme {
@@ -223,27 +17,31 @@ node [shape = box,
 fontname = Helvetica, fontsize = 35, style = filled]
       
 node [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]
-A [label = 'Total fluorine (TF)']
+A [label = 'Hypothesis']
 
 node [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]
-B1 [label = 'Organic fluorine (OF)']
-B2 [label = 'Inorganic Fluorine (IF)']
+B1 [label = 'Experimental design']
+
 
 node [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]
-C1 [label = 'Extractable organic \\n fluorine (EOF)']
-C2 [label = 'Non-extractable organic \\n fluorine (NEOF)']
+C1 [label = 'Sampling design \\n and collection']
+C2 [label = 'Collection of \\n metadata']
 
 node [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]
-D1 [label = 'Identified \\n organofluorines']
-D2 [label = 'Unidentified \\n organofluorines']
+D1 [label = 'Chemical analysis']
+
+node [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]
+E1 [label = 'Data analysis']
 
       
       
 # edge statements
 edge [color = black]
-A -> {B1 B2}
+A -> {B1}
 B1 -> {C1 C2}
-C1 -> {D1 D2}
+C1 -> {D1}
+C2 -> {E1}
+D1 -> {E1}
 
       
       }
@@ -254,11 +52,29 @@ C1 -> {D1 D2}
 
 
 
-## Sampling design
+## Hypothesis
+xx
 
-## Instrument injection
+## Experimental design
+<br>
+- Compounds of interest?  
+- Amendable to GC and/or LC?  
+- Instrumentations available?  
 
+## Sampling design and collection
+xx
+<br>
 
+## Collection of metadata
+Metadata is the information about data, in this particular case, the relevant information about our samples and chemicals of interest.  
+Examples could be the location, group, 
 
+## Chemical analysis
+xx
+<br>
+
+## Data analysis
+xx
+<br>
 
 

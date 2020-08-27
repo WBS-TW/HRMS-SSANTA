@@ -4,26 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Molecular networks | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</title>
-  <meta name="description" content="Chapter 6 Molecular networks | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <title>6 Molecular networks | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</title>
+  <meta name="description" content="This book is a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry and to provide practical demonstrations for a workflow for SSA/NTA." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Molecular networks | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <meta property="og:title" content="6 Molecular networks | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
   <meta property="og:type" content="book" />
-  
-  
-  
-  
+  <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
+  <meta property="og:image" content="https://www.oru.se/personal/thanh_wangimages/OUR.png" />
+  <meta property="og:description" content="This book is a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry and to provide practical demonstrations for a workflow for SSA/NTA." />
+  <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Molecular networks | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <meta name="twitter:title" content="6 Molecular networks | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
   
-  
-  
+  <meta name="twitter:description" content="This book is a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry and to provide practical demonstrations for a workflow for SSA/NTA." />
+  <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wangimages/OUR.png" />
 
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
+<meta name="date" content="2020-08-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -121,6 +122,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<link rel="stylesheet" href="css\style.css" type="text/css" />
 </head>
 
 <body>
@@ -133,16 +135,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
+<li><a href="./">Authoring Books with R Markdown</a></li>
+
+<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="Experimental-design.html"><a href="Experimental-design.html"><i class="fa fa-check"></i><b>2</b> Experimental design for SSA/NTA analysis</a><ul>
-<li class="chapter" data-level="2.1" data-path="Experimental-design.html"><a href="Experimental-design.html#sampling-design"><i class="fa fa-check"></i><b>2.1</b> Sampling design</a></li>
-<li class="chapter" data-level="2.2" data-path="Experimental-design.html"><a href="Experimental-design.html#instrument-injection"><i class="fa fa-check"></i><b>2.2</b> Instrument injection</a></li>
+<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction and concepts</a></li>
+<li class="chapter" data-level="2" data-path="Experimental-design.html"><a href="Experimental-design.html"><i class="fa fa-check"></i><b>2</b> Experimental design for SSA/NTA environmental analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="Experimental-design.html"><a href="Experimental-design.html#hypothesis"><i class="fa fa-check"></i><b>2.1</b> Hypothesis</a></li>
+<li class="chapter" data-level="2.2" data-path="Experimental-design.html"><a href="Experimental-design.html#experimental-design"><i class="fa fa-check"></i><b>2.2</b> Experimental design</a></li>
+<li class="chapter" data-level="2.3" data-path="Experimental-design.html"><a href="Experimental-design.html#sampling-design-and-collection"><i class="fa fa-check"></i><b>2.3</b> Sampling design and collection</a></li>
+<li class="chapter" data-level="2.4" data-path="Experimental-design.html"><a href="Experimental-design.html#collection-of-metadata"><i class="fa fa-check"></i><b>2.4</b> Collection of metadata</a></li>
+<li class="chapter" data-level="2.5" data-path="Experimental-design.html"><a href="Experimental-design.html#chemical-analysis"><i class="fa fa-check"></i><b>2.5</b> Chemical analysis</a></li>
+<li class="chapter" data-level="2.6" data-path="Experimental-design.html"><a href="Experimental-design.html#data-analysis"><i class="fa fa-check"></i><b>2.6</b> Data analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="MS-preprocess.html"><a href="MS-preprocess.html"><i class="fa fa-check"></i><b>3</b> Pre-processing HRMS data</a><ul>
-<li class="chapter" data-level="3.1" data-path="MS-preprocess.html"><a href="MS-preprocess.html#msconvert"><i class="fa fa-check"></i><b>3.1</b> <strong>MSConvert</strong></a></li>
-<li class="chapter" data-level="3.2" data-path="MS-preprocess.html"><a href="MS-preprocess.html#xcms"><i class="fa fa-check"></i><b>3.2</b> <strong>XCMS</strong></a></li>
-<li class="chapter" data-level="3.3" data-path="MS-preprocess.html"><a href="MS-preprocess.html#patroon"><i class="fa fa-check"></i><b>3.3</b> <strong>PatRoon</strong></a></li>
+<li class="chapter" data-level="3.1" data-path="MS-preprocess.html"><a href="MS-preprocess.html#msconvert"><i class="fa fa-check"></i><b>3.1</b> MSConvert</a></li>
+<li class="chapter" data-level="3.2" data-path="MS-preprocess.html"><a href="MS-preprocess.html#msnbase-and-xcms"><i class="fa fa-check"></i><b>3.2</b> MsnBase and XCMS</a></li>
+<li class="chapter" data-level="3.3" data-path="MS-preprocess.html"><a href="MS-preprocess.html#patroon"><i class="fa fa-check"></i><b>3.3</b> PatRoon</a></li>
+<li class="chapter" data-level="3.4" data-path="MS-preprocess.html"><a href="MS-preprocess.html#ms-dial"><i class="fa fa-check"></i><b>3.4</b> MS-DIAL</a></li>
+<li class="chapter" data-level="3.5" data-path="MS-preprocess.html"><a href="MS-preprocess.html#output-formats"><i class="fa fa-check"></i><b>3.5</b> Output formats</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="mass-defect.html"><a href="mass-defect.html"><i class="fa fa-check"></i><b>4</b> Mass defect plots</a><ul>
 <li class="chapter" data-level="4.1" data-path="mass-defect.html"><a href="mass-defect.html#mdplotr"><i class="fa fa-check"></i><b>4.1</b> MDPlotR</a></li>
@@ -168,6 +179,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4.2" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>7.4.2</b> MSPepSearch</a></li>
 </ul></li>
 </ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -186,13 +200,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="molecular_networks" class="section level1">
-<h1><span class="header-section-number">Chapter 6</span> Molecular networks</h1>
+<h1><span class="header-section-number">6</span> Molecular networks</h1>
 <p>This is a chapter about molecular networks</p>
 <p><br><br></p>
 <div id="metgem" class="section level2">
 <h2><span class="header-section-number">6.1</span> MetGem</h2>
+<p>xx
+<br><br></p>
 <div id="gc-data" class="section level3">
 <h3><span class="header-section-number">6.1.1</span> GC data</h3>
+<p>xx
+<br><br></p>
 <p><br></p>
 <p><em>Metgem webpage:</em> <a href="https://metgem.github.io/" class="uri">https://metgem.github.io/</a> <br>
 <em>Metgem handbook:</em> <a href="https://metgem.readthedocs.io/en/latest/index.html" class="uri">https://metgem.readthedocs.io/en/latest/index.html</a> <br></p>
@@ -224,8 +242,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
+"github": true,
+"facebook": false,
 "twitter": true,
 "linkedin": false,
 "weibo": false,
@@ -239,8 +257,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/09-Molecular_networks.Rmd",
+"text": "Edit"
 },
 "history": {
 "link": null,
@@ -250,9 +268,9 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["SSANTA.pdf", "SSANTA.epub", "SSANTA.mobi"],
 "toc": {
-"collapse": "subsection"
+"collapse": "none"
 }
 });
 });

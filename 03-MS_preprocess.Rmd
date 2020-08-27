@@ -2,17 +2,25 @@
 
 <br><br>
 
-## __MSConvert__
-
+## MSConvert
+xx
 <br><br>
 
-## __XCMS__
-
+## MsnBase and XCMS
+xx
 <br><br>
 
-## __PatRoon__
-
+## PatRoon
+xx
 <br><br>
 
+## MS-DIAL
+xx
+<br><br>
 
-
+## Output formats
+<br>
+- MSnExp and XCMSnExp
+- MSP
+- MFG
+- CSV (for both output data or metadata)

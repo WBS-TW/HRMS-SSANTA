@@ -1,4 +1,9 @@
-# Introduction {#Intro}
+# Introduction and concepts {#Intro}
+
+<br><br>
+
+
+
 
 * _This is italic_
 * __This is bold__
@@ -6,6 +11,17 @@
 * Superscript: ^13^C
 * Inline code: `library(tidyverse)`
 <br><br>
+
+
+```{r startup, echo=FALSE, message=FALSE}
+
+library(tidyverse)
+library(DiagrammeR)
+library(plotly)
+library(processx)
+
+```
+
 
 ```{r intro, echo = FALSE, fig.cap= "Test of figure"}
 
