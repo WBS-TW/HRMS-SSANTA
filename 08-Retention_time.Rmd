@@ -1,4 +1,4 @@
-# Retention time index and prediction {#retention_times}
+# **Retention time index and prediction** {#retention_times}
 
 This is a chapter about retention time index and prediction
 

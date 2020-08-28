@@ -1,4 +1,4 @@
-# Molecular networks {#molecular_networks}
+# **Molecular networks** {#molecular_networks}
 
 This is a chapter about molecular networks
 
