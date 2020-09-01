@@ -38,3 +38,13 @@ knitr::include_graphics("images/rumsfeldt_quadrant.png")
 
 ```
 
+## Terminologies
+<br><br>
+- High resolution mass spectrometry
+- Non-target analysis
+- Pseudo-quantification
+- Semi-quantification
+- Suspsect screening analysis
+
+
+

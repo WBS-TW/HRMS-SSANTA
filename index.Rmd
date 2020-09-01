@@ -26,6 +26,10 @@ cover-image: images/OUR.png
 
 This book is a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry and to provide practical demonstrations for a workflow for SSA/NTA.
 
+- Does not include all the vast number of platforms, software and applications that can be used for SSA/NTA. <br>
+
+- Includes the use of applications that has been developed by the author.
+
 * Basic knowledge of R programming is a prerequisite to understand some of the codes
 * The author do not take responsibility for programs or computer crashing.  
 
