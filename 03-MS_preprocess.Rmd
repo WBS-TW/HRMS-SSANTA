@@ -2,6 +2,12 @@
 
 <br><br>
 
+## Proprietary and standardized MS data format
+<br>
+See: https://en.wikipedia.org/wiki/Mass_spectrometry_data_format
+
+<br><br>
+
 ## MSConvert
 xx
 <br><br>
