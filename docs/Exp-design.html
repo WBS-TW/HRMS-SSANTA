@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2020-08-28" />
+<meta name="date" content="2020-09-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -139,7 +139,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> <strong>Introduction and concepts</strong></a></li>
+<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> <strong>Introduction and concepts</strong></a><ul>
+<li class="chapter" data-level="1.1" data-path="Intro.html"><a href="Intro.html#terminologies"><i class="fa fa-check"></i><b>1.1</b> Terminologies</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="Exp-design.html"><a href="Exp-design.html"><i class="fa fa-check"></i><b>2</b> <strong>Experimental design</strong></a><ul>
 <li class="chapter" data-level="2.1" data-path="Exp-design.html"><a href="Exp-design.html#hypothesis"><i class="fa fa-check"></i><b>2.1</b> Hypothesis</a></li>
 <li class="chapter" data-level="2.2" data-path="Exp-design.html"><a href="Exp-design.html#experimental-design"><i class="fa fa-check"></i><b>2.2</b> Experimental design</a></li>
@@ -151,7 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="Exp-design.html"><a href="Exp-design.html#workflow-examples"><i class="fa fa-check"></i><b>2.8</b> Workflow examples</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="MS-preprocess.html"><a href="MS-preprocess.html"><i class="fa fa-check"></i><b>3</b> <strong>Pre-processing HRMS data</strong></a><ul>
-<li class="chapter" data-level="3.1" data-path="MS-preprocess.html"><a href="MS-preprocess.html#vendor-and-standardized-ms-data-format"><i class="fa fa-check"></i><b>3.1</b> Vendor and standardized MS data format</a></li>
+<li class="chapter" data-level="3.1" data-path="MS-preprocess.html"><a href="MS-preprocess.html#proprietary-and-standardized-ms-data-format"><i class="fa fa-check"></i><b>3.1</b> Proprietary and standardized MS data format</a></li>
 <li class="chapter" data-level="3.2" data-path="MS-preprocess.html"><a href="MS-preprocess.html#msconvert"><i class="fa fa-check"></i><b>3.2</b> MSConvert</a></li>
 <li class="chapter" data-level="3.3" data-path="MS-preprocess.html"><a href="MS-preprocess.html#msnbase-and-xcms"><i class="fa fa-check"></i><b>3.3</b> MsnBase and XCMS</a></li>
 <li class="chapter" data-level="3.4" data-path="MS-preprocess.html"><a href="MS-preprocess.html#patroon"><i class="fa fa-check"></i><b>3.4</b> PatRoon</a></li>
@@ -182,6 +184,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4.2" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>7.4.2</b> MSPepSearch</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="postprocessing.html"><a href="postprocessing.html"><i class="fa fa-check"></i><b>8</b> <strong>Data post-processing</strong></a><ul>
+<li class="chapter" data-level="8.1" data-path="postprocessing.html"><a href="postprocessing.html#hierarchical-clustering"><i class="fa fa-check"></i><b>8.1</b> Hierarchical clustering</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
 
@@ -206,8 +211,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">2</span> <strong>Experimental design</strong></h1>
 <p><br><br></p>
 <div class="figure">
-<div id="htmlwidget-64bf83ef4e2f77bcda74" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-64bf83ef4e2f77bcda74">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]\nA [label = \"Hypothesis\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nB1 [label = \"Experimental design\"]\nB2 [label = \"QA/QC\"]\n\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nC1 [label = \"Sampling design \\n and collection\"]\nC2 [label = \"Collection of \\n metadata\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nD1 [label = \"Chemical analysis\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nE1 [label = \"Data analysis\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1}\nB2 -> {B1}\nB1 -> {C1 C2}\nC1 -> {D1}\nC2 -> {E1}\nD1 -> {E1}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d42fa545325561f79fa9" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d42fa545325561f79fa9">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]\nA [label = \"Hypothesis\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nB1 [label = \"Experimental design\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nC1 [label = \"Sampling design \\n and collection\"]\nC2 [label = \"QA/QC\"]\nC3 [label = \"Collection of \\n metadata\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nD1 [label = \"Chemical analysis\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nE1 [label = \"Data analysis\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1}\nB1 -> {C1 C2 C3}\nC1 -> {D1}\nC2 -> {D1}\nC3 -> {E1}\nD1 -> {E1}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 (#fig:diagram_exp_des)Design workFlow
 </p>
@@ -254,8 +259,8 @@ Examples could be the location, group,</p>
 <h2><span class="header-section-number">2.8</span> Workflow examples</h2>
 <p><br></p>
 <div class="figure">
-<div id="htmlwidget-52e36ce468c4d48e2d3a" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-52e36ce468c4d48e2d3a">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = false]\nA [label = \"Finding Cl/Br among groups\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nB1 [label = \"Collect different groups\"]\nB2 [label = \"QA/QC\"]\n\n\nnode [color = black, fillcolor = white, fixedsize = false]\nC1 [label = \"Sample different groups\"]\nC2 [label = \"Suspect list of Cl/Br compounds\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nD1 [label = \"Chemical analysis\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nE1 [label = \"Suspect screening\"]\nE2 [label = \"Nontarget\"]\n\nF1 [label = \"Mass defect plots\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1}\nB2 -> {C1}\nB1 -> {C1 C2}\nC1 -> {D1}\nC2 -> {E1}\nD1 -> {E1}\nE2 -> {F1}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-96623a18725ec92e2fec" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-96623a18725ec92e2fec">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = false]\nA [label = \"Finding Cl/Br among groups\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nB1 [label = \"Collect different groups\"]\nB2 [label = \"QA/QC\"]\n\n\nnode [color = black, fillcolor = white, fixedsize = false]\nC1 [label = \"Sample different groups\"]\nC2 [label = \"Suspect list of Cl/Br compounds\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nD1 [label = \"Chemical analysis\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nE1 [label = \"Suspect screening\"]\nE2 [label = \"Nontarget\"]\n\nF1 [label = \"Mass defect plots\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1}\nB2 -> {C1}\nB1 -> {C1 C2}\nC1 -> {D1}\nC2 -> {E1}\nD1 -> {E1}\nE2 -> {F1}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 (#fig:example_workflows)Workflow for nontarget using XX
 </p>

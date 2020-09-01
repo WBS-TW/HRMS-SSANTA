@@ -26,7 +26,7 @@ xx
 
 ## Output formats
 <br>
-- MSnExp and XCMSnExp
-- MSP
-- MFG
-- CSV (for both output data or metadata)
+- MSnExp and XCMSnExp <br>
+- MSP <br>
+- MFG <br>
+- CSV (for both output data or metadata) <br>

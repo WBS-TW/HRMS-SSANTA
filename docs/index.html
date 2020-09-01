@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2020-08-28" />
+<meta name="date" content="2020-09-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -139,7 +139,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> <strong>Introduction and concepts</strong></a></li>
+<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> <strong>Introduction and concepts</strong></a><ul>
+<li class="chapter" data-level="1.1" data-path="Intro.html"><a href="Intro.html#terminologies"><i class="fa fa-check"></i><b>1.1</b> Terminologies</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="Exp-design.html"><a href="Exp-design.html"><i class="fa fa-check"></i><b>2</b> <strong>Experimental design</strong></a><ul>
 <li class="chapter" data-level="2.1" data-path="Exp-design.html"><a href="Exp-design.html#hypothesis"><i class="fa fa-check"></i><b>2.1</b> Hypothesis</a></li>
 <li class="chapter" data-level="2.2" data-path="Exp-design.html"><a href="Exp-design.html#experimental-design"><i class="fa fa-check"></i><b>2.2</b> Experimental design</a></li>
@@ -151,7 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="Exp-design.html"><a href="Exp-design.html#workflow-examples"><i class="fa fa-check"></i><b>2.8</b> Workflow examples</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="MS-preprocess.html"><a href="MS-preprocess.html"><i class="fa fa-check"></i><b>3</b> <strong>Pre-processing HRMS data</strong></a><ul>
-<li class="chapter" data-level="3.1" data-path="MS-preprocess.html"><a href="MS-preprocess.html#vendor-and-standardized-ms-data-format"><i class="fa fa-check"></i><b>3.1</b> Vendor and standardized MS data format</a></li>
+<li class="chapter" data-level="3.1" data-path="MS-preprocess.html"><a href="MS-preprocess.html#proprietary-and-standardized-ms-data-format"><i class="fa fa-check"></i><b>3.1</b> Proprietary and standardized MS data format</a></li>
 <li class="chapter" data-level="3.2" data-path="MS-preprocess.html"><a href="MS-preprocess.html#msconvert"><i class="fa fa-check"></i><b>3.2</b> MSConvert</a></li>
 <li class="chapter" data-level="3.3" data-path="MS-preprocess.html"><a href="MS-preprocess.html#msnbase-and-xcms"><i class="fa fa-check"></i><b>3.3</b> MsnBase and XCMS</a></li>
 <li class="chapter" data-level="3.4" data-path="MS-preprocess.html"><a href="MS-preprocess.html#patroon"><i class="fa fa-check"></i><b>3.4</b> PatRoon</a></li>
@@ -182,6 +184,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4.2" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>7.4.2</b> MSPepSearch</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="postprocessing.html"><a href="postprocessing.html"><i class="fa fa-check"></i><b>8</b> <strong>Data post-processing</strong></a><ul>
+<li class="chapter" data-level="8.1" data-path="postprocessing.html"><a href="postprocessing.html#hierarchical-clustering"><i class="fa fa-check"></i><b>8.1</b> Hierarchical clustering</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
 
@@ -205,14 +210,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</h1>
 <p class="author"><em>Thanh Wang, <br> MTM Research Centre, Örebro University</em></p>
-<p class="date"><em>2020-08-28</em></p>
+<p class="date"><em>2020-09-01</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
 <p>This book is a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry and to provide practical demonstrations for a workflow for SSA/NTA.</p>
 <ul>
-<li>Basic knowledge of R programming is a prerequisite to understand some of the codes</li>
-<li>The author do not take responsibility for programs or computer crashing.</li>
+<li><p>Does not include all the vast number of platforms, software and applications that can be used for SSA/NTA. <br></p></li>
+<li><p>Includes the use of applications that has been developed by the author.</p></li>
+<li><p>Basic knowledge of R programming is a prerequisite to understand some of the codes</p></li>
+<li><p>The author do not take responsibility for programs or computer crashing.</p></li>
 </ul>
 <p><br><br><br></p>
 <p>Please cite:</p>
