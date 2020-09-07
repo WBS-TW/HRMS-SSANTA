@@ -16,6 +16,7 @@
 ```{r startup, echo=FALSE, message=FALSE}
 
 library(tidyverse)
+library(kableExtra)
 library(DiagrammeR)
 library(plotly)
 library(processx)
@@ -23,17 +24,12 @@ library(processx)
 ```
 
 
-```{r intro, echo = FALSE, fig.cap= "Test of figure"}
+```{r target_vs_nontarget, echo = FALSE, fig.cap= "Comparison between target and nontarget analysis"}
 
-1 + 1
-
-rnorm(10)  # 10 random numbers
-
-plot(dist ~ speed, cars)  # a scatterplot
-
+knitr::include_graphics("images/target_vs_nontarget.png")
 ```
 
-```{r rumsfeldt}
+```{r rumsfeldt, echo = FALSE, fig.cap= "Test of figure"}
 knitr::include_graphics("images/rumsfeldt_quadrant.png")
 
 ```
@@ -42,9 +38,10 @@ knitr::include_graphics("images/rumsfeldt_quadrant.png")
 <br><br>
 - High resolution mass spectrometry
 - Non-target analysis
-- Pseudo-quantification
+- Suspect screening analysis
 - Semi-quantification
-- Suspsect screening analysis
+- Pseudo-quantification
+
 
 
 

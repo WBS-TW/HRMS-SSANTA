@@ -101,7 +101,7 @@ node [shape = box,
 fontname = Helvetica, fontsize = 35, style = filled]
       
 node [color = black, fillcolor = white, fixedsize = false]
-A [label = 'Finding Cl/Br among groups']
+A [label = 'Indoor dust collected \\n among different \\n use categories']
 
 node [color = black, fillcolor = white, fixedsize = false]
 B1 [label = 'Collect different groups']

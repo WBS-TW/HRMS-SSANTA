@@ -1,0 +1,60 @@
+# Example workflow: PFASs {#example_pfas}
+
+A walkthrough for PFAS analysis
+
+<br><br>  
+
+
+
+
+```{r example_workflows_PFASs, echo=FALSE, fig.cap= "Workflow for nontarget using XX"}
+
+# Diagrammer: rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html
+
+grViz("
+digraph Scheme {
+      
+# graph statement
+graph [layout = dot, overlap = false, rankdir = LR]
+
+# node statements
+node [shape = box,
+fontname = Helvetica, fontsize = 35, style = filled]
+      
+node [color = black, fillcolor = white, fixedsize = false]
+A [label = 'a']
+
+node [color = blue, fillcolor = white, fixedsize = false]
+B [label = 'b']
+
+
+
+node [color = black, fillcolor = white, fixedsize = false]
+C [label = 'c']
+
+
+node [color = black, fillcolor = white, fixedsize = false]
+D [label = 'd']
+
+E [label = 'e']
+
+
+      
+      
+# edge statements
+edge [color = black]
+A -> {B}
+
+      
+      }
+      ")
+
+
+```
+
+
+
+
+
+
+
