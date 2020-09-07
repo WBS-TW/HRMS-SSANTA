@@ -2,6 +2,36 @@
 
 <br><br>
 
+
+## Peak picking
+
+
+
+<br>
+```{r PFOS isotopes, echo = FALSE, fig.cap= "PFOS isotopic patterns"}
+knitr::include_graphics("images/isotopic_pattern_PFOS.png")
+
+```
+
+
+<br>
+
+```{r peak picking, echo = FALSE, fig.cap= "Mass traces of PFOS and labelled standards"}
+knitr::include_graphics("images/mass_traces_PFOS_IS_RS.png")
+
+```
+
+
+
+<br><br>
+## Alignment
+
+
+<br><br>
+## Componentization
+
+
+<br><br>
 ## Proprietary and standardized MS data format
 <br>
 See: https://en.wikipedia.org/wiki/Mass_spectrometry_data_format
@@ -11,6 +41,8 @@ See: https://en.wikipedia.org/wiki/Mass_spectrometry_data_format
 ## OpenMS and Toppview
 xx
 
+<br>
+https://www.youtube.com/watch?v=GuK1daIc6vo&list=PL2u38g_AG4MH7yCMF06N2VW7eZOJcglh7&index=5
 
 <br><br>
 ## MSConvert
@@ -24,6 +56,11 @@ xx
 ## PatRoon
 xx
 <br><br>
+
+https://www.researchsquare.com/article/rs-36675/v1
+<br>
+https://rickhelmus.github.io/patRoon/articles/tutorial.html
+<br>
 
 ## MS-DIAL
 xx

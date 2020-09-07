@@ -29,18 +29,21 @@ library(processx)
 knitr::include_graphics("images/target_vs_nontarget.png")
 ```
 
-```{r rumsfeldt, echo = FALSE, fig.cap= "Test of figure"}
+```{r rumsfeldt, echo = FALSE, fig.cap= "Knowns and unknowns"}
 knitr::include_graphics("images/rumsfeldt_quadrant.png")
 
 ```
 
 ## Terminologies
 <br><br>
-- High resolution mass spectrometry
-- Non-target analysis
-- Suspect screening analysis
-- Semi-quantification
-- Pseudo-quantification
+- High resolution mass spectrometry <br>
+- Non-target analysis <br>
+- Suspect screening analysis <br>
+- Semi-quantification <br>
+- Pseudo-quantification <br>
+- Data-dependent analysis (DDA) <br>
+- Data-indenpendent analysis (DIA) <br>
+
 
 
 
