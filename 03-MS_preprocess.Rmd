@@ -62,8 +62,17 @@ https://www.researchsquare.com/article/rs-36675/v1
 https://rickhelmus.github.io/patRoon/articles/tutorial.html
 <br>
 
+OpenMS performs peak picking and isotope grouping in one step (any idea how to turn off this?), while XCMS does not perform this step here. 
+From Rick: For OpenMS: you can use a trick for this by setting localMZRange=0, this way OpenMS won’t be able to look for isotopes. Note that its detection was more developed for ‘natural compounds’ (eg proteomics, metabolomics) in mind, and that it isn’t really good in grouping halogenated peaks anyway.
+
+
 ## MS-DIAL
-xx
+
+MS2Dec: <br> 
+Sigma window value: 0.1 - 1.0. Smaller value will avoid clustering of peaks that are far from each other (false positive grouping).
+<br>
+MS/MS abundance cut off: increase to remove background noise 
+
 <br><br>
 
 ## Output formats
