@@ -85,4 +85,66 @@ D1_3 -> {E1}
 ```
 
 
+```{r data processing, echo=FALSE}
+
+grViz("
+digraph Scheme {
+      
+# graph statement
+graph [layout = dot, overlap = false]
+
+# node statements
+node [shape = box,
+fontname = Helvetica, fontsize = 35, style = filled]
+      
+node [color = black, fillcolor = white, fixedsize = false]
+
+ZERO [label = 'Deconvolution']
+
+A [label = 'Target analysis']
+B [label = 'Suspect list screening']
+
+C [label = 'NIST library screening']
+C1 [label = 'Molecular ion confirmation']
+C2 [label = 'Retention time index']
+
+
+D [label = 'Mass defect \\n (selected mz, rt and int of annotated compounds']
+
+subgraph cluster2 {
+E [label = 'Annotation']
+ID1 [label = 'Confirm EIC peaks']
+}
+
+F [label = 'Molecular networking']
+G [label = 'Multivariate statistics']
+
+ID2 [label = 'Peak/Component list with \\n partial annotation']
+
+Q1 [label = 'Semiquantify across samples']      
+      
+# edge statements
+
+edge [color = black]
+
+ZERO -> {A B C}
+A -> {E}
+B -> {E}
+
+{C1 C2} -> {C}
+C -> {E}
+
+E -> {ID1}
+ID1 -> {ID2}
+ID2 -> {F}
+ID2 -> {G}
+ID2 -> {D}
+ID2 -> {Q1}
+
+}
+")
+
+
+```
+
 
