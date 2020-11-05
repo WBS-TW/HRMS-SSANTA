@@ -8,6 +8,16 @@ In environmental analysis, NIST MS library is widely used to match a spectrum to
 
 There are three different models that have recently been published to prdict the fragmentation patterns of GC-EI MS. 
 
+<br><br>
+### MEtfrag 
+<br><br>
+
+
+### Sirius CSI FingerID 
+<br><br>
+
+
+
 ### CFM-ID  
 In silico fragmentation:  
 Help file: https://sourceforge.net/p/cfm-id/wiki/Home/  
