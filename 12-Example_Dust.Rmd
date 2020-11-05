@@ -314,69 +314,219 @@ This code uses XCMS with centWave. Check differences and skip first steps to com
 ```{r XCMS CW, echo=TRUE, eval=FALSE}
 
 #first define the working directory (folder with experimental group folders inside)
-# mzMLfiles <- list.files(path = "/home/ORUNET.ORU.SE/twg/Dioxinlab/GC-Orbitrap data/Florian/Dust NTA 20200513/mzXML/",pattern = ".mzXML", recursive = TRUE, full.names = TRUE)
+# mzMLfiles <- list.files(path = "/mzXML/",pattern = ".mzXML", recursive = TRUE, full.names = TRUE)
 # Remove files containing "Hex", blank samples
 # mzMLfiles <- mzMLfiles[-grep("Hex", mzMLfiles)]
 
-sample_info <- readxl::read_xlsx("/home/ORUNET.ORU.SE/twg/Windows_home/Dust_Florian/Sample_list_NTA_dust.xlsx",
-                               sheet = "Sample")
+sample_info <- readxl::read_xlsx("Sample_list_NTA_dust.xlsx",
+                               sheet = "Sample_xcms")
 # filter only samples
 sample_info <- sample_info %>%
   dplyr::filter(!(group %in% c("blank_solvent")))
 
-mzXMLfiles <- as.character(sample_info$filename)
-
-pd <- data.frame(sample_name = paste0(sample_info$new_codes, ".mzXML"),
-                 class = sample_info$group,
+pd <- data.frame(sample_name = paste0(sample_info$analysis, ".mzXML"),
+                 sample_group = sample_info$group,
                  stringsAsFactors = FALSE)
+
+mzXMLfiles <- paste0(sample_info$path, "/", sample_info$analysis, ".mzXML")
+
+
+
+# Use subset to test
+pd <- pd[1:2,]
+mzXMLfiles <- mzXMLfiles[1:2]
+
+raw_data <- readMSData(mzXMLfiles, 
+                         pdata = new("NAnnotatedDataFrame", pd),
+                         mode = "onDisk")
+
 # pd <- pd %>% dplyr::filter(sample_group != "IS") %>% dplyr::filter(sample_group != "RTI")
 
+#-----Find features----#
 
-min.clustersize <- 20 #how many fragments need to be in a group for it to be included in the results. 5 - trace compounds; 20 - mostly high quality spectra
-#useOriginalCode(TRUE) #otherwise matchedFilter will allocate a huge amount of RAM when using step = 0.001
+# centWave params
+cwp <- CentWaveParam(ppm = 5,
+                     peakwidth = c(3, 45),
+                     snthresh = 10,
+                     prefilter = c(1,30000),
+                     mzCenterFun = "wMean",
+                     integrate = 1L,
+                     mzdiff = -0.001,
+                     fitgauss = FALSE,
+                     noise = 30000,
+                     verboseColumns = FALSE)
 
-#Refer to XCMS and CAMERA documentation for information about parameters and functions
-#These are the parameters used for high rez GC-Orbitrap data
-xs1 <- xcmsSet(mzXMLfiles, 
-               phenoData = pd,
-               method = "centWave", 
-               ppm = 3,
-               peakwidth = c(2,20),
-               snthresh = 5,
-               prefilter = c(3, 5000),
-               noise = 1000)
 
-xs2 <- group(xs1, method = "density", bw = 5, mzwid = 0.002, minsamp = 1, minfrac = 0, max = 1000)
+xs1 <- findChromPeaks(mzXMLfiles, param = cwp)
 
-xs3 <- retcor(xs2, method = "obiwarp")
+# use model peak to evaluate process
+rtr <- c(1440, 1460)
+mzr <- c(340.238, 340.242)
+chr_raw <- chromatogram(mzXMLfiles, mz = mzr, rt = rtr)
+chr_mzr <- chromatogram(xs1, mz = mzr, rt = rtr)
+group_colors <- paste0(brewer.pal(3, "Set1")[1:2], "60")
+sample_colors <- group_colors[xs1$sample_group]
 
-#xs4 <- group(xs3, method = "density", bw = 2, mzwid = 0.6, minsamp = 1, minfrac = 0, max = 1000)
- 
-xs4 <- group(xs3, method = "density", bw = 2, mzwid = 0.002, minsamp = 1, minfrac = 0, max = 1000)
 
-xs5 <- fillPeaks(xs4)
+#----Group features 1----#
 
-xs6 <- xsAnnotate(xs = xs5, sample=NA, polarity = "positive")
+pdp <- PeakDensityParam(
+  sampleGroups = pd$sample_group,
+  bw = 10,
+  minFraction = 0,
+  minSamples = 1,
+  binSize = 0.002,
+  maxFeatures = 1000)
+
+
+xs2 <- groupChromPeaks(xs1, param = pdp)
+
+
+plotChromPeakDensity(chr_mzr, col = sample_colors, param = pdp)
+
+
+#----retention time correction----#
+
+obip <- ObiwarpParam(binSize = 0.05,  # need to check optimal binSize
+                     centerSample = integer(),
+                     response = 1L,
+                     distFun = "cor_opt",
+                     gapInit = numeric(),
+                     gapExtend = numeric(),
+                     factorDiag = 2,
+                     factorGap = 1,
+                     localAlignment = FALSE,
+                     initPenalty = 0,
+                     subset = integer(),
+                     subsetAdjust = c("average", "previous"))
+
+xs3 <- adjustRtime(xs2, param = obip)
+
+# Get the base peak chromatograms
+bpis_adj <- chromatogram(xs3, aggregationFun = "max", include = "none")
+par(mfrow = c(2, 1), mar = c(4.5, 4.2, 1, 0.5))
+plot(bpis_adj)
+# Plot also the difference of adjusted to raw retention time.
+plotAdjustedRtime(xs3)
+
+par(mfrow = c(2, 1))
+## Plot the raw data
+plot(chr_raw)
+
+## Extract the chromatogram from the adjusted object
+chr_adj <- chromatogram(xs3, rt = rtr, mz = mzr)
+plot(chr_adj, peakType = "none")
+
+
+
+#----Group features 2----#
+# After retention time correction, the rt values are modified and additional grouping is needed.
+
+pdp2 <- PeakDensityParam(
+  sampleGroups = pd$sample_group,
+  bw = 5,
+  minFraction = 0,
+  minSamples = 1,
+  binSize = 0.2,
+  maxFeatures = 1000)
+
+
+xs4 <- groupChromPeaks(xs3, param = pdp2)
+
+xs4_chrom <- chromatogram(xs4, mz = mzr, rt = rtr)
+plotChromPeakDensity(xs4_chrom, col = sample_colors, param = pdp2)
+
+# iteratively decrease the binSize
+pdp3 <- PeakDensityParam(
+  sampleGroups = pd$sample_group,
+  bw = 2,
+  minFraction = 0,
+  minSamples = 1,
+  binSize = 0.002,
+  maxFeatures = 1000)
+
+xs4 <- groupChromPeaks(xs4, param = pdp3)
+
+xs4_chrom <- chromatogram(xs4, mz = mzr, rt = rtr)
+plotChromPeakDensity(xs4_chrom, col = sample_colors, param = pdp3)
+
+#----Fill missing features----#
+
+
+xs5 <- fillChromPeaks(xs4)
+
+## Check missing values before filling in peaks
+apply(featureValues(xs5, filled = FALSE), MARGIN = 2,
+      FUN = function(z) sum(is.na(z)))
+
+## Missing values after filling in peaks
+apply(featureValues(xs5), MARGIN = 2,
+      FUN = function(z) sum(is.na(z)))
+
+
+
+#---- QC ----#
+
+# Extract chromatograms of 4 features
+feature_chroms <- featureChromatograms(xs5, features = 10000:10004)
+
+plot(feature_chroms)
+
+
+boxplot(featureValues(xs5, value="into") +1, 
+        #col=as.numeric(sampclass(mtbls2Set))+1, 
+        log="y", las=2)
+
+sdThresh <- 4.0 ## Filter low-standard deviation rows for plot
+data <- log(featureValues(xs5))+1
+pca.result <- pca(data, nPcs=3)
+plotPcs(pca.result, type="loadings", 
+        #col=as.numeric(sampclass(mtbls2Set))+1
+        )
+
+
+
+
+# It is possible to use the retention time correction and grouping step in an iterative way if needed. 
+# Once you perform your last adjustRtime step and thus your last grouping step, you will obtain your final peak list (i.e. final list of ions)
+
+
+#----Annotation using CAMERA----#
+
+# Since CAMERA has not yet been ported to XCMSnExp,we need to convert to xcmsSet. 
+# Note that the conversion only makes sense for somple XCMSnSets, 
+# without e.g. MS level filtering (where CAMERA would then extract the wrong peaks)
+
+xs6 <- as(xs5, "xcmsSet")
+
+xs6 <- xsAnnotate(xs = xs6, sample=NA, polarity = "positive")
 
 xs7 <- groupFWHM(xs6, sigma = 6 , perfwhm = 2, intval = "maxo")
 
-xs8 <- groupCorr(xs7, cor_eic_th = 0.7, calcCaS = TRUE)
+xs8 <- groupCorr(xs7, cor_eic_th = 0.8, calcCaS = TRUE)
 
-xsPC <- calcPC(xs6, method = "hcs")
+
+#how many fragments need to be in a group for it to be included in the results. 5 - trace compounds; 20 - mostly high quality spectra
+min.clustersize <- 20 
 
 peaktable <- getPeaklist(xs8, intval="into")
-write.csv(peaktable, file = "untreated_peaktable_centWave.csv") #This creates a peaktable .csv file with all m/z features sorted into "compounds"
+write.csv(peaktable, file = "test_peaktable.csv") #This creates a peaktable .csv file with all m/z features sorted into "compounds"
 
 #the following script identifies all "compounds" considered too small according to min.clustersize
-#you don't need to modify anything, that run the next part as is
 peaktable <- getPeaklist(xs8, intval="maxo")
+
+# Replaces NA in intensities with zero
+peaktable <- peaktable %>%
+  dplyr::mutate(dplyr::across(dplyr::starts_with("X"), ~tidyr::replace_na(., 0)))
+
+
 pcgroups <- sort(unique(as.numeric(peaktable$pcgroup)))
 lspectra <- NULL
 extra <- NULL
 small.clusters <- NULL
 big.clusters <- NULL
 n <- 1
-for(x in pcgroups) {
+for(x in seq_along(pcgroups)) {
   clustersize <- length(peaktable[peaktable$pcgroup==x,ncol(peaktable)])
   if(clustersize < as.numeric(min.clustersize))
   {
@@ -389,6 +539,7 @@ for(x in pcgroups) {
     gruppe1 <- gruppe1[, -(2:(ncol(gruppe1)-3-(length(mzXMLfiles))))]
     gruppe1 <- gruppe1[, -(ncol(gruppe1):(ncol(gruppe1)-2))]
     decider <- NULL
+    
     for(i in 2:ncol(gruppe1))
     {
       decider <- c(decider, sum(gruppe1[, i]))
@@ -400,6 +551,11 @@ for(x in pcgroups) {
     n <- n+1
   }
 }
+
+
+# remove peaks with zero intensities
+lspectra <- lapply(lspectra, function(x) {x[x$int != 0,]})
+
 reduced.peaktable <- getReducedPeaklist(xs8, method = "sum", intval = "into", default.adduct.info = "maxint", mzrt.range = FALSE, npeaks.sum = FALSE, cleanup = FALSE)
 if(is.null(small.clusters)==FALSE) {
   for(z in small.clusters)
@@ -407,7 +563,8 @@ if(is.null(small.clusters)==FALSE) {
     reduced.peaktable <- reduced.peaktable[-(which(reduced.peaktable[, ncol(reduced.peaktable)]==z)), ]
   }
 }
-write.csv(reduced.peaktable, file = "peaktable_centWave20201022.csv") #This creates a peaktable .csv file with only "compounds" instead of m/z features
+write.csv(reduced.peaktable, file = "test_peaktable.csv") #This creates a peaktable .csv file with only "compounds" instead of m/z features
+
 extra <- data.frame(Name = paste("Unknown", big.clusters, "RT =",round(reduced.peaktable$rt/60, 2) ), Class = "Unknown", RT = round(reduced.peaktable$rt/60, 2),  stringsAsFactors = FALSE)
 
 ####KOVATS#####
@@ -449,7 +606,8 @@ extra <- cbind(extra, RI)
 # create the msp object with spectra and all meta information in the extra object (NAME, RETENTIONTIME, RETENTIONINDEX)
 export.msp <- construct.msp(lspectra, extra)
 
-write.msp(export.msp, file = "spectra_centWave20201022.msp") #This creates a NIST MS Search compatible .msp file with all compound pseudospectra
+write.msp(export.msp, file = "test_spectra.msp") #This creates a NIST MS Search compatible .msp file with all compound pseudospectra
+
 
 ```
 
