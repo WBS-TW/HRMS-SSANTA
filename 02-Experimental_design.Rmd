@@ -54,6 +54,7 @@ D1 -> {E1}
 
 
 ## Hypothesis
+<br>
 xx
 
 ## Experimental design
@@ -62,9 +63,21 @@ xx
 - Amendable to GC and/or LC?  
 - Instrumentations available?  
 
-## QA/QC
- - Spiking with native before and after extraction to evaluate the extraction efficiency and matrix effect
+## QA/QC measures
 <br>
+- Spiking with native before and after extraction to evaluate the extraction efficiency and matrix effect. <br>
+- Dilute QC extracts to investigate potential matrix effects(?) <br>
+- Field blanks <br>
+- Procedural blanks <br>
+- Solvent blanks <br>
+- Procedural replicates <br>
+- Triplicate injections <br>. Should also inject the procedural replicates in triplicates.
+- Standard reference material <br>
+- Randomization <br>
+- Retention time index standard <br>
+- Volumetric internal standard added into the final extract to guard against small difference of extract volumes.Use e.g. 4,4'-Dibromooctafluorobiphenyl which should not be in the samples and is stable. <br>
+- 
+
 
 ## Sampling design and collection
 xx
@@ -77,7 +90,7 @@ convention and that the sample codes could also specify if a sample is a field b
 Dont start a sample ID with a number
 
 ## Collection of metadata
-Metadata is the information about data, in this particular case, the relevant information about our samples and chemicals of interest.  
+Metadata is the information about data. In this particular case, it is the relevant information about our samples and chemicals of interest.  
 Examples could be the location, group, 
 
 ## Chemical analysis

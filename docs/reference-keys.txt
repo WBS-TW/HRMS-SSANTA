@@ -4,7 +4,7 @@ terminologies
 Exp_design
 hypothesis
 experimental-design
-qaqc
+qaqc-measures
 sampling-design-and-collection
 collection-of-metadata
 chemical-analysis

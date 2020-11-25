@@ -14,7 +14,7 @@ fontsize: 12pt
 monofont: "Source Code Pro"
 monofontoptions: "Scale=0.7"
 site: bookdown::bookdown_site
-description: "This book is a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry and to provide practical demonstrations for a workflow for SSA/NTA."
+description: "This is a work-in-progress book to introduce the concepts of suspect and nontarget analysis (SSA/NTA) with focus on environmental analytical chemistry and to provide practical demonstrations for a workflow for SSA/NTA."
 url: 'https\https://www.oru.se/personal/thanh_wang'
 github-repo: WBS-TW/WBS-TW.github.io
 cover-image: images/OUR.png
