@@ -9,6 +9,28 @@
 
 ## Suspect scoring
 <br>
-- Mass error (ppm) <br>
-- RMS of isotope intensities (%) <br>
-- RMS of mz error ppm <br>
+https://www.waters.com/waters/fr_FR/Mass-Accuracy-and-Resolution/nav.htm?locale=fr_FR&cid=10091028
+<br>
+
+Mass error (ppm): <br>
+
+\begin{equation} 
+  ME_{ppm} = \frac{mz_{theor} - mz_{meas}}{mz_{theor}} * 10^6
+\end{equation} <br>
+
+where *mz~theor~* is the theoretical exact mass (in u or Da) of the isotope, and *mz~meas~* is the measured accurate mass from the instrument.
+
+<br>
+
+
+RMS of isotope mz error ppm: <br>
+\begin{equation} 
+  RMS_{mz} = \sqrt{\frac{\sum_{i=1}^n (ME_{ppm})^2}{n}}
+\end{equation} <br>
+
+At least mz of isotopes M, M+1, M+2 (n > 3) should be included in the calculations to give good estimate of the average 
+
+RMS of isotope intensities (%): <br>
+\begin{equation} 
+  RMS_{Ab} = \sqrt{\frac{\sum_{i=1}^n (Ab_{theor} - Ab_{meas})^2}{n}}
+\end{equation} <br>
