@@ -75,7 +75,7 @@ xx
 - Standard reference material <br>
 - Randomization <br>
 - Retention time index standard <br>
-- Volumetric internal standard added into the final extract to guard against small difference of extract volumes.Use e.g. 4,4'-Dibromooctafluorobiphenyl which should not be in the samples and is stable. <br>
+- Volumetric internal standard added into the final extract to guard against small difference of extract volumes, as well as enable normalization of intensities/areas between samples and batches.Use e.g. 4,4'-Dibromooctafluorobiphenyl which should not be in the samples and is stable. <br>
 - 
 
 
