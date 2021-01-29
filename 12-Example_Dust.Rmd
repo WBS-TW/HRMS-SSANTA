@@ -149,6 +149,8 @@ ID2 -> {Q1}
 
 
 <br>
+
+## **GC orbitrap HRMS workflow**
 This code uses XCMS with MF -> CAMERA preprocessing used in : Stettin, D.; Poulin, R.X.; Pohnert, G. Metabolomics Benefits from Orbitrap GC–MS—Comparison of Low- and High-Resolution GC–MS. Metabolites 2020, 10, 143. See the supplementary material for original code. The code was modified here to also include retention time index and also remove zero intensity peaks after peak grouping. Additional metainformation for the msp file can also be added in the "extra" object.
 
 
@@ -610,4 +612,196 @@ write.msp(export.msp, file = "test_spectra.msp") #This creates a NIST MS Search 
 
 
 ```
+
+
+
+
+## **LC-HRMS using Waters MSe DIA workflow**
+
+
+```{r startup}
+library(xcms)
+library(magrittr)
+library(RAMClustR)
+```
+
+# Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2
+
+
+## First convert unifi data using MSConvert
+
+Options: 
+output format: mzML
+binary encoding precision: 64-bit
+Write index: check
+TPP compatibility: check
+use zlib compression: uncheck
+package in gzip: uncheck
+
+
+Filters:
+1. TitleMaker
+2. msLevel: 1-2  (need to click "Add" to add filter)
+
+## Centroiding raw data from mzML using MSnbase
+```{r}
+
+library(xcms)
+library(magrittr)
+
+# mzML file was created by MSConvert without centroiding but only function 1 and function 2 (MS channel 1 and 2).
+# Lock mass channel (Channel 3) is therefore removed by MSConvert
+
+# A1. Smoothing and then centroiding of mzML raw data file
+
+data_sg_cent <- data_prof %>%
+  smooth(method = "SavitzkyGolay", halfWindowSize = 4L) %>%
+  pickPeaks()
+
+## A2. Write the centroided data to files with the same names in the current directory
+
+writeMSData(data_sg_cent, file = "D:/Raw_data/Test_centroidingMSnbase/STD1_1_A,3_1_cent.mzML")
+
+```
+
+
+
+```{r}
+
+## B1. Read the centroided data.
+
+files <- "D:/Raw_data/Test_centroidingMSnbase/STD1_1_A,3_1_cent.mzML"
+
+sample.names <- data.frame(sample_name = c("STD1"),
+                           sample_group = c("STD"))
+
+
+raw_data <- readMSData(files = files, 
+                         pdata = new("NAnnotatedDataFrame", sample.names),
+                         mode = "onDisk")
+
+raw_data_info <- dplyr::glimpse(fData(raw_data))
+
+
+## B2. Peak detection for both MS1 and MS2
+
+# Set parameters specific for MS instrument (below is for Waters G2 XS qtof)
+ms.res <- 40000
+peak.width <- c(10,60)
+ms.fwhm <- round(550/ms.res, digits = 3)
+ppm <- round(1.5*(1000000*ms.fwhm)/(550*2.355))
+sn.thresh <- 10 
+
+
+# Peak picking for MS1
+cwp1 <- CentWaveParam(
+  ppm = ppm,
+  peakwidth = peak.width,
+  snthresh = sn.thresh,
+  prefilter = c(3, 5000),
+  mzCenterFun = "wMean",
+  integrate = 2L,
+  mzdiff = -0.001,
+  fitgauss = TRUE,
+  noise = 2000,
+  verboseColumns = TRUE,
+  roiList = list(),
+  firstBaselineCheck = TRUE,
+  roiScales = numeric(),
+  extendLengthMSW = FALSE
+)
+
+xdata <- findChromPeaks(raw_data, param = cwp1, msLevel = 1L)
+
+
+# Peak picking for MS2
+cwp2 <- CentWaveParam(
+  ppm = ppm,
+  peakwidth = peak.width,
+  snthresh = sn.thresh,
+  prefilter = c(3, 100),
+  mzCenterFun = "wMean",
+  integrate = 2L,
+  mzdiff = -0.001,
+  fitgauss = TRUE,
+  noise = 100,
+  verboseColumns = TRUE,
+  roiList = list(),
+  firstBaselineCheck = TRUE,
+  roiScales = numeric(),
+  extendLengthMSW = FALSE
+)
+
+xdata <- findChromPeaks(xdata, param = cwp2, msLevel = 2L, add = TRUE)
+
+# Check that MS1 and MS2 has been peak picked
+table(chromPeakData(xdata)$ms_level)
+
+isolationWindowTargetMz(xdata)
+isolationWindow(xdata)
+chromPeakData(xdata)
+
+# B4. Find and correlate MS2 peaks to MS1
+xdata <- findChromPeaksIsolationWindow(xdata, param = cwp2)
+
+xspectra <- reconstructChromPeakSpectra(xdata,
+                                        expandRt = 0,
+                                        diffRt = 2,
+                                        minCor = 0.8,
+                                        intensity = "maxo",
+                                        peakId = rownames(chromPeaks(xdata, msLevel = 1L)),
+                                        BPPARAM = bpparam())
+
+
+
+xspectra
+
+## Manually check MS2 spectra that "belongs" to a precursor m/z ##
+
+
+spec_group <- 3
+
+# Info for spectra group
+xspectra[[spec_group]]
+
+#Plotly allows for interactive check of m/z and intensity of ggplot2 objects
+plotly::ggplotly(plot(xspectra[[spec_group]])) 
+
+
+#plot EIC
+pk_ids <- mcols(xspectra)$ms2_peak_id[[spec_group]]
+
+rt_range <- chromPeaks(xdata)[pk_ids, c("rtmin", "rtmax")]
+mz_range <- chromPeaks(xdata)[pk_ids, c("mzmin", "mzmax")]
+pmz <- precursorMz(xspectra)[spec_group]
+xdata_iwindow <- filterIsolationWindow(xdata, mz = pmz)
+ms2_eics <- chromatogram(xdata_iwindow, rt = rt_range,
+                         mz = mz_range, msLevel = 2L)
+
+plot(ms2_eics)
+
+
+
+## Currently need to do componentisation in order to group adducts and in source fragmentations
+
+
+
+pdp <- PeakDensityParam(sampleGroups = sample.groups,
+                          minFraction = minfrac, bw = bw.pre)
+xdata <- groupChromPeaks(xdata, param = pdp)
+
+pgp <- PeakGroupsParam(
+    minFraction = 0.5)
+xdata <- adjustRtime(xdata, param = pgp)
+
+pdp <- PeakDensityParam(sampleGroups = sample.groups,
+                          minFraction = minfrac, bw = bw.post)
+xdata <- groupChromPeaks(xdata, param = pdp)
+
+fpp <- FillChromPeaksParam(expandMz = 0, expandRt = 0, ppm = 0)
+xdata <- fillChromPeaks(xdata, param = fpp)
+
+
+```
+
 
