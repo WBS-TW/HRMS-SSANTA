@@ -79,6 +79,48 @@ xx
 - Volumetric internal standard added into the final extract to guard against small difference of extract volumes, as well as enable normalization of intensities/areas between samples and batches.Use e.g. 4,4'-Dibromooctafluorobiphenyl which should not be in the samples and is stable. <br>
 - 
 
+## Data directory structure  
+
+Before we continue with chemical and data analysis, you should first structure the project folder in your computer where you store all the raw and metadata.Below is a suggestion for file directory structure for your project folder. Try to use underscore(_) in your folder names as space causes some errors in various systems and software.
+
+```{}
+YOUR_PROJECT_NAME
+│   Project_info.xlsx
+│
+└───Chemicals_Database
+│   │   Chemicals.xlsx
+│   │   ...
+│   │
+│   
+└───Literature
+│   │   Interesting_paper1.pdf
+│   │   ..
+│
+└───Raw_files
+│   │   File_info.xlsx
+│   │   ..
+│   │   └───LC_positive
+│   │   └───LC_negative
+│   │   └───GC_orbitrap
+│
+└───Results_Data_analysis
+│   │   Hit_list.xlsx
+│   │   Quantification.xlsx
+│   │   ..
+│   │   └───Peaklist_LC_positive
+│   │   └───Peaklist_LC_negative
+│
+└───Sample_info
+│   │   Sample_info.xlsx
+│
+└───Manuscript
+│   │   Manuscript_v1.docx
+
+    
+    
+    
+```
+
 
 ## Sampling design and collection
 xx
@@ -94,9 +136,17 @@ Dont start a sample ID with a number
 Metadata is the information about data. In this particular case, it is the relevant information about our samples and chemicals of interest.  
 Examples could be the location, group, 
 
+
+
+
+
 ## Chemical analysis
 xx
 <br>
+
+
+
+
 
 ## Data analysis
 xx

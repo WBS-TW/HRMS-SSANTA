@@ -5,6 +5,7 @@ Exp_design
 hypothesis
 experimental-design
 qaqc-measures
+data-directory-structure
 sampling-design-and-collection
 collection-of-metadata
 chemical-analysis
@@ -12,6 +13,7 @@ data-analysis
 workflow-examples
 MS_preprocess
 peak-picking
+open-tools-for-preprocessing
 openms-and-toppview
 msnbase-and-xcms
 patroon
@@ -41,4 +43,9 @@ mspepsearch
 postprocessing
 hierarchical-clustering
 example_dust
+gc-orbitrap-hrms-workflow
+lc-hrms-using-waters-mse-dia-workflow
+workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2
+first-convert-unifi-data-using-msconvert
+centroiding-raw-data-from-mzml-using-msnbase
 example_pfas

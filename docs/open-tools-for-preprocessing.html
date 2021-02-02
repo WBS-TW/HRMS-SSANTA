@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Library search | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</title>
+  <title>4 Open tools for preprocessing | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</title>
   <meta name="description" content="SSANTA." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Library search | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <meta property="og:title" content="4 Open tools for preprocessing | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wangimages/OUR.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Library search | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <meta name="twitter:title" content="4 Open tools for preprocessing | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
   
   <meta name="twitter:description" content="SSANTA." />
   <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wangimages/OUR.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="molecular-networks.html"/>
-<link rel="next" href="postprocessing.html"/>
+<link rel="prev" href="MS-preprocess.html"/>
+<link rel="next" href="suspect-screening.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -224,85 +224,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="library" class="section level1">
-<h1><span class="header-section-number">9</span> <strong>Library search</strong></h1>
-<p>In environmental analysis, NIST MS library is widely used to match a spectrum to a list of standard spectra. However, a major drawback of the NIST MS Search is that now all chemicals are included and all spectral ions are at unit mass (for EI spectra library, also called mainlib)</p>
-<p><br><br><br />
-## IN SILICO FRAGMENTATION</p>
-<p>There are three different models that have recently been published to prdict the fragmentation patterns of GC-EI MS.</p>
-<p><br><br>
-### MEtfrag
-<br><br></p>
-<div id="sirius-csi-fingerid" class="section level3">
-<h3><span class="header-section-number">9.0.1</span> Sirius CSI FingerID</h3>
-<p><br><br></p>
-</div>
-<div id="cfm-id" class="section level3">
-<h3><span class="header-section-number">9.0.2</span> CFM-ID</h3>
-<p>In silico fragmentation:<br />
-Help file: <a href="https://sourceforge.net/p/cfm-id/wiki/Home/" class="uri">https://sourceforge.net/p/cfm-id/wiki/Home/</a></p>
+<div id="open-tools-for-preprocessing" class="section level1">
+<h1><span class="header-section-number">4</span> Open tools for preprocessing</h1>
+<div id="openms-and-toppview" class="section level2">
+<h2><span class="header-section-number">4.1</span> OpenMS and Toppview</h2>
+<p>xx</p>
 <p><br>
-<em>Use instructions:</em></p>
-<ul>
-<li>If you are using EI-MS (GC-MS) data, please use the ei_ms_model provided.<br />
-</li>
-<li>Note that lpsolve55.dll must also be included in the same directory as the executables. This file can be found in the development version of LPSolve (e.g. lp_solve_5.5.2.0_dev_win32.zip), which can be downloaded from <a href="https://sourceforge.net/projects/lpsolve/files/lpsolve/5.5.2.5/lp_solve_5.5.2.5_dev_win32.zip/download" class="uri">https://sourceforge.net/projects/lpsolve/files/lpsolve/5.5.2.5/lp_solve_5.5.2.5_dev_win32.zip/download</a>.</li>
-</ul>
-<p>Cfm-predict</p>
-<p>COMMAND:<br />
-<code>cfm-predict.exe &lt;smiles_or_inchi_or_file&gt; &lt;prob_thresh&gt; &lt;param_file&gt; &lt;config_file&gt; &lt;annotate_fragments&gt; &lt;output_file_or_dir&gt; &lt;apply_postproc&gt; &lt;suppress_exceptions&gt;</code></p>
-<p><br></p>
-<p>EXAMPLE (naphthalene):<br />
-<code>cfm-predict.exe InChI=1S/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp</code></p>
-<p><br></p>
-<p>EXAMPLE (.txt file as input):<br />
-<code>cfm-predict.exe D:/Program/cfm-id-2.4_win32/test/input.txt 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp</code></p>
-<p><br><br><br></p>
+<a href="https://www.youtube.com/watch?v=GuK1daIc6vo&amp;list=PL2u38g_AG4MH7yCMF06N2VW7eZOJcglh7&amp;index=5" class="uri">https://www.youtube.com/watch?v=GuK1daIc6vo&amp;list=PL2u38g_AG4MH7yCMF06N2VW7eZOJcglh7&amp;index=5</a></p>
+<p><br><br>
+## MSConvert
+xx
+<br><br></p>
 </div>
-<div id="neims" class="section level2">
-<h2><span class="header-section-number">9.1</span> NEIMS</h2>
-<p>Help files: <a href="https://github.com/brain-research/deep-molecular-massspec" class="uri">https://github.com/brain-research/deep-molecular-massspec</a></p>
-<p><br><br><br></p>
-</div>
-<div id="deepei" class="section level2">
-<h2><span class="header-section-number">9.2</span> DeepEI</h2>
-<p>Help files: <a href="https://github.com/hcji/DeepEI" class="uri">https://github.com/hcji/DeepEI</a><br />
-<a href="https://github.com/hcji/DeepEI/blob/master/Usage.ipynb" class="uri">https://github.com/hcji/DeepEI/blob/master/Usage.ipynb</a></p>
-<p><br><br><br></p>
-<p><br><br><br></p>
-</div>
-<div id="other-prediction-algorithms" class="section level2">
-<h2><span class="header-section-number">9.3</span> Other prediction algorithms</h2>
-<p>QCEIMS</p>
-</div>
-<div id="library-search" class="section level2">
-<h2><span class="header-section-number">9.4</span> LIBRARY SEARCH</h2>
+<div id="msnbase-and-xcms" class="section level2">
+<h2><span class="header-section-number">4.2</span> MsnBase and XCMS</h2>
 <p>xx
 <br><br></p>
-<div id="lib2nist" class="section level3">
-<h3><span class="header-section-number">9.4.1</span> LIB2NIST</h3>
-<p>Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.<br />
+</div>
+<div id="patroon" class="section level2">
+<h2><span class="header-section-number">4.3</span> PatRoon</h2>
+<p>xx
+<br><br></p>
+<p><a href="https://www.researchsquare.com/article/rs-36675/v1" class="uri">https://www.researchsquare.com/article/rs-36675/v1</a>
 <br>
-COMMAND:<br />
-<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code><br />
-<br><br />
-EXAMPLES:<br />
-<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\LCMs_GC_Orbitrap.msp C:\NIST14\ =LCMs_GC_Orbitrap</code></p>
-<p><br><br><br></p>
+<a href="https://rickhelmus.github.io/patRoon/articles/tutorial.html" class="uri">https://rickhelmus.github.io/patRoon/articles/tutorial.html</a>
+<br></p>
+<p>OpenMS performs peak picking and isotope grouping in one step (any idea how to turn off this?), while XCMS does not perform this step here.
+From Rick: For OpenMS: you can use a trick for this by setting localMZRange=0, this way OpenMS won’t be able to look for isotopes. Note that its detection was more developed for ‘natural compounds’ (eg proteomics, metabolomics) in mind, and that it isn’t really good in grouping halogenated peaks anyway.</p>
 </div>
-<div id="mspepsearch" class="section level3">
-<h3><span class="header-section-number">9.4.2</span> MSPepSearch</h3>
-<p><br><br />
-Use MSPepSearch to find similar spectra</p>
+<div id="ms-dial" class="section level2">
+<h2><span class="header-section-number">4.4</span> MS-DIAL</h2>
+<p>MS2Dec: <br>
+Sigma window value: 0.1 - 1.0. Smaller value will avoid clustering of peaks that are far from each other (false positive grouping).
+<br>
+MS/MS abundance cut off: increase to remove background noise</p>
 <p><br><br></p>
-<p>EXAMPLES:<br />
-<code>MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 10 /OnlyFound /HITS 5 /LIB D:\Raw_data\Dust_Florian\GC\test\Mylib /INP D:\Raw_data\Dust_Florian\GC\test\input.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv /OutMW</code></p>
-<p><br></p>
-<p><code>MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 100 /OnlyFound /HITS 5 /LIB C:\NIST14\NIST_contaminants_orbitrap /INP D:\Projects\Mexico_Air\NIST_Mexico.msp /OUTMGF D:\Projects\Mexico_Air\test\test.mgf /OUTTAB D:\Projects\Mexico_Air\test\test.tsv</code></p>
-<p><br></p>
-<p><code>MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\NIST14\LCMs_GC_Orbitrap /INP D:\Raw_data\Dust_Florian\GC\test\11.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv</code></p>
-
 </div>
+<div id="output-formats" class="section level2">
+<h2><span class="header-section-number">4.5</span> Output formats</h2>
+<p><br>
+- MSnExp and XCMSnExp <br>
+- MSP <br>
+- MFG <br>
+- CSV (for both output data or metadata) <br></p>
+
 </div>
 </div>
             </section>
@@ -310,8 +275,8 @@ Use MSPepSearch to find similar spectra</p>
           </div>
         </div>
       </div>
-<a href="molecular-networks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="postprocessing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="MS-preprocess.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="suspect-screening.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -342,7 +307,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/10-library_search.Rmd",
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/03-MS_preprocess.Rmd",
 "text": "Edit"
 },
 "history": {

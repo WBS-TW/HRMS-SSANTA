@@ -619,7 +619,7 @@ write.msp(export.msp, file = "test_spectra.msp") #This creates a NIST MS Search 
 ## **LC-HRMS using Waters MSe DIA workflow**
 
 
-```{r startup}
+```{r load_package_12}
 library(xcms)
 library(magrittr)
 library(RAMClustR)
@@ -644,7 +644,7 @@ Filters:
 2. msLevel: 1-2  (need to click "Add" to add filter)
 
 ## Centroiding raw data from mzML using MSnbase
-```{r}
+```{r eval=FALSE, include=FALSE}
 
 library(xcms)
 library(magrittr)
@@ -666,7 +666,7 @@ writeMSData(data_sg_cent, file = "D:/Raw_data/Test_centroidingMSnbase/STD1_1_A,3
 
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 
 ## B1. Read the centroided data.
 
