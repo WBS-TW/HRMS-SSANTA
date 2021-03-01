@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2021-02-02" />
+<meta name="date" content="2021-02-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -228,8 +228,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">2</span> <strong>Experimental design</strong></h1>
 <p><br><br></p>
 <div class="figure">
-<div id="htmlwidget-2e5a7cf95dbcc077a040" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2e5a7cf95dbcc077a040">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]\nA [label = \"Hypothesis\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nB1 [label = \"Experimental design\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nC1 [label = \"Sampling design \\n and collection\"]\nC2 [label = \"QA/QC\"]\nC3 [label = \"Collection of \\n metadata\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nD1 [label = \"Chemical analysis\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nE1 [label = \"Data analysis\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1}\nB1 -> {C1 C2 C3}\nC1 -> {D1}\nC2 -> {C1}\nC2 -> {D1}\nC3 -> {E1}\nD1 -> {E1}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-30531a0f10cf06c81071" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-30531a0f10cf06c81071">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]\nA [label = \"Hypothesis\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nB1 [label = \"Experimental design\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nC1 [label = \"Sampling design \\n and collection\"]\nC2 [label = \"QA/QC\"]\nC3 [label = \"Collection of \\n metadata\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nD1 [label = \"Chemical analysis\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nE1 [label = \"Data analysis\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1}\nB1 -> {C1 C2 C3}\nC1 -> {D1}\nC2 -> {C1}\nC2 -> {D1}\nC3 -> {E1}\nD1 -> {E1}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 (#fig:diagram_exp_des)Design workFlow
 </p>
@@ -249,25 +249,25 @@ xx</p>
 <div id="qaqc-measures" class="section level2">
 <h2><span class="header-section-number">2.3</span> QA/QC measures</h2>
 <p><br>
-- Spiking with native before and after extraction to evaluate the extraction efficiency and matrix effect. <br>
-- Dilute QC extracts to investigate potential matrix effects(?) <br>
-- Field blanks <br>
-- Procedural blanks <br>
-- Solvent blanks <br>
-- Procedural replicates <br>
-- Triplicate injections <br>. Should also inject the procedural replicates in triplicates.
-- Standard reference material <br>
-- Randomization <br>
-- Retention time index standard <br>
-- Volumetric internal standard added into the final extract to guard against small difference of extract volumes, as well as enable normalization of intensities/areas between samples and batches.Use e.g. 4,4’-Dibromooctafluorobiphenyl which should not be in the samples and is stable. <br>
+- Spiking with native before and after extraction to evaluate the extraction efficiency and matrix effect.<br />
+- Dilute QC extracts to investigate potential matrix effects(?).<br />
+- Field blanks.<br />
+- Procedural blanks.<br />
+- Solvent blanks.<br />
+- Procedural replicates.<br />
+- Triplicate injections.<br />
+- Should also inject the procedural replicates in triplicates.<br />
+- Standard reference material.<br />
+- Randomization.<br />
+- Retention time index standard.<br />
+- Volumetric internal standard added into the final extract to guard against small difference of extract volumes, as well as enable normalization of intensities/areas between samples and batches.Use e.g. 4,4’-Dibromooctafluorobiphenyl which should not be in the samples and is stable.<br />
 -</p>
 </div>
 <div id="data-directory-structure" class="section level2">
 <h2><span class="header-section-number">2.4</span> Data directory structure</h2>
-<p>Before we continue with chemical and data analysis, you should first structure the project folder in your computer where you store all the raw and metadata.Below is a suggestion for file directory structure for your project folder.</p>
-<pre><code>project
+<p>Before we continue with chemical and data analysis, you should first structure the project folder in your computer where you store all the raw and metadata.Below is a suggestion for file directory structure for your project folder. Try to use underscore(_) in your folder names as space causes some errors in various systems and software.</p>
+<pre><code>YOUR_PROJECT_NAME
 │   Project_info.xlsx
-│       
 │
 └───Chemicals_Database
 │   │   Chemicals.xlsx
@@ -288,9 +288,15 @@ xx</p>
 └───Results_Data_analysis
 │   │   Hit_list.xlsx
 │   │   Quantification.xlsx
+│   │   ..
+│   │   └───Peaklist_LC_positive
+│   │   └───Peaklist_LC_negative
 │
 └───Sample_info
 │   │   Sample_info.xlsx
+│
+└───Manuscript
+│   │   Manuscript_v1.docx
 
     
     
@@ -303,8 +309,9 @@ xx</p>
 <p>What’s in a name? <br>
 Sample names/ID <br>
 Naming sample IDs might seem trivial at first but could help downstream data analysis and also to clarify your sampling design. It is important to have a uniform naming.
-convention and that the sample codes could also specify if a sample is a field blank, procedural blank, replicates, belong to a specific group…
-Dont start a sample ID with a number</p>
+convention and that the sample codes could also specify if a sample is a field blank, procedural blank, replicates, belong to a specific group…<br />
+- Dont start a sample ID with a number<br />
+- Avoid using space and special characters in the file name. Space can be replaced with underscore "_" instead.</p>
 </div>
 <div id="collection-of-metadata" class="section level2">
 <h2><span class="header-section-number">2.6</span> Collection of metadata</h2>
@@ -325,15 +332,15 @@ Examples could be the location, group,</p>
 <h2><span class="header-section-number">2.9</span> Workflow examples</h2>
 <p><br></p>
 <div class="figure">
-<div id="htmlwidget-d6247d01bd3dfe6beb29" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d6247d01bd3dfe6beb29">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = false]\nA [label = \"Indoor dust collected \\n among different \\n use categories\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nB1 [label = \"Collect different groups\"]\nB2 [label = \"QA/QC\"]\n\n\nnode [color = black, fillcolor = white, fixedsize = false]\nC1 [label = \"Sample different groups\"]\nC2 [label = \"Suspect list of Cl/Br compounds\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nD1 [label = \"Chemical analysis\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nE1 [label = \"Suspect screening\"]\nE2 [label = \"Nontarget\"]\n\nF1 [label = \"Mass defect plots\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1}\nB2 -> {C1}\nB1 -> {C1 C2}\nC1 -> {D1}\nC2 -> {E1}\nD1 -> {E1}\nE2 -> {F1}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-87a7f8cbd054c446dc4d" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-87a7f8cbd054c446dc4d">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = false]\nA [label = \"Indoor dust collected \\n among different \\n use categories\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nB1 [label = \"Collect different groups\"]\nB2 [label = \"QA/QC\"]\n\n\nnode [color = black, fillcolor = white, fixedsize = false]\nC1 [label = \"Sample different groups\"]\nC2 [label = \"Suspect list of Cl/Br compounds\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nD1 [label = \"Chemical analysis\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nE1 [label = \"Suspect screening\"]\nE2 [label = \"Nontarget\"]\n\nF1 [label = \"Mass defect plots\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B1}\nB2 -> {C1}\nB1 -> {C1 C2}\nC1 -> {D1}\nC2 -> {E1}\nD1 -> {E1}\nE2 -> {F1}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 (#fig:example_workflows)Workflow for nontarget using XX
 </p>
 </div>
 <div class="figure">
-<div id="htmlwidget-5df970c4b9c44f753d10" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5df970c4b9c44f753d10">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = false]\nL1 [label = \"Level 1\"]\nL2 [label = \"Level 2\"]\nL3 [label = \"Level 3\"]\nL4 [label = \"Level 4\"]\nL5 [label = \"Level 5\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nS1 [label = \"Mass defect plot\"]\nS2 [label = \"Molecular networking\"]\nS3 [label = \"Fragmentation prediction\"]\nS4 [label = \"Retention time prediction\"]\nS5 [label = \"HRMS library search\"]\n\n\nnode [color = black, fillcolor = white, fixedsize = false]\nA1 [label = \"Exposure index\"]\nA2 [label = \"USdbdb\"]\nA3 [label = \"Building products database\"]\n\n      \n# edge statements\nedge [color = black]\n\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e653344de71b3486d6ea" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e653344de71b3486d6ea">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = false]\nL1 [label = \"Level 1\"]\nL2 [label = \"Level 2\"]\nL3 [label = \"Level 3\"]\nL4 [label = \"Level 4\"]\nL5 [label = \"Level 5\"]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nS1 [label = \"Mass defect plot\"]\nS2 [label = \"Molecular networking\"]\nS3 [label = \"Fragmentation prediction\"]\nS4 [label = \"Retention time prediction\"]\nS5 [label = \"HRMS library search\"]\n\n\nnode [color = black, fillcolor = white, fixedsize = false]\nA1 [label = \"Exposure index\"]\nA2 [label = \"USdbdb\"]\nA3 [label = \"Building products database\"]\n\n      \n# edge statements\nedge [color = black]\n\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 (#fig:example_identification)Workflow for structure elucidation and identification
 </p>
