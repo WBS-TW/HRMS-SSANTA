@@ -62,43 +62,67 @@ https://github.com/hcji/DeepEI/blob/master/Usage.ipynb
 <br><br><br>
 
 
-<br><br><br>
+## QCEIMS
 
-## Other prediction algorithms
+RUN IN LINUX
+  
+  
+PREPARATION  
+Copy the ".XTBPARAM" folder and the ".mass_raw.agr" file to /home/ORUNET.ORU.SE/twg/ 
+  
+  
+1. Prepare a file with the equilibrium structure of your desired molecule M.
+Important: This file has to be named coord and should have the TURBOMOLE coord format.
+In most cases you will have an .xyz file. This file can be easily converted by typing:
+  
+x2t <xyzfile> > coord
+  
+if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a
+script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has
+to be in atomic units.
+  
+CAN THIS BE DONE USING OPENBABEL?
+  
+2. Prepare an input file called qceims.in. For the input options, see section 4 or the
+qceims.in file in the examples folder. If no such file is prepared, default options are:
+run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntraj).
 
-QCEIMS
+RUN QCEIMS
 
-
-
+set +o noclobbe
+  
+export PATH=/home/ORUNET.ORU.SE/twg/QCEIMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis
+  
+cd QCEIMS/example/2-Chloroethanol_GFN2
+  
+qceims
+  
 ## LIBRARY SEARCH  
 xx
-<br><br>
-
+  
+  
 ### LIB2NIST  
 Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.  
-<br>
+  
 COMMAND:  
 `lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N <path to msp file> <output path> =<new name of library>`  
-<br>  
+    
 EXAMPLES:  
-`lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\LCMs_GC_Orbitrap.msp C:\NIST14\ =LCMs_GC_Orbitrap`  
+`lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\RECETOX_GC-EI_MS_20201028.msp D:\Program\NIST14\ =RECETOX_GC-EI_MS_20201028`  
   
 <br><br><br>
 
 ### MSPepSearch  
-<br>  
+    
 Use MSPepSearch to find similar spectra  
-
-<br><br>
-
+  
+  
 EXAMPLES:  
 `MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 10 /OnlyFound /HITS 5 /LIB D:\Raw_data\Dust_Florian\GC\test\Mylib /INP D:\Raw_data\Dust_Florian\GC\test\input.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv /OutMW`
-
-<br>
-
+  
+  
 `MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 100 /OnlyFound /HITS 5 /LIB C:\NIST14\NIST_contaminants_orbitrap /INP D:\Projects\Mexico_Air\NIST_Mexico.msp /OUTMGF D:\Projects\Mexico_Air\test\test.mgf /OUTTAB D:\Projects\Mexico_Air\test\test.tsv`  
-
-<br>
-
+  
+  
 `MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\NIST14\LCMs_GC_Orbitrap /INP D:\Raw_data\Dust_Florian\GC\test\11.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv`  
 
