@@ -1,0 +1,11 @@
+# A handbook on GC Q Exactive orbitrap use 
+
+A walkthrough for GC Q Exactive use
+  
+  
+  
+  
+## Terminologies
+  
+_Automatic Gain Control (AGC):_ Sets the ion injection time to maintain the optimum quantity of ions for each scan. With AGC on, the scan function consists of a prescan and an analytical scan. The split lens is used to start and stop the injection of ions into the mass analyzer. It provides a high deflection voltage most of the time so that ions are deflected into a baffle except when they are to be allowed into the C-Trap. The fast switching of the ion beam ensures the precise determination of the ion injection time that is required for AGC.
+
