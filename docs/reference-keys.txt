@@ -5,6 +5,8 @@ Exp_design
 hypothesis
 experimental-design
 qaqc-measures
+recovery-extraction-efficieny
+matrix-effects
 data-directory-structure
 sampling-design-and-collection
 collection-of-metadata
@@ -36,7 +38,7 @@ sirius-csi-fingerid
 cfm-id
 neims
 deepei
-other-prediction-algorithms
+qceims
 library-search
 lib2nist
 mspepsearch
@@ -49,3 +51,5 @@ workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2
 first-convert-unifi-data-using-msconvert
 centroiding-raw-data-from-mzml-using-msnbase
 example_pfas
+a-handbook-on-gc-q-exactive-orbitrap-use
+terminologies-1

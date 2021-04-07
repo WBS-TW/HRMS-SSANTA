@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2021-02-21" />
+<meta name="date" content="2021-04-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -145,7 +145,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="Exp-design.html"><a href="Exp-design.html"><i class="fa fa-check"></i><b>2</b> <strong>Experimental design</strong></a><ul>
 <li class="chapter" data-level="2.1" data-path="Exp-design.html"><a href="Exp-design.html#hypothesis"><i class="fa fa-check"></i><b>2.1</b> Hypothesis</a></li>
 <li class="chapter" data-level="2.2" data-path="Exp-design.html"><a href="Exp-design.html#experimental-design"><i class="fa fa-check"></i><b>2.2</b> Experimental design</a></li>
-<li class="chapter" data-level="2.3" data-path="Exp-design.html"><a href="Exp-design.html#qaqc-measures"><i class="fa fa-check"></i><b>2.3</b> QA/QC measures</a></li>
+<li class="chapter" data-level="2.3" data-path="Exp-design.html"><a href="Exp-design.html#qaqc-measures"><i class="fa fa-check"></i><b>2.3</b> QA/QC measures</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="Exp-design.html"><a href="Exp-design.html#recovery-extraction-efficieny"><i class="fa fa-check"></i><b>2.3.1</b> Recovery (Extraction efficieny)</a></li>
+<li class="chapter" data-level="2.3.2" data-path="Exp-design.html"><a href="Exp-design.html#matrix-effects"><i class="fa fa-check"></i><b>2.3.2</b> Matrix effects</a></li>
+</ul></li>
 <li class="chapter" data-level="2.4" data-path="Exp-design.html"><a href="Exp-design.html#data-directory-structure"><i class="fa fa-check"></i><b>2.4</b> Data directory structure</a></li>
 <li class="chapter" data-level="2.5" data-path="Exp-design.html"><a href="Exp-design.html#sampling-design-and-collection"><i class="fa fa-check"></i><b>2.5</b> Sampling design and collection</a></li>
 <li class="chapter" data-level="2.6" data-path="Exp-design.html"><a href="Exp-design.html#collection-of-metadata"><i class="fa fa-check"></i><b>2.6</b> Collection of metadata</a></li>
@@ -186,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.0.2" data-path="library.html"><a href="library.html#cfm-id"><i class="fa fa-check"></i><b>9.0.2</b> CFM-ID</a></li>
 <li class="chapter" data-level="9.1" data-path="library.html"><a href="library.html#neims"><i class="fa fa-check"></i><b>9.1</b> NEIMS</a></li>
 <li class="chapter" data-level="9.2" data-path="library.html"><a href="library.html#deepei"><i class="fa fa-check"></i><b>9.2</b> DeepEI</a></li>
-<li class="chapter" data-level="9.3" data-path="library.html"><a href="library.html#other-prediction-algorithms"><i class="fa fa-check"></i><b>9.3</b> Other prediction algorithms</a></li>
+<li class="chapter" data-level="9.3" data-path="library.html"><a href="library.html#qceims"><i class="fa fa-check"></i><b>9.3</b> QCEIMS</a></li>
 <li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>9.4</b> LIBRARY SEARCH</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="library.html"><a href="library.html#lib2nist"><i class="fa fa-check"></i><b>9.4.1</b> LIB2NIST</a></li>
 <li class="chapter" data-level="9.4.2" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>9.4.2</b> MSPepSearch</a></li>
@@ -204,6 +207,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.2" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#centroiding-raw-data-from-mzml-using-msnbase"><i class="fa fa-check"></i><b>12.2</b> Centroiding raw data from mzML using MSnbase</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="example-pfas.html"><a href="example-pfas.html"><i class="fa fa-check"></i><b>13</b> Example workflow: PFASs</a></li>
+<li class="chapter" data-level="14" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>14</b> A handbook on GC Q Exactive orbitrap use</a><ul>
+<li class="chapter" data-level="14.1" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#terminologies-1"><i class="fa fa-check"></i><b>14.1</b> Terminologies</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
 
@@ -269,37 +275,51 @@ Help file: <a href="https://sourceforge.net/p/cfm-id/wiki/Home/" class="uri">htt
 <p>Help files: <a href="https://github.com/hcji/DeepEI" class="uri">https://github.com/hcji/DeepEI</a><br />
 <a href="https://github.com/hcji/DeepEI/blob/master/Usage.ipynb" class="uri">https://github.com/hcji/DeepEI/blob/master/Usage.ipynb</a></p>
 <p><br><br><br></p>
-<p><br><br><br></p>
 </div>
-<div id="other-prediction-algorithms" class="section level2">
-<h2><span class="header-section-number">9.3</span> Other prediction algorithms</h2>
-<p>QCEIMS</p>
+<div id="qceims" class="section level2">
+<h2><span class="header-section-number">9.3</span> QCEIMS</h2>
+<p>RUN IN LINUX</p>
+<p>PREPARATION<br />
+Copy the “.XTBPARAM” folder and the “.mass_raw.agr” file to /home/ORUNET.ORU.SE/twg/</p>
+<ol style="list-style-type: decimal">
+<li>Prepare a file with the equilibrium structure of your desired molecule M.
+Important: This file has to be named coord and should have the TURBOMOLE coord format.
+In most cases you will have an .xyz file. This file can be easily converted by typing:</li>
+</ol>
+<p>x2t <xyzfile> &gt; coord</p>
+<p>if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a
+script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has
+to be in atomic units.</p>
+<p>CAN THIS BE DONE USING OPENBABEL?</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Prepare an input file called qceims.in. For the input options, see section 4 or the
+qceims.in file in the examples folder. If no such file is prepared, default options are:
+run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntraj).</li>
+</ol>
+<p>RUN QCEIMS</p>
+<p>set +o noclobbe</p>
+<p>export PATH=/home/ORUNET.ORU.SE/twg/QCEIMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis</p>
+<p>cd QCEIMS/example/2-Chloroethanol_GFN2</p>
+<p>qceims</p>
 </div>
 <div id="library-search" class="section level2">
 <h2><span class="header-section-number">9.4</span> LIBRARY SEARCH</h2>
-<p>xx
-<br><br></p>
+<p>xx</p>
 <div id="lib2nist" class="section level3">
 <h3><span class="header-section-number">9.4.1</span> LIB2NIST</h3>
-<p>Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.<br />
-<br>
-COMMAND:<br />
-<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code><br />
-<br><br />
-EXAMPLES:<br />
-<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\LCMs_GC_Orbitrap.msp C:\NIST14\ =LCMs_GC_Orbitrap</code></p>
+<p>Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.</p>
+<p>COMMAND:<br />
+<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code></p>
+<p>EXAMPLES:<br />
+<code>lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\RECETOX_GC-EI_MS_20201028.msp D:\Program\NIST14\ =RECETOX_GC-EI_MS_20201028</code></p>
 <p><br><br><br></p>
 </div>
 <div id="mspepsearch" class="section level3">
 <h3><span class="header-section-number">9.4.2</span> MSPepSearch</h3>
-<p><br><br />
-Use MSPepSearch to find similar spectra</p>
-<p><br><br></p>
+<p>Use MSPepSearch to find similar spectra</p>
 <p>EXAMPLES:<br />
 <code>MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 10 /OnlyFound /HITS 5 /LIB D:\Raw_data\Dust_Florian\GC\test\Mylib /INP D:\Raw_data\Dust_Florian\GC\test\input.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv /OutMW</code></p>
-<p><br></p>
 <p><code>MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 100 /OnlyFound /HITS 5 /LIB C:\NIST14\NIST_contaminants_orbitrap /INP D:\Projects\Mexico_Air\NIST_Mexico.msp /OUTMGF D:\Projects\Mexico_Air\test\test.mgf /OUTTAB D:\Projects\Mexico_Air\test\test.tsv</code></p>
-<p><br></p>
 <p><code>MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\NIST14\LCMs_GC_Orbitrap /INP D:\Raw_data\Dust_Florian\GC\test\11.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv</code></p>
 
 </div>
