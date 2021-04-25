@@ -3,6 +3,24 @@
 <br><br>
 
 
+## HRMS spectra library setup
+1.	Copy the template excel sheet for your analytical run (LC, GC, ESI, EI, POS, NEG,..) to the ”1_Standard_infosheets” folder.  
+2.	The ”Spectral_FileName” cell will autogenerate the name for the msp file based on the filled cells. Copy this file name later for the msp file.  
+3.	Open MS-DIAL  
+4.	Perform peak peaking,….  
+a.	Xxx  
+b.	Xxx  
+c.	Xxx  
+d.	Xxx  
+5.	Double click on the individual file at the file navigator (click on the text of the file name)  
+6.	In the ”peak spot viewer” find the peak of the standard chemical. Click on the triangle to show the deconvoluted spectrum.  
+7.	Retention time index is not exported to MS-FINDER. NEED TO FIX or MANUALLY COPY FROM EXCEL INFO SHEET.    
+
+
+
+
+
+
 ## Listing suspects
 <br><br>
 

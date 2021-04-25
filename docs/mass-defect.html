@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2021-04-07" />
+<meta name="date" content="2021-04-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="suspect-screening.html"/>
 <link rel="next" href="retention-times.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +51,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
@@ -58,18 +58,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -89,7 +89,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,13 +139,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> <strong>Introduction and concepts</strong></a><ul>
+<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> <strong>Introduction and concepts</strong></a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="Intro.html"><a href="Intro.html#terminologies"><i class="fa fa-check"></i><b>1.1</b> Terminologies</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="Exp-design.html"><a href="Exp-design.html"><i class="fa fa-check"></i><b>2</b> <strong>Experimental design</strong></a><ul>
+<li class="chapter" data-level="2" data-path="Exp-design.html"><a href="Exp-design.html"><i class="fa fa-check"></i><b>2</b> <strong>Experimental design</strong></a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="Exp-design.html"><a href="Exp-design.html#hypothesis"><i class="fa fa-check"></i><b>2.1</b> Hypothesis</a></li>
 <li class="chapter" data-level="2.2" data-path="Exp-design.html"><a href="Exp-design.html#experimental-design"><i class="fa fa-check"></i><b>2.2</b> Experimental design</a></li>
-<li class="chapter" data-level="2.3" data-path="Exp-design.html"><a href="Exp-design.html#qaqc-measures"><i class="fa fa-check"></i><b>2.3</b> QA/QC measures</a><ul>
+<li class="chapter" data-level="2.3" data-path="Exp-design.html"><a href="Exp-design.html#qaqc-measures"><i class="fa fa-check"></i><b>2.3</b> QA/QC measures</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="Exp-design.html"><a href="Exp-design.html#recovery-extraction-efficieny"><i class="fa fa-check"></i><b>2.3.1</b> Recovery (Extraction efficieny)</a></li>
 <li class="chapter" data-level="2.3.2" data-path="Exp-design.html"><a href="Exp-design.html#matrix-effects"><i class="fa fa-check"></i><b>2.3.2</b> Matrix effects</a></li>
 </ul></li>
@@ -156,58 +159,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="Exp-design.html"><a href="Exp-design.html#data-analysis"><i class="fa fa-check"></i><b>2.8</b> Data analysis</a></li>
 <li class="chapter" data-level="2.9" data-path="Exp-design.html"><a href="Exp-design.html#workflow-examples"><i class="fa fa-check"></i><b>2.9</b> Workflow examples</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="MS-preprocess.html"><a href="MS-preprocess.html"><i class="fa fa-check"></i><b>3</b> <strong>Pre-processing HRMS data</strong></a><ul>
+<li class="chapter" data-level="3" data-path="MS-preprocess.html"><a href="MS-preprocess.html"><i class="fa fa-check"></i><b>3</b> <strong>Pre-processing HRMS data</strong></a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="MS-preprocess.html"><a href="MS-preprocess.html#peak-picking"><i class="fa fa-check"></i><b>3.1</b> Peak picking</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html"><i class="fa fa-check"></i><b>4</b> Open tools for preprocessing</a><ul>
+<li class="chapter" data-level="4" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html"><i class="fa fa-check"></i><b>4</b> Open tools for preprocessing</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#openms-and-toppview"><i class="fa fa-check"></i><b>4.1</b> OpenMS and Toppview</a></li>
 <li class="chapter" data-level="4.2" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#msnbase-and-xcms"><i class="fa fa-check"></i><b>4.2</b> MsnBase and XCMS</a></li>
 <li class="chapter" data-level="4.3" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#patroon"><i class="fa fa-check"></i><b>4.3</b> PatRoon</a></li>
 <li class="chapter" data-level="4.4" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#ms-dial"><i class="fa fa-check"></i><b>4.4</b> MS-DIAL</a></li>
 <li class="chapter" data-level="4.5" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#output-formats"><i class="fa fa-check"></i><b>4.5</b> Output formats</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="suspect-screening.html"><a href="suspect-screening.html"><i class="fa fa-check"></i><b>5</b> <strong>Suspect screening</strong></a><ul>
-<li class="chapter" data-level="5.1" data-path="suspect-screening.html"><a href="suspect-screening.html#listing-suspects"><i class="fa fa-check"></i><b>5.1</b> Listing suspects</a></li>
-<li class="chapter" data-level="5.2" data-path="suspect-screening.html"><a href="suspect-screening.html#suspect-scoring"><i class="fa fa-check"></i><b>5.2</b> Suspect scoring</a></li>
+<li class="chapter" data-level="5" data-path="suspect-screening.html"><a href="suspect-screening.html"><i class="fa fa-check"></i><b>5</b> <strong>Suspect screening</strong></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="suspect-screening.html"><a href="suspect-screening.html#hrms-spectra-library-setup"><i class="fa fa-check"></i><b>5.1</b> HRMS spectra library setup</a></li>
+<li class="chapter" data-level="5.2" data-path="suspect-screening.html"><a href="suspect-screening.html#listing-suspects"><i class="fa fa-check"></i><b>5.2</b> Listing suspects</a></li>
+<li class="chapter" data-level="5.3" data-path="suspect-screening.html"><a href="suspect-screening.html#suspect-scoring"><i class="fa fa-check"></i><b>5.3</b> Suspect scoring</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="mass-defect.html"><a href="mass-defect.html"><i class="fa fa-check"></i><b>6</b> <strong>Mass defect plots</strong></a><ul>
+<li class="chapter" data-level="6" data-path="mass-defect.html"><a href="mass-defect.html"><i class="fa fa-check"></i><b>6</b> <strong>Mass defect plots</strong></a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="mass-defect.html"><a href="mass-defect.html#mdplotr"><i class="fa fa-check"></i><b>6.1</b> MDPlotR</a></li>
 <li class="chapter" data-level="6.2" data-path="mass-defect.html"><a href="mass-defect.html#findhalo"><i class="fa fa-check"></i><b>6.2</b> findhalo</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="retention-times.html"><a href="retention-times.html"><i class="fa fa-check"></i><b>7</b> <strong>Retention time index and prediction</strong></a><ul>
-<li class="chapter" data-level="7.1" data-path="retention-times.html"><a href="retention-times.html#lc"><i class="fa fa-check"></i><b>7.1</b> LC</a><ul>
+<li class="chapter" data-level="7" data-path="retention-times.html"><a href="retention-times.html"><i class="fa fa-check"></i><b>7</b> <strong>Retention time index and prediction</strong></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="retention-times.html"><a href="retention-times.html#lc"><i class="fa fa-check"></i><b>7.1</b> LC</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="retention-times.html"><a href="retention-times.html#retip---retention-time-prediction-for-metabolomics"><i class="fa fa-check"></i><b>7.1.1</b> Retip - Retention Time prediction for Metabolomics</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="molecular-networks.html"><a href="molecular-networks.html"><i class="fa fa-check"></i><b>8</b> <strong>Molecular networks</strong></a><ul>
-<li class="chapter" data-level="8.1" data-path="molecular-networks.html"><a href="molecular-networks.html#metgem"><i class="fa fa-check"></i><b>8.1</b> MetGem</a><ul>
+<li class="chapter" data-level="8" data-path="molecular-networks.html"><a href="molecular-networks.html"><i class="fa fa-check"></i><b>8</b> <strong>Molecular networks</strong></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="molecular-networks.html"><a href="molecular-networks.html#metgem"><i class="fa fa-check"></i><b>8.1</b> MetGem</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="molecular-networks.html"><a href="molecular-networks.html#gc-data"><i class="fa fa-check"></i><b>8.1.1</b> GC data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="library.html"><a href="library.html"><i class="fa fa-check"></i><b>9</b> <strong>Library search</strong></a><ul>
+<li class="chapter" data-level="9" data-path="library.html"><a href="library.html"><i class="fa fa-check"></i><b>9</b> <strong>Library search</strong></a>
+<ul>
 <li class="chapter" data-level="9.0.1" data-path="library.html"><a href="library.html#sirius-csi-fingerid"><i class="fa fa-check"></i><b>9.0.1</b> Sirius CSI FingerID</a></li>
 <li class="chapter" data-level="9.0.2" data-path="library.html"><a href="library.html#cfm-id"><i class="fa fa-check"></i><b>9.0.2</b> CFM-ID</a></li>
 <li class="chapter" data-level="9.1" data-path="library.html"><a href="library.html#neims"><i class="fa fa-check"></i><b>9.1</b> NEIMS</a></li>
 <li class="chapter" data-level="9.2" data-path="library.html"><a href="library.html#deepei"><i class="fa fa-check"></i><b>9.2</b> DeepEI</a></li>
 <li class="chapter" data-level="9.3" data-path="library.html"><a href="library.html#qceims"><i class="fa fa-check"></i><b>9.3</b> QCEIMS</a></li>
-<li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>9.4</b> LIBRARY SEARCH</a><ul>
+<li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>9.4</b> LIBRARY SEARCH</a>
+<ul>
 <li class="chapter" data-level="9.4.1" data-path="library.html"><a href="library.html#lib2nist"><i class="fa fa-check"></i><b>9.4.1</b> LIB2NIST</a></li>
 <li class="chapter" data-level="9.4.2" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>9.4.2</b> MSPepSearch</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="postprocessing.html"><a href="postprocessing.html"><i class="fa fa-check"></i><b>10</b> <strong>Data post-processing</strong></a><ul>
+<li class="chapter" data-level="10" data-path="postprocessing.html"><a href="postprocessing.html"><i class="fa fa-check"></i><b>10</b> <strong>Data post-processing</strong></a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="postprocessing.html"><a href="postprocessing.html#hierarchical-clustering"><i class="fa fa-check"></i><b>10.1</b> Hierarchical clustering</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="example-dust.html"><a href="example-dust.html"><i class="fa fa-check"></i><b>11</b> Example workflow: indoor dust</a><ul>
+<li class="chapter" data-level="11" data-path="example-dust.html"><a href="example-dust.html"><i class="fa fa-check"></i><b>11</b> Example workflow: indoor dust</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="example-dust.html"><a href="example-dust.html#gc-orbitrap-hrms-workflow"><i class="fa fa-check"></i><b>11.1</b> <strong>GC orbitrap HRMS workflow</strong></a></li>
 <li class="chapter" data-level="11.2" data-path="example-dust.html"><a href="example-dust.html#lc-hrms-using-waters-mse-dia-workflow"><i class="fa fa-check"></i><b>11.2</b> <strong>LC-HRMS using Waters MSe DIA workflow</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><i class="fa fa-check"></i><b>12</b> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</a><ul>
+<li class="chapter" data-level="12" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><i class="fa fa-check"></i><b>12</b> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#first-convert-unifi-data-using-msconvert"><i class="fa fa-check"></i><b>12.1</b> First convert unifi data using MSConvert</a></li>
 <li class="chapter" data-level="12.2" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#centroiding-raw-data-from-mzml-using-msnbase"><i class="fa fa-check"></i><b>12.2</b> Centroiding raw data from mzML using MSnbase</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="example-pfas.html"><a href="example-pfas.html"><i class="fa fa-check"></i><b>13</b> Example workflow: PFASs</a></li>
-<li class="chapter" data-level="14" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>14</b> A handbook on GC Q Exactive orbitrap use</a><ul>
+<li class="chapter" data-level="14" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>14</b> A handbook on GC Q Exactive orbitrap use</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#terminologies-1"><i class="fa fa-check"></i><b>14.1</b> Terminologies</a></li>
 </ul></li>
 <li class="divider"></li>
@@ -230,16 +248,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mass_defect" class="section level1">
+<div id="mass_defect" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> <strong>Mass defect plots</strong></h1>
 <p>This is a chapter about using mass defect plots to help with nontarget data</p>
 <p><br><br></p>
-<div id="mdplotr" class="section level2">
+<div id="mdplotr" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> MDPlotR</h2>
 <p>xx
 <br><br></p>
 </div>
-<div id="findhalo" class="section level2">
+<div id="findhalo" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> findhalo</h2>
 <p>xx
 <br><br></p>

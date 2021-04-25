@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2021-04-07" />
+<meta name="date" content="2021-04-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="postprocessing.html"/>
 <link rel="next" href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +51,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
@@ -58,18 +58,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -89,7 +89,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,13 +139,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> <strong>Introduction and concepts</strong></a><ul>
+<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> <strong>Introduction and concepts</strong></a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="Intro.html"><a href="Intro.html#terminologies"><i class="fa fa-check"></i><b>1.1</b> Terminologies</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="Exp-design.html"><a href="Exp-design.html"><i class="fa fa-check"></i><b>2</b> <strong>Experimental design</strong></a><ul>
+<li class="chapter" data-level="2" data-path="Exp-design.html"><a href="Exp-design.html"><i class="fa fa-check"></i><b>2</b> <strong>Experimental design</strong></a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="Exp-design.html"><a href="Exp-design.html#hypothesis"><i class="fa fa-check"></i><b>2.1</b> Hypothesis</a></li>
 <li class="chapter" data-level="2.2" data-path="Exp-design.html"><a href="Exp-design.html#experimental-design"><i class="fa fa-check"></i><b>2.2</b> Experimental design</a></li>
-<li class="chapter" data-level="2.3" data-path="Exp-design.html"><a href="Exp-design.html#qaqc-measures"><i class="fa fa-check"></i><b>2.3</b> QA/QC measures</a><ul>
+<li class="chapter" data-level="2.3" data-path="Exp-design.html"><a href="Exp-design.html#qaqc-measures"><i class="fa fa-check"></i><b>2.3</b> QA/QC measures</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="Exp-design.html"><a href="Exp-design.html#recovery-extraction-efficieny"><i class="fa fa-check"></i><b>2.3.1</b> Recovery (Extraction efficieny)</a></li>
 <li class="chapter" data-level="2.3.2" data-path="Exp-design.html"><a href="Exp-design.html#matrix-effects"><i class="fa fa-check"></i><b>2.3.2</b> Matrix effects</a></li>
 </ul></li>
@@ -156,58 +159,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="Exp-design.html"><a href="Exp-design.html#data-analysis"><i class="fa fa-check"></i><b>2.8</b> Data analysis</a></li>
 <li class="chapter" data-level="2.9" data-path="Exp-design.html"><a href="Exp-design.html#workflow-examples"><i class="fa fa-check"></i><b>2.9</b> Workflow examples</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="MS-preprocess.html"><a href="MS-preprocess.html"><i class="fa fa-check"></i><b>3</b> <strong>Pre-processing HRMS data</strong></a><ul>
+<li class="chapter" data-level="3" data-path="MS-preprocess.html"><a href="MS-preprocess.html"><i class="fa fa-check"></i><b>3</b> <strong>Pre-processing HRMS data</strong></a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="MS-preprocess.html"><a href="MS-preprocess.html#peak-picking"><i class="fa fa-check"></i><b>3.1</b> Peak picking</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html"><i class="fa fa-check"></i><b>4</b> Open tools for preprocessing</a><ul>
+<li class="chapter" data-level="4" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html"><i class="fa fa-check"></i><b>4</b> Open tools for preprocessing</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#openms-and-toppview"><i class="fa fa-check"></i><b>4.1</b> OpenMS and Toppview</a></li>
 <li class="chapter" data-level="4.2" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#msnbase-and-xcms"><i class="fa fa-check"></i><b>4.2</b> MsnBase and XCMS</a></li>
 <li class="chapter" data-level="4.3" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#patroon"><i class="fa fa-check"></i><b>4.3</b> PatRoon</a></li>
 <li class="chapter" data-level="4.4" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#ms-dial"><i class="fa fa-check"></i><b>4.4</b> MS-DIAL</a></li>
 <li class="chapter" data-level="4.5" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#output-formats"><i class="fa fa-check"></i><b>4.5</b> Output formats</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="suspect-screening.html"><a href="suspect-screening.html"><i class="fa fa-check"></i><b>5</b> <strong>Suspect screening</strong></a><ul>
-<li class="chapter" data-level="5.1" data-path="suspect-screening.html"><a href="suspect-screening.html#listing-suspects"><i class="fa fa-check"></i><b>5.1</b> Listing suspects</a></li>
-<li class="chapter" data-level="5.2" data-path="suspect-screening.html"><a href="suspect-screening.html#suspect-scoring"><i class="fa fa-check"></i><b>5.2</b> Suspect scoring</a></li>
+<li class="chapter" data-level="5" data-path="suspect-screening.html"><a href="suspect-screening.html"><i class="fa fa-check"></i><b>5</b> <strong>Suspect screening</strong></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="suspect-screening.html"><a href="suspect-screening.html#hrms-spectra-library-setup"><i class="fa fa-check"></i><b>5.1</b> HRMS spectra library setup</a></li>
+<li class="chapter" data-level="5.2" data-path="suspect-screening.html"><a href="suspect-screening.html#listing-suspects"><i class="fa fa-check"></i><b>5.2</b> Listing suspects</a></li>
+<li class="chapter" data-level="5.3" data-path="suspect-screening.html"><a href="suspect-screening.html#suspect-scoring"><i class="fa fa-check"></i><b>5.3</b> Suspect scoring</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="mass-defect.html"><a href="mass-defect.html"><i class="fa fa-check"></i><b>6</b> <strong>Mass defect plots</strong></a><ul>
+<li class="chapter" data-level="6" data-path="mass-defect.html"><a href="mass-defect.html"><i class="fa fa-check"></i><b>6</b> <strong>Mass defect plots</strong></a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="mass-defect.html"><a href="mass-defect.html#mdplotr"><i class="fa fa-check"></i><b>6.1</b> MDPlotR</a></li>
 <li class="chapter" data-level="6.2" data-path="mass-defect.html"><a href="mass-defect.html#findhalo"><i class="fa fa-check"></i><b>6.2</b> findhalo</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="retention-times.html"><a href="retention-times.html"><i class="fa fa-check"></i><b>7</b> <strong>Retention time index and prediction</strong></a><ul>
-<li class="chapter" data-level="7.1" data-path="retention-times.html"><a href="retention-times.html#lc"><i class="fa fa-check"></i><b>7.1</b> LC</a><ul>
+<li class="chapter" data-level="7" data-path="retention-times.html"><a href="retention-times.html"><i class="fa fa-check"></i><b>7</b> <strong>Retention time index and prediction</strong></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="retention-times.html"><a href="retention-times.html#lc"><i class="fa fa-check"></i><b>7.1</b> LC</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="retention-times.html"><a href="retention-times.html#retip---retention-time-prediction-for-metabolomics"><i class="fa fa-check"></i><b>7.1.1</b> Retip - Retention Time prediction for Metabolomics</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="molecular-networks.html"><a href="molecular-networks.html"><i class="fa fa-check"></i><b>8</b> <strong>Molecular networks</strong></a><ul>
-<li class="chapter" data-level="8.1" data-path="molecular-networks.html"><a href="molecular-networks.html#metgem"><i class="fa fa-check"></i><b>8.1</b> MetGem</a><ul>
+<li class="chapter" data-level="8" data-path="molecular-networks.html"><a href="molecular-networks.html"><i class="fa fa-check"></i><b>8</b> <strong>Molecular networks</strong></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="molecular-networks.html"><a href="molecular-networks.html#metgem"><i class="fa fa-check"></i><b>8.1</b> MetGem</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="molecular-networks.html"><a href="molecular-networks.html#gc-data"><i class="fa fa-check"></i><b>8.1.1</b> GC data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="library.html"><a href="library.html"><i class="fa fa-check"></i><b>9</b> <strong>Library search</strong></a><ul>
+<li class="chapter" data-level="9" data-path="library.html"><a href="library.html"><i class="fa fa-check"></i><b>9</b> <strong>Library search</strong></a>
+<ul>
 <li class="chapter" data-level="9.0.1" data-path="library.html"><a href="library.html#sirius-csi-fingerid"><i class="fa fa-check"></i><b>9.0.1</b> Sirius CSI FingerID</a></li>
 <li class="chapter" data-level="9.0.2" data-path="library.html"><a href="library.html#cfm-id"><i class="fa fa-check"></i><b>9.0.2</b> CFM-ID</a></li>
 <li class="chapter" data-level="9.1" data-path="library.html"><a href="library.html#neims"><i class="fa fa-check"></i><b>9.1</b> NEIMS</a></li>
 <li class="chapter" data-level="9.2" data-path="library.html"><a href="library.html#deepei"><i class="fa fa-check"></i><b>9.2</b> DeepEI</a></li>
 <li class="chapter" data-level="9.3" data-path="library.html"><a href="library.html#qceims"><i class="fa fa-check"></i><b>9.3</b> QCEIMS</a></li>
-<li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>9.4</b> LIBRARY SEARCH</a><ul>
+<li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>9.4</b> LIBRARY SEARCH</a>
+<ul>
 <li class="chapter" data-level="9.4.1" data-path="library.html"><a href="library.html#lib2nist"><i class="fa fa-check"></i><b>9.4.1</b> LIB2NIST</a></li>
 <li class="chapter" data-level="9.4.2" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>9.4.2</b> MSPepSearch</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="postprocessing.html"><a href="postprocessing.html"><i class="fa fa-check"></i><b>10</b> <strong>Data post-processing</strong></a><ul>
+<li class="chapter" data-level="10" data-path="postprocessing.html"><a href="postprocessing.html"><i class="fa fa-check"></i><b>10</b> <strong>Data post-processing</strong></a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="postprocessing.html"><a href="postprocessing.html#hierarchical-clustering"><i class="fa fa-check"></i><b>10.1</b> Hierarchical clustering</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="example-dust.html"><a href="example-dust.html"><i class="fa fa-check"></i><b>11</b> Example workflow: indoor dust</a><ul>
+<li class="chapter" data-level="11" data-path="example-dust.html"><a href="example-dust.html"><i class="fa fa-check"></i><b>11</b> Example workflow: indoor dust</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="example-dust.html"><a href="example-dust.html#gc-orbitrap-hrms-workflow"><i class="fa fa-check"></i><b>11.1</b> <strong>GC orbitrap HRMS workflow</strong></a></li>
 <li class="chapter" data-level="11.2" data-path="example-dust.html"><a href="example-dust.html#lc-hrms-using-waters-mse-dia-workflow"><i class="fa fa-check"></i><b>11.2</b> <strong>LC-HRMS using Waters MSe DIA workflow</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><i class="fa fa-check"></i><b>12</b> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</a><ul>
+<li class="chapter" data-level="12" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><i class="fa fa-check"></i><b>12</b> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#first-convert-unifi-data-using-msconvert"><i class="fa fa-check"></i><b>12.1</b> First convert unifi data using MSConvert</a></li>
 <li class="chapter" data-level="12.2" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#centroiding-raw-data-from-mzml-using-msnbase"><i class="fa fa-check"></i><b>12.2</b> Centroiding raw data from mzML using MSnbase</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="example-pfas.html"><a href="example-pfas.html"><i class="fa fa-check"></i><b>13</b> Example workflow: PFASs</a></li>
-<li class="chapter" data-level="14" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>14</b> A handbook on GC Q Exactive orbitrap use</a><ul>
+<li class="chapter" data-level="14" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>14</b> A handbook on GC Q Exactive orbitrap use</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#terminologies-1"><i class="fa fa-check"></i><b>14.1</b> Terminologies</a></li>
 </ul></li>
 <li class="divider"></li>
@@ -230,7 +248,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="example_dust" class="section level1">
+<div id="example_dust" class="section level1" number="11">
 <h1><span class="header-section-number">11</span> Example workflow: indoor dust</h1>
 <p>A walkthrough for indoor dust analysis</p>
 <p><br><br></p>
@@ -244,456 +262,456 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="htmlwidget-aff30042729cc554b85f" style="width:672px;height:480px;" class="grViz html-widget"></div>
 <script type="application/json" data-for="htmlwidget-aff30042729cc554b85f">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = false]\n\nZERO [label = \"Deconvolution\"]\n\nA [label = \"Target analysis\"]\nB [label = \"Suspect list screening\"]\n\nC [label = \"NIST library screening\"]\nC1 [label = \"Molecular ion confirmation\"]\nC2 [label = \"Retention time index\"]\n\n\nD [label = \"Mass defect \\n (selected mz, rt and int of annotated compounds\"]\n\nsubgraph cluster2 {\nE [label = \"Annotation\"]\nID1 [label = \"Confirm EIC peaks\"]\n}\n\nF [label = \"Molecular networking\"]\nG [label = \"Multivariate statistics\"]\n\nID2 [label = \"Peak/Component list with \\n partial annotation\"]\n\nQ1 [label = \"Semiquantify across samples\"]      \n      \n# edge statements\n\nedge [color = black]\n\nZERO -> {A B C}\nA -> {E}\nB -> {E}\n\n{C1 C2} -> {C}\nC -> {E}\n\nE -> {ID1}\nID1 -> {ID2}\nID2 -> {F}\nID2 -> {G}\nID2 -> {D}\nID2 -> {Q1}\n\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p><br></p>
-<div id="gc-orbitrap-hrms-workflow" class="section level2">
+<div id="gc-orbitrap-hrms-workflow" class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> <strong>GC orbitrap HRMS workflow</strong></h2>
 <p>This code uses XCMS with MF -&gt; CAMERA preprocessing used in : Stettin, D.; Poulin, R.X.; Pohnert, G. Metabolomics Benefits from Orbitrap GC–MS—Comparison of Low- and High-Resolution GC–MS. Metabolites 2020, 10, 143. See the supplementary material for original code. The code was modified here to also include retention time index and also remove zero intensity peaks after peak grouping. Additional metainformation for the msp file can also be added in the “extra” object.</p>
 <p><br></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="example-dust.html#cb2-1"></a><span class="kw">library</span>(processx)</span>
-<span id="cb2-2"><a href="example-dust.html#cb2-2"></a><span class="kw">library</span>(xcms)</span>
-<span id="cb2-3"><a href="example-dust.html#cb2-3"></a><span class="kw">library</span>(CAMERA)</span>
-<span id="cb2-4"><a href="example-dust.html#cb2-4"></a><span class="kw">library</span>(metaMS)</span>
-<span id="cb2-5"><a href="example-dust.html#cb2-5"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb2-6"><a href="example-dust.html#cb2-6"></a><span class="kw">library</span>(stringr)</span>
-<span id="cb2-7"><a href="example-dust.html#cb2-7"></a></span>
-<span id="cb2-8"><a href="example-dust.html#cb2-8"></a><span class="co">#first define the working directory (folder with experimental group folders inside)</span></span>
-<span id="cb2-9"><a href="example-dust.html#cb2-9"></a><span class="co"># mzMLfiles &lt;- list.files(path = &quot;/home/ORUNET.ORU.SE/twg/Dioxinlab/GC-Orbitrap data/Florian/Dust NTA 20200513/mzXML/&quot;,pattern = &quot;.mzXML&quot;, recursive = TRUE, full.names = TRUE)</span></span>
-<span id="cb2-10"><a href="example-dust.html#cb2-10"></a><span class="co"># Remove files containing &quot;Hex&quot;, blank samples</span></span>
-<span id="cb2-11"><a href="example-dust.html#cb2-11"></a><span class="co"># mzMLfiles &lt;- mzMLfiles[-grep(&quot;Hex&quot;, mzMLfiles)]</span></span>
-<span id="cb2-12"><a href="example-dust.html#cb2-12"></a></span>
-<span id="cb2-13"><a href="example-dust.html#cb2-13"></a>sample_info &lt;-<span class="st"> </span>readxl<span class="op">::</span><span class="kw">read_xlsx</span>(<span class="st">&quot;/home/ORUNET.ORU.SE/twg/Windows_home/Dust_Florian/Sample_list_NTA_dust.xlsx&quot;</span>,</span>
-<span id="cb2-14"><a href="example-dust.html#cb2-14"></a>                               <span class="dt">sheet =</span> <span class="st">&quot;Sample&quot;</span>)</span>
-<span id="cb2-15"><a href="example-dust.html#cb2-15"></a><span class="co"># filter only samples</span></span>
-<span id="cb2-16"><a href="example-dust.html#cb2-16"></a>sample_info &lt;-<span class="st"> </span>sample_info <span class="op">%&gt;%</span></span>
-<span id="cb2-17"><a href="example-dust.html#cb2-17"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(<span class="op">!</span>(group <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;blank_solvent&quot;</span>)))</span>
-<span id="cb2-18"><a href="example-dust.html#cb2-18"></a></span>
-<span id="cb2-19"><a href="example-dust.html#cb2-19"></a>mzXMLfiles &lt;-<span class="st"> </span><span class="kw">as.character</span>(sample_info<span class="op">$</span>filename)</span>
-<span id="cb2-20"><a href="example-dust.html#cb2-20"></a></span>
-<span id="cb2-21"><a href="example-dust.html#cb2-21"></a>pd &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sample_name =</span> <span class="kw">paste0</span>(sample_info<span class="op">$</span>new_codes, <span class="st">&quot;.mzXML&quot;</span>),</span>
-<span id="cb2-22"><a href="example-dust.html#cb2-22"></a>                 <span class="dt">class =</span> sample_info<span class="op">$</span>group,</span>
-<span id="cb2-23"><a href="example-dust.html#cb2-23"></a>                 <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb2-24"><a href="example-dust.html#cb2-24"></a><span class="co"># pd &lt;- pd %&gt;% dplyr::filter(sample_group != &quot;IS&quot;) %&gt;% dplyr::filter(sample_group != &quot;RTI&quot;)</span></span>
-<span id="cb2-25"><a href="example-dust.html#cb2-25"></a></span>
-<span id="cb2-26"><a href="example-dust.html#cb2-26"></a></span>
-<span id="cb2-27"><a href="example-dust.html#cb2-27"></a>min.clustersize &lt;-<span class="st"> </span><span class="dv">17</span> <span class="co">#how many fragments need to be in a group for it to be included in the results. 5 - trace compounds; 20 - mostly high quality spectra</span></span>
-<span id="cb2-28"><a href="example-dust.html#cb2-28"></a><span class="kw">useOriginalCode</span>(<span class="ot">TRUE</span>) <span class="co">#otherwise matchedFilter will allocate a huge amount of RAM when using step = 0.001</span></span>
-<span id="cb2-29"><a href="example-dust.html#cb2-29"></a></span>
-<span id="cb2-30"><a href="example-dust.html#cb2-30"></a><span class="co">#Refer to XCMS and CAMERA documentation for information about parameters and functions</span></span>
-<span id="cb2-31"><a href="example-dust.html#cb2-31"></a><span class="co">#These are the parameters used for high rez GC-Orbitrap data</span></span>
-<span id="cb2-32"><a href="example-dust.html#cb2-32"></a>xs1 &lt;-<span class="st"> </span><span class="kw">xcmsSet</span>(mzXMLfiles, </span>
-<span id="cb2-33"><a href="example-dust.html#cb2-33"></a>               <span class="dt">phenoData =</span> pd,</span>
-<span id="cb2-34"><a href="example-dust.html#cb2-34"></a>               <span class="dt">method =</span> <span class="st">&quot;matchedFilter&quot;</span>, </span>
-<span id="cb2-35"><a href="example-dust.html#cb2-35"></a>               <span class="dt">fwhm =</span> <span class="dv">3</span>, <span class="dt">step =</span> <span class="fl">0.001</span>, </span>
-<span id="cb2-36"><a href="example-dust.html#cb2-36"></a>               <span class="dt">steps =</span> <span class="dv">2</span>, <span class="dt">max =</span> <span class="dv">1000</span>, </span>
-<span id="cb2-37"><a href="example-dust.html#cb2-37"></a>               <span class="dt">snthresh =</span> <span class="dv">3</span>, <span class="dt">mzdiff =</span> <span class="fl">0.002</span>)</span>
-<span id="cb2-38"><a href="example-dust.html#cb2-38"></a></span>
-<span id="cb2-39"><a href="example-dust.html#cb2-39"></a>xs2 &lt;-<span class="st"> </span><span class="kw">group</span>(xs1, <span class="dt">method =</span> <span class="st">&quot;density&quot;</span>, <span class="dt">bw =</span> <span class="dv">5</span>, <span class="dt">mzwid =</span> <span class="fl">0.002</span>, <span class="dt">minsamp =</span> <span class="dv">1</span>, <span class="dt">minfrac =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1000</span>)</span>
-<span id="cb2-40"><a href="example-dust.html#cb2-40"></a></span>
-<span id="cb2-41"><a href="example-dust.html#cb2-41"></a>xs3 &lt;-<span class="st"> </span><span class="kw">retcor</span>(xs2, <span class="dt">method =</span> <span class="st">&quot;obiwarp&quot;</span>)</span>
-<span id="cb2-42"><a href="example-dust.html#cb2-42"></a></span>
-<span id="cb2-43"><a href="example-dust.html#cb2-43"></a>xs4 &lt;-<span class="st"> </span><span class="kw">group</span>(xs3, <span class="dt">method =</span> <span class="st">&quot;density&quot;</span>, <span class="dt">bw =</span> <span class="dv">2</span>, <span class="dt">mzwid =</span> <span class="fl">0.6</span>, <span class="dt">minsamp =</span> <span class="dv">1</span>, <span class="dt">minfrac =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1000</span>)</span>
-<span id="cb2-44"><a href="example-dust.html#cb2-44"></a></span>
-<span id="cb2-45"><a href="example-dust.html#cb2-45"></a>xs4 &lt;-<span class="st"> </span><span class="kw">group</span>(xs3, <span class="dt">method =</span> <span class="st">&quot;density&quot;</span>, <span class="dt">bw =</span> <span class="dv">2</span>, <span class="dt">mzwid =</span> <span class="fl">0.002</span>, <span class="dt">minsamp =</span> <span class="dv">1</span>, <span class="dt">minfrac =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1000</span>)</span>
-<span id="cb2-46"><a href="example-dust.html#cb2-46"></a></span>
-<span id="cb2-47"><a href="example-dust.html#cb2-47"></a>xs5 &lt;-<span class="st"> </span><span class="kw">fillPeaks</span>(xs4)</span>
-<span id="cb2-48"><a href="example-dust.html#cb2-48"></a></span>
-<span id="cb2-49"><a href="example-dust.html#cb2-49"></a>xs6 &lt;-<span class="st"> </span><span class="kw">xsAnnotate</span>(<span class="dt">xs =</span> xs5, <span class="dt">sample=</span><span class="ot">NA</span>, <span class="dt">polarity =</span> <span class="st">&quot;positive&quot;</span>)</span>
-<span id="cb2-50"><a href="example-dust.html#cb2-50"></a></span>
-<span id="cb2-51"><a href="example-dust.html#cb2-51"></a>xs7 &lt;-<span class="st"> </span><span class="kw">groupFWHM</span>(xs6, <span class="dt">sigma =</span> <span class="dv">6</span> , <span class="dt">perfwhm =</span> <span class="dv">2</span>, <span class="dt">intval =</span> <span class="st">&quot;maxo&quot;</span>)</span>
-<span id="cb2-52"><a href="example-dust.html#cb2-52"></a></span>
-<span id="cb2-53"><a href="example-dust.html#cb2-53"></a>xs8 &lt;-<span class="st"> </span><span class="kw">groupCorr</span>(xs7, <span class="dt">cor_eic_th =</span> <span class="fl">0.8</span>, <span class="dt">calcCaS =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-54"><a href="example-dust.html#cb2-54"></a></span>
-<span id="cb2-55"><a href="example-dust.html#cb2-55"></a></span>
-<span id="cb2-56"><a href="example-dust.html#cb2-56"></a>peaktable &lt;-<span class="st"> </span><span class="kw">getPeaklist</span>(xs8, <span class="dt">intval=</span><span class="st">&quot;into&quot;</span>)</span>
-<span id="cb2-57"><a href="example-dust.html#cb2-57"></a><span class="kw">write.csv</span>(peaktable, <span class="dt">file =</span> <span class="st">&quot;untreated_peaktable_MatchedFilter.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with all m/z features sorted into &quot;compounds&quot;</span></span>
-<span id="cb2-58"><a href="example-dust.html#cb2-58"></a></span>
-<span id="cb2-59"><a href="example-dust.html#cb2-59"></a><span class="co">#the following script identifies all &quot;compounds&quot; considered too small according to min.clustersize</span></span>
-<span id="cb2-60"><a href="example-dust.html#cb2-60"></a><span class="co">#you don&#39;t need to modify anything, that run the next part as is</span></span>
-<span id="cb2-61"><a href="example-dust.html#cb2-61"></a>peaktable &lt;-<span class="st"> </span><span class="kw">getPeaklist</span>(xs8, <span class="dt">intval=</span><span class="st">&quot;maxo&quot;</span>)</span>
-<span id="cb2-62"><a href="example-dust.html#cb2-62"></a>pcgroups &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">unique</span>(<span class="kw">as.numeric</span>(peaktable<span class="op">$</span>pcgroup)))</span>
-<span id="cb2-63"><a href="example-dust.html#cb2-63"></a>lspectra &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb2-64"><a href="example-dust.html#cb2-64"></a>extra &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb2-65"><a href="example-dust.html#cb2-65"></a>small.clusters &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb2-66"><a href="example-dust.html#cb2-66"></a>big.clusters &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb2-67"><a href="example-dust.html#cb2-67"></a>n &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb2-68"><a href="example-dust.html#cb2-68"></a><span class="cf">for</span>(x <span class="cf">in</span> pcgroups) {</span>
-<span id="cb2-69"><a href="example-dust.html#cb2-69"></a>  clustersize &lt;-<span class="st"> </span><span class="kw">length</span>(peaktable[peaktable<span class="op">$</span>pcgroup<span class="op">==</span>x,<span class="kw">ncol</span>(peaktable)])</span>
-<span id="cb2-70"><a href="example-dust.html#cb2-70"></a>  <span class="cf">if</span>(clustersize <span class="op">&lt;</span><span class="st"> </span><span class="kw">as.numeric</span>(min.clustersize))</span>
-<span id="cb2-71"><a href="example-dust.html#cb2-71"></a>  {</span>
-<span id="cb2-72"><a href="example-dust.html#cb2-72"></a>    small.clusters &lt;-<span class="st"> </span><span class="kw">c</span>(small.clusters, x)</span>
-<span id="cb2-73"><a href="example-dust.html#cb2-73"></a>  }</span>
-<span id="cb2-74"><a href="example-dust.html#cb2-74"></a>  <span class="cf">else</span></span>
-<span id="cb2-75"><a href="example-dust.html#cb2-75"></a>  {</span>
-<span id="cb2-76"><a href="example-dust.html#cb2-76"></a>    big.clusters &lt;-<span class="st"> </span><span class="kw">c</span>(big.clusters, x)</span>
-<span id="cb2-77"><a href="example-dust.html#cb2-77"></a>    gruppe1 &lt;-<span class="st"> </span>peaktable[peaktable<span class="op">$</span>pcgroup<span class="op">==</span>x,]</span>
-<span id="cb2-78"><a href="example-dust.html#cb2-78"></a>    gruppe1 &lt;-<span class="st"> </span>gruppe1[, <span class="op">-</span>(<span class="dv">2</span><span class="op">:</span>(<span class="kw">ncol</span>(gruppe1)<span class="op">-</span><span class="dv">3</span><span class="op">-</span>(<span class="kw">length</span>(mzXMLfiles))))]</span>
-<span id="cb2-79"><a href="example-dust.html#cb2-79"></a>    gruppe1 &lt;-<span class="st"> </span>gruppe1[, <span class="op">-</span>(<span class="kw">ncol</span>(gruppe1)<span class="op">:</span>(<span class="kw">ncol</span>(gruppe1)<span class="op">-</span><span class="dv">2</span>))]</span>
-<span id="cb2-80"><a href="example-dust.html#cb2-80"></a>    decider &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb2-81"><a href="example-dust.html#cb2-81"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">ncol</span>(gruppe1))</span>
-<span id="cb2-82"><a href="example-dust.html#cb2-82"></a>    {</span>
-<span id="cb2-83"><a href="example-dust.html#cb2-83"></a>      decider &lt;-<span class="st"> </span><span class="kw">c</span>(decider, <span class="kw">sum</span>(gruppe1[, i]))</span>
-<span id="cb2-84"><a href="example-dust.html#cb2-84"></a>    }</span>
-<span id="cb2-85"><a href="example-dust.html#cb2-85"></a>    highest &lt;-<span class="st"> </span><span class="kw">which</span>(decider<span class="op">==</span><span class="kw">max</span>(decider), <span class="dt">arr.ind =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-86"><a href="example-dust.html#cb2-86"></a>    gruppe1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(gruppe1[, <span class="dv">1</span>], gruppe1[, highest[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>])</span>
-<span id="cb2-87"><a href="example-dust.html#cb2-87"></a>    <span class="kw">colnames</span>(gruppe1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mz&quot;</span>, <span class="st">&quot;int&quot;</span>)</span>
-<span id="cb2-88"><a href="example-dust.html#cb2-88"></a>    lspectra[[n]] &lt;-<span class="st"> </span>gruppe1</span>
-<span id="cb2-89"><a href="example-dust.html#cb2-89"></a>    n &lt;-<span class="st"> </span>n<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb2-90"><a href="example-dust.html#cb2-90"></a>  }</span>
-<span id="cb2-91"><a href="example-dust.html#cb2-91"></a>}</span>
-<span id="cb2-92"><a href="example-dust.html#cb2-92"></a></span>
-<span id="cb2-93"><a href="example-dust.html#cb2-93"></a><span class="co"># remove peaks with zero intensities</span></span>
-<span id="cb2-94"><a href="example-dust.html#cb2-94"></a></span>
-<span id="cb2-95"><a href="example-dust.html#cb2-95"></a>lspectra &lt;-<span class="st"> </span><span class="kw">lapply</span>(lspectra, <span class="cf">function</span>(x) {x[x<span class="op">$</span>int <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>,]})</span>
-<span id="cb2-96"><a href="example-dust.html#cb2-96"></a></span>
-<span id="cb2-97"><a href="example-dust.html#cb2-97"></a></span>
-<span id="cb2-98"><a href="example-dust.html#cb2-98"></a>reduced.peaktable &lt;-<span class="st"> </span><span class="kw">getReducedPeaklist</span>(xs8, <span class="dt">method =</span> <span class="st">&quot;sum&quot;</span>, <span class="dt">intval =</span> <span class="st">&quot;into&quot;</span>, <span class="dt">default.adduct.info =</span> <span class="st">&quot;maxint&quot;</span>, <span class="dt">mzrt.range =</span> <span class="ot">FALSE</span>, <span class="dt">npeaks.sum =</span> <span class="ot">FALSE</span>, <span class="dt">cleanup =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb2-99"><a href="example-dust.html#cb2-99"></a><span class="cf">if</span>(<span class="kw">is.null</span>(small.clusters)<span class="op">==</span><span class="ot">FALSE</span>) {</span>
-<span id="cb2-100"><a href="example-dust.html#cb2-100"></a>  <span class="cf">for</span>(z <span class="cf">in</span> small.clusters)</span>
-<span id="cb2-101"><a href="example-dust.html#cb2-101"></a>  {</span>
-<span id="cb2-102"><a href="example-dust.html#cb2-102"></a>    reduced.peaktable &lt;-<span class="st"> </span>reduced.peaktable[<span class="op">-</span>(<span class="kw">which</span>(reduced.peaktable[, <span class="kw">ncol</span>(reduced.peaktable)]<span class="op">==</span>z)), ]</span>
-<span id="cb2-103"><a href="example-dust.html#cb2-103"></a>  }</span>
-<span id="cb2-104"><a href="example-dust.html#cb2-104"></a>}</span>
-<span id="cb2-105"><a href="example-dust.html#cb2-105"></a><span class="kw">write.csv</span>(reduced.peaktable, <span class="dt">file =</span> <span class="st">&quot;peaktable_MatchedFilter.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with only &quot;compounds&quot; instead of m/z features</span></span>
-<span id="cb2-106"><a href="example-dust.html#cb2-106"></a>extra &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Name =</span> <span class="kw">paste</span>(<span class="st">&quot;Unknown&quot;</span>, big.clusters, <span class="st">&quot;RT =&quot;</span>,<span class="kw">round</span>(reduced.peaktable<span class="op">$</span>rt<span class="op">/</span><span class="dv">60</span>, <span class="dv">2</span>) ), <span class="dt">Class =</span> <span class="st">&quot;Unknown&quot;</span>, <span class="dt">RT =</span> <span class="kw">round</span>(reduced.peaktable<span class="op">$</span>rt<span class="op">/</span><span class="dv">60</span>, <span class="dv">2</span>),  <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb2-107"><a href="example-dust.html#cb2-107"></a></span>
-<span id="cb2-108"><a href="example-dust.html#cb2-108"></a><span class="co">####KOVATS#####</span></span>
-<span id="cb2-109"><a href="example-dust.html#cb2-109"></a><span class="co">#Adding Kovats retention index to the extra obejct to write to msp</span></span>
-<span id="cb2-110"><a href="example-dust.html#cb2-110"></a>data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">rt =</span> extra<span class="op">$</span>RT)</span>
-<span id="cb2-111"><a href="example-dust.html#cb2-111"></a>alkaneSeries &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Num =</span> <span class="kw">c</span>(<span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>),</span>
-<span id="cb2-112"><a href="example-dust.html#cb2-112"></a>                           <span class="dt">rt =</span> <span class="kw">c</span>(<span class="fl">4.90</span>, <span class="fl">8.00</span>, <span class="fl">11.13</span>, <span class="fl">14.05</span>, <span class="fl">16.70</span>, <span class="fl">19.37</span>, <span class="fl">22.45</span>, <span class="fl">25.77</span>))</span>
-<span id="cb2-113"><a href="example-dust.html#cb2-113"></a></span>
-<span id="cb2-114"><a href="example-dust.html#cb2-114"></a>RI &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">length =</span> <span class="kw">nrow</span>(data))</span>
-<span id="cb2-115"><a href="example-dust.html#cb2-115"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">nrow</span>(data))) {</span>
-<span id="cb2-116"><a href="example-dust.html#cb2-116"></a>  m &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">case_when</span>(</span>
-<span id="cb2-117"><a href="example-dust.html#cb2-117"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">1</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">2</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">1</span>],</span>
-<span id="cb2-118"><a href="example-dust.html#cb2-118"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">2</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">3</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">2</span>],</span>
-<span id="cb2-119"><a href="example-dust.html#cb2-119"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">3</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">4</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">3</span>],</span>
-<span id="cb2-120"><a href="example-dust.html#cb2-120"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">4</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">5</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">4</span>],</span>
-<span id="cb2-121"><a href="example-dust.html#cb2-121"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">5</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">6</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">5</span>],</span>
-<span id="cb2-122"><a href="example-dust.html#cb2-122"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">6</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">7</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">6</span>],</span>
-<span id="cb2-123"><a href="example-dust.html#cb2-123"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">7</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">8</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">7</span>]</span>
-<span id="cb2-124"><a href="example-dust.html#cb2-124"></a>)</span>
-<span id="cb2-125"><a href="example-dust.html#cb2-125"></a></span>
-<span id="cb2-126"><a href="example-dust.html#cb2-126"></a>n &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">case_when</span>(</span>
-<span id="cb2-127"><a href="example-dust.html#cb2-127"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">1</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">2</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">2</span>],</span>
-<span id="cb2-128"><a href="example-dust.html#cb2-128"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">2</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">3</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">3</span>],</span>
-<span id="cb2-129"><a href="example-dust.html#cb2-129"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">3</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">4</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">4</span>],</span>
-<span id="cb2-130"><a href="example-dust.html#cb2-130"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">4</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">5</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">5</span>],</span>
-<span id="cb2-131"><a href="example-dust.html#cb2-131"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">5</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">6</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">6</span>],</span>
-<span id="cb2-132"><a href="example-dust.html#cb2-132"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">6</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">7</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">7</span>],</span>
-<span id="cb2-133"><a href="example-dust.html#cb2-133"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">7</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">8</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">8</span>]</span>
-<span id="cb2-134"><a href="example-dust.html#cb2-134"></a>)</span>
-<span id="cb2-135"><a href="example-dust.html#cb2-135"></a></span>
-<span id="cb2-136"><a href="example-dust.html#cb2-136"></a></span>
-<span id="cb2-137"><a href="example-dust.html#cb2-137"></a>RI[i] &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span>n <span class="op">+</span><span class="st"> </span><span class="dv">100</span><span class="op">*</span>(m<span class="op">-</span>n) <span class="op">*</span><span class="st"> </span>(data<span class="op">$</span>rt[i] <span class="op">-</span><span class="st"> </span>alkaneSeries[alkaneSeries<span class="op">$</span>Num <span class="op">==</span><span class="st"> </span>n,]<span class="op">$</span>rt)<span class="op">/</span>(alkaneSeries[alkaneSeries<span class="op">$</span>Num <span class="op">==</span><span class="st"> </span>m,]<span class="op">$</span>rt <span class="op">-</span><span class="st"> </span>alkaneSeries[alkaneSeries<span class="op">$</span>Num <span class="op">==</span><span class="st"> </span>n,]<span class="op">$</span>rt), <span class="dv">0</span>)</span>
-<span id="cb2-138"><a href="example-dust.html#cb2-138"></a>}</span>
-<span id="cb2-139"><a href="example-dust.html#cb2-139"></a></span>
-<span id="cb2-140"><a href="example-dust.html#cb2-140"></a>extra &lt;-<span class="st"> </span><span class="kw">cbind</span>(extra, RI)</span>
-<span id="cb2-141"><a href="example-dust.html#cb2-141"></a></span>
-<span id="cb2-142"><a href="example-dust.html#cb2-142"></a><span class="co">######</span><span class="re">END</span><span class="co"> KOVATS######</span></span>
-<span id="cb2-143"><a href="example-dust.html#cb2-143"></a></span>
-<span id="cb2-144"><a href="example-dust.html#cb2-144"></a><span class="co"># create the msp object with spectra and all meta information in the extra object (NAME, RETENTIONTIME, RETENTIONINDEX)</span></span>
-<span id="cb2-145"><a href="example-dust.html#cb2-145"></a>export.msp &lt;-<span class="st"> </span><span class="kw">construct.msp</span>(lspectra, extra)</span>
-<span id="cb2-146"><a href="example-dust.html#cb2-146"></a></span>
-<span id="cb2-147"><a href="example-dust.html#cb2-147"></a><span class="kw">write.msp</span>(export.msp, <span class="dt">file =</span> <span class="st">&quot;spectra_MatchedFilter20201030.msp&quot;</span>) <span class="co">#This creates a NIST MS Search compatible .msp file with all compound pseudospectra</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="example-dust.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(processx)</span>
+<span id="cb2-2"><a href="example-dust.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xcms)</span>
+<span id="cb2-3"><a href="example-dust.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(CAMERA)</span>
+<span id="cb2-4"><a href="example-dust.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metaMS)</span>
+<span id="cb2-5"><a href="example-dust.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-6"><a href="example-dust.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb2-7"><a href="example-dust.html#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="example-dust.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#first define the working directory (folder with experimental group folders inside)</span></span>
+<span id="cb2-9"><a href="example-dust.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># mzMLfiles &lt;- list.files(path = &quot;/home/ORUNET.ORU.SE/twg/Dioxinlab/GC-Orbitrap data/Florian/Dust NTA 20200513/mzXML/&quot;,pattern = &quot;.mzXML&quot;, recursive = TRUE, full.names = TRUE)</span></span>
+<span id="cb2-10"><a href="example-dust.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove files containing &quot;Hex&quot;, blank samples</span></span>
+<span id="cb2-11"><a href="example-dust.html#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># mzMLfiles &lt;- mzMLfiles[-grep(&quot;Hex&quot;, mzMLfiles)]</span></span>
+<span id="cb2-12"><a href="example-dust.html#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="example-dust.html#cb2-13" aria-hidden="true" tabindex="-1"></a>sample_info <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">&quot;/home/ORUNET.ORU.SE/twg/Windows_home/Dust_Florian/Sample_list_NTA_dust.xlsx&quot;</span>,</span>
+<span id="cb2-14"><a href="example-dust.html#cb2-14" aria-hidden="true" tabindex="-1"></a>                               <span class="at">sheet =</span> <span class="st">&quot;Sample&quot;</span>)</span>
+<span id="cb2-15"><a href="example-dust.html#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># filter only samples</span></span>
+<span id="cb2-16"><a href="example-dust.html#cb2-16" aria-hidden="true" tabindex="-1"></a>sample_info <span class="ot">&lt;-</span> sample_info <span class="sc">%&gt;%</span></span>
+<span id="cb2-17"><a href="example-dust.html#cb2-17" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span>(group <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;blank_solvent&quot;</span>)))</span>
+<span id="cb2-18"><a href="example-dust.html#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="example-dust.html#cb2-19" aria-hidden="true" tabindex="-1"></a>mzXMLfiles <span class="ot">&lt;-</span> <span class="fu">as.character</span>(sample_info<span class="sc">$</span>filename)</span>
+<span id="cb2-20"><a href="example-dust.html#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="example-dust.html#cb2-21" aria-hidden="true" tabindex="-1"></a>pd <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sample_name =</span> <span class="fu">paste0</span>(sample_info<span class="sc">$</span>new_codes, <span class="st">&quot;.mzXML&quot;</span>),</span>
+<span id="cb2-22"><a href="example-dust.html#cb2-22" aria-hidden="true" tabindex="-1"></a>                 <span class="at">class =</span> sample_info<span class="sc">$</span>group,</span>
+<span id="cb2-23"><a href="example-dust.html#cb2-23" aria-hidden="true" tabindex="-1"></a>                 <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-24"><a href="example-dust.html#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># pd &lt;- pd %&gt;% dplyr::filter(sample_group != &quot;IS&quot;) %&gt;% dplyr::filter(sample_group != &quot;RTI&quot;)</span></span>
+<span id="cb2-25"><a href="example-dust.html#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="example-dust.html#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="example-dust.html#cb2-27" aria-hidden="true" tabindex="-1"></a>min.clustersize <span class="ot">&lt;-</span> <span class="dv">17</span> <span class="co">#how many fragments need to be in a group for it to be included in the results. 5 - trace compounds; 20 - mostly high quality spectra</span></span>
+<span id="cb2-28"><a href="example-dust.html#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">useOriginalCode</span>(<span class="cn">TRUE</span>) <span class="co">#otherwise matchedFilter will allocate a huge amount of RAM when using step = 0.001</span></span>
+<span id="cb2-29"><a href="example-dust.html#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="example-dust.html#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">#Refer to XCMS and CAMERA documentation for information about parameters and functions</span></span>
+<span id="cb2-31"><a href="example-dust.html#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">#These are the parameters used for high rez GC-Orbitrap data</span></span>
+<span id="cb2-32"><a href="example-dust.html#cb2-32" aria-hidden="true" tabindex="-1"></a>xs1 <span class="ot">&lt;-</span> <span class="fu">xcmsSet</span>(mzXMLfiles, </span>
+<span id="cb2-33"><a href="example-dust.html#cb2-33" aria-hidden="true" tabindex="-1"></a>               <span class="at">phenoData =</span> pd,</span>
+<span id="cb2-34"><a href="example-dust.html#cb2-34" aria-hidden="true" tabindex="-1"></a>               <span class="at">method =</span> <span class="st">&quot;matchedFilter&quot;</span>, </span>
+<span id="cb2-35"><a href="example-dust.html#cb2-35" aria-hidden="true" tabindex="-1"></a>               <span class="at">fwhm =</span> <span class="dv">3</span>, <span class="at">step =</span> <span class="fl">0.001</span>, </span>
+<span id="cb2-36"><a href="example-dust.html#cb2-36" aria-hidden="true" tabindex="-1"></a>               <span class="at">steps =</span> <span class="dv">2</span>, <span class="at">max =</span> <span class="dv">1000</span>, </span>
+<span id="cb2-37"><a href="example-dust.html#cb2-37" aria-hidden="true" tabindex="-1"></a>               <span class="at">snthresh =</span> <span class="dv">3</span>, <span class="at">mzdiff =</span> <span class="fl">0.002</span>)</span>
+<span id="cb2-38"><a href="example-dust.html#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="example-dust.html#cb2-39" aria-hidden="true" tabindex="-1"></a>xs2 <span class="ot">&lt;-</span> <span class="fu">group</span>(xs1, <span class="at">method =</span> <span class="st">&quot;density&quot;</span>, <span class="at">bw =</span> <span class="dv">5</span>, <span class="at">mzwid =</span> <span class="fl">0.002</span>, <span class="at">minsamp =</span> <span class="dv">1</span>, <span class="at">minfrac =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1000</span>)</span>
+<span id="cb2-40"><a href="example-dust.html#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="example-dust.html#cb2-41" aria-hidden="true" tabindex="-1"></a>xs3 <span class="ot">&lt;-</span> <span class="fu">retcor</span>(xs2, <span class="at">method =</span> <span class="st">&quot;obiwarp&quot;</span>)</span>
+<span id="cb2-42"><a href="example-dust.html#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="example-dust.html#cb2-43" aria-hidden="true" tabindex="-1"></a>xs4 <span class="ot">&lt;-</span> <span class="fu">group</span>(xs3, <span class="at">method =</span> <span class="st">&quot;density&quot;</span>, <span class="at">bw =</span> <span class="dv">2</span>, <span class="at">mzwid =</span> <span class="fl">0.6</span>, <span class="at">minsamp =</span> <span class="dv">1</span>, <span class="at">minfrac =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1000</span>)</span>
+<span id="cb2-44"><a href="example-dust.html#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="example-dust.html#cb2-45" aria-hidden="true" tabindex="-1"></a>xs4 <span class="ot">&lt;-</span> <span class="fu">group</span>(xs3, <span class="at">method =</span> <span class="st">&quot;density&quot;</span>, <span class="at">bw =</span> <span class="dv">2</span>, <span class="at">mzwid =</span> <span class="fl">0.002</span>, <span class="at">minsamp =</span> <span class="dv">1</span>, <span class="at">minfrac =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1000</span>)</span>
+<span id="cb2-46"><a href="example-dust.html#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="example-dust.html#cb2-47" aria-hidden="true" tabindex="-1"></a>xs5 <span class="ot">&lt;-</span> <span class="fu">fillPeaks</span>(xs4)</span>
+<span id="cb2-48"><a href="example-dust.html#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="example-dust.html#cb2-49" aria-hidden="true" tabindex="-1"></a>xs6 <span class="ot">&lt;-</span> <span class="fu">xsAnnotate</span>(<span class="at">xs =</span> xs5, <span class="at">sample=</span><span class="cn">NA</span>, <span class="at">polarity =</span> <span class="st">&quot;positive&quot;</span>)</span>
+<span id="cb2-50"><a href="example-dust.html#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="example-dust.html#cb2-51" aria-hidden="true" tabindex="-1"></a>xs7 <span class="ot">&lt;-</span> <span class="fu">groupFWHM</span>(xs6, <span class="at">sigma =</span> <span class="dv">6</span> , <span class="at">perfwhm =</span> <span class="dv">2</span>, <span class="at">intval =</span> <span class="st">&quot;maxo&quot;</span>)</span>
+<span id="cb2-52"><a href="example-dust.html#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="example-dust.html#cb2-53" aria-hidden="true" tabindex="-1"></a>xs8 <span class="ot">&lt;-</span> <span class="fu">groupCorr</span>(xs7, <span class="at">cor_eic_th =</span> <span class="fl">0.8</span>, <span class="at">calcCaS =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-54"><a href="example-dust.html#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="example-dust.html#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="example-dust.html#cb2-56" aria-hidden="true" tabindex="-1"></a>peaktable <span class="ot">&lt;-</span> <span class="fu">getPeaklist</span>(xs8, <span class="at">intval=</span><span class="st">&quot;into&quot;</span>)</span>
+<span id="cb2-57"><a href="example-dust.html#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(peaktable, <span class="at">file =</span> <span class="st">&quot;untreated_peaktable_MatchedFilter.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with all m/z features sorted into &quot;compounds&quot;</span></span>
+<span id="cb2-58"><a href="example-dust.html#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="example-dust.html#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">#the following script identifies all &quot;compounds&quot; considered too small according to min.clustersize</span></span>
+<span id="cb2-60"><a href="example-dust.html#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="co">#you don&#39;t need to modify anything, that run the next part as is</span></span>
+<span id="cb2-61"><a href="example-dust.html#cb2-61" aria-hidden="true" tabindex="-1"></a>peaktable <span class="ot">&lt;-</span> <span class="fu">getPeaklist</span>(xs8, <span class="at">intval=</span><span class="st">&quot;maxo&quot;</span>)</span>
+<span id="cb2-62"><a href="example-dust.html#cb2-62" aria-hidden="true" tabindex="-1"></a>pcgroups <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">unique</span>(<span class="fu">as.numeric</span>(peaktable<span class="sc">$</span>pcgroup)))</span>
+<span id="cb2-63"><a href="example-dust.html#cb2-63" aria-hidden="true" tabindex="-1"></a>lspectra <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb2-64"><a href="example-dust.html#cb2-64" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb2-65"><a href="example-dust.html#cb2-65" aria-hidden="true" tabindex="-1"></a>small.clusters <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb2-66"><a href="example-dust.html#cb2-66" aria-hidden="true" tabindex="-1"></a>big.clusters <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb2-67"><a href="example-dust.html#cb2-67" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb2-68"><a href="example-dust.html#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> pcgroups) {</span>
+<span id="cb2-69"><a href="example-dust.html#cb2-69" aria-hidden="true" tabindex="-1"></a>  clustersize <span class="ot">&lt;-</span> <span class="fu">length</span>(peaktable[peaktable<span class="sc">$</span>pcgroup<span class="sc">==</span>x,<span class="fu">ncol</span>(peaktable)])</span>
+<span id="cb2-70"><a href="example-dust.html#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(clustersize <span class="sc">&lt;</span> <span class="fu">as.numeric</span>(min.clustersize))</span>
+<span id="cb2-71"><a href="example-dust.html#cb2-71" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb2-72"><a href="example-dust.html#cb2-72" aria-hidden="true" tabindex="-1"></a>    small.clusters <span class="ot">&lt;-</span> <span class="fu">c</span>(small.clusters, x)</span>
+<span id="cb2-73"><a href="example-dust.html#cb2-73" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-74"><a href="example-dust.html#cb2-74" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb2-75"><a href="example-dust.html#cb2-75" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb2-76"><a href="example-dust.html#cb2-76" aria-hidden="true" tabindex="-1"></a>    big.clusters <span class="ot">&lt;-</span> <span class="fu">c</span>(big.clusters, x)</span>
+<span id="cb2-77"><a href="example-dust.html#cb2-77" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> peaktable[peaktable<span class="sc">$</span>pcgroup<span class="sc">==</span>x,]</span>
+<span id="cb2-78"><a href="example-dust.html#cb2-78" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> gruppe1[, <span class="sc">-</span>(<span class="dv">2</span><span class="sc">:</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">-</span><span class="dv">3</span><span class="sc">-</span>(<span class="fu">length</span>(mzXMLfiles))))]</span>
+<span id="cb2-79"><a href="example-dust.html#cb2-79" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> gruppe1[, <span class="sc">-</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">:</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">-</span><span class="dv">2</span>))]</span>
+<span id="cb2-80"><a href="example-dust.html#cb2-80" aria-hidden="true" tabindex="-1"></a>    decider <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb2-81"><a href="example-dust.html#cb2-81" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(gruppe1))</span>
+<span id="cb2-82"><a href="example-dust.html#cb2-82" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-83"><a href="example-dust.html#cb2-83" aria-hidden="true" tabindex="-1"></a>      decider <span class="ot">&lt;-</span> <span class="fu">c</span>(decider, <span class="fu">sum</span>(gruppe1[, i]))</span>
+<span id="cb2-84"><a href="example-dust.html#cb2-84" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-85"><a href="example-dust.html#cb2-85" aria-hidden="true" tabindex="-1"></a>    highest <span class="ot">&lt;-</span> <span class="fu">which</span>(decider<span class="sc">==</span><span class="fu">max</span>(decider), <span class="at">arr.ind =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-86"><a href="example-dust.html#cb2-86" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(gruppe1[, <span class="dv">1</span>], gruppe1[, highest[<span class="dv">1</span>]<span class="sc">+</span><span class="dv">1</span>])</span>
+<span id="cb2-87"><a href="example-dust.html#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(gruppe1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mz&quot;</span>, <span class="st">&quot;int&quot;</span>)</span>
+<span id="cb2-88"><a href="example-dust.html#cb2-88" aria-hidden="true" tabindex="-1"></a>    lspectra[[n]] <span class="ot">&lt;-</span> gruppe1</span>
+<span id="cb2-89"><a href="example-dust.html#cb2-89" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb2-90"><a href="example-dust.html#cb2-90" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-91"><a href="example-dust.html#cb2-91" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-92"><a href="example-dust.html#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="example-dust.html#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="co"># remove peaks with zero intensities</span></span>
+<span id="cb2-94"><a href="example-dust.html#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="example-dust.html#cb2-95" aria-hidden="true" tabindex="-1"></a>lspectra <span class="ot">&lt;-</span> <span class="fu">lapply</span>(lspectra, <span class="cf">function</span>(x) {x[x<span class="sc">$</span>int <span class="sc">!=</span> <span class="dv">0</span>,]})</span>
+<span id="cb2-96"><a href="example-dust.html#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-97"><a href="example-dust.html#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="example-dust.html#cb2-98" aria-hidden="true" tabindex="-1"></a>reduced.peaktable <span class="ot">&lt;-</span> <span class="fu">getReducedPeaklist</span>(xs8, <span class="at">method =</span> <span class="st">&quot;sum&quot;</span>, <span class="at">intval =</span> <span class="st">&quot;into&quot;</span>, <span class="at">default.adduct.info =</span> <span class="st">&quot;maxint&quot;</span>, <span class="at">mzrt.range =</span> <span class="cn">FALSE</span>, <span class="at">npeaks.sum =</span> <span class="cn">FALSE</span>, <span class="at">cleanup =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-99"><a href="example-dust.html#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">is.null</span>(small.clusters)<span class="sc">==</span><span class="cn">FALSE</span>) {</span>
+<span id="cb2-100"><a href="example-dust.html#cb2-100" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(z <span class="cf">in</span> small.clusters)</span>
+<span id="cb2-101"><a href="example-dust.html#cb2-101" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb2-102"><a href="example-dust.html#cb2-102" aria-hidden="true" tabindex="-1"></a>    reduced.peaktable <span class="ot">&lt;-</span> reduced.peaktable[<span class="sc">-</span>(<span class="fu">which</span>(reduced.peaktable[, <span class="fu">ncol</span>(reduced.peaktable)]<span class="sc">==</span>z)), ]</span>
+<span id="cb2-103"><a href="example-dust.html#cb2-103" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-104"><a href="example-dust.html#cb2-104" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-105"><a href="example-dust.html#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(reduced.peaktable, <span class="at">file =</span> <span class="st">&quot;peaktable_MatchedFilter.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with only &quot;compounds&quot; instead of m/z features</span></span>
+<span id="cb2-106"><a href="example-dust.html#cb2-106" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Name =</span> <span class="fu">paste</span>(<span class="st">&quot;Unknown&quot;</span>, big.clusters, <span class="st">&quot;RT =&quot;</span>,<span class="fu">round</span>(reduced.peaktable<span class="sc">$</span>rt<span class="sc">/</span><span class="dv">60</span>, <span class="dv">2</span>) ), <span class="at">Class =</span> <span class="st">&quot;Unknown&quot;</span>, <span class="at">RT =</span> <span class="fu">round</span>(reduced.peaktable<span class="sc">$</span>rt<span class="sc">/</span><span class="dv">60</span>, <span class="dv">2</span>),  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-107"><a href="example-dust.html#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-108"><a href="example-dust.html#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="do">####KOVATS#####</span></span>
+<span id="cb2-109"><a href="example-dust.html#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="co">#Adding Kovats retention index to the extra obejct to write to msp</span></span>
+<span id="cb2-110"><a href="example-dust.html#cb2-110" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">rt =</span> extra<span class="sc">$</span>RT)</span>
+<span id="cb2-111"><a href="example-dust.html#cb2-111" aria-hidden="true" tabindex="-1"></a>alkaneSeries <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Num =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>),</span>
+<span id="cb2-112"><a href="example-dust.html#cb2-112" aria-hidden="true" tabindex="-1"></a>                           <span class="at">rt =</span> <span class="fu">c</span>(<span class="fl">4.90</span>, <span class="fl">8.00</span>, <span class="fl">11.13</span>, <span class="fl">14.05</span>, <span class="fl">16.70</span>, <span class="fl">19.37</span>, <span class="fl">22.45</span>, <span class="fl">25.77</span>))</span>
+<span id="cb2-113"><a href="example-dust.html#cb2-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-114"><a href="example-dust.html#cb2-114" aria-hidden="true" tabindex="-1"></a>RI <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="fu">nrow</span>(data))</span>
+<span id="cb2-115"><a href="example-dust.html#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(data))) {</span>
+<span id="cb2-116"><a href="example-dust.html#cb2-116" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb2-117"><a href="example-dust.html#cb2-117" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">1</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">1</span>],</span>
+<span id="cb2-118"><a href="example-dust.html#cb2-118" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">2</span>],</span>
+<span id="cb2-119"><a href="example-dust.html#cb2-119" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">3</span>],</span>
+<span id="cb2-120"><a href="example-dust.html#cb2-120" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">4</span>],</span>
+<span id="cb2-121"><a href="example-dust.html#cb2-121" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">5</span>],</span>
+<span id="cb2-122"><a href="example-dust.html#cb2-122" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">6</span>],</span>
+<span id="cb2-123"><a href="example-dust.html#cb2-123" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">8</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">7</span>]</span>
+<span id="cb2-124"><a href="example-dust.html#cb2-124" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-125"><a href="example-dust.html#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-126"><a href="example-dust.html#cb2-126" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb2-127"><a href="example-dust.html#cb2-127" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">1</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">2</span>],</span>
+<span id="cb2-128"><a href="example-dust.html#cb2-128" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">3</span>],</span>
+<span id="cb2-129"><a href="example-dust.html#cb2-129" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">4</span>],</span>
+<span id="cb2-130"><a href="example-dust.html#cb2-130" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">5</span>],</span>
+<span id="cb2-131"><a href="example-dust.html#cb2-131" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">6</span>],</span>
+<span id="cb2-132"><a href="example-dust.html#cb2-132" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">7</span>],</span>
+<span id="cb2-133"><a href="example-dust.html#cb2-133" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">8</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">8</span>]</span>
+<span id="cb2-134"><a href="example-dust.html#cb2-134" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-135"><a href="example-dust.html#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-136"><a href="example-dust.html#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-137"><a href="example-dust.html#cb2-137" aria-hidden="true" tabindex="-1"></a>RI[i] <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>n <span class="sc">+</span> <span class="dv">100</span><span class="sc">*</span>(m<span class="sc">-</span>n) <span class="sc">*</span> (data<span class="sc">$</span>rt[i] <span class="sc">-</span> alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> n,]<span class="sc">$</span>rt)<span class="sc">/</span>(alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> m,]<span class="sc">$</span>rt <span class="sc">-</span> alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> n,]<span class="sc">$</span>rt), <span class="dv">0</span>)</span>
+<span id="cb2-138"><a href="example-dust.html#cb2-138" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-139"><a href="example-dust.html#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-140"><a href="example-dust.html#cb2-140" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="fu">cbind</span>(extra, RI)</span>
+<span id="cb2-141"><a href="example-dust.html#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-142"><a href="example-dust.html#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="do">######</span><span class="re">END</span><span class="do"> KOVATS######</span></span>
+<span id="cb2-143"><a href="example-dust.html#cb2-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-144"><a href="example-dust.html#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="co"># create the msp object with spectra and all meta information in the extra object (NAME, RETENTIONTIME, RETENTIONINDEX)</span></span>
+<span id="cb2-145"><a href="example-dust.html#cb2-145" aria-hidden="true" tabindex="-1"></a>export.msp <span class="ot">&lt;-</span> <span class="fu">construct.msp</span>(lspectra, extra)</span>
+<span id="cb2-146"><a href="example-dust.html#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-147"><a href="example-dust.html#cb2-147" aria-hidden="true" tabindex="-1"></a><span class="fu">write.msp</span>(export.msp, <span class="at">file =</span> <span class="st">&quot;spectra_MatchedFilter20201030.msp&quot;</span>) <span class="co">#This creates a NIST MS Search compatible .msp file with all compound pseudospectra</span></span></code></pre></div>
 <p>This code uses XCMS with centWave. Check differences and skip first steps to combine both workflows</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="example-dust.html#cb3-1"></a><span class="co">#first define the working directory (folder with experimental group folders inside)</span></span>
-<span id="cb3-2"><a href="example-dust.html#cb3-2"></a><span class="co"># mzMLfiles &lt;- list.files(path = &quot;/mzXML/&quot;,pattern = &quot;.mzXML&quot;, recursive = TRUE, full.names = TRUE)</span></span>
-<span id="cb3-3"><a href="example-dust.html#cb3-3"></a><span class="co"># Remove files containing &quot;Hex&quot;, blank samples</span></span>
-<span id="cb3-4"><a href="example-dust.html#cb3-4"></a><span class="co"># mzMLfiles &lt;- mzMLfiles[-grep(&quot;Hex&quot;, mzMLfiles)]</span></span>
-<span id="cb3-5"><a href="example-dust.html#cb3-5"></a></span>
-<span id="cb3-6"><a href="example-dust.html#cb3-6"></a>sample_info &lt;-<span class="st"> </span>readxl<span class="op">::</span><span class="kw">read_xlsx</span>(<span class="st">&quot;Sample_list_NTA_dust.xlsx&quot;</span>,</span>
-<span id="cb3-7"><a href="example-dust.html#cb3-7"></a>                               <span class="dt">sheet =</span> <span class="st">&quot;Sample_xcms&quot;</span>)</span>
-<span id="cb3-8"><a href="example-dust.html#cb3-8"></a><span class="co"># filter only samples</span></span>
-<span id="cb3-9"><a href="example-dust.html#cb3-9"></a>sample_info &lt;-<span class="st"> </span>sample_info <span class="op">%&gt;%</span></span>
-<span id="cb3-10"><a href="example-dust.html#cb3-10"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(<span class="op">!</span>(group <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;blank_solvent&quot;</span>)))</span>
-<span id="cb3-11"><a href="example-dust.html#cb3-11"></a></span>
-<span id="cb3-12"><a href="example-dust.html#cb3-12"></a>pd &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sample_name =</span> <span class="kw">paste0</span>(sample_info<span class="op">$</span>analysis, <span class="st">&quot;.mzXML&quot;</span>),</span>
-<span id="cb3-13"><a href="example-dust.html#cb3-13"></a>                 <span class="dt">sample_group =</span> sample_info<span class="op">$</span>group,</span>
-<span id="cb3-14"><a href="example-dust.html#cb3-14"></a>                 <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb3-15"><a href="example-dust.html#cb3-15"></a></span>
-<span id="cb3-16"><a href="example-dust.html#cb3-16"></a>mzXMLfiles &lt;-<span class="st"> </span><span class="kw">paste0</span>(sample_info<span class="op">$</span>path, <span class="st">&quot;/&quot;</span>, sample_info<span class="op">$</span>analysis, <span class="st">&quot;.mzXML&quot;</span>)</span>
-<span id="cb3-17"><a href="example-dust.html#cb3-17"></a></span>
-<span id="cb3-18"><a href="example-dust.html#cb3-18"></a></span>
-<span id="cb3-19"><a href="example-dust.html#cb3-19"></a></span>
-<span id="cb3-20"><a href="example-dust.html#cb3-20"></a><span class="co"># Use subset to test</span></span>
-<span id="cb3-21"><a href="example-dust.html#cb3-21"></a>pd &lt;-<span class="st"> </span>pd[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,]</span>
-<span id="cb3-22"><a href="example-dust.html#cb3-22"></a>mzXMLfiles &lt;-<span class="st"> </span>mzXMLfiles[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
-<span id="cb3-23"><a href="example-dust.html#cb3-23"></a></span>
-<span id="cb3-24"><a href="example-dust.html#cb3-24"></a>raw_data &lt;-<span class="st"> </span><span class="kw">readMSData</span>(mzXMLfiles, </span>
-<span id="cb3-25"><a href="example-dust.html#cb3-25"></a>                         <span class="dt">pdata =</span> <span class="kw">new</span>(<span class="st">&quot;NAnnotatedDataFrame&quot;</span>, pd),</span>
-<span id="cb3-26"><a href="example-dust.html#cb3-26"></a>                         <span class="dt">mode =</span> <span class="st">&quot;onDisk&quot;</span>)</span>
-<span id="cb3-27"><a href="example-dust.html#cb3-27"></a></span>
-<span id="cb3-28"><a href="example-dust.html#cb3-28"></a><span class="co"># pd &lt;- pd %&gt;% dplyr::filter(sample_group != &quot;IS&quot;) %&gt;% dplyr::filter(sample_group != &quot;RTI&quot;)</span></span>
-<span id="cb3-29"><a href="example-dust.html#cb3-29"></a></span>
-<span id="cb3-30"><a href="example-dust.html#cb3-30"></a><span class="co">#-----Find features----#</span></span>
-<span id="cb3-31"><a href="example-dust.html#cb3-31"></a></span>
-<span id="cb3-32"><a href="example-dust.html#cb3-32"></a><span class="co"># centWave params</span></span>
-<span id="cb3-33"><a href="example-dust.html#cb3-33"></a>cwp &lt;-<span class="st"> </span><span class="kw">CentWaveParam</span>(<span class="dt">ppm =</span> <span class="dv">5</span>,</span>
-<span id="cb3-34"><a href="example-dust.html#cb3-34"></a>                     <span class="dt">peakwidth =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">45</span>),</span>
-<span id="cb3-35"><a href="example-dust.html#cb3-35"></a>                     <span class="dt">snthresh =</span> <span class="dv">10</span>,</span>
-<span id="cb3-36"><a href="example-dust.html#cb3-36"></a>                     <span class="dt">prefilter =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">30000</span>),</span>
-<span id="cb3-37"><a href="example-dust.html#cb3-37"></a>                     <span class="dt">mzCenterFun =</span> <span class="st">&quot;wMean&quot;</span>,</span>
-<span id="cb3-38"><a href="example-dust.html#cb3-38"></a>                     <span class="dt">integrate =</span> 1L,</span>
-<span id="cb3-39"><a href="example-dust.html#cb3-39"></a>                     <span class="dt">mzdiff =</span> <span class="fl">-0.001</span>,</span>
-<span id="cb3-40"><a href="example-dust.html#cb3-40"></a>                     <span class="dt">fitgauss =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb3-41"><a href="example-dust.html#cb3-41"></a>                     <span class="dt">noise =</span> <span class="dv">30000</span>,</span>
-<span id="cb3-42"><a href="example-dust.html#cb3-42"></a>                     <span class="dt">verboseColumns =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb3-43"><a href="example-dust.html#cb3-43"></a></span>
-<span id="cb3-44"><a href="example-dust.html#cb3-44"></a></span>
-<span id="cb3-45"><a href="example-dust.html#cb3-45"></a>xs1 &lt;-<span class="st"> </span><span class="kw">findChromPeaks</span>(mzXMLfiles, <span class="dt">param =</span> cwp)</span>
-<span id="cb3-46"><a href="example-dust.html#cb3-46"></a></span>
-<span id="cb3-47"><a href="example-dust.html#cb3-47"></a><span class="co"># use model peak to evaluate process</span></span>
-<span id="cb3-48"><a href="example-dust.html#cb3-48"></a>rtr &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1440</span>, <span class="dv">1460</span>)</span>
-<span id="cb3-49"><a href="example-dust.html#cb3-49"></a>mzr &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">340.238</span>, <span class="fl">340.242</span>)</span>
-<span id="cb3-50"><a href="example-dust.html#cb3-50"></a>chr_raw &lt;-<span class="st"> </span><span class="kw">chromatogram</span>(mzXMLfiles, <span class="dt">mz =</span> mzr, <span class="dt">rt =</span> rtr)</span>
-<span id="cb3-51"><a href="example-dust.html#cb3-51"></a>chr_mzr &lt;-<span class="st"> </span><span class="kw">chromatogram</span>(xs1, <span class="dt">mz =</span> mzr, <span class="dt">rt =</span> rtr)</span>
-<span id="cb3-52"><a href="example-dust.html#cb3-52"></a>group_colors &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">brewer.pal</span>(<span class="dv">3</span>, <span class="st">&quot;Set1&quot;</span>)[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>], <span class="st">&quot;60&quot;</span>)</span>
-<span id="cb3-53"><a href="example-dust.html#cb3-53"></a>sample_colors &lt;-<span class="st"> </span>group_colors[xs1<span class="op">$</span>sample_group]</span>
-<span id="cb3-54"><a href="example-dust.html#cb3-54"></a></span>
-<span id="cb3-55"><a href="example-dust.html#cb3-55"></a></span>
-<span id="cb3-56"><a href="example-dust.html#cb3-56"></a><span class="co">#----Group features 1----#</span></span>
-<span id="cb3-57"><a href="example-dust.html#cb3-57"></a></span>
-<span id="cb3-58"><a href="example-dust.html#cb3-58"></a>pdp &lt;-<span class="st"> </span><span class="kw">PeakDensityParam</span>(</span>
-<span id="cb3-59"><a href="example-dust.html#cb3-59"></a>  <span class="dt">sampleGroups =</span> pd<span class="op">$</span>sample_group,</span>
-<span id="cb3-60"><a href="example-dust.html#cb3-60"></a>  <span class="dt">bw =</span> <span class="dv">10</span>,</span>
-<span id="cb3-61"><a href="example-dust.html#cb3-61"></a>  <span class="dt">minFraction =</span> <span class="dv">0</span>,</span>
-<span id="cb3-62"><a href="example-dust.html#cb3-62"></a>  <span class="dt">minSamples =</span> <span class="dv">1</span>,</span>
-<span id="cb3-63"><a href="example-dust.html#cb3-63"></a>  <span class="dt">binSize =</span> <span class="fl">0.002</span>,</span>
-<span id="cb3-64"><a href="example-dust.html#cb3-64"></a>  <span class="dt">maxFeatures =</span> <span class="dv">1000</span>)</span>
-<span id="cb3-65"><a href="example-dust.html#cb3-65"></a></span>
-<span id="cb3-66"><a href="example-dust.html#cb3-66"></a></span>
-<span id="cb3-67"><a href="example-dust.html#cb3-67"></a>xs2 &lt;-<span class="st"> </span><span class="kw">groupChromPeaks</span>(xs1, <span class="dt">param =</span> pdp)</span>
-<span id="cb3-68"><a href="example-dust.html#cb3-68"></a></span>
-<span id="cb3-69"><a href="example-dust.html#cb3-69"></a></span>
-<span id="cb3-70"><a href="example-dust.html#cb3-70"></a><span class="kw">plotChromPeakDensity</span>(chr_mzr, <span class="dt">col =</span> sample_colors, <span class="dt">param =</span> pdp)</span>
-<span id="cb3-71"><a href="example-dust.html#cb3-71"></a></span>
-<span id="cb3-72"><a href="example-dust.html#cb3-72"></a></span>
-<span id="cb3-73"><a href="example-dust.html#cb3-73"></a><span class="co">#----retention time correction----#</span></span>
-<span id="cb3-74"><a href="example-dust.html#cb3-74"></a></span>
-<span id="cb3-75"><a href="example-dust.html#cb3-75"></a>obip &lt;-<span class="st"> </span><span class="kw">ObiwarpParam</span>(<span class="dt">binSize =</span> <span class="fl">0.05</span>,  <span class="co"># need to check optimal binSize</span></span>
-<span id="cb3-76"><a href="example-dust.html#cb3-76"></a>                     <span class="dt">centerSample =</span> <span class="kw">integer</span>(),</span>
-<span id="cb3-77"><a href="example-dust.html#cb3-77"></a>                     <span class="dt">response =</span> 1L,</span>
-<span id="cb3-78"><a href="example-dust.html#cb3-78"></a>                     <span class="dt">distFun =</span> <span class="st">&quot;cor_opt&quot;</span>,</span>
-<span id="cb3-79"><a href="example-dust.html#cb3-79"></a>                     <span class="dt">gapInit =</span> <span class="kw">numeric</span>(),</span>
-<span id="cb3-80"><a href="example-dust.html#cb3-80"></a>                     <span class="dt">gapExtend =</span> <span class="kw">numeric</span>(),</span>
-<span id="cb3-81"><a href="example-dust.html#cb3-81"></a>                     <span class="dt">factorDiag =</span> <span class="dv">2</span>,</span>
-<span id="cb3-82"><a href="example-dust.html#cb3-82"></a>                     <span class="dt">factorGap =</span> <span class="dv">1</span>,</span>
-<span id="cb3-83"><a href="example-dust.html#cb3-83"></a>                     <span class="dt">localAlignment =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb3-84"><a href="example-dust.html#cb3-84"></a>                     <span class="dt">initPenalty =</span> <span class="dv">0</span>,</span>
-<span id="cb3-85"><a href="example-dust.html#cb3-85"></a>                     <span class="dt">subset =</span> <span class="kw">integer</span>(),</span>
-<span id="cb3-86"><a href="example-dust.html#cb3-86"></a>                     <span class="dt">subsetAdjust =</span> <span class="kw">c</span>(<span class="st">&quot;average&quot;</span>, <span class="st">&quot;previous&quot;</span>))</span>
-<span id="cb3-87"><a href="example-dust.html#cb3-87"></a></span>
-<span id="cb3-88"><a href="example-dust.html#cb3-88"></a>xs3 &lt;-<span class="st"> </span><span class="kw">adjustRtime</span>(xs2, <span class="dt">param =</span> obip)</span>
-<span id="cb3-89"><a href="example-dust.html#cb3-89"></a></span>
-<span id="cb3-90"><a href="example-dust.html#cb3-90"></a><span class="co"># Get the base peak chromatograms</span></span>
-<span id="cb3-91"><a href="example-dust.html#cb3-91"></a>bpis_adj &lt;-<span class="st"> </span><span class="kw">chromatogram</span>(xs3, <span class="dt">aggregationFun =</span> <span class="st">&quot;max&quot;</span>, <span class="dt">include =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb3-92"><a href="example-dust.html#cb3-92"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="fl">4.5</span>, <span class="fl">4.2</span>, <span class="dv">1</span>, <span class="fl">0.5</span>))</span>
-<span id="cb3-93"><a href="example-dust.html#cb3-93"></a><span class="kw">plot</span>(bpis_adj)</span>
-<span id="cb3-94"><a href="example-dust.html#cb3-94"></a><span class="co"># Plot also the difference of adjusted to raw retention time.</span></span>
-<span id="cb3-95"><a href="example-dust.html#cb3-95"></a><span class="kw">plotAdjustedRtime</span>(xs3)</span>
-<span id="cb3-96"><a href="example-dust.html#cb3-96"></a></span>
-<span id="cb3-97"><a href="example-dust.html#cb3-97"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span>
-<span id="cb3-98"><a href="example-dust.html#cb3-98"></a><span class="co">## Plot the raw data</span></span>
-<span id="cb3-99"><a href="example-dust.html#cb3-99"></a><span class="kw">plot</span>(chr_raw)</span>
-<span id="cb3-100"><a href="example-dust.html#cb3-100"></a></span>
-<span id="cb3-101"><a href="example-dust.html#cb3-101"></a><span class="co">## Extract the chromatogram from the adjusted object</span></span>
-<span id="cb3-102"><a href="example-dust.html#cb3-102"></a>chr_adj &lt;-<span class="st"> </span><span class="kw">chromatogram</span>(xs3, <span class="dt">rt =</span> rtr, <span class="dt">mz =</span> mzr)</span>
-<span id="cb3-103"><a href="example-dust.html#cb3-103"></a><span class="kw">plot</span>(chr_adj, <span class="dt">peakType =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb3-104"><a href="example-dust.html#cb3-104"></a></span>
-<span id="cb3-105"><a href="example-dust.html#cb3-105"></a></span>
-<span id="cb3-106"><a href="example-dust.html#cb3-106"></a></span>
-<span id="cb3-107"><a href="example-dust.html#cb3-107"></a><span class="co">#----Group features 2----#</span></span>
-<span id="cb3-108"><a href="example-dust.html#cb3-108"></a><span class="co"># After retention time correction, the rt values are modified and additional grouping is needed.</span></span>
-<span id="cb3-109"><a href="example-dust.html#cb3-109"></a></span>
-<span id="cb3-110"><a href="example-dust.html#cb3-110"></a>pdp2 &lt;-<span class="st"> </span><span class="kw">PeakDensityParam</span>(</span>
-<span id="cb3-111"><a href="example-dust.html#cb3-111"></a>  <span class="dt">sampleGroups =</span> pd<span class="op">$</span>sample_group,</span>
-<span id="cb3-112"><a href="example-dust.html#cb3-112"></a>  <span class="dt">bw =</span> <span class="dv">5</span>,</span>
-<span id="cb3-113"><a href="example-dust.html#cb3-113"></a>  <span class="dt">minFraction =</span> <span class="dv">0</span>,</span>
-<span id="cb3-114"><a href="example-dust.html#cb3-114"></a>  <span class="dt">minSamples =</span> <span class="dv">1</span>,</span>
-<span id="cb3-115"><a href="example-dust.html#cb3-115"></a>  <span class="dt">binSize =</span> <span class="fl">0.2</span>,</span>
-<span id="cb3-116"><a href="example-dust.html#cb3-116"></a>  <span class="dt">maxFeatures =</span> <span class="dv">1000</span>)</span>
-<span id="cb3-117"><a href="example-dust.html#cb3-117"></a></span>
-<span id="cb3-118"><a href="example-dust.html#cb3-118"></a></span>
-<span id="cb3-119"><a href="example-dust.html#cb3-119"></a>xs4 &lt;-<span class="st"> </span><span class="kw">groupChromPeaks</span>(xs3, <span class="dt">param =</span> pdp2)</span>
-<span id="cb3-120"><a href="example-dust.html#cb3-120"></a></span>
-<span id="cb3-121"><a href="example-dust.html#cb3-121"></a>xs4_chrom &lt;-<span class="st"> </span><span class="kw">chromatogram</span>(xs4, <span class="dt">mz =</span> mzr, <span class="dt">rt =</span> rtr)</span>
-<span id="cb3-122"><a href="example-dust.html#cb3-122"></a><span class="kw">plotChromPeakDensity</span>(xs4_chrom, <span class="dt">col =</span> sample_colors, <span class="dt">param =</span> pdp2)</span>
-<span id="cb3-123"><a href="example-dust.html#cb3-123"></a></span>
-<span id="cb3-124"><a href="example-dust.html#cb3-124"></a><span class="co"># iteratively decrease the binSize</span></span>
-<span id="cb3-125"><a href="example-dust.html#cb3-125"></a>pdp3 &lt;-<span class="st"> </span><span class="kw">PeakDensityParam</span>(</span>
-<span id="cb3-126"><a href="example-dust.html#cb3-126"></a>  <span class="dt">sampleGroups =</span> pd<span class="op">$</span>sample_group,</span>
-<span id="cb3-127"><a href="example-dust.html#cb3-127"></a>  <span class="dt">bw =</span> <span class="dv">2</span>,</span>
-<span id="cb3-128"><a href="example-dust.html#cb3-128"></a>  <span class="dt">minFraction =</span> <span class="dv">0</span>,</span>
-<span id="cb3-129"><a href="example-dust.html#cb3-129"></a>  <span class="dt">minSamples =</span> <span class="dv">1</span>,</span>
-<span id="cb3-130"><a href="example-dust.html#cb3-130"></a>  <span class="dt">binSize =</span> <span class="fl">0.002</span>,</span>
-<span id="cb3-131"><a href="example-dust.html#cb3-131"></a>  <span class="dt">maxFeatures =</span> <span class="dv">1000</span>)</span>
-<span id="cb3-132"><a href="example-dust.html#cb3-132"></a></span>
-<span id="cb3-133"><a href="example-dust.html#cb3-133"></a>xs4 &lt;-<span class="st"> </span><span class="kw">groupChromPeaks</span>(xs4, <span class="dt">param =</span> pdp3)</span>
-<span id="cb3-134"><a href="example-dust.html#cb3-134"></a></span>
-<span id="cb3-135"><a href="example-dust.html#cb3-135"></a>xs4_chrom &lt;-<span class="st"> </span><span class="kw">chromatogram</span>(xs4, <span class="dt">mz =</span> mzr, <span class="dt">rt =</span> rtr)</span>
-<span id="cb3-136"><a href="example-dust.html#cb3-136"></a><span class="kw">plotChromPeakDensity</span>(xs4_chrom, <span class="dt">col =</span> sample_colors, <span class="dt">param =</span> pdp3)</span>
-<span id="cb3-137"><a href="example-dust.html#cb3-137"></a></span>
-<span id="cb3-138"><a href="example-dust.html#cb3-138"></a><span class="co">#----Fill missing features----#</span></span>
-<span id="cb3-139"><a href="example-dust.html#cb3-139"></a></span>
-<span id="cb3-140"><a href="example-dust.html#cb3-140"></a></span>
-<span id="cb3-141"><a href="example-dust.html#cb3-141"></a>xs5 &lt;-<span class="st"> </span><span class="kw">fillChromPeaks</span>(xs4)</span>
-<span id="cb3-142"><a href="example-dust.html#cb3-142"></a></span>
-<span id="cb3-143"><a href="example-dust.html#cb3-143"></a><span class="co">## Check missing values before filling in peaks</span></span>
-<span id="cb3-144"><a href="example-dust.html#cb3-144"></a><span class="kw">apply</span>(<span class="kw">featureValues</span>(xs5, <span class="dt">filled =</span> <span class="ot">FALSE</span>), <span class="dt">MARGIN =</span> <span class="dv">2</span>,</span>
-<span id="cb3-145"><a href="example-dust.html#cb3-145"></a>      <span class="dt">FUN =</span> <span class="cf">function</span>(z) <span class="kw">sum</span>(<span class="kw">is.na</span>(z)))</span>
-<span id="cb3-146"><a href="example-dust.html#cb3-146"></a></span>
-<span id="cb3-147"><a href="example-dust.html#cb3-147"></a><span class="co">## Missing values after filling in peaks</span></span>
-<span id="cb3-148"><a href="example-dust.html#cb3-148"></a><span class="kw">apply</span>(<span class="kw">featureValues</span>(xs5), <span class="dt">MARGIN =</span> <span class="dv">2</span>,</span>
-<span id="cb3-149"><a href="example-dust.html#cb3-149"></a>      <span class="dt">FUN =</span> <span class="cf">function</span>(z) <span class="kw">sum</span>(<span class="kw">is.na</span>(z)))</span>
-<span id="cb3-150"><a href="example-dust.html#cb3-150"></a></span>
-<span id="cb3-151"><a href="example-dust.html#cb3-151"></a></span>
-<span id="cb3-152"><a href="example-dust.html#cb3-152"></a></span>
-<span id="cb3-153"><a href="example-dust.html#cb3-153"></a><span class="co">#---- QC ----#</span></span>
-<span id="cb3-154"><a href="example-dust.html#cb3-154"></a></span>
-<span id="cb3-155"><a href="example-dust.html#cb3-155"></a><span class="co"># Extract chromatograms of 4 features</span></span>
-<span id="cb3-156"><a href="example-dust.html#cb3-156"></a>feature_chroms &lt;-<span class="st"> </span><span class="kw">featureChromatograms</span>(xs5, <span class="dt">features =</span> <span class="dv">10000</span><span class="op">:</span><span class="dv">10004</span>)</span>
-<span id="cb3-157"><a href="example-dust.html#cb3-157"></a></span>
-<span id="cb3-158"><a href="example-dust.html#cb3-158"></a><span class="kw">plot</span>(feature_chroms)</span>
-<span id="cb3-159"><a href="example-dust.html#cb3-159"></a></span>
-<span id="cb3-160"><a href="example-dust.html#cb3-160"></a></span>
-<span id="cb3-161"><a href="example-dust.html#cb3-161"></a><span class="kw">boxplot</span>(<span class="kw">featureValues</span>(xs5, <span class="dt">value=</span><span class="st">&quot;into&quot;</span>) <span class="op">+</span><span class="dv">1</span>, </span>
-<span id="cb3-162"><a href="example-dust.html#cb3-162"></a>        <span class="co">#col=as.numeric(sampclass(mtbls2Set))+1, </span></span>
-<span id="cb3-163"><a href="example-dust.html#cb3-163"></a>        <span class="dt">log=</span><span class="st">&quot;y&quot;</span>, <span class="dt">las=</span><span class="dv">2</span>)</span>
-<span id="cb3-164"><a href="example-dust.html#cb3-164"></a></span>
-<span id="cb3-165"><a href="example-dust.html#cb3-165"></a>sdThresh &lt;-<span class="st"> </span><span class="fl">4.0</span> <span class="co">## Filter low-standard deviation rows for plot</span></span>
-<span id="cb3-166"><a href="example-dust.html#cb3-166"></a>data &lt;-<span class="st"> </span><span class="kw">log</span>(<span class="kw">featureValues</span>(xs5))<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb3-167"><a href="example-dust.html#cb3-167"></a>pca.result &lt;-<span class="st"> </span><span class="kw">pca</span>(data, <span class="dt">nPcs=</span><span class="dv">3</span>)</span>
-<span id="cb3-168"><a href="example-dust.html#cb3-168"></a><span class="kw">plotPcs</span>(pca.result, <span class="dt">type=</span><span class="st">&quot;loadings&quot;</span>, </span>
-<span id="cb3-169"><a href="example-dust.html#cb3-169"></a>        <span class="co">#col=as.numeric(sampclass(mtbls2Set))+1</span></span>
-<span id="cb3-170"><a href="example-dust.html#cb3-170"></a>        )</span>
-<span id="cb3-171"><a href="example-dust.html#cb3-171"></a></span>
-<span id="cb3-172"><a href="example-dust.html#cb3-172"></a></span>
-<span id="cb3-173"><a href="example-dust.html#cb3-173"></a></span>
-<span id="cb3-174"><a href="example-dust.html#cb3-174"></a></span>
-<span id="cb3-175"><a href="example-dust.html#cb3-175"></a><span class="co"># It is possible to use the retention time correction and grouping step in an iterative way if needed. </span></span>
-<span id="cb3-176"><a href="example-dust.html#cb3-176"></a><span class="co"># Once you perform your last adjustRtime step and thus your last grouping step, you will obtain your final peak list (i.e. final list of ions)</span></span>
-<span id="cb3-177"><a href="example-dust.html#cb3-177"></a></span>
-<span id="cb3-178"><a href="example-dust.html#cb3-178"></a></span>
-<span id="cb3-179"><a href="example-dust.html#cb3-179"></a><span class="co">#----Annotation using CAMERA----#</span></span>
-<span id="cb3-180"><a href="example-dust.html#cb3-180"></a></span>
-<span id="cb3-181"><a href="example-dust.html#cb3-181"></a><span class="co"># Since CAMERA has not yet been ported to XCMSnExp,we need to convert to xcmsSet. </span></span>
-<span id="cb3-182"><a href="example-dust.html#cb3-182"></a><span class="co"># Note that the conversion only makes sense for somple XCMSnSets, </span></span>
-<span id="cb3-183"><a href="example-dust.html#cb3-183"></a><span class="co"># without e.g. MS level filtering (where CAMERA would then extract the wrong peaks)</span></span>
-<span id="cb3-184"><a href="example-dust.html#cb3-184"></a></span>
-<span id="cb3-185"><a href="example-dust.html#cb3-185"></a>xs6 &lt;-<span class="st"> </span><span class="kw">as</span>(xs5, <span class="st">&quot;xcmsSet&quot;</span>)</span>
-<span id="cb3-186"><a href="example-dust.html#cb3-186"></a></span>
-<span id="cb3-187"><a href="example-dust.html#cb3-187"></a>xs6 &lt;-<span class="st"> </span><span class="kw">xsAnnotate</span>(<span class="dt">xs =</span> xs6, <span class="dt">sample=</span><span class="ot">NA</span>, <span class="dt">polarity =</span> <span class="st">&quot;positive&quot;</span>)</span>
-<span id="cb3-188"><a href="example-dust.html#cb3-188"></a></span>
-<span id="cb3-189"><a href="example-dust.html#cb3-189"></a>xs7 &lt;-<span class="st"> </span><span class="kw">groupFWHM</span>(xs6, <span class="dt">sigma =</span> <span class="dv">6</span> , <span class="dt">perfwhm =</span> <span class="dv">2</span>, <span class="dt">intval =</span> <span class="st">&quot;maxo&quot;</span>)</span>
-<span id="cb3-190"><a href="example-dust.html#cb3-190"></a></span>
-<span id="cb3-191"><a href="example-dust.html#cb3-191"></a>xs8 &lt;-<span class="st"> </span><span class="kw">groupCorr</span>(xs7, <span class="dt">cor_eic_th =</span> <span class="fl">0.8</span>, <span class="dt">calcCaS =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb3-192"><a href="example-dust.html#cb3-192"></a></span>
-<span id="cb3-193"><a href="example-dust.html#cb3-193"></a></span>
-<span id="cb3-194"><a href="example-dust.html#cb3-194"></a><span class="co">#how many fragments need to be in a group for it to be included in the results. 5 - trace compounds; 20 - mostly high quality spectra</span></span>
-<span id="cb3-195"><a href="example-dust.html#cb3-195"></a>min.clustersize &lt;-<span class="st"> </span><span class="dv">20</span> </span>
-<span id="cb3-196"><a href="example-dust.html#cb3-196"></a></span>
-<span id="cb3-197"><a href="example-dust.html#cb3-197"></a>peaktable &lt;-<span class="st"> </span><span class="kw">getPeaklist</span>(xs8, <span class="dt">intval=</span><span class="st">&quot;into&quot;</span>)</span>
-<span id="cb3-198"><a href="example-dust.html#cb3-198"></a><span class="kw">write.csv</span>(peaktable, <span class="dt">file =</span> <span class="st">&quot;test_peaktable.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with all m/z features sorted into &quot;compounds&quot;</span></span>
-<span id="cb3-199"><a href="example-dust.html#cb3-199"></a></span>
-<span id="cb3-200"><a href="example-dust.html#cb3-200"></a><span class="co">#the following script identifies all &quot;compounds&quot; considered too small according to min.clustersize</span></span>
-<span id="cb3-201"><a href="example-dust.html#cb3-201"></a>peaktable &lt;-<span class="st"> </span><span class="kw">getPeaklist</span>(xs8, <span class="dt">intval=</span><span class="st">&quot;maxo&quot;</span>)</span>
-<span id="cb3-202"><a href="example-dust.html#cb3-202"></a></span>
-<span id="cb3-203"><a href="example-dust.html#cb3-203"></a><span class="co"># Replaces NA in intensities with zero</span></span>
-<span id="cb3-204"><a href="example-dust.html#cb3-204"></a>peaktable &lt;-<span class="st"> </span>peaktable <span class="op">%&gt;%</span></span>
-<span id="cb3-205"><a href="example-dust.html#cb3-205"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(dplyr<span class="op">::</span><span class="kw">across</span>(dplyr<span class="op">::</span><span class="kw">starts_with</span>(<span class="st">&quot;X&quot;</span>), <span class="op">~</span>tidyr<span class="op">::</span><span class="kw">replace_na</span>(., <span class="dv">0</span>)))</span>
-<span id="cb3-206"><a href="example-dust.html#cb3-206"></a></span>
-<span id="cb3-207"><a href="example-dust.html#cb3-207"></a></span>
-<span id="cb3-208"><a href="example-dust.html#cb3-208"></a>pcgroups &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">unique</span>(<span class="kw">as.numeric</span>(peaktable<span class="op">$</span>pcgroup)))</span>
-<span id="cb3-209"><a href="example-dust.html#cb3-209"></a>lspectra &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb3-210"><a href="example-dust.html#cb3-210"></a>extra &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb3-211"><a href="example-dust.html#cb3-211"></a>small.clusters &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb3-212"><a href="example-dust.html#cb3-212"></a>big.clusters &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb3-213"><a href="example-dust.html#cb3-213"></a>n &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb3-214"><a href="example-dust.html#cb3-214"></a><span class="cf">for</span>(x <span class="cf">in</span> <span class="kw">seq_along</span>(pcgroups)) {</span>
-<span id="cb3-215"><a href="example-dust.html#cb3-215"></a>  clustersize &lt;-<span class="st"> </span><span class="kw">length</span>(peaktable[peaktable<span class="op">$</span>pcgroup<span class="op">==</span>x,<span class="kw">ncol</span>(peaktable)])</span>
-<span id="cb3-216"><a href="example-dust.html#cb3-216"></a>  <span class="cf">if</span>(clustersize <span class="op">&lt;</span><span class="st"> </span><span class="kw">as.numeric</span>(min.clustersize))</span>
-<span id="cb3-217"><a href="example-dust.html#cb3-217"></a>  {</span>
-<span id="cb3-218"><a href="example-dust.html#cb3-218"></a>    small.clusters &lt;-<span class="st"> </span><span class="kw">c</span>(small.clusters, x)</span>
-<span id="cb3-219"><a href="example-dust.html#cb3-219"></a>  }</span>
-<span id="cb3-220"><a href="example-dust.html#cb3-220"></a>  <span class="cf">else</span></span>
-<span id="cb3-221"><a href="example-dust.html#cb3-221"></a>  {</span>
-<span id="cb3-222"><a href="example-dust.html#cb3-222"></a>    big.clusters &lt;-<span class="st"> </span><span class="kw">c</span>(big.clusters, x)</span>
-<span id="cb3-223"><a href="example-dust.html#cb3-223"></a>    gruppe1 &lt;-<span class="st"> </span>peaktable[peaktable<span class="op">$</span>pcgroup<span class="op">==</span>x,]</span>
-<span id="cb3-224"><a href="example-dust.html#cb3-224"></a>    gruppe1 &lt;-<span class="st"> </span>gruppe1[, <span class="op">-</span>(<span class="dv">2</span><span class="op">:</span>(<span class="kw">ncol</span>(gruppe1)<span class="op">-</span><span class="dv">3</span><span class="op">-</span>(<span class="kw">length</span>(mzXMLfiles))))]</span>
-<span id="cb3-225"><a href="example-dust.html#cb3-225"></a>    gruppe1 &lt;-<span class="st"> </span>gruppe1[, <span class="op">-</span>(<span class="kw">ncol</span>(gruppe1)<span class="op">:</span>(<span class="kw">ncol</span>(gruppe1)<span class="op">-</span><span class="dv">2</span>))]</span>
-<span id="cb3-226"><a href="example-dust.html#cb3-226"></a>    decider &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb3-227"><a href="example-dust.html#cb3-227"></a>    </span>
-<span id="cb3-228"><a href="example-dust.html#cb3-228"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">ncol</span>(gruppe1))</span>
-<span id="cb3-229"><a href="example-dust.html#cb3-229"></a>    {</span>
-<span id="cb3-230"><a href="example-dust.html#cb3-230"></a>      decider &lt;-<span class="st"> </span><span class="kw">c</span>(decider, <span class="kw">sum</span>(gruppe1[, i]))</span>
-<span id="cb3-231"><a href="example-dust.html#cb3-231"></a>    }</span>
-<span id="cb3-232"><a href="example-dust.html#cb3-232"></a>    highest &lt;-<span class="st"> </span><span class="kw">which</span>(decider<span class="op">==</span><span class="kw">max</span>(decider), <span class="dt">arr.ind =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb3-233"><a href="example-dust.html#cb3-233"></a>    gruppe1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(gruppe1[, <span class="dv">1</span>], gruppe1[, highest[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>])</span>
-<span id="cb3-234"><a href="example-dust.html#cb3-234"></a>    <span class="kw">colnames</span>(gruppe1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mz&quot;</span>, <span class="st">&quot;int&quot;</span>)</span>
-<span id="cb3-235"><a href="example-dust.html#cb3-235"></a>    lspectra[[n]] &lt;-<span class="st"> </span>gruppe1</span>
-<span id="cb3-236"><a href="example-dust.html#cb3-236"></a>    n &lt;-<span class="st"> </span>n<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb3-237"><a href="example-dust.html#cb3-237"></a>  }</span>
-<span id="cb3-238"><a href="example-dust.html#cb3-238"></a>}</span>
-<span id="cb3-239"><a href="example-dust.html#cb3-239"></a></span>
-<span id="cb3-240"><a href="example-dust.html#cb3-240"></a></span>
-<span id="cb3-241"><a href="example-dust.html#cb3-241"></a><span class="co"># remove peaks with zero intensities</span></span>
-<span id="cb3-242"><a href="example-dust.html#cb3-242"></a>lspectra &lt;-<span class="st"> </span><span class="kw">lapply</span>(lspectra, <span class="cf">function</span>(x) {x[x<span class="op">$</span>int <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>,]})</span>
-<span id="cb3-243"><a href="example-dust.html#cb3-243"></a></span>
-<span id="cb3-244"><a href="example-dust.html#cb3-244"></a>reduced.peaktable &lt;-<span class="st"> </span><span class="kw">getReducedPeaklist</span>(xs8, <span class="dt">method =</span> <span class="st">&quot;sum&quot;</span>, <span class="dt">intval =</span> <span class="st">&quot;into&quot;</span>, <span class="dt">default.adduct.info =</span> <span class="st">&quot;maxint&quot;</span>, <span class="dt">mzrt.range =</span> <span class="ot">FALSE</span>, <span class="dt">npeaks.sum =</span> <span class="ot">FALSE</span>, <span class="dt">cleanup =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb3-245"><a href="example-dust.html#cb3-245"></a><span class="cf">if</span>(<span class="kw">is.null</span>(small.clusters)<span class="op">==</span><span class="ot">FALSE</span>) {</span>
-<span id="cb3-246"><a href="example-dust.html#cb3-246"></a>  <span class="cf">for</span>(z <span class="cf">in</span> small.clusters)</span>
-<span id="cb3-247"><a href="example-dust.html#cb3-247"></a>  {</span>
-<span id="cb3-248"><a href="example-dust.html#cb3-248"></a>    reduced.peaktable &lt;-<span class="st"> </span>reduced.peaktable[<span class="op">-</span>(<span class="kw">which</span>(reduced.peaktable[, <span class="kw">ncol</span>(reduced.peaktable)]<span class="op">==</span>z)), ]</span>
-<span id="cb3-249"><a href="example-dust.html#cb3-249"></a>  }</span>
-<span id="cb3-250"><a href="example-dust.html#cb3-250"></a>}</span>
-<span id="cb3-251"><a href="example-dust.html#cb3-251"></a><span class="kw">write.csv</span>(reduced.peaktable, <span class="dt">file =</span> <span class="st">&quot;test_peaktable.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with only &quot;compounds&quot; instead of m/z features</span></span>
-<span id="cb3-252"><a href="example-dust.html#cb3-252"></a></span>
-<span id="cb3-253"><a href="example-dust.html#cb3-253"></a>extra &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Name =</span> <span class="kw">paste</span>(<span class="st">&quot;Unknown&quot;</span>, big.clusters, <span class="st">&quot;RT =&quot;</span>,<span class="kw">round</span>(reduced.peaktable<span class="op">$</span>rt<span class="op">/</span><span class="dv">60</span>, <span class="dv">2</span>) ), <span class="dt">Class =</span> <span class="st">&quot;Unknown&quot;</span>, <span class="dt">RT =</span> <span class="kw">round</span>(reduced.peaktable<span class="op">$</span>rt<span class="op">/</span><span class="dv">60</span>, <span class="dv">2</span>),  <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb3-254"><a href="example-dust.html#cb3-254"></a></span>
-<span id="cb3-255"><a href="example-dust.html#cb3-255"></a><span class="co">####KOVATS#####</span></span>
-<span id="cb3-256"><a href="example-dust.html#cb3-256"></a><span class="co">#Adding Kovats retention index to the extra obejct to write to msp</span></span>
-<span id="cb3-257"><a href="example-dust.html#cb3-257"></a>data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">rt =</span> extra<span class="op">$</span>RT)</span>
-<span id="cb3-258"><a href="example-dust.html#cb3-258"></a>alkaneSeries &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Num =</span> <span class="kw">c</span>(<span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>),</span>
-<span id="cb3-259"><a href="example-dust.html#cb3-259"></a>                           <span class="dt">rt =</span> <span class="kw">c</span>(<span class="fl">4.90</span>, <span class="fl">8.00</span>, <span class="fl">11.13</span>, <span class="fl">14.05</span>, <span class="fl">16.70</span>, <span class="fl">19.37</span>, <span class="fl">22.45</span>, <span class="fl">25.77</span>))</span>
-<span id="cb3-260"><a href="example-dust.html#cb3-260"></a></span>
-<span id="cb3-261"><a href="example-dust.html#cb3-261"></a>RI &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">length =</span> <span class="kw">nrow</span>(data))</span>
-<span id="cb3-262"><a href="example-dust.html#cb3-262"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">nrow</span>(data))) {</span>
-<span id="cb3-263"><a href="example-dust.html#cb3-263"></a>  m &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">case_when</span>(</span>
-<span id="cb3-264"><a href="example-dust.html#cb3-264"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">1</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">2</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">1</span>],</span>
-<span id="cb3-265"><a href="example-dust.html#cb3-265"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">2</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">3</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">2</span>],</span>
-<span id="cb3-266"><a href="example-dust.html#cb3-266"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">3</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">4</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">3</span>],</span>
-<span id="cb3-267"><a href="example-dust.html#cb3-267"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">4</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">5</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">4</span>],</span>
-<span id="cb3-268"><a href="example-dust.html#cb3-268"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">5</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">6</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">5</span>],</span>
-<span id="cb3-269"><a href="example-dust.html#cb3-269"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">6</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">7</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">6</span>],</span>
-<span id="cb3-270"><a href="example-dust.html#cb3-270"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">7</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">8</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">7</span>]</span>
-<span id="cb3-271"><a href="example-dust.html#cb3-271"></a>)</span>
-<span id="cb3-272"><a href="example-dust.html#cb3-272"></a></span>
-<span id="cb3-273"><a href="example-dust.html#cb3-273"></a>n &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">case_when</span>(</span>
-<span id="cb3-274"><a href="example-dust.html#cb3-274"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">1</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">2</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">2</span>],</span>
-<span id="cb3-275"><a href="example-dust.html#cb3-275"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">2</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">3</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">3</span>],</span>
-<span id="cb3-276"><a href="example-dust.html#cb3-276"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">3</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">4</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">4</span>],</span>
-<span id="cb3-277"><a href="example-dust.html#cb3-277"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">4</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">5</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">5</span>],</span>
-<span id="cb3-278"><a href="example-dust.html#cb3-278"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">5</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">6</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">6</span>],</span>
-<span id="cb3-279"><a href="example-dust.html#cb3-279"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">6</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">7</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">7</span>],</span>
-<span id="cb3-280"><a href="example-dust.html#cb3-280"></a>  data<span class="op">$</span>rt[i] <span class="op">&gt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">7</span>] <span class="op">&amp;</span><span class="st"> </span>data<span class="op">$</span>rt[i] <span class="op">&lt;=</span><span class="st"> </span>alkaneSeries<span class="op">$</span>rt[<span class="dv">8</span>] <span class="op">~</span><span class="st"> </span>alkaneSeries<span class="op">$</span>Num[<span class="dv">8</span>]</span>
-<span id="cb3-281"><a href="example-dust.html#cb3-281"></a>)</span>
-<span id="cb3-282"><a href="example-dust.html#cb3-282"></a></span>
-<span id="cb3-283"><a href="example-dust.html#cb3-283"></a></span>
-<span id="cb3-284"><a href="example-dust.html#cb3-284"></a>RI[i] &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span>n <span class="op">+</span><span class="st"> </span><span class="dv">100</span><span class="op">*</span>(m<span class="op">-</span>n) <span class="op">*</span><span class="st"> </span>(data<span class="op">$</span>rt[i] <span class="op">-</span><span class="st"> </span>alkaneSeries[alkaneSeries<span class="op">$</span>Num <span class="op">==</span><span class="st"> </span>n,]<span class="op">$</span>rt)<span class="op">/</span>(alkaneSeries[alkaneSeries<span class="op">$</span>Num <span class="op">==</span><span class="st"> </span>m,]<span class="op">$</span>rt <span class="op">-</span><span class="st"> </span>alkaneSeries[alkaneSeries<span class="op">$</span>Num <span class="op">==</span><span class="st"> </span>n,]<span class="op">$</span>rt), <span class="dv">0</span>)</span>
-<span id="cb3-285"><a href="example-dust.html#cb3-285"></a>}</span>
-<span id="cb3-286"><a href="example-dust.html#cb3-286"></a></span>
-<span id="cb3-287"><a href="example-dust.html#cb3-287"></a>extra &lt;-<span class="st"> </span><span class="kw">cbind</span>(extra, RI)</span>
-<span id="cb3-288"><a href="example-dust.html#cb3-288"></a></span>
-<span id="cb3-289"><a href="example-dust.html#cb3-289"></a><span class="co">######</span><span class="re">END</span><span class="co"> KOVATS######</span></span>
-<span id="cb3-290"><a href="example-dust.html#cb3-290"></a></span>
-<span id="cb3-291"><a href="example-dust.html#cb3-291"></a><span class="co"># create the msp object with spectra and all meta information in the extra object (NAME, RETENTIONTIME, RETENTIONINDEX)</span></span>
-<span id="cb3-292"><a href="example-dust.html#cb3-292"></a>export.msp &lt;-<span class="st"> </span><span class="kw">construct.msp</span>(lspectra, extra)</span>
-<span id="cb3-293"><a href="example-dust.html#cb3-293"></a></span>
-<span id="cb3-294"><a href="example-dust.html#cb3-294"></a><span class="kw">write.msp</span>(export.msp, <span class="dt">file =</span> <span class="st">&quot;test_spectra.msp&quot;</span>) <span class="co">#This creates a NIST MS Search compatible .msp file with all compound pseudospectra</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="example-dust.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#first define the working directory (folder with experimental group folders inside)</span></span>
+<span id="cb3-2"><a href="example-dust.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mzMLfiles &lt;- list.files(path = &quot;/mzXML/&quot;,pattern = &quot;.mzXML&quot;, recursive = TRUE, full.names = TRUE)</span></span>
+<span id="cb3-3"><a href="example-dust.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove files containing &quot;Hex&quot;, blank samples</span></span>
+<span id="cb3-4"><a href="example-dust.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># mzMLfiles &lt;- mzMLfiles[-grep(&quot;Hex&quot;, mzMLfiles)]</span></span>
+<span id="cb3-5"><a href="example-dust.html#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="example-dust.html#cb3-6" aria-hidden="true" tabindex="-1"></a>sample_info <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">&quot;Sample_list_NTA_dust.xlsx&quot;</span>,</span>
+<span id="cb3-7"><a href="example-dust.html#cb3-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">sheet =</span> <span class="st">&quot;Sample_xcms&quot;</span>)</span>
+<span id="cb3-8"><a href="example-dust.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># filter only samples</span></span>
+<span id="cb3-9"><a href="example-dust.html#cb3-9" aria-hidden="true" tabindex="-1"></a>sample_info <span class="ot">&lt;-</span> sample_info <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="example-dust.html#cb3-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span>(group <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;blank_solvent&quot;</span>)))</span>
+<span id="cb3-11"><a href="example-dust.html#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="example-dust.html#cb3-12" aria-hidden="true" tabindex="-1"></a>pd <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sample_name =</span> <span class="fu">paste0</span>(sample_info<span class="sc">$</span>analysis, <span class="st">&quot;.mzXML&quot;</span>),</span>
+<span id="cb3-13"><a href="example-dust.html#cb3-13" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sample_group =</span> sample_info<span class="sc">$</span>group,</span>
+<span id="cb3-14"><a href="example-dust.html#cb3-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-15"><a href="example-dust.html#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="example-dust.html#cb3-16" aria-hidden="true" tabindex="-1"></a>mzXMLfiles <span class="ot">&lt;-</span> <span class="fu">paste0</span>(sample_info<span class="sc">$</span>path, <span class="st">&quot;/&quot;</span>, sample_info<span class="sc">$</span>analysis, <span class="st">&quot;.mzXML&quot;</span>)</span>
+<span id="cb3-17"><a href="example-dust.html#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="example-dust.html#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="example-dust.html#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="example-dust.html#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Use subset to test</span></span>
+<span id="cb3-21"><a href="example-dust.html#cb3-21" aria-hidden="true" tabindex="-1"></a>pd <span class="ot">&lt;-</span> pd[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span>
+<span id="cb3-22"><a href="example-dust.html#cb3-22" aria-hidden="true" tabindex="-1"></a>mzXMLfiles <span class="ot">&lt;-</span> mzXMLfiles[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
+<span id="cb3-23"><a href="example-dust.html#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="example-dust.html#cb3-24" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">readMSData</span>(mzXMLfiles, </span>
+<span id="cb3-25"><a href="example-dust.html#cb3-25" aria-hidden="true" tabindex="-1"></a>                         <span class="at">pdata =</span> <span class="fu">new</span>(<span class="st">&quot;NAnnotatedDataFrame&quot;</span>, pd),</span>
+<span id="cb3-26"><a href="example-dust.html#cb3-26" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mode =</span> <span class="st">&quot;onDisk&quot;</span>)</span>
+<span id="cb3-27"><a href="example-dust.html#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="example-dust.html#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co"># pd &lt;- pd %&gt;% dplyr::filter(sample_group != &quot;IS&quot;) %&gt;% dplyr::filter(sample_group != &quot;RTI&quot;)</span></span>
+<span id="cb3-29"><a href="example-dust.html#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="example-dust.html#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">#-----Find features----#</span></span>
+<span id="cb3-31"><a href="example-dust.html#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="example-dust.html#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co"># centWave params</span></span>
+<span id="cb3-33"><a href="example-dust.html#cb3-33" aria-hidden="true" tabindex="-1"></a>cwp <span class="ot">&lt;-</span> <span class="fu">CentWaveParam</span>(<span class="at">ppm =</span> <span class="dv">5</span>,</span>
+<span id="cb3-34"><a href="example-dust.html#cb3-34" aria-hidden="true" tabindex="-1"></a>                     <span class="at">peakwidth =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">45</span>),</span>
+<span id="cb3-35"><a href="example-dust.html#cb3-35" aria-hidden="true" tabindex="-1"></a>                     <span class="at">snthresh =</span> <span class="dv">10</span>,</span>
+<span id="cb3-36"><a href="example-dust.html#cb3-36" aria-hidden="true" tabindex="-1"></a>                     <span class="at">prefilter =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">30000</span>),</span>
+<span id="cb3-37"><a href="example-dust.html#cb3-37" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mzCenterFun =</span> <span class="st">&quot;wMean&quot;</span>,</span>
+<span id="cb3-38"><a href="example-dust.html#cb3-38" aria-hidden="true" tabindex="-1"></a>                     <span class="at">integrate =</span> 1L,</span>
+<span id="cb3-39"><a href="example-dust.html#cb3-39" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mzdiff =</span> <span class="sc">-</span><span class="fl">0.001</span>,</span>
+<span id="cb3-40"><a href="example-dust.html#cb3-40" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fitgauss =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-41"><a href="example-dust.html#cb3-41" aria-hidden="true" tabindex="-1"></a>                     <span class="at">noise =</span> <span class="dv">30000</span>,</span>
+<span id="cb3-42"><a href="example-dust.html#cb3-42" aria-hidden="true" tabindex="-1"></a>                     <span class="at">verboseColumns =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-43"><a href="example-dust.html#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="example-dust.html#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="example-dust.html#cb3-45" aria-hidden="true" tabindex="-1"></a>xs1 <span class="ot">&lt;-</span> <span class="fu">findChromPeaks</span>(mzXMLfiles, <span class="at">param =</span> cwp)</span>
+<span id="cb3-46"><a href="example-dust.html#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="example-dust.html#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co"># use model peak to evaluate process</span></span>
+<span id="cb3-48"><a href="example-dust.html#cb3-48" aria-hidden="true" tabindex="-1"></a>rtr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1440</span>, <span class="dv">1460</span>)</span>
+<span id="cb3-49"><a href="example-dust.html#cb3-49" aria-hidden="true" tabindex="-1"></a>mzr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">340.238</span>, <span class="fl">340.242</span>)</span>
+<span id="cb3-50"><a href="example-dust.html#cb3-50" aria-hidden="true" tabindex="-1"></a>chr_raw <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(mzXMLfiles, <span class="at">mz =</span> mzr, <span class="at">rt =</span> rtr)</span>
+<span id="cb3-51"><a href="example-dust.html#cb3-51" aria-hidden="true" tabindex="-1"></a>chr_mzr <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(xs1, <span class="at">mz =</span> mzr, <span class="at">rt =</span> rtr)</span>
+<span id="cb3-52"><a href="example-dust.html#cb3-52" aria-hidden="true" tabindex="-1"></a>group_colors <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">brewer.pal</span>(<span class="dv">3</span>, <span class="st">&quot;Set1&quot;</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="st">&quot;60&quot;</span>)</span>
+<span id="cb3-53"><a href="example-dust.html#cb3-53" aria-hidden="true" tabindex="-1"></a>sample_colors <span class="ot">&lt;-</span> group_colors[xs1<span class="sc">$</span>sample_group]</span>
+<span id="cb3-54"><a href="example-dust.html#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="example-dust.html#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="example-dust.html#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="co">#----Group features 1----#</span></span>
+<span id="cb3-57"><a href="example-dust.html#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-58"><a href="example-dust.html#cb3-58" aria-hidden="true" tabindex="-1"></a>pdp <span class="ot">&lt;-</span> <span class="fu">PeakDensityParam</span>(</span>
+<span id="cb3-59"><a href="example-dust.html#cb3-59" aria-hidden="true" tabindex="-1"></a>  <span class="at">sampleGroups =</span> pd<span class="sc">$</span>sample_group,</span>
+<span id="cb3-60"><a href="example-dust.html#cb3-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">bw =</span> <span class="dv">10</span>,</span>
+<span id="cb3-61"><a href="example-dust.html#cb3-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">minFraction =</span> <span class="dv">0</span>,</span>
+<span id="cb3-62"><a href="example-dust.html#cb3-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">minSamples =</span> <span class="dv">1</span>,</span>
+<span id="cb3-63"><a href="example-dust.html#cb3-63" aria-hidden="true" tabindex="-1"></a>  <span class="at">binSize =</span> <span class="fl">0.002</span>,</span>
+<span id="cb3-64"><a href="example-dust.html#cb3-64" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxFeatures =</span> <span class="dv">1000</span>)</span>
+<span id="cb3-65"><a href="example-dust.html#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="example-dust.html#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-67"><a href="example-dust.html#cb3-67" aria-hidden="true" tabindex="-1"></a>xs2 <span class="ot">&lt;-</span> <span class="fu">groupChromPeaks</span>(xs1, <span class="at">param =</span> pdp)</span>
+<span id="cb3-68"><a href="example-dust.html#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="example-dust.html#cb3-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-70"><a href="example-dust.html#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="fu">plotChromPeakDensity</span>(chr_mzr, <span class="at">col =</span> sample_colors, <span class="at">param =</span> pdp)</span>
+<span id="cb3-71"><a href="example-dust.html#cb3-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-72"><a href="example-dust.html#cb3-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-73"><a href="example-dust.html#cb3-73" aria-hidden="true" tabindex="-1"></a><span class="co">#----retention time correction----#</span></span>
+<span id="cb3-74"><a href="example-dust.html#cb3-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-75"><a href="example-dust.html#cb3-75" aria-hidden="true" tabindex="-1"></a>obip <span class="ot">&lt;-</span> <span class="fu">ObiwarpParam</span>(<span class="at">binSize =</span> <span class="fl">0.05</span>,  <span class="co"># need to check optimal binSize</span></span>
+<span id="cb3-76"><a href="example-dust.html#cb3-76" aria-hidden="true" tabindex="-1"></a>                     <span class="at">centerSample =</span> <span class="fu">integer</span>(),</span>
+<span id="cb3-77"><a href="example-dust.html#cb3-77" aria-hidden="true" tabindex="-1"></a>                     <span class="at">response =</span> 1L,</span>
+<span id="cb3-78"><a href="example-dust.html#cb3-78" aria-hidden="true" tabindex="-1"></a>                     <span class="at">distFun =</span> <span class="st">&quot;cor_opt&quot;</span>,</span>
+<span id="cb3-79"><a href="example-dust.html#cb3-79" aria-hidden="true" tabindex="-1"></a>                     <span class="at">gapInit =</span> <span class="fu">numeric</span>(),</span>
+<span id="cb3-80"><a href="example-dust.html#cb3-80" aria-hidden="true" tabindex="-1"></a>                     <span class="at">gapExtend =</span> <span class="fu">numeric</span>(),</span>
+<span id="cb3-81"><a href="example-dust.html#cb3-81" aria-hidden="true" tabindex="-1"></a>                     <span class="at">factorDiag =</span> <span class="dv">2</span>,</span>
+<span id="cb3-82"><a href="example-dust.html#cb3-82" aria-hidden="true" tabindex="-1"></a>                     <span class="at">factorGap =</span> <span class="dv">1</span>,</span>
+<span id="cb3-83"><a href="example-dust.html#cb3-83" aria-hidden="true" tabindex="-1"></a>                     <span class="at">localAlignment =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-84"><a href="example-dust.html#cb3-84" aria-hidden="true" tabindex="-1"></a>                     <span class="at">initPenalty =</span> <span class="dv">0</span>,</span>
+<span id="cb3-85"><a href="example-dust.html#cb3-85" aria-hidden="true" tabindex="-1"></a>                     <span class="at">subset =</span> <span class="fu">integer</span>(),</span>
+<span id="cb3-86"><a href="example-dust.html#cb3-86" aria-hidden="true" tabindex="-1"></a>                     <span class="at">subsetAdjust =</span> <span class="fu">c</span>(<span class="st">&quot;average&quot;</span>, <span class="st">&quot;previous&quot;</span>))</span>
+<span id="cb3-87"><a href="example-dust.html#cb3-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-88"><a href="example-dust.html#cb3-88" aria-hidden="true" tabindex="-1"></a>xs3 <span class="ot">&lt;-</span> <span class="fu">adjustRtime</span>(xs2, <span class="at">param =</span> obip)</span>
+<span id="cb3-89"><a href="example-dust.html#cb3-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-90"><a href="example-dust.html#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the base peak chromatograms</span></span>
+<span id="cb3-91"><a href="example-dust.html#cb3-91" aria-hidden="true" tabindex="-1"></a>bpis_adj <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(xs3, <span class="at">aggregationFun =</span> <span class="st">&quot;max&quot;</span>, <span class="at">include =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb3-92"><a href="example-dust.html#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="fl">4.5</span>, <span class="fl">4.2</span>, <span class="dv">1</span>, <span class="fl">0.5</span>))</span>
+<span id="cb3-93"><a href="example-dust.html#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bpis_adj)</span>
+<span id="cb3-94"><a href="example-dust.html#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot also the difference of adjusted to raw retention time.</span></span>
+<span id="cb3-95"><a href="example-dust.html#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAdjustedRtime</span>(xs3)</span>
+<span id="cb3-96"><a href="example-dust.html#cb3-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-97"><a href="example-dust.html#cb3-97" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span>
+<span id="cb3-98"><a href="example-dust.html#cb3-98" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the raw data</span></span>
+<span id="cb3-99"><a href="example-dust.html#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(chr_raw)</span>
+<span id="cb3-100"><a href="example-dust.html#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-101"><a href="example-dust.html#cb3-101" aria-hidden="true" tabindex="-1"></a><span class="do">## Extract the chromatogram from the adjusted object</span></span>
+<span id="cb3-102"><a href="example-dust.html#cb3-102" aria-hidden="true" tabindex="-1"></a>chr_adj <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(xs3, <span class="at">rt =</span> rtr, <span class="at">mz =</span> mzr)</span>
+<span id="cb3-103"><a href="example-dust.html#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(chr_adj, <span class="at">peakType =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb3-104"><a href="example-dust.html#cb3-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-105"><a href="example-dust.html#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-106"><a href="example-dust.html#cb3-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-107"><a href="example-dust.html#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="co">#----Group features 2----#</span></span>
+<span id="cb3-108"><a href="example-dust.html#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="co"># After retention time correction, the rt values are modified and additional grouping is needed.</span></span>
+<span id="cb3-109"><a href="example-dust.html#cb3-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-110"><a href="example-dust.html#cb3-110" aria-hidden="true" tabindex="-1"></a>pdp2 <span class="ot">&lt;-</span> <span class="fu">PeakDensityParam</span>(</span>
+<span id="cb3-111"><a href="example-dust.html#cb3-111" aria-hidden="true" tabindex="-1"></a>  <span class="at">sampleGroups =</span> pd<span class="sc">$</span>sample_group,</span>
+<span id="cb3-112"><a href="example-dust.html#cb3-112" aria-hidden="true" tabindex="-1"></a>  <span class="at">bw =</span> <span class="dv">5</span>,</span>
+<span id="cb3-113"><a href="example-dust.html#cb3-113" aria-hidden="true" tabindex="-1"></a>  <span class="at">minFraction =</span> <span class="dv">0</span>,</span>
+<span id="cb3-114"><a href="example-dust.html#cb3-114" aria-hidden="true" tabindex="-1"></a>  <span class="at">minSamples =</span> <span class="dv">1</span>,</span>
+<span id="cb3-115"><a href="example-dust.html#cb3-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">binSize =</span> <span class="fl">0.2</span>,</span>
+<span id="cb3-116"><a href="example-dust.html#cb3-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxFeatures =</span> <span class="dv">1000</span>)</span>
+<span id="cb3-117"><a href="example-dust.html#cb3-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-118"><a href="example-dust.html#cb3-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-119"><a href="example-dust.html#cb3-119" aria-hidden="true" tabindex="-1"></a>xs4 <span class="ot">&lt;-</span> <span class="fu">groupChromPeaks</span>(xs3, <span class="at">param =</span> pdp2)</span>
+<span id="cb3-120"><a href="example-dust.html#cb3-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-121"><a href="example-dust.html#cb3-121" aria-hidden="true" tabindex="-1"></a>xs4_chrom <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(xs4, <span class="at">mz =</span> mzr, <span class="at">rt =</span> rtr)</span>
+<span id="cb3-122"><a href="example-dust.html#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="fu">plotChromPeakDensity</span>(xs4_chrom, <span class="at">col =</span> sample_colors, <span class="at">param =</span> pdp2)</span>
+<span id="cb3-123"><a href="example-dust.html#cb3-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-124"><a href="example-dust.html#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="co"># iteratively decrease the binSize</span></span>
+<span id="cb3-125"><a href="example-dust.html#cb3-125" aria-hidden="true" tabindex="-1"></a>pdp3 <span class="ot">&lt;-</span> <span class="fu">PeakDensityParam</span>(</span>
+<span id="cb3-126"><a href="example-dust.html#cb3-126" aria-hidden="true" tabindex="-1"></a>  <span class="at">sampleGroups =</span> pd<span class="sc">$</span>sample_group,</span>
+<span id="cb3-127"><a href="example-dust.html#cb3-127" aria-hidden="true" tabindex="-1"></a>  <span class="at">bw =</span> <span class="dv">2</span>,</span>
+<span id="cb3-128"><a href="example-dust.html#cb3-128" aria-hidden="true" tabindex="-1"></a>  <span class="at">minFraction =</span> <span class="dv">0</span>,</span>
+<span id="cb3-129"><a href="example-dust.html#cb3-129" aria-hidden="true" tabindex="-1"></a>  <span class="at">minSamples =</span> <span class="dv">1</span>,</span>
+<span id="cb3-130"><a href="example-dust.html#cb3-130" aria-hidden="true" tabindex="-1"></a>  <span class="at">binSize =</span> <span class="fl">0.002</span>,</span>
+<span id="cb3-131"><a href="example-dust.html#cb3-131" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxFeatures =</span> <span class="dv">1000</span>)</span>
+<span id="cb3-132"><a href="example-dust.html#cb3-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-133"><a href="example-dust.html#cb3-133" aria-hidden="true" tabindex="-1"></a>xs4 <span class="ot">&lt;-</span> <span class="fu">groupChromPeaks</span>(xs4, <span class="at">param =</span> pdp3)</span>
+<span id="cb3-134"><a href="example-dust.html#cb3-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-135"><a href="example-dust.html#cb3-135" aria-hidden="true" tabindex="-1"></a>xs4_chrom <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(xs4, <span class="at">mz =</span> mzr, <span class="at">rt =</span> rtr)</span>
+<span id="cb3-136"><a href="example-dust.html#cb3-136" aria-hidden="true" tabindex="-1"></a><span class="fu">plotChromPeakDensity</span>(xs4_chrom, <span class="at">col =</span> sample_colors, <span class="at">param =</span> pdp3)</span>
+<span id="cb3-137"><a href="example-dust.html#cb3-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-138"><a href="example-dust.html#cb3-138" aria-hidden="true" tabindex="-1"></a><span class="co">#----Fill missing features----#</span></span>
+<span id="cb3-139"><a href="example-dust.html#cb3-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-140"><a href="example-dust.html#cb3-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-141"><a href="example-dust.html#cb3-141" aria-hidden="true" tabindex="-1"></a>xs5 <span class="ot">&lt;-</span> <span class="fu">fillChromPeaks</span>(xs4)</span>
+<span id="cb3-142"><a href="example-dust.html#cb3-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-143"><a href="example-dust.html#cb3-143" aria-hidden="true" tabindex="-1"></a><span class="do">## Check missing values before filling in peaks</span></span>
+<span id="cb3-144"><a href="example-dust.html#cb3-144" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(<span class="fu">featureValues</span>(xs5, <span class="at">filled =</span> <span class="cn">FALSE</span>), <span class="at">MARGIN =</span> <span class="dv">2</span>,</span>
+<span id="cb3-145"><a href="example-dust.html#cb3-145" aria-hidden="true" tabindex="-1"></a>      <span class="at">FUN =</span> <span class="cf">function</span>(z) <span class="fu">sum</span>(<span class="fu">is.na</span>(z)))</span>
+<span id="cb3-146"><a href="example-dust.html#cb3-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-147"><a href="example-dust.html#cb3-147" aria-hidden="true" tabindex="-1"></a><span class="do">## Missing values after filling in peaks</span></span>
+<span id="cb3-148"><a href="example-dust.html#cb3-148" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(<span class="fu">featureValues</span>(xs5), <span class="at">MARGIN =</span> <span class="dv">2</span>,</span>
+<span id="cb3-149"><a href="example-dust.html#cb3-149" aria-hidden="true" tabindex="-1"></a>      <span class="at">FUN =</span> <span class="cf">function</span>(z) <span class="fu">sum</span>(<span class="fu">is.na</span>(z)))</span>
+<span id="cb3-150"><a href="example-dust.html#cb3-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-151"><a href="example-dust.html#cb3-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-152"><a href="example-dust.html#cb3-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-153"><a href="example-dust.html#cb3-153" aria-hidden="true" tabindex="-1"></a><span class="co">#---- QC ----#</span></span>
+<span id="cb3-154"><a href="example-dust.html#cb3-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-155"><a href="example-dust.html#cb3-155" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract chromatograms of 4 features</span></span>
+<span id="cb3-156"><a href="example-dust.html#cb3-156" aria-hidden="true" tabindex="-1"></a>feature_chroms <span class="ot">&lt;-</span> <span class="fu">featureChromatograms</span>(xs5, <span class="at">features =</span> <span class="dv">10000</span><span class="sc">:</span><span class="dv">10004</span>)</span>
+<span id="cb3-157"><a href="example-dust.html#cb3-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-158"><a href="example-dust.html#cb3-158" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(feature_chroms)</span>
+<span id="cb3-159"><a href="example-dust.html#cb3-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-160"><a href="example-dust.html#cb3-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-161"><a href="example-dust.html#cb3-161" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">featureValues</span>(xs5, <span class="at">value=</span><span class="st">&quot;into&quot;</span>) <span class="sc">+</span><span class="dv">1</span>, </span>
+<span id="cb3-162"><a href="example-dust.html#cb3-162" aria-hidden="true" tabindex="-1"></a>        <span class="co">#col=as.numeric(sampclass(mtbls2Set))+1, </span></span>
+<span id="cb3-163"><a href="example-dust.html#cb3-163" aria-hidden="true" tabindex="-1"></a>        <span class="at">log=</span><span class="st">&quot;y&quot;</span>, <span class="at">las=</span><span class="dv">2</span>)</span>
+<span id="cb3-164"><a href="example-dust.html#cb3-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-165"><a href="example-dust.html#cb3-165" aria-hidden="true" tabindex="-1"></a>sdThresh <span class="ot">&lt;-</span> <span class="fl">4.0</span> <span class="do">## Filter low-standard deviation rows for plot</span></span>
+<span id="cb3-166"><a href="example-dust.html#cb3-166" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">featureValues</span>(xs5))<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb3-167"><a href="example-dust.html#cb3-167" aria-hidden="true" tabindex="-1"></a>pca.result <span class="ot">&lt;-</span> <span class="fu">pca</span>(data, <span class="at">nPcs=</span><span class="dv">3</span>)</span>
+<span id="cb3-168"><a href="example-dust.html#cb3-168" aria-hidden="true" tabindex="-1"></a><span class="fu">plotPcs</span>(pca.result, <span class="at">type=</span><span class="st">&quot;loadings&quot;</span>, </span>
+<span id="cb3-169"><a href="example-dust.html#cb3-169" aria-hidden="true" tabindex="-1"></a>        <span class="co">#col=as.numeric(sampclass(mtbls2Set))+1</span></span>
+<span id="cb3-170"><a href="example-dust.html#cb3-170" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb3-171"><a href="example-dust.html#cb3-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-172"><a href="example-dust.html#cb3-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-173"><a href="example-dust.html#cb3-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-174"><a href="example-dust.html#cb3-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-175"><a href="example-dust.html#cb3-175" aria-hidden="true" tabindex="-1"></a><span class="co"># It is possible to use the retention time correction and grouping step in an iterative way if needed. </span></span>
+<span id="cb3-176"><a href="example-dust.html#cb3-176" aria-hidden="true" tabindex="-1"></a><span class="co"># Once you perform your last adjustRtime step and thus your last grouping step, you will obtain your final peak list (i.e. final list of ions)</span></span>
+<span id="cb3-177"><a href="example-dust.html#cb3-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-178"><a href="example-dust.html#cb3-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-179"><a href="example-dust.html#cb3-179" aria-hidden="true" tabindex="-1"></a><span class="co">#----Annotation using CAMERA----#</span></span>
+<span id="cb3-180"><a href="example-dust.html#cb3-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-181"><a href="example-dust.html#cb3-181" aria-hidden="true" tabindex="-1"></a><span class="co"># Since CAMERA has not yet been ported to XCMSnExp,we need to convert to xcmsSet. </span></span>
+<span id="cb3-182"><a href="example-dust.html#cb3-182" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the conversion only makes sense for somple XCMSnSets, </span></span>
+<span id="cb3-183"><a href="example-dust.html#cb3-183" aria-hidden="true" tabindex="-1"></a><span class="co"># without e.g. MS level filtering (where CAMERA would then extract the wrong peaks)</span></span>
+<span id="cb3-184"><a href="example-dust.html#cb3-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-185"><a href="example-dust.html#cb3-185" aria-hidden="true" tabindex="-1"></a>xs6 <span class="ot">&lt;-</span> <span class="fu">as</span>(xs5, <span class="st">&quot;xcmsSet&quot;</span>)</span>
+<span id="cb3-186"><a href="example-dust.html#cb3-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-187"><a href="example-dust.html#cb3-187" aria-hidden="true" tabindex="-1"></a>xs6 <span class="ot">&lt;-</span> <span class="fu">xsAnnotate</span>(<span class="at">xs =</span> xs6, <span class="at">sample=</span><span class="cn">NA</span>, <span class="at">polarity =</span> <span class="st">&quot;positive&quot;</span>)</span>
+<span id="cb3-188"><a href="example-dust.html#cb3-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-189"><a href="example-dust.html#cb3-189" aria-hidden="true" tabindex="-1"></a>xs7 <span class="ot">&lt;-</span> <span class="fu">groupFWHM</span>(xs6, <span class="at">sigma =</span> <span class="dv">6</span> , <span class="at">perfwhm =</span> <span class="dv">2</span>, <span class="at">intval =</span> <span class="st">&quot;maxo&quot;</span>)</span>
+<span id="cb3-190"><a href="example-dust.html#cb3-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-191"><a href="example-dust.html#cb3-191" aria-hidden="true" tabindex="-1"></a>xs8 <span class="ot">&lt;-</span> <span class="fu">groupCorr</span>(xs7, <span class="at">cor_eic_th =</span> <span class="fl">0.8</span>, <span class="at">calcCaS =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-192"><a href="example-dust.html#cb3-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-193"><a href="example-dust.html#cb3-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-194"><a href="example-dust.html#cb3-194" aria-hidden="true" tabindex="-1"></a><span class="co">#how many fragments need to be in a group for it to be included in the results. 5 - trace compounds; 20 - mostly high quality spectra</span></span>
+<span id="cb3-195"><a href="example-dust.html#cb3-195" aria-hidden="true" tabindex="-1"></a>min.clustersize <span class="ot">&lt;-</span> <span class="dv">20</span> </span>
+<span id="cb3-196"><a href="example-dust.html#cb3-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-197"><a href="example-dust.html#cb3-197" aria-hidden="true" tabindex="-1"></a>peaktable <span class="ot">&lt;-</span> <span class="fu">getPeaklist</span>(xs8, <span class="at">intval=</span><span class="st">&quot;into&quot;</span>)</span>
+<span id="cb3-198"><a href="example-dust.html#cb3-198" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(peaktable, <span class="at">file =</span> <span class="st">&quot;test_peaktable.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with all m/z features sorted into &quot;compounds&quot;</span></span>
+<span id="cb3-199"><a href="example-dust.html#cb3-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-200"><a href="example-dust.html#cb3-200" aria-hidden="true" tabindex="-1"></a><span class="co">#the following script identifies all &quot;compounds&quot; considered too small according to min.clustersize</span></span>
+<span id="cb3-201"><a href="example-dust.html#cb3-201" aria-hidden="true" tabindex="-1"></a>peaktable <span class="ot">&lt;-</span> <span class="fu">getPeaklist</span>(xs8, <span class="at">intval=</span><span class="st">&quot;maxo&quot;</span>)</span>
+<span id="cb3-202"><a href="example-dust.html#cb3-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-203"><a href="example-dust.html#cb3-203" aria-hidden="true" tabindex="-1"></a><span class="co"># Replaces NA in intensities with zero</span></span>
+<span id="cb3-204"><a href="example-dust.html#cb3-204" aria-hidden="true" tabindex="-1"></a>peaktable <span class="ot">&lt;-</span> peaktable <span class="sc">%&gt;%</span></span>
+<span id="cb3-205"><a href="example-dust.html#cb3-205" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(dplyr<span class="sc">::</span><span class="fu">across</span>(dplyr<span class="sc">::</span><span class="fu">starts_with</span>(<span class="st">&quot;X&quot;</span>), <span class="sc">~</span>tidyr<span class="sc">::</span><span class="fu">replace_na</span>(., <span class="dv">0</span>)))</span>
+<span id="cb3-206"><a href="example-dust.html#cb3-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-207"><a href="example-dust.html#cb3-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-208"><a href="example-dust.html#cb3-208" aria-hidden="true" tabindex="-1"></a>pcgroups <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">unique</span>(<span class="fu">as.numeric</span>(peaktable<span class="sc">$</span>pcgroup)))</span>
+<span id="cb3-209"><a href="example-dust.html#cb3-209" aria-hidden="true" tabindex="-1"></a>lspectra <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb3-210"><a href="example-dust.html#cb3-210" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb3-211"><a href="example-dust.html#cb3-211" aria-hidden="true" tabindex="-1"></a>small.clusters <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb3-212"><a href="example-dust.html#cb3-212" aria-hidden="true" tabindex="-1"></a>big.clusters <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb3-213"><a href="example-dust.html#cb3-213" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-214"><a href="example-dust.html#cb3-214" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> <span class="fu">seq_along</span>(pcgroups)) {</span>
+<span id="cb3-215"><a href="example-dust.html#cb3-215" aria-hidden="true" tabindex="-1"></a>  clustersize <span class="ot">&lt;-</span> <span class="fu">length</span>(peaktable[peaktable<span class="sc">$</span>pcgroup<span class="sc">==</span>x,<span class="fu">ncol</span>(peaktable)])</span>
+<span id="cb3-216"><a href="example-dust.html#cb3-216" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(clustersize <span class="sc">&lt;</span> <span class="fu">as.numeric</span>(min.clustersize))</span>
+<span id="cb3-217"><a href="example-dust.html#cb3-217" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb3-218"><a href="example-dust.html#cb3-218" aria-hidden="true" tabindex="-1"></a>    small.clusters <span class="ot">&lt;-</span> <span class="fu">c</span>(small.clusters, x)</span>
+<span id="cb3-219"><a href="example-dust.html#cb3-219" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-220"><a href="example-dust.html#cb3-220" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb3-221"><a href="example-dust.html#cb3-221" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb3-222"><a href="example-dust.html#cb3-222" aria-hidden="true" tabindex="-1"></a>    big.clusters <span class="ot">&lt;-</span> <span class="fu">c</span>(big.clusters, x)</span>
+<span id="cb3-223"><a href="example-dust.html#cb3-223" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> peaktable[peaktable<span class="sc">$</span>pcgroup<span class="sc">==</span>x,]</span>
+<span id="cb3-224"><a href="example-dust.html#cb3-224" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> gruppe1[, <span class="sc">-</span>(<span class="dv">2</span><span class="sc">:</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">-</span><span class="dv">3</span><span class="sc">-</span>(<span class="fu">length</span>(mzXMLfiles))))]</span>
+<span id="cb3-225"><a href="example-dust.html#cb3-225" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> gruppe1[, <span class="sc">-</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">:</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">-</span><span class="dv">2</span>))]</span>
+<span id="cb3-226"><a href="example-dust.html#cb3-226" aria-hidden="true" tabindex="-1"></a>    decider <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb3-227"><a href="example-dust.html#cb3-227" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-228"><a href="example-dust.html#cb3-228" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(gruppe1))</span>
+<span id="cb3-229"><a href="example-dust.html#cb3-229" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb3-230"><a href="example-dust.html#cb3-230" aria-hidden="true" tabindex="-1"></a>      decider <span class="ot">&lt;-</span> <span class="fu">c</span>(decider, <span class="fu">sum</span>(gruppe1[, i]))</span>
+<span id="cb3-231"><a href="example-dust.html#cb3-231" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-232"><a href="example-dust.html#cb3-232" aria-hidden="true" tabindex="-1"></a>    highest <span class="ot">&lt;-</span> <span class="fu">which</span>(decider<span class="sc">==</span><span class="fu">max</span>(decider), <span class="at">arr.ind =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-233"><a href="example-dust.html#cb3-233" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(gruppe1[, <span class="dv">1</span>], gruppe1[, highest[<span class="dv">1</span>]<span class="sc">+</span><span class="dv">1</span>])</span>
+<span id="cb3-234"><a href="example-dust.html#cb3-234" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(gruppe1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mz&quot;</span>, <span class="st">&quot;int&quot;</span>)</span>
+<span id="cb3-235"><a href="example-dust.html#cb3-235" aria-hidden="true" tabindex="-1"></a>    lspectra[[n]] <span class="ot">&lt;-</span> gruppe1</span>
+<span id="cb3-236"><a href="example-dust.html#cb3-236" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb3-237"><a href="example-dust.html#cb3-237" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-238"><a href="example-dust.html#cb3-238" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-239"><a href="example-dust.html#cb3-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-240"><a href="example-dust.html#cb3-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-241"><a href="example-dust.html#cb3-241" aria-hidden="true" tabindex="-1"></a><span class="co"># remove peaks with zero intensities</span></span>
+<span id="cb3-242"><a href="example-dust.html#cb3-242" aria-hidden="true" tabindex="-1"></a>lspectra <span class="ot">&lt;-</span> <span class="fu">lapply</span>(lspectra, <span class="cf">function</span>(x) {x[x<span class="sc">$</span>int <span class="sc">!=</span> <span class="dv">0</span>,]})</span>
+<span id="cb3-243"><a href="example-dust.html#cb3-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-244"><a href="example-dust.html#cb3-244" aria-hidden="true" tabindex="-1"></a>reduced.peaktable <span class="ot">&lt;-</span> <span class="fu">getReducedPeaklist</span>(xs8, <span class="at">method =</span> <span class="st">&quot;sum&quot;</span>, <span class="at">intval =</span> <span class="st">&quot;into&quot;</span>, <span class="at">default.adduct.info =</span> <span class="st">&quot;maxint&quot;</span>, <span class="at">mzrt.range =</span> <span class="cn">FALSE</span>, <span class="at">npeaks.sum =</span> <span class="cn">FALSE</span>, <span class="at">cleanup =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-245"><a href="example-dust.html#cb3-245" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">is.null</span>(small.clusters)<span class="sc">==</span><span class="cn">FALSE</span>) {</span>
+<span id="cb3-246"><a href="example-dust.html#cb3-246" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(z <span class="cf">in</span> small.clusters)</span>
+<span id="cb3-247"><a href="example-dust.html#cb3-247" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb3-248"><a href="example-dust.html#cb3-248" aria-hidden="true" tabindex="-1"></a>    reduced.peaktable <span class="ot">&lt;-</span> reduced.peaktable[<span class="sc">-</span>(<span class="fu">which</span>(reduced.peaktable[, <span class="fu">ncol</span>(reduced.peaktable)]<span class="sc">==</span>z)), ]</span>
+<span id="cb3-249"><a href="example-dust.html#cb3-249" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-250"><a href="example-dust.html#cb3-250" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-251"><a href="example-dust.html#cb3-251" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(reduced.peaktable, <span class="at">file =</span> <span class="st">&quot;test_peaktable.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with only &quot;compounds&quot; instead of m/z features</span></span>
+<span id="cb3-252"><a href="example-dust.html#cb3-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-253"><a href="example-dust.html#cb3-253" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Name =</span> <span class="fu">paste</span>(<span class="st">&quot;Unknown&quot;</span>, big.clusters, <span class="st">&quot;RT =&quot;</span>,<span class="fu">round</span>(reduced.peaktable<span class="sc">$</span>rt<span class="sc">/</span><span class="dv">60</span>, <span class="dv">2</span>) ), <span class="at">Class =</span> <span class="st">&quot;Unknown&quot;</span>, <span class="at">RT =</span> <span class="fu">round</span>(reduced.peaktable<span class="sc">$</span>rt<span class="sc">/</span><span class="dv">60</span>, <span class="dv">2</span>),  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-254"><a href="example-dust.html#cb3-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-255"><a href="example-dust.html#cb3-255" aria-hidden="true" tabindex="-1"></a><span class="do">####KOVATS#####</span></span>
+<span id="cb3-256"><a href="example-dust.html#cb3-256" aria-hidden="true" tabindex="-1"></a><span class="co">#Adding Kovats retention index to the extra obejct to write to msp</span></span>
+<span id="cb3-257"><a href="example-dust.html#cb3-257" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">rt =</span> extra<span class="sc">$</span>RT)</span>
+<span id="cb3-258"><a href="example-dust.html#cb3-258" aria-hidden="true" tabindex="-1"></a>alkaneSeries <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Num =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>),</span>
+<span id="cb3-259"><a href="example-dust.html#cb3-259" aria-hidden="true" tabindex="-1"></a>                           <span class="at">rt =</span> <span class="fu">c</span>(<span class="fl">4.90</span>, <span class="fl">8.00</span>, <span class="fl">11.13</span>, <span class="fl">14.05</span>, <span class="fl">16.70</span>, <span class="fl">19.37</span>, <span class="fl">22.45</span>, <span class="fl">25.77</span>))</span>
+<span id="cb3-260"><a href="example-dust.html#cb3-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-261"><a href="example-dust.html#cb3-261" aria-hidden="true" tabindex="-1"></a>RI <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="fu">nrow</span>(data))</span>
+<span id="cb3-262"><a href="example-dust.html#cb3-262" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(data))) {</span>
+<span id="cb3-263"><a href="example-dust.html#cb3-263" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb3-264"><a href="example-dust.html#cb3-264" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">1</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">1</span>],</span>
+<span id="cb3-265"><a href="example-dust.html#cb3-265" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">2</span>],</span>
+<span id="cb3-266"><a href="example-dust.html#cb3-266" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">3</span>],</span>
+<span id="cb3-267"><a href="example-dust.html#cb3-267" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">4</span>],</span>
+<span id="cb3-268"><a href="example-dust.html#cb3-268" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">5</span>],</span>
+<span id="cb3-269"><a href="example-dust.html#cb3-269" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">6</span>],</span>
+<span id="cb3-270"><a href="example-dust.html#cb3-270" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">8</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">7</span>]</span>
+<span id="cb3-271"><a href="example-dust.html#cb3-271" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-272"><a href="example-dust.html#cb3-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-273"><a href="example-dust.html#cb3-273" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb3-274"><a href="example-dust.html#cb3-274" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">1</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">2</span>],</span>
+<span id="cb3-275"><a href="example-dust.html#cb3-275" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">3</span>],</span>
+<span id="cb3-276"><a href="example-dust.html#cb3-276" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">4</span>],</span>
+<span id="cb3-277"><a href="example-dust.html#cb3-277" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">5</span>],</span>
+<span id="cb3-278"><a href="example-dust.html#cb3-278" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">6</span>],</span>
+<span id="cb3-279"><a href="example-dust.html#cb3-279" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">7</span>],</span>
+<span id="cb3-280"><a href="example-dust.html#cb3-280" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">8</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">8</span>]</span>
+<span id="cb3-281"><a href="example-dust.html#cb3-281" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-282"><a href="example-dust.html#cb3-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-283"><a href="example-dust.html#cb3-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-284"><a href="example-dust.html#cb3-284" aria-hidden="true" tabindex="-1"></a>RI[i] <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>n <span class="sc">+</span> <span class="dv">100</span><span class="sc">*</span>(m<span class="sc">-</span>n) <span class="sc">*</span> (data<span class="sc">$</span>rt[i] <span class="sc">-</span> alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> n,]<span class="sc">$</span>rt)<span class="sc">/</span>(alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> m,]<span class="sc">$</span>rt <span class="sc">-</span> alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> n,]<span class="sc">$</span>rt), <span class="dv">0</span>)</span>
+<span id="cb3-285"><a href="example-dust.html#cb3-285" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-286"><a href="example-dust.html#cb3-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-287"><a href="example-dust.html#cb3-287" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="fu">cbind</span>(extra, RI)</span>
+<span id="cb3-288"><a href="example-dust.html#cb3-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-289"><a href="example-dust.html#cb3-289" aria-hidden="true" tabindex="-1"></a><span class="do">######</span><span class="re">END</span><span class="do"> KOVATS######</span></span>
+<span id="cb3-290"><a href="example-dust.html#cb3-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-291"><a href="example-dust.html#cb3-291" aria-hidden="true" tabindex="-1"></a><span class="co"># create the msp object with spectra and all meta information in the extra object (NAME, RETENTIONTIME, RETENTIONINDEX)</span></span>
+<span id="cb3-292"><a href="example-dust.html#cb3-292" aria-hidden="true" tabindex="-1"></a>export.msp <span class="ot">&lt;-</span> <span class="fu">construct.msp</span>(lspectra, extra)</span>
+<span id="cb3-293"><a href="example-dust.html#cb3-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-294"><a href="example-dust.html#cb3-294" aria-hidden="true" tabindex="-1"></a><span class="fu">write.msp</span>(export.msp, <span class="at">file =</span> <span class="st">&quot;test_spectra.msp&quot;</span>) <span class="co">#This creates a NIST MS Search compatible .msp file with all compound pseudospectra</span></span></code></pre></div>
 </div>
-<div id="lc-hrms-using-waters-mse-dia-workflow" class="section level2">
+<div id="lc-hrms-using-waters-mse-dia-workflow" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> <strong>LC-HRMS using Waters MSe DIA workflow</strong></h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="example-dust.html#cb4-1"></a><span class="kw">library</span>(xcms)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="example-dust.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xcms)</span></code></pre></div>
 <pre><code>## Loading required package: Biobase</code></pre>
 <pre><code>## Loading required package: BiocGenerics</code></pre>
 <pre><code>## Loading required package: parallel</code></pre>
@@ -776,7 +794,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## The following object is masked from &#39;package:stats&#39;:
 ## 
 ##     sigma</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="example-dust.html#cb37-1"></a><span class="kw">library</span>(magrittr)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="example-dust.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;magrittr&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:purrr&#39;:
@@ -785,7 +803,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## The following object is masked from &#39;package:tidyr&#39;:
 ## 
 ##     extract</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="example-dust.html#cb41-1"></a><span class="kw">library</span>(RAMClustR)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="example-dust.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RAMClustR)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;RAMClustR&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:ggplot2&#39;:

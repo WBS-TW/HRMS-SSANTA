@@ -159,10 +159,8 @@ Examples could be the location, group,
 
 
 
-## Chemical analysis
-xx
-<br>
-
+## Chemical analysis  
+Sample order is important and should be noted in the sample information sheet. This can be important in downstream data analysis, e.g. retention time correction can be more efficiently corrected if the sample order are correctly set.
 
 
 
