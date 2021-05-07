@@ -6,4 +6,129 @@
 ## Classyfire  
 
 
+```{r eval=FALSE, include=FALSE, echo=TRUE}
+library(readxl)
+library(tidyverse)
+library(jsonlite)
+library(ChemmineR)
+library(classyfireR)
+library(writexl)
+
+
+
+# PubChemLite <- read_csv("D:/Projects/Non-target screening/Manuscript/MDPlotR/Data/PubChemLite_31Oct2020_exposomics.csv", n_max = 100)
+# 
+# Classification_List <- purrr::map(PubChemLite$InChIKey, get_classification)
+# 
+# Groupings <- purrr::map(Classification_List, classification)
+# 
+# names(Groupings) <- PubChemLite$Identifier
+
+#######
+
+
+PubChemLite <- read_csv("/home/ORUNET.ORU.SE/twg/Windows_home/Raw_Data/PubChemLite_31Oct2020_exposomics.csv")
+
+
+
+
+
+# Using classyfireR to group hit list
+
+inchi_keys <- PubChemLite$InChIKey
+
+res <- tibble(Identifier = NULL, Level = NULL, Classification = NULL, CHEMONT = NULL)
+
+classify <- get_classification(inchi_keys[1])
+class_df <- classify@classification
+class_df <- class_df %>%
+  mutate(Identifier = paste(PubChemLite[1,1])) %>%
+  select(Identifier, everything())
+res <- rbind(class_df)
+
+for (i in 2:length(inchi_keys)) {
+    tryCatch({
+      print(i)
+      classify <- get_classification(inchi_keys[i])
+      class_df <- classify@classification
+      class_df <- class_df %>%
+        mutate(Identifier = paste(PubChemLite[i,1])) %>%
+        select(Identifier, everything())    
+      res <- res %>%
+        full_join(class_df)
+      rm(classify, class_df)
+      #Sys.sleep(6) # Classyfire API restricts requests to 12 per minute. Not anymore?
+    },error = function(e){}) 
+}
+
+# res <- res %>% rename(Identifier = id)
+res <- res %>% mutate(Identifier = as.numeric(Identifier))
+
+#  grouping data
+
+res %>%
+  group_by(Level) %>%
+  tally()
+
+res2 <- res %>%
+  left_join(PubChemLite, by = "Identifier")
+
+res_class <- res %>%
+  filter(Level == "class") %>%
+  left_join(PubChemLite, by = "Identifier")
+
+res_subclass <- res %>%
+  filter(Level == "subclass") %>%
+  left_join(PubChemLite, by = "Identifier")
+
+res_lvl5 <- res %>%
+  filter(Level == "level 5") %>%
+  left_join(PubChemLite, by = "Identifier")
+
+res_lvl6 <- res %>%
+  filter(Level == "level 6") %>%
+  left_join(PubChemLite, by = "Identifier")
+
+res_lvl7 <- res %>%
+  filter(Level == "level 7") %>%
+  left_join(PubChemLite, by = "Identifier")
+
+res_lvl8 <- res %>%
+  filter(Level == "level 8") %>%
+  left_join(PubChemLite, by = "Identifier")
+
+# write to excel
+write_xlsx(list(all_results = res2,
+                class = res_class,
+                subclass = res_subclass,
+                level5 = res_lvl5,
+                level6 = res_lvl6,
+                level7 = res_lvl7,
+                level8 = res_lvl8),
+           path = "/home/ORUNET.ORU.SE/twg/Windows_home/Raw_Data/PubChemLite_31Oct2020_exposomics_classyfire_grouped.xlsx")
+
+
+# write only individual groups
+write_xlsx(list(class = res_class,
+                subclass = res_subclass,
+                level5 = res_lvl5,
+                level6 = res_lvl6,
+                level7 = res_lvl7,
+                level8 = res_lvl8),
+           path = "/home/ORUNET.ORU.SE/twg/Windows_home/Raw_Data/PubChemLite_31Oct2020_exposomics_classyfire_grouped.xlsx")
+
+# write to csv to MDPlotR
+output <- res_lvl5 %>%
+  select(Identifier, CompoundName, MonoisotopicMass, Classification, MolecularFormula) %>%
+  mutate(rt = sample(10:400, 1, replace = TRUE)) %>%
+  mutate(intensity = sample(10:1000, 1, replace = TRUE)) %>%
+  rename(mz = MonoisotopicMass)
+
+write_csv(output, "/home/ORUNET.ORU.SE/twg/Windows_home/Raw_Data/PubChemLite_31Oct2020_exposomics_CF_Level5.csv")
+
+
+
+```
+
+
 ## Hierarchical clustering  

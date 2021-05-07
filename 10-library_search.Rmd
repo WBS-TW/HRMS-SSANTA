@@ -99,6 +99,60 @@ qceims
   
 ## LIBRARY SEARCH  
 xx
+
+```{r readMGF, eval=FALSE, include=FALSE, echo=TRUE}
+# from https://github.com/daniellyz/MergeION/blob/master/R/readMGF2.R
+
+# Extracting metadata and a list of spectra from mgf file
+# The function extracts a dataframe of metadata and a list of spectra from mgf file or
+
+
+readMGF2<-function(con){
+
+
+  options(stringsAsFactors = FALSE)
+  options(warn=-1)
+
+  # if (is.character(con)){
+  #   if (file_ext(con)!="mgf"){
+  #     stop("The file extension of your input library must be mgf!")
+  #   }} else {
+  #     stop("The input must be the name of the mgf file!")}
+
+  #####################################
+  ### Reading from spectral library:
+  #####################################
+
+  db = readMgfData(con, verbose = FALSE)
+  metadata = fData(db)
+  N = nrow(metadata)
+
+  # From a MSnBase object to a list of spectra m/z intensity
+  spectrum_list=list()
+  for (i in 1:N){
+    spectrum_list[[i]]=cbind(db[[i]]@mz,db[[i]]@intensity)
+  }
+
+  ####################
+  ### Return results:
+  ####################
+
+  library = list()
+  if (N>0){
+    library$sp = spectrum_list
+    library$metadata = metadata
+  }
+  return(library)
+}
+
+
+test <- readMGF2("D:\\Raw_data\\Dust_Florian\\GC\\test\\test.mgf")
+unknown1 <- test$sp[[1]]
+
+
+
+```
+
   
   
 ### LIB2NIST  
@@ -125,4 +179,27 @@ EXAMPLES:
   
   
 `MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\NIST14\LCMs_GC_Orbitrap /INP D:\Raw_data\Dust_Florian\GC\test\11.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv`  
+
+
+
+```{r eval=FALSE, include=FALSE, echo=TRUE}
+
+
+system("D:\\Program\\MSPepSearch\\MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\\NIST14\\LCMs_GC_Orbitrap /INP D:\\Raw_data\\Dust_Florian\\GC\\test\\11.msp /OUTMGF D:\\Raw_data\\Dust_Florian\\GC\\test\\test.msp /OUTTAB D:\\Raw_data\\Dust_Florian\\GC\\test\\test.tsv")
+
+
+# not working yet!
+test <- run(command = "D:/Program/MSPepSearch/MSPepSearch64.exe", args = "Gusviqh /INP D:\\Raw_data\\Dust_Florian\\GC\\test\\11.msp")
+cat(test$stderr)
+
+hits <- read_tsv("D:\\Raw_data\\Dust_Florian\\GC\\test\\test.tsv", skip = 3)
+hits <- hits %>% 
+  slice_head(n = length(hits[[1]])-2)
+
+spectra <- readMgfData(filename = "D:\\Raw_data\\Dust_Florian\\GC\\test\\test.mgf")
+
+plot(spectra[[1]], spectra[[2]])
+
+
+```
 
