@@ -1,0 +1,14 @@
+# Walkthrough on how to generate msp files from raw HRMS files  
+<br>  
+
+
+## 15.1.1. Convert the raw data file to .mzML using MSconvert (For unifi, please see 15.1.2)
+<br>  
+
+Choose the raw files you want to include and "add" these. Make sure the "Output Directory" is correctly set. In the "Filters" dropdown menu, select the "Peak Picking. For "Algorithm", use "Vendor" for most raw files. Choose appropriate MS Levels you want to include. Keep "1- " to choose all MS levels. For GC data, this is fine. Press add and then make sure to move the "peakPicking" filter as the first filter as seen in below figure.  
+
+```{r MSConvert, echo = FALSE, fig.cap= "MSConvert"}
+
+knitr::include_graphics("images/MSConvert.png")
+```
+
