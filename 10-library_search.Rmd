@@ -64,8 +64,8 @@ https://github.com/hcji/DeepEI/blob/master/Usage.ipynb
 
 ## QCEIMS
 
-RUN IN LINUX
-  
+RUN ON LINUX SERVER
+
   
 PREPARATION  
 Copy the ".XTBPARAM" folder and the ".mass_raw.agr" file to /home/ORUNET.ORU.SE/twg/ 
@@ -75,13 +75,13 @@ Copy the ".XTBPARAM" folder and the ".mass_raw.agr" file to /home/ORUNET.ORU.SE/
 Important: This file has to be named coord and should have the TURBOMOLE coord format.
 In most cases you will have an .xyz file. This file can be easily converted by typing:
   
-x2t <xyzfile> > coord
+> x2t <xyzfile> > coord
   
 if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a
 script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has
 to be in atomic units.
   
-CAN THIS BE DONE USING OPENBABEL?
+CAN THIS BE DONE USING OPENBABEL? NEED TO VERIFY AND ADD STEPS
   
 2. Prepare an input file called qceims.in. For the input options, see section 4 or the
 qceims.in file in the examples folder. If no such file is prepared, default options are:
@@ -89,18 +89,82 @@ run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntr
 
 RUN QCEIMS
 
-set +o noclobbe
+> set +o noclobber
   
-export PATH=/home/ORUNET.ORU.SE/twg/QCEIMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis
+> export PATH=/home/ORUNET.ORU.SE/twg/QCEIMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis
   
-cd QCEIMS/example/2-Chloroethanol_GFN2
+> cd QCEIMS/example/ethanol
   
-qceims
+> qceims
+
+
+4. run qceims again and check the ouput if all is ok.
+
+5. do the parallel production run (pqceims <nprocs> locally, q-batch on 
+a cluster with queing system). While running you can type
+getres
+which gathers the runs already finished (creates tmpqceims.res
+and tmpqceims.out). The final results are on qceims.out and qceims.res
+
+6. download an exp. EI-MS from the NIST if available and copy it
+to the working dir as exp.dat (take the JCAMP-DX format from their web page).
+ - Usefull for testing but not necessary. -
+
+7. get spectrum by 
+plotms
+and plot it with
+xmgrace mass.agr
+the file ".mass.agr" should be in your home dir.
+plotms reads by default <qceims.res> or by
+plotms -f <name_of_res_file>
+any other res file. Check the consistency of the total charge.
+
+8. if the ratio of fragment to M+ signals is too large
+decrease the IEE by increasing the parameter 
+ieeatm (default is 0.6 eV/atom) by inserting
+ieeatm  <value>
+in qceims.in and do the parallel run again (requires an
+additional qceims pre-run).
+
+9. if the IEE is ok, increase ntraj to get better
+statistics and re-run (note: qceims.res is appended
+so delete it at this point).
+
+VERY IMPORTANT: EVERY CHANGE IN THE INPUT REQUIRES A RUN OF QCEIMS
+IN THE WORKING DIR BEFORE THE PARALLEL SCRIPT IS STARTED IN ORDER TO
+BE IN EFFECT!
+
+10. trajectories are in TMPQCEIMS/TMP.<run_number>
+they are numbered by the run and the ion tracking number.
+(something like gmolden TMPQCEIMS/TMP.$1/trj.$1.$2
+gives trajectory $1, track $2)
+
+11. for more QCEIMS code options (model parameters) see manual
+
+usefull options for qceims:
+
+-c     : check IEE but do nothing (requires M trajectory)
+-p     : normal production (fragmentation) mode. Possible in any
+         existing TMPQCEIMS/TMP.$1 directory.
+-eonly : use the requested QC (as specified in qceims.in)
+         and do a single-point energy 
+-e0    : same as above, charge = 0
+-e1    : same as above, charge = 1
+-qcp <string>
+       : string = path to the QC code /usr/local/bin is default)
+
+other important options in <qceims.in>:
+
+ip-<method>
+ntraj <int>
+ieeatm <real>
+iseed <int>     (random number initialization to start different runs)
   
 ## LIBRARY SEARCH  
 xx
 
 ```{r readMGF, eval=FALSE, include=FALSE, echo=TRUE}
+
 # from https://github.com/daniellyz/MergeION/blob/master/R/readMGF2.R
 
 # Extracting metadata and a list of spectra from mgf file
