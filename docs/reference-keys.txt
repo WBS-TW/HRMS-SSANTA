@@ -1,4 +1,5 @@
 fig:rumsfeldt
+fig:MSConvert
 Intro
 terminologies
 Exp_design
@@ -54,3 +55,5 @@ centroiding-raw-data-from-mzml-using-msnbase
 example_pfas
 a-handbook-on-gc-q-exactive-orbitrap-use
 terminologies-1
+walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files
+convert-the-raw-data-file-to-.mzml-using-msconvert-for-unifi-please-see-next-section

@@ -12,3 +12,8 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/* Increase page width according to https://community.rstudio.com/t/increase-the-width-used-by-gitbook-solved/14726/4 */
+.book .book-body .page-wrapper .page-inner {
+  max-width: 90%;
+}

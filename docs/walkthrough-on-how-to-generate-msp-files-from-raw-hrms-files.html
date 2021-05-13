@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Suspect screening | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</title>
+  <title>15 Walkthrough on how to generate msp files from raw HRMS files | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</title>
   <meta name="description" content="SSANTA." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Suspect screening | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <meta property="og:title" content="15 Walkthrough on how to generate msp files from raw HRMS files | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Suspect screening | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <meta name="twitter:title" content="15 Walkthrough on how to generate msp files from raw HRMS files | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
   
   <meta name="twitter:description" content="SSANTA." />
   <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="open-tools-for-preprocessing.html"/>
-<link rel="next" href="mass-defect.html"/>
+<link rel="prev" href="a-handbook-on-gc-q-exactive-orbitrap-use.html"/>
+
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -255,71 +255,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="suspect_screening" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> <strong>Suspect screening</strong></h1>
-<p><br><br></p>
-<div id="hrms-spectra-library-setup" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> HRMS spectra library setup</h2>
-<ol style="list-style-type: decimal">
-<li>Copy the template excel sheet for your analytical run (LC, GC, ESI, EI, POS, NEG,..) to the ”1_Standard_infosheets” folder.<br />
-</li>
-<li>The ”Spectral_FileName” cell will autogenerate the name for the msp file based on the filled cells. Copy this file name later for the msp file.<br />
-</li>
-<li>Open MS-DIAL<br />
-</li>
-<li>Perform peak peaking,….<br />
-</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Xxx<br />
-</li>
-<li>Xxx<br />
-</li>
-<li>Xxx<br />
-</li>
-<li>Xxx<br />
-</li>
-</ol>
-<ol start="5" style="list-style-type: decimal">
-<li>Double click on the individual file at the file navigator (click on the text of the file name)<br />
-</li>
-<li>In the ”peak spot viewer” find the peak of the standard chemical. Click on the triangle to show the deconvoluted spectrum.<br />
-</li>
-<li>Retention time index is not exported to MS-FINDER. NEED TO FIX or MANUALLY COPY FROM EXCEL INFO SHEET.<br />
-..<br />
-X. Use LIB2NIST to convert combined msp file to NIST library. NEED TO ADD RETENTIONINDEX in comment
-Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.</li>
-</ol>
-<p>COMMAND:<br />
-<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code></p>
-<p>EXAMPLES:<br />
-<code>lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\RECETOX_GC-EI_MS_20201028.msp D:\Program\NIST14\ =RECETOX_GC-EI_MS_20201028</code></p>
-<p><br><br><br></p>
-</div>
-<div id="listing-suspects" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Listing suspects</h2>
-<p><br><br></p>
-</div>
-<div id="suspect-scoring" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Suspect scoring</h2>
-<p><br>
-<a href="https://www.waters.com/waters/fr_FR/Mass-Accuracy-and-Resolution/nav.htm?locale=fr_FR&amp;cid=10091028" class="uri">https://www.waters.com/waters/fr_FR/Mass-Accuracy-and-Resolution/nav.htm?locale=fr_FR&amp;cid=10091028</a>
-<br></p>
-<p>Mass error (ppm): <br></p>
-<p><span class="math display">\[\begin{equation} 
-  ME_{ppm} = \frac{mz_{theor} - mz_{meas}}{mz_{theor}} * 10^6
-\end{equation}\]</span> <br></p>
-<p>where <em>mz<sub>theor</sub></em> is the theoretical exact mass (in u or Da) of the isotope, and <em>mz<sub>meas</sub></em> is the measured accurate mass from the instrument.</p>
+<div id="walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files" class="section level1" number="15">
+<h1><span class="header-section-number">15</span> Walkthrough on how to generate msp files from raw HRMS files</h1>
 <p><br></p>
-<p>RMS of isotope mz error ppm: <br>
-<span class="math display">\[\begin{equation} 
-  RMS_{mz} = \sqrt{\frac{\sum_{i=1}^n (ME_{ppm})^2}{n}}
-\end{equation}\]</span> <br></p>
-<p>At least mz of isotopes M, M+1, M+2 (n &gt; 3) should be included in the calculations to give good estimate of the average</p>
-<p>RMS of isotope intensities (%): <br>
-<span class="math display">\[\begin{equation} 
-  RMS_{Ab} = \sqrt{\frac{\sum_{i=1}^n (Ab_{theor} - Ab_{meas})^2}{n}}
-\end{equation}\]</span> <br></p>
+<div id="convert-the-raw-data-file-to-.mzml-using-msconvert-for-unifi-please-see-next-section" class="section level2" number="15.1">
+<h2><span class="header-section-number">15.1</span> Convert the raw data file to .mzML using MSconvert (For unifi, please see next section)</h2>
+<p><br></p>
+<p>Click “Browse” and choose the raw files you want to include and “add” these. Make sure the “Output Directory” is correctly set. In the “Filters” dropdown menu, select the “Peak Picking. For”Algorithm“, use”Vendor" for most raw files. Choose appropriate MS Levels you want to include. Keep “1-” to choose all MS levels. For GC data, this is fine. Press add and then make sure to move the “peakPicking” filter as the first filter as seen in below figure. If you have many files, it would be wise to increase the “Files to convert in parallel” to speed up the process. However, this depends on your computer processing power.</p>
+<div class="figure"><span id="fig:MSConvert"></span>
+<img src="images/MSConvert.PNG" alt="MSConvert" width="852" />
+<p class="caption">
+Figure 15.1: MSConvert
+</p>
+</div>
 
 </div>
 </div>
@@ -328,8 +276,8 @@ Convert your library list into NIST library format using LIB2NIST command line (
           </div>
         </div>
       </div>
-<a href="open-tools-for-preprocessing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="mass-defect.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-handbook-on-gc-q-exactive-orbitrap-use.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -361,7 +309,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/05-Suspect_screening.Rmd",
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/15-Instructions_HRMS_Spectral_Library.Rmd",
 "text": "Edit"
 },
 "history": {
