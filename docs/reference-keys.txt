@@ -1,5 +1,6 @@
 fig:rumsfeldt
 fig:spectrum1
+fig:diagramSpeclib
 fig:MSConvert
 fig:MSConvertStartup
 fig:MSConvertChoosefiles
