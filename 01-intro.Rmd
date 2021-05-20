@@ -24,12 +24,12 @@ library(processx)
 ```
 
 
-```{r target_vs_nontarget, echo = FALSE, fig.cap= "Comparison between target and nontarget analysis"}
+```{r target_vs_nontarget, echo = FALSE, fig.cap= "Comparison between target and nontarget analysis", fig.align='center'}
 
 knitr::include_graphics("images/target_vs_nontarget.png")
 ```
 
-```{r rumsfeldt, echo = FALSE, fig.cap= "Knowns and unknowns"}
+```{r rumsfeldt, echo = FALSE, fig.cap= "Knowns and unknowns", fig.align='center'}
 knitr::include_graphics("images/rumsfeldt_quadrant.png")
 
 ```

@@ -3,6 +3,15 @@
 In environmental analysis, NIST MS library is widely used to match a spectrum to a list of standard spectra. However, a major drawback of the NIST MS Search is that now all chemicals are included and all spectral ions are at unit mass (for EI spectra library, also called mainlib)
 
 
+Below figure shows a relatively good spectral match for a standard if only nominal or even at 0.1 decimal m/z:
+
+
+```{r spectrum1, echo = FALSE, fig.cap= "Spectral matching (using MS-DIAL)"}
+
+knitr::include_graphics("images/Spectra_CFBP_MePDA.PNG", dpi = 100)
+```
+
+
 <br><br>  
 ## IN SILICO FRAGMENTATION  
 

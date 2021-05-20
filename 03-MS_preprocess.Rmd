@@ -71,7 +71,8 @@ From Rick: For OpenMS: you can use a trick for this by setting localMZRange=0, t
 ## MS-DIAL
 
 MS2Dec: <br> 
-Sigma window value: 0.1 - 1.0. Smaller value will avoid clustering of peaks that are far from each other (false positive grouping).
+Sigma window value: 0.1 - 1.0. Smaller value will avoid clustering of peaks that are far from each other (false positive grouping).  
+In GC-HRMS, try 0.8 to separate and deconvolute very closely coeluting peak in GC (+-1). These parameters should be tested with e.g. QC samples with known compounds to get best deconvolution parameter for your samples.
 <br>
 MS/MS abundance cut off: increase to remove background noise 
 

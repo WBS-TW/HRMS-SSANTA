@@ -7,7 +7,7 @@ A walkthrough for indoor dust analysis
 
 
 
-```{r example_workflows_dust, echo=FALSE, fig.cap= "Workflow for nontarget using XX"}
+```{r example_workflows_dust, echo=FALSE, fig.cap= "Workflow for nontarget using XX", fig.align='center'}
 
 # Diagrammer: rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html
 
@@ -85,7 +85,7 @@ D1_3 -> {E1}
 ```
 
 
-```{r data processing, echo=FALSE}
+```{r data processing, echo=FALSE, fig.align='center'}
 
 grViz("
 digraph Scheme {

@@ -2,7 +2,7 @@
 
 <br><br>
 
-```{r diagram_exp_des, echo=FALSE, fig.cap= "Design workFlow"}
+```{r diagram_exp_des, echo=FALSE, fig.cap= "Design workFlow", fig.align='center'}
 
 # Diagrammer: rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html
 
@@ -137,7 +137,7 @@ YOUR_PROJECT_NAME
     
 ```
   
-Here, the chemicals database could also be from an external folder or library. This is important if you have a central database for all chemicals of interest such as suspect list, spectral libraries, etc.  
+Here, the chemicals database could also be from an external folder or library. This is recommended to have a central database for all chemicals of interest such as suspect list, spectral libraries, etc.  
 
 
 ## Sampling design and collection
