@@ -36,13 +36,34 @@ knitr::include_graphics("images/rumsfeldt_quadrant.png")
 
 ## Terminologies
 <br><br>
-- High resolution mass spectrometry <br>
-- Non-target analysis <br>
-- Suspect screening analysis <br>
-- Semi-quantification <br>
-- Pseudo-quantification <br>
-- Data-dependent analysis (DDA) <br>
-- Data-indenpendent analysis (DIA) <br>
+
+- Blank solvent  
+
+- Data-dependent analysis (DDA)  
+
+- Data-independent analysis (DIA)  
+
+- Extracted ion chromatogram (EIC)  
+
+- Field blanks  
+
+- High resolution mass spectrometry (HRMS) 
+
+- Non-target analysis (NTA)  
+
+- Procedural blanks  
+
+- Pseudo-quantification  
+
+- Quality assurance (QA) sample  
+
+- Semi-quantification  
+- Solvent blank
+
+- Suspect screening analysis (SSA)  
+ 
+
+
 
 
 
