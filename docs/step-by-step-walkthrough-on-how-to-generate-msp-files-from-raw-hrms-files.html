@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2021-05-24" />
+<meta name="date" content="2021-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -233,7 +233,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><i class="fa fa-check"></i><b>15</b> Step-by-step walkthrough on how to generate msp files from raw HRMS files</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#analyzing-the-standards-using-hrms"><i class="fa fa-check"></i><b>15.1</b> Analyzing the standards using HRMS</a></li>
+<li class="chapter" data-level="15.1" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#analyze-the-standards-using-hrms"><i class="fa fa-check"></i><b>15.1</b> Analyze the standards using HRMS</a></li>
 <li class="chapter" data-level="15.2" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx"><i class="fa fa-check"></i><b>15.2</b> Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX)</a></li>
 <li class="chapter" data-level="15.3" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#fill-in-the-standard-infosheet"><i class="fa fa-check"></i><b>15.3</b> Fill in the standard infosheet</a></li>
 <li class="chapter" data-level="15.4" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#use-md-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound"><i class="fa fa-check"></i><b>15.4</b> Use MD-DIAL to perform spectral deconvolution and generate spectra for each compound</a></li>
@@ -260,9 +260,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files" class="section level1" number="15">
 <h1><span class="header-section-number">15</span> Step-by-step walkthrough on how to generate msp files from raw HRMS files</h1>
-<p><br></p>
-<p>We first start with the raw data from the analysis of a standard and we want to generate a .msp file as a final file. The msp file is a file format developed by NIST to store mass spectral data. For more information, please see this <a href="https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf">document</a>.<br />
-If compounds are analyzed using GC, then you have to include an <strong>alkane mix</strong> to be able to calculate the retention index (RI). In our lab, we use a mix consisting of C7-C40 alkanes. Ask Thanh for the alkane mix.</p>
+<p>In this tutorial, I will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library. The project is organized in different subfolders within the main folder named "<em>MTM_HRMS_LIB"</em>. Do not change the name of any folders.</p>
+<p>We first start with the raw data from the analysis of a standard and we want to generate a <strong>.msp</strong> file as a final file format. The msp file is a file format developed by NIST to store mass spectral data. For more information, please see this <a href="https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf">document</a>.</p>
+<p>If compounds are analyzed using GC, then you also need to include an <strong>alkane mix</strong> to be able to calculate the retention index (RI). In our lab, we use a mix consisting of C7-C40 alkanes. Ask Thanh for the alkane mix. You can find some representative chromatograms with retention times of the alkane mix for a 30 m DB-5ms column in the file “<em>/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/AlkaneMixRT.pptx</em>.” A solvent blank also needs to be run together with the standards in order to subtract the blank signals at a later stage.</p>
 <div class="figure" style="text-align: center"><span id="fig:diagramSpeclib"></span>
 <div id="htmlwidget-f7dd67e70bd980c8815c" style="width:672px;height:480px;" class="grViz html-widget"></div>
 <script type="application/json" data-for="htmlwidget-f7dd67e70bd980c8815c">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = TB]\n\n# node statements\nnode [shape = box]\n\nA [label = \"Analysis of standard \\n using LC-HRMS or GC-HRMS.\", fontsize = 24]\n\nB [label = \"Convert raw data from \\n vendor format to mzML file format\", fontsize = 24]\n\nC [label = \"Fill in compound and \\n method information in template\", fontsize = 24]\n\nD [label = \"Use MD-DIAL to perform spectral \\n deconvolution and generate \\n spectra for each compound\", fontsize = 24]\n\nE [label = \"Export the spectra to MS-FINDER \\n to annotate spectral peaks\", fontsize = 24]\n\nF [label = \"Export final spectra to msp format\", fontsize = 24]\n      \n      \n# edge statements\nedge [color = black]\nA -> {B}\nB -> {C}\nC -> {D}\nD -> {E}\nE -> {F}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
@@ -307,25 +307,32 @@ Figure 15.1: General workflow for spectral library
 └───R
     |   MTM_HRMS_database.Rmd
     </code></pre>
-<p>The main folder (MTM_HRMS_LIB) contain some template information sheet that are used to fill in information about the standard and the analysis method. The MTM id number (MTMxxxxx) for each standard infosheet is in numeric order and check the MTM_HRMS_MAINLIB.xlsx for the latest id number and use the subsequent one as the new MTM id.</p>
+<p>The main folder (MTM_HRMS_LIB) contain some template information sheet that are used to fill in information about the standard and the analysis method. The MTM id number (MTMxxxxx) for each standard infosheet is in numeric order and must contain 8 character in total. Check the MTM_HRMS_MAINLIB.xlsx for the latest id number and use the next one as the new MTM id.</p>
 <p><strong>INSTALL REQUIRED SOFTWARE</strong></p>
 <p>Several software and packages are needed to generate the spectra library. All are open access and free to use for academic purposes.</p>
-<p><em>Proteowizard</em>: We mainly use MSConvert which is bundled in the Proteowizard software package and you can download it <a href="http://proteowizard.sourceforge.net/download.html">here</a>.<br />
-<em>MS-DIAL</em>: used to analyze the mzML file and generate spectra. Download the latest version <a href="http://prime.psc.riken.jp/compms/msdial/main.html">here</a>. No installation is necessary so you only need to extract the downloaded zip file to your folder of choice.<br />
-<em>MS-FINDER</em>: used to annotate the individual peaks in the spectrum and export to msp file.</p>
-<div id="analyzing-the-standards-using-hrms" class="section level2" number="15.1">
-<h2><span class="header-section-number">15.1</span> Analyzing the standards using HRMS</h2>
+<ul>
+<li><em>Proteowizard</em>: We mainly use MSConvert which is bundled in the Proteowizard software package and you can download it <a href="http://proteowizard.sourceforge.net/download.html">here</a>.<br />
+</li>
+<li><em>MS-DIAL</em>: used to analyze the mzML file and generate spectra. Download the latest version <a href="http://prime.psc.riken.jp/compms/msdial/main.html">here</a>. No installation is necessary so you only need to extract the downloaded zip file to your folder of choice.<br />
+</li>
+<li><em>MS-FINDER</em>: used to annotate the individual peaks in the spectrum and export to msp file.</li>
+</ul>
+<div id="analyze-the-standards-using-hrms" class="section level2" number="15.1">
+<h2><span class="header-section-number">15.1</span> Analyze the standards using HRMS</h2>
 <p>It is recommended to analyze single standards but mixtures are also feasible to analyze if the analytes are not coeluting too close to each other. The deconvolution algorithm of MS-DIAL is able to distinguish between two peaks that are closely eluted but still have slightly different retention times.<br />
 You should also inject a <em>solvent blank</em> to perform blank subtraction later in MS-DIAL.</p>
 </div>
 <div id="convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx" class="section level2" number="15.2">
 <h2><span class="header-section-number">15.2</span> Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX)</h2>
-<p><br><br />
-The first step is to convert the vendor software format to the open mass spectrometric data format mzML. We use MSConvert to perform this. After installation, open the MSConvert program.
-Most vendor software record the mass spectra in profile mode, but data processing of this is usually very time consuming as well as producing a very large file. Therefore, during file conversion we also perform centroiding to make downstream data processing easier as well as reducing the size of the mzML file. 1. Click “Browse” and choose the raw files you want to include and “add” these.<br />
-2. Choose mzML as the output format. Make sure the “Output Directory” is correctly set to the folder you want to store the mzML file. For this library task, you can directly choose the “/MTM_HRMS_LIB/MSDIAL_PROJECT” in the library folder as temporary storage.<br />
-3. In the “Filters” dropdown menu, select the “Peak Picking. For”Algorithm“, use”Vendor" for most raw files. Choose appropriate MS Levels you want to include. Use “1 -” to choose all MS levels. For GC data, this is fine. Press add and then make sure to move the “peakPicking” filter as the first filter as seen in below figure.
-4. If you have many files, it would be wise to increase the “Files to convert in parallel” to speed up the process. However, this depends on your computer processing power the number of cores it has. The other parameters should be set as seen in below Figure <a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#fig:MSConvert">15.2</a>.</p>
+<ol style="list-style-type: decimal">
+<li><p>The first step is to convert the vendor software format to the open mass spectrometric data format mzML. We use MSConvert to perform this. After installing Proteowizard, open the MSConvert program.
+Most vendor software record the mass spectra in profile mode, but data processing of this format is usually very time consuming as well as producing very large files. Therefore, during file conversion we will also perform centroiding to make data processing faster as well as reducing the size of the mzML file. 1.<br />
+Click “Browse” and choose the raw file(s) you want to include and add.</p></li>
+<li><p>Choose mzML as the output format. Make sure the “Output Directory” is correctly set to the folder you want to store the mzML file. For this library task, you can directly choose the “/MTM_HRMS_LIB/MSDIAL_PROJECT” in the library folder as temporary storage.<br />
+</p></li>
+<li><p>In the “Filters” dropdown menu, select the “Peak Picking. For”Algorithm“, use”Vendor" for most raw files. Choose appropriate MS Levels you want to include. Use “1 -” to choose all MS levels. For GC data, this is fine. Press add and then make sure to move the “peakPicking” filter as the first filter as seen in below figure.</p></li>
+<li><p>If you have many files, it would be wise to increase the “Files to convert in parallel” to speed up the process. However, this depends on your computer processing power the number of cores it has. The other parameters should be set as seen in below Figure <a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#fig:MSConvert">15.2</a>.</p></li>
+</ol>
 <div class="figure"><span id="fig:MSConvert"></span>
 <img src="images/MSConvert.PNG" alt="MSConvert" width="852" />
 <p class="caption">
@@ -339,21 +346,25 @@ After you have finished with the conversion, copy the mzML file(s) to the design
 <h2><span class="header-section-number">15.3</span> Fill in the standard infosheet</h2>
 <p>In the main folder, choose one of the standard information sheets depending on whether you used LC or GC and the ionization mode. The content of the information sheet looks slightly different depending on LC or GC. Copy the chosen infosheet to the “1_Standard_infosheets” folder. In that folder, rename the copied infosheet to the new MTM id as mentioned in previous section.<br />
 The infosheet is organized in accordance to the format used by <a href="https://massbank.eu//MassBank/">Massbank Europe</a>. A description on the Massbank record format can be found <a href="https://github.com/MassBank/MassBank-web/blob/main/Documentation/MassBankRecordFormat.md">here</a>. It is important that you do not change any of the titles in the first column in the infosheet, as the format requirement is quite strict. Also, try not to copy text from one cell to another as it might change the underlying format of the cells (if you think you made an error, copy the template and redo again).<br />
-The rows that are in bold are information that are mandatory to fill in. The “ACCESSION” row is the MTM id, the “RECORD_TITLE” will be automatically generated based on the information you filled in so you will not fill this row.<br />
-“COMMENT: centroided mzML file name” is for internal purposes and refers to the name of the mzML file you converted.<br />
-“COMMENT: msp file name” is automatically generated and will be used later to name the msp file.<br />
-“COMMENT: CONFIDENCE” refers to how confident you are of the identification of your standard according to the <a href="https://pubs.acs.org/doi/abs/10.1021/es5002105">“Schymanski scale”</a>. Leave it as “Reference Standard (Level 1),” unless there are standards where you cannot distinguish or identify between different isomers in a standard. In this case, you should use “Level 3.” An example is “Technical mixture (Level 3).”<br />
-“CH$NAME:” occurs twice which means you have to input two different names for the compound in the standard, because a compound can have different names. It could be the common name specified in PubChem, the IUPAC name, trade name or the abbreviation.<br />
-The “CH$IUPAC” is the InChI which starts with “InChI=.” You can find all these information for the compound by searching in <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a>.<br />
-For GC compounds, you also need to fill in the “AC$CHROMATOGRAPHY: KOVATS_RTI” and “AC$CHROMATOGRAPHY: RETENTION_TIME.” These will be available later in MS-DIAL.</p>
-<p>The other rows should be quite straightforward to fill in. If you use the same method for many standards, then you can save a copy of an infosheet to use as a method template, while only filling information for the different compounds: ACCESSION, DATE, COMMENT: centroided mzML file name, CH$NAME, CH$NAME, CH$FORMULA:, CH$EXACT_MASS:, CH$SMILES:, CH$IUPAC:, CH$LINK: CAS, CH$LINK: INCHIKEY</p>
+The rows that are in bold are information that are mandatory to fill in.</p>
+<p>The “ACCESSION” row is the MTM id.</p>
+<p>The “RECORD_TITLE” will be automatically generated based on the information you filled in so you should not fill this row.</p>
+<p>“COMMENT: centroided mzML file name” is for internal purposes and refers to the name of the mzML file you converted and copied to the “MTM_HRMS_LIB/2_mzML_data/../” folder.</p>
+<p>“COMMENT: msp file name” is automatically generated and will be used later to name the msp file.</p>
+<p>“COMMENT: CONFIDENCE” refers to how confident you are of the identification of your standard according to the <a href="https://pubs.acs.org/doi/abs/10.1021/es5002105">“Schymanski scale”</a>. Leave it as “Reference Standard (Level 1),” unless there are standards where you cannot distinguish or identify between different isomers in a standard. In this case, you should use “Level 3.” An example is “Technical mixture (Level 3),” where we analyzed a technical standard (usually &lt;90% purity) and several isomeric peaks can be seen in the chromatogram. In this case, I usually individually register each isomer in its own infosheet.</p>
+<p>“CH$NAME:” occurs twice which means you have to input two different names for the compound in the standard, because a compound can have different names. It could be the common name specified in PubChem, the IUPAC name, trade name or the abbreviation.</p>
+<p>“CH$IUPAC” is the InChI and always starts with “InChI=.” You can find all these information for the compound by searching in <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a>.</p>
+<p>For GC compounds, you also need to fill in the “AC$CHROMATOGRAPHY: KOVATS_RTI” and “AC$CHROMATOGRAPHY: RETENTION_TIME.” These will be available later in MS-DIAL.</p>
+<p>The other rows should be quite straightforward to fill in. If you use the same method for many standards, then you can save a copy of an infosheet to use as a method template, while only updating information for each specific compound: ACCESSION, DATE, COMMENT: centroided mzML file name, CH$NAME, CH$NAME, CH$FORMULA, CH$EXACT_MASS:, CH$SMILES:, CH$IUPAC:, CH$LINK: CAS, CH$LINK: INCHIKEY</p>
+<p>The <em>AC$CHROMATOGRAPHY: RETENTION_TIME</em> row will be obtained later using MS-DIAL.</p>
+<p>If you use GC-MS, then you also need to fill in the <em>AC$CHROMATOGRAPHY: KOVATS_RTI</em> which will also be available later using MS-DIAL.</p>
 <p>Now that you have filled in most information about the compound, we can proceed to process the mzML file to extract the spectra using MS-DIAL (although you can also first process the mzML files and then fill in the information afterwards).</p>
 </div>
 <div id="use-md-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound" class="section level2" number="15.4">
 <h2><span class="header-section-number">15.4</span> Use MD-DIAL to perform spectral deconvolution and generate spectra for each compound</h2>
-<p>The graphical layout of MS-DIAL takes some time to get used to since it is centered around detected peaks. It is important that you choose the correct parameters in the beginning since the parameters can affect the peak detection and alignment, or else you need to redo the data preprocessing again which could take long time if you are analyzing a lot of samples. In the case where we analyze standards, then the default parameters with some instrument specific parameters can be used. These are found in the subfolder <em>MSDIAL_PROJECT/MSDIAL_params/</em>. If you want to know more details about data processing using MS-DIAL, please check the <a href="https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html">online tutorial</a>.</p>
-<p>The below steps are based on the excellent workflow for GC-EI orbitrap data described by <a href="https://www.frontiersin.org/articles/10.3389/fpubh.2021.622558/full">Price et al.</a>.<br />
-<strong>1.</strong> In the File menu, start a new project. You must choose a file path where the mzML file(s) are located. When the data analysis is finished, several files associated with the analysis is created in the same folder. Depending on GC or LC analysis, then different parameters needs to be selected. Below Figure <a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#fig:MSDIALStartup">15.3</a> shows parameters for GC analysis. GC-EI is a hard ionization and we also centroided the mzML file so these paramters needs to be specified.</p>
+<p>The graphical user interface of MS-DIAL takes some time to get used to since it is centered around detected peaks. It is important that you choose the correct parameters in the beginning since the parameters can affect the peak detection and alignment, or else you need to redo the data preprocessing again which could take long time if you are analyzing a lot of samples. When you run a large number of real samples, it is recommended to first optimize the parameters using e.g. QC samples. In this case where we analyze standards, then the default parameters with some instrument specific parameters can be used. These are found in the subfolder <em>MSDIAL_PROJECT/MSDIAL_params/</em>. If you want to know more details about data processing using MS-DIAL, please check the <a href="https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html">MS-DIAL online tutorial</a>.</p>
+<p>The below steps are based on the workflow for GC-EI orbitrap data described by <a href="https://www.frontiersin.org/articles/10.3389/fpubh.2021.622558/full">Price et al.</a>.</p>
+<p><strong>1.</strong> In the File menu, start a new project. You must choose a file path where the mzML file(s) are located. When the data analysis is finished, several files associated with the analysis is created in the same folder. Depending on GC or LC analysis, then different parameters needs to be selected. Below Figure <a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#fig:MSDIALStartup">15.3</a> shows parameters for GC analysis. GC-EI is a hard ionization and we also centroided the mzML file so these paramters needs to be specified.</p>
 <div class="figure"><span id="fig:MSDIALStartup"></span>
 <img src="images/chap15/MSDIAL_startproject.PNG" alt="Starting a new project for GC analysis" width="1519" />
 <p class="caption">

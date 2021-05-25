@@ -67,7 +67,7 @@ example_pfas
 a-handbook-on-gc-q-exactive-orbitrap-use
 terminologies-1
 step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files
-analyzing-the-standards-using-hrms
+analyze-the-standards-using-hrms
 convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx
 fill-in-the-standard-infosheet
 use-md-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound
