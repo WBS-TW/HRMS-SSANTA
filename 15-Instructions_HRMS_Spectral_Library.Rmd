@@ -1,7 +1,7 @@
-# Step-by-step walkthrough on how to generate msp files from raw HRMS files  
-    
+# Tutorial on generating msp files from raw HRMS files to contribute to MTM HRMS library  
   
-In this tutorial, I will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library. The project is organized in different subfolders within the main folder named "_MTM_HRMS_LIB"_. Do not change the name of any folders.   
+
+This tutorial will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library. The project is organized in different subfolders within the main folder named "_MTM_HRMS_LIB"_. Do not change the name of any folders.   
 
 We first start with the raw data from the analysis of a standard and we want to generate a __.msp__ file as a final file format. The msp file is a file format developed by NIST to store mass spectral data. For more information, please see this [document](https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf).  
   
@@ -248,8 +248,11 @@ You can then see the EIC (5) of the chosen peak to check if the peak shape is go
 knitr::include_graphics("images/chap15/MSDIAL_9.png", dpi = 100)
 ```
   
-In the new MS-FINDER window, fill in the information in (10) in Figure \@ref(fig:MSFINDER) for your compound. For GC-MS, in most cases the monoisotopic peak (equivalent to the precursor m/z) and you can choose the ion closest to the monoisotopic mass of your standard compound. Choose the precursor type. For GC-MS, choose [M]+. After you are done, choose "Fragment annotation (single)" in the ""Analysis" menu (11). Afterwards, choose the "Fragment annotation (batch job)" under the same menu. The _in silico_ annotation of the fragment ions should not be finished (12) and you can now export the annotated spectrum as an ".msp" file (13). Use the file name that was generated in the standard infosheet you filled in at the "COMMENT: msp file name" row. Save the file in the "3_MSP" subfolder.  
+In the new MS-FINDER window, fill in the information in (10) in Figure \@ref(fig:MSFINDER) for your compound. For GC-MS, in most cases the monoisotopic peak (somewhat equivalent to the precursor ion in LC mode) and you can choose the ion closest to the monoisotopic mass of your standard compound. Then choose the precursor type. For GC-MS: choose [M]+. (M plus dot). After you are done, select "Fragment annotation (single)" in the ""Analysis" menu (11). Afterwards, select the "Fragment annotation (batch job)" under the same menu. The _in silico_ annotation of the fragment ions should now be calculated (12) and you can thereafter export the annotated spectrum as an ".msp" file (see 13). Use the file name that was generated in the standard infosheet you filled in at the "COMMENT: msp file name" row. Save the file in the "3_MSP" subfolder.  
 Now you are finished with generating the msp file for your standard spectrum.  
+  
+The mainlib excel file as well as the combined msp file will be updated on a regular basis or upon request.  
+
 
 
 
