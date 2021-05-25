@@ -1,8 +1,10 @@
 # Step-by-step walkthrough on how to generate msp files from raw HRMS files  
-<br>  
+    
+  
+In this tutorial, I will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library.  
 
-We first start with the raw data from the analysis of a standard and we want to generate a .msp file as a final file. The msp file is a file format developed by NIST to store mass spectral data. For more information, please see this [document](https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf).  
-If compounds are analyzed using GC, then you have to include an __alkane mix__ to be able to calculate the retention index (RI). In our lab, we use a mix consisting of C7-C40 alkanes. Ask Thanh for the alkane mix.
+We first start with the raw data from the analysis of a standard and we want to generate a __.msp__ file as a final file format. The msp file is a file format developed by NIST to store mass spectral data. For more information, please see this [document](https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf).  
+If compounds are analyzed using GC, then you also need to include an __alkane mix__ to be able to calculate the retention index (RI). In our lab, we use a mix consisting of C7-C40 alkanes. Ask Thanh for the alkane mix.
   
 ```{r diagramSpeclib, echo=FALSE, fig.cap= "General workflow for spectral library", fig.align='center'}
 
