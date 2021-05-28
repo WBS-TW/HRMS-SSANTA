@@ -302,6 +302,7 @@ Help file: <a href="https://sourceforge.net/p/cfm-id/wiki/Home/" class="uri">htt
 <div id="qceims" class="section level2" number="9.3">
 <h2><span class="header-section-number">9.3</span> QCEIMS</h2>
 <p>RUN ON LINUX SERVER</p>
+<p>Check <a href="https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/movies_grimme/QCEIMS.v.4.0_manual.pdf">online manual</a> for details</p>
 <p>PREPARATION<br />
 Copy the “.XTBPARAM” folder and the “.mass_raw.agr” file to /home/ORUNET.ORU.SE/twg/</p>
 <ol style="list-style-type: decimal">
@@ -331,12 +332,27 @@ run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntr
 4. qceims
 run qceims again and check the ouput if all is ok.
 
-5. do the parallel production run (pqceims &lt;nprocs&gt; locally, q-batch on 
-a cluster with queing system). While running you can type
-getres
-which gathers the runs already finished (creates tmpqceims.res and tmpqceims.out). The final results are on qceims.out and qceims.res
+5. Executing production runs.
+Running qceims locally, use:
+pqceims
+You might want to leave your work station and even log out in the meantime. In this case, type:
 
-6. download an exp. EI-MS from the NIST if available and copy it to the working dir as exp.dat (take the JCAMP-DX format from their web page).  - Usefull for testing but not necessary. -
+
+5. do the parallel production run (pqceims &lt;nprocs&gt; locally, q-batch on 
+a cluster with queing system). While running you can type:
+nohup pqceims &lt;# proc&gt; &amp;
+where &lt;# proc&gt; gives the number of CPUs you want to use.
+
+Optionally, check the status of your QCEIMS run by changing to your working directory
+and typing getres, which will provide an output of the form:
+XXX runs done and written to tmpqceims.res/out
+
+getres
+which gathers the runs already finished (creates tmpqceims.res and tmpqceims.out). 
+The final results are on qceims.out and qceims.res
+
+6. download an exp. EI-MS from the NIST if available and copy it to the working dir as exp.dat 
+(take the JCAMP-DX format from their web page).  - Usefull for testing but not necessary. -
 
 7. get spectrum by 
 plotms
@@ -352,9 +368,11 @@ ieeatm (default is 0.6 eV/atom) by inserting
 ieeatm  &lt;value&gt;
 in qceims.in and do the parallel run again (requires an additional qceims pre-run).
 
-9. if the IEE is ok, increase ntraj to get better statistics and re-run (note: qceims.res is appended so delete it at this point).
+9. if the IEE is ok, increase ntraj to get better statistics and re-run 
+(note: qceims.res is appended so delete it at this point).
 
-VERY IMPORTANT: EVERY CHANGE IN THE INPUT REQUIRES A RUN OF QCEIMS IN THE WORKING DIR BEFORE THE PARALLEL SCRIPT IS STARTED IN ORDER TO BE IN EFFECT!
+VERY IMPORTANT: EVERY CHANGE IN THE INPUT REQUIRES A RUN OF QCEIMS IN THE WORKING DIR
+BEFORE THE PARALLEL SCRIPT IS STARTED IN ORDER TO BE IN EFFECT!
 
 10. trajectories are in TMPQCEIMS/TMP.&lt;run_number&gt;
 they are numbered by the run and the ion tracking number.
