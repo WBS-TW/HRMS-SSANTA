@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>14 A handbook on GC Q Exactive orbitrap use | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</title>
+  <title>12 A handbook on GC Q Exactive orbitrap use | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
   <meta name="description" content="SSANTA." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="14 A handbook on GC Q Exactive orbitrap use | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <meta property="og:title" content="12 A handbook on GC Q Exactive orbitrap use | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="14 A handbook on GC Q Exactive orbitrap use | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R" />
+  <meta name="twitter:title" content="12 A handbook on GC Q Exactive orbitrap use | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   
   <meta name="twitter:description" content="SSANTA." />
   <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2021-05-25" />
+<meta name="date" content="2021-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="example-pfas.html"/>
-<link rel="next" href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"/>
+<link rel="next" href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"/>
 <script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -206,37 +206,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="library.html"><a href="library.html#neims"><i class="fa fa-check"></i><b>9.1</b> NEIMS</a></li>
 <li class="chapter" data-level="9.2" data-path="library.html"><a href="library.html#deepei"><i class="fa fa-check"></i><b>9.2</b> DeepEI</a></li>
 <li class="chapter" data-level="9.3" data-path="library.html"><a href="library.html#qceims"><i class="fa fa-check"></i><b>9.3</b> QCEIMS</a></li>
-<li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>9.4</b> LIBRARY SEARCH</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="library.html"><a href="library.html#lib2nist"><i class="fa fa-check"></i><b>9.4.1</b> LIB2NIST</a></li>
-<li class="chapter" data-level="9.4.2" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>9.4.2</b> MSPepSearch</a></li>
+<li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#gc-orbitrap-hrms-workflow"><i class="fa fa-check"></i><b>9.4</b> <strong>GC orbitrap HRMS workflow</strong></a></li>
+<li class="chapter" data-level="9.5" data-path="library.html"><a href="library.html#lc-hrms-using-waters-mse-dia-workflow"><i class="fa fa-check"></i><b>9.5</b> <strong>LC-HRMS using Waters MSe DIA workflow</strong></a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="postprocessing.html"><a href="postprocessing.html"><i class="fa fa-check"></i><b>10</b> <strong>Data post-processing</strong></a>
+<li class="chapter" data-level="10" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><i class="fa fa-check"></i><b>10</b> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="postprocessing.html"><a href="postprocessing.html#hierarchical-clustering"><i class="fa fa-check"></i><b>10.1</b> Hierarchical clustering</a></li>
+<li class="chapter" data-level="10.1" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#first-convert-unifi-data-using-msconvert"><i class="fa fa-check"></i><b>10.1</b> First convert unifi data using MSConvert</a></li>
+<li class="chapter" data-level="10.2" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#centroiding-raw-data-from-mzml-using-msnbase"><i class="fa fa-check"></i><b>10.2</b> Centroiding raw data from mzML using MSnbase</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="example-dust.html"><a href="example-dust.html"><i class="fa fa-check"></i><b>11</b> Example workflow: indoor dust</a>
+<li class="chapter" data-level="11" data-path="example-pfas.html"><a href="example-pfas.html"><i class="fa fa-check"></i><b>11</b> Example workflow: PFASs</a></li>
+<li class="chapter" data-level="12" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>12</b> A handbook on GC Q Exactive orbitrap use</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="example-dust.html"><a href="example-dust.html#gc-orbitrap-hrms-workflow"><i class="fa fa-check"></i><b>11.1</b> <strong>GC orbitrap HRMS workflow</strong></a></li>
-<li class="chapter" data-level="11.2" data-path="example-dust.html"><a href="example-dust.html#lc-hrms-using-waters-mse-dia-workflow"><i class="fa fa-check"></i><b>11.2</b> <strong>LC-HRMS using Waters MSe DIA workflow</strong></a></li>
+<li class="chapter" data-level="12.1" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#terminologies-1"><i class="fa fa-check"></i><b>12.1</b> Terminologies</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><i class="fa fa-check"></i><b>12</b> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</a>
+<li class="chapter" data-level="13" data-path="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><i class="fa fa-check"></i><b>13</b> Tutorial on generating msp files from raw HRMS files to contribute to MTM HRMS library</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#first-convert-unifi-data-using-msconvert"><i class="fa fa-check"></i><b>12.1</b> First convert unifi data using MSConvert</a></li>
-<li class="chapter" data-level="12.2" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#centroiding-raw-data-from-mzml-using-msnbase"><i class="fa fa-check"></i><b>12.2</b> Centroiding raw data from mzML using MSnbase</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="example-pfas.html"><a href="example-pfas.html"><i class="fa fa-check"></i><b>13</b> Example workflow: PFASs</a></li>
-<li class="chapter" data-level="14" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>14</b> A handbook on GC Q Exactive orbitrap use</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#terminologies-1"><i class="fa fa-check"></i><b>14.1</b> Terminologies</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><i class="fa fa-check"></i><b>15</b> Step-by-step walkthrough on how to generate msp files from raw HRMS files</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#analyze-the-standards-using-hrms"><i class="fa fa-check"></i><b>15.1</b> Analyze the standards using HRMS</a></li>
-<li class="chapter" data-level="15.2" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx"><i class="fa fa-check"></i><b>15.2</b> Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX)</a></li>
-<li class="chapter" data-level="15.3" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#fill-in-the-standard-infosheet"><i class="fa fa-check"></i><b>15.3</b> Fill in the standard infosheet</a></li>
-<li class="chapter" data-level="15.4" data-path="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html"><a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html#use-md-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound"><i class="fa fa-check"></i><b>15.4</b> Use MD-DIAL to perform spectral deconvolution and generate spectra for each compound</a></li>
+<li class="chapter" data-level="13.1" data-path="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html#analyze-the-standards-using-hrms"><i class="fa fa-check"></i><b>13.1</b> Analyze the standards using HRMS</a></li>
+<li class="chapter" data-level="13.2" data-path="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html#convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx"><i class="fa fa-check"></i><b>13.2</b> Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX)</a></li>
+<li class="chapter" data-level="13.3" data-path="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html#fill-in-the-standard-infosheet"><i class="fa fa-check"></i><b>13.3</b> Fill in the standard infosheet</a></li>
+<li class="chapter" data-level="13.4" data-path="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html#use-md-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound"><i class="fa fa-check"></i><b>13.4</b> Use MD-DIAL to perform spectral deconvolution and generate spectra for each compound</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
@@ -250,7 +238,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS: a tutorial using R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</a>
           </h1>
         </div>
 
@@ -258,11 +246,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="a-handbook-on-gc-q-exactive-orbitrap-use" class="section level1" number="14">
-<h1><span class="header-section-number">14</span> A handbook on GC Q Exactive orbitrap use</h1>
+<div id="a-handbook-on-gc-q-exactive-orbitrap-use" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> A handbook on GC Q Exactive orbitrap use</h1>
 <p>A walkthrough for GC Q Exactive use</p>
-<div id="terminologies-1" class="section level2" number="14.1">
-<h2><span class="header-section-number">14.1</span> Terminologies</h2>
+<div id="terminologies-1" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Terminologies</h2>
 <p><em>Automatic Gain Control (AGC):</em> Sets the ion injection time to maintain the optimum quantity of ions for each scan. With AGC on, the scan function consists of a prescan and an analytical scan. The split lens is used to start and stop the injection of ions into the mass analyzer. It provides a high deflection voltage most of the time so that ions are deflected into a baffle except when they are to be allowed into the C-Trap. The fast switching of the ion beam ensures the precise determination of the ion injection time that is required for AGC.</p>
 
 </div>
@@ -273,7 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="example-pfas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="step-by-step-walkthrough-on-how-to-generate-msp-files-from-raw-hrms-files.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -99,26 +99,23 @@ run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntr
 
 RUN QCEIMS
 
-> set +o noclobber
-  
-> export PATH=/home/ORUNET.ORU.SE/twg/QCEIMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis
-  
-> cd QCEIMS/example/ethanol
-  
-> qceims
 
+```
+1. set +o noclobber
 
-4. run qceims again and check the ouput if all is ok.
+2. export PATH=/home/ORUNET.ORU.SE/twg/QCEIMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis
+
+3. cd QCEIMS/example/ethanol
+
+4. qceims
+run qceims again and check the ouput if all is ok.
 
 5. do the parallel production run (pqceims <nprocs> locally, q-batch on 
 a cluster with queing system). While running you can type
 getres
-which gathers the runs already finished (creates tmpqceims.res
-and tmpqceims.out). The final results are on qceims.out and qceims.res
+which gathers the runs already finished (creates tmpqceims.res and tmpqceims.out). The final results are on qceims.out and qceims.res
 
-6. download an exp. EI-MS from the NIST if available and copy it
-to the working dir as exp.dat (take the JCAMP-DX format from their web page).
- - Usefull for testing but not necessary. -
+6. download an exp. EI-MS from the NIST if available and copy it to the working dir as exp.dat (take the JCAMP-DX format from their web page).  - Usefull for testing but not necessary. -
 
 7. get spectrum by 
 plotms
@@ -129,20 +126,14 @@ plotms reads by default <qceims.res> or by
 plotms -f <name_of_res_file>
 any other res file. Check the consistency of the total charge.
 
-8. if the ratio of fragment to M+ signals is too large
-decrease the IEE by increasing the parameter 
+8. if the ratio of fragment to M+ signals is too large decrease the IEE by increasing the parameter 
 ieeatm (default is 0.6 eV/atom) by inserting
 ieeatm  <value>
-in qceims.in and do the parallel run again (requires an
-additional qceims pre-run).
+in qceims.in and do the parallel run again (requires an additional qceims pre-run).
 
-9. if the IEE is ok, increase ntraj to get better
-statistics and re-run (note: qceims.res is appended
-so delete it at this point).
+9. if the IEE is ok, increase ntraj to get better statistics and re-run (note: qceims.res is appended so delete it at this point).
 
-VERY IMPORTANT: EVERY CHANGE IN THE INPUT REQUIRES A RUN OF QCEIMS
-IN THE WORKING DIR BEFORE THE PARALLEL SCRIPT IS STARTED IN ORDER TO
-BE IN EFFECT!
+VERY IMPORTANT: EVERY CHANGE IN THE INPUT REQUIRES A RUN OF QCEIMS IN THE WORKING DIR BEFORE THE PARALLEL SCRIPT IS STARTED IN ORDER TO BE IN EFFECT!
 
 10. trajectories are in TMPQCEIMS/TMP.<run_number>
 they are numbered by the run and the ion tracking number.
