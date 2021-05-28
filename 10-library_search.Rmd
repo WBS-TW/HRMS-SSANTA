@@ -81,16 +81,17 @@ Copy the ".XTBPARAM" folder and the ".mass_raw.agr" file to /home/ORUNET.ORU.SE/
   
   
 1. Prepare a file with the equilibrium structure of your desired molecule M.
-Important: This file has to be named coord and should have the TURBOMOLE coord format.
+Important: This file has to be named coord and should have the TURBOMOLE coord format (tmol).
 In most cases you will have an .xyz file. This file can be easily converted by typing:
   
 > x2t <xyzfile> > coord
   
 if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a
 script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has
-to be in atomic units.
+to be in atomic units.  
+NOTE: this can be converted using openbabel -> tmol
   
-CAN THIS BE DONE USING OPENBABEL? NEED TO VERIFY AND ADD STEPS
+
   
 2. Prepare an input file called qceims.in. For the input options, see section 4 or the
 qceims.in file in the examples folder. If no such file is prepared, default options are:
