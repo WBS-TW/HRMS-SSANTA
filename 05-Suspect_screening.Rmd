@@ -3,27 +3,19 @@
 <br><br>
 
 
-## HRMS spectra library setup
-1.	Copy the template excel sheet for your analytical run (LC, GC, ESI, EI, POS, NEG,..) to the ”1_Standard_infosheets” folder.  
-2.	The ”Spectral_FileName” cell will autogenerate the name for the msp file based on the filled cells. Copy this file name later for the msp file.  
-3.	Open MS-DIAL  
-4.	Perform peak peaking,….  
-a.	Xxx  
-b.	Xxx  
-c.	Xxx  
-d.	Xxx  
-5.	Double click on the individual file at the file navigator (click on the text of the file name)  
-6.	In the ”peak spot viewer” find the peak of the standard chemical. Click on the triangle to show the deconvoluted spectrum.  
-7.	Retention time index is not exported to MS-FINDER. NEED TO FIX or MANUALLY COPY FROM EXCEL INFO SHEET.    
-..  
-X. Use LIB2NIST to convert combined msp file to NIST library. NEED TO ADD RETENTIONINDEX in comment
-Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.  
+## LIB2NIST
+X. Use LIB2NIST to convert combined msp file to NIST library.  
+NEED TO ADD RETENTIONINDEX in comment field (see p31. of https://www.nist.gov/system/files/documents/srd/NIST1aVer22Man.pdf)  
+
+Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass since the GUI tool only convert to nominal mass) __NOTE TO SELF: CHECK IF THIS IS TRUE__. See command line help file for arguments.  
   
-COMMAND:  
+IN WINDOWS: open 'cmd', go to the folder where LIB2NIST is and type:
+    
+COMMAND: __NOTE TO SELF: VERIFY THAT THE COMMAND IS CORRECT, ALSO IS IT POSSIBLE TO ADD RI?__  
 `lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N <path to msp file> <output path> =<new name of library>`  
     
 EXAMPLES:  
-`lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\RECETOX_GC-EI_MS_20201028.msp D:\Program\NIST14\ =RECETOX_GC-EI_MS_20201028`  
+`lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\2021-05-28_MTM_HRMS_RECETOX_THERMO.msp D:\Program\NIST14\ =MTM_HRMS_RECETOX_THERMO_20210528`  
   
 <br><br><br>
 
