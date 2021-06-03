@@ -248,11 +248,23 @@ You can then see the EIC (5) of the chosen peak to check if the peak shape is go
 knitr::include_graphics("images/chap15/MSDIAL_9.png", dpi = 100)
 ```
   
-In the new MS-FINDER window, fill in the information in (10) in Figure \@ref(fig:MSFINDER) for your compound. For GC-MS, in most cases the monoisotopic peak (somewhat equivalent to the precursor ion in LC mode) and you can choose the ion closest to the monoisotopic mass of your standard compound. Then choose the precursor type. For GC-MS: choose [M]+. (M plus dot). After you are done, select "Fragment annotation (single)" in the ""Analysis" menu (11). Afterwards, select the "Fragment annotation (batch job)" under the same menu. The _in silico_ annotation of the fragment ions should now be calculated (12) and you can thereafter export the annotated spectrum as an ".msp" file (see 13). Use the file name that was generated in the standard infosheet you filled at the "COMMENT: msp file name" row. Save the file in the "3_MSP" subfolder.  
-Now you are finished with generating the msp file for your standard spectrum.  
+In the new MS-FINDER window, fill in the information in (10) in Figure \@ref(fig:MSFINDER) for your compound. For GC-MS, in most cases the monoisotopic peak (somewhat equivalent to the precursor ion in LC mode) and you can choose the ion closest to the monoisotopic mass of your standard compound. Then choose the precursor type. For GC-MS: choose [M]+. (M plus dot). After you are done, select "Fragment annotation (single)" in the ""Analysis" menu (11). Afterwards, select the "Fragment annotation (batch job)" under the same menu. The _in silico_ annotation of the fragment ions should now be calculated (12) and you can thereafter export the annotated spectrum as an ".msp" file (see 13). Use the file name that was generated in the standard infosheet you filled at the "COMMENT: msp file name" row. Save the file in the "3_MSP" subfolder.
   
-The mainlib excel file as well as the combined msp file will be updated on a regular basis or upon request.  
+Now you are finished with generating the msp file for your standard spectrum.
 
+__Send the newly created files together with the mzML files to Thanh__
+
+The mainlib excel file as well as the combined msp file will be updated on a regular basis or upon request.    
+
+The final msp file will look something like below (not including the ## sign). A note is that the retention index is not included by MS-FINDER when you export to msp file. This will be later automatically added to the combined database based on the retention index value in the infosheet for the specific standard. Therefore, it is important to check that all files have consistent MTM IDs for the same measured compound. 
+```{r mspfile, echo=FALSE, fig.cap= "Example of msp file"}
+
+msp_table <- readLines("images/chap15/MTM00029.txt")
+
+cat(msp_table, sep = "\n")
+
+
+```
 
 
 

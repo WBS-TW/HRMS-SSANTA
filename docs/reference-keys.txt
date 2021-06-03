@@ -34,7 +34,7 @@ patroon
 ms-dial
 output-formats
 suspect_screening
-hrms-spectra-library-setup
+lib2nist
 listing-suspects
 suspect-scoring
 mass_defect

@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2021-05-28" />
+<meta name="date" content="2021-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="suspect-screening.html"><a href="suspect-screening.html"><i class="fa fa-check"></i><b>5</b> <strong>Suspect screening</strong></a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="suspect-screening.html"><a href="suspect-screening.html#hrms-spectra-library-setup"><i class="fa fa-check"></i><b>5.1</b> HRMS spectra library setup</a></li>
+<li class="chapter" data-level="5.1" data-path="suspect-screening.html"><a href="suspect-screening.html#lib2nist"><i class="fa fa-check"></i><b>5.1</b> LIB2NIST</a></li>
 <li class="chapter" data-level="5.2" data-path="suspect-screening.html"><a href="suspect-screening.html#listing-suspects"><i class="fa fa-check"></i><b>5.2</b> Listing suspects</a></li>
 <li class="chapter" data-level="5.3" data-path="suspect-screening.html"><a href="suspect-screening.html#suspect-scoring"><i class="fa fa-check"></i><b>5.3</b> Suspect scoring</a></li>
 </ul></li>
@@ -334,19 +334,14 @@ run qceims again and check the ouput if all is ok.
 
 5. Executing production runs.
 Running qceims locally, use:
-pqceims
+pqceims &lt;#cores&gt;
+where &lt;#cores&gt; is the number of cores requested
 You might want to leave your work station and even log out in the meantime. In this case, type:
-
-
-5. do the parallel production run (pqceims &lt;nprocs&gt; locally, q-batch on 
-a cluster with queing system). While running you can type:
 nohup pqceims &lt;# proc&gt; &amp;
-where &lt;# proc&gt; gives the number of CPUs you want to use.
 
 Optionally, check the status of your QCEIMS run by changing to your working directory
 and typing getres, which will provide an output of the form:
 XXX runs done and written to tmpqceims.res/out
-
 getres
 which gathers the runs already finished (creates tmpqceims.res and tmpqceims.out). 
 The final results are on qceims.out and qceims.res

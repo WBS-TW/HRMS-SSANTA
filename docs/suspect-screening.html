@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2021-05-28" />
+<meta name="date" content="2021-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="suspect-screening.html"><a href="suspect-screening.html"><i class="fa fa-check"></i><b>5</b> <strong>Suspect screening</strong></a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="suspect-screening.html"><a href="suspect-screening.html#hrms-spectra-library-setup"><i class="fa fa-check"></i><b>5.1</b> HRMS spectra library setup</a></li>
+<li class="chapter" data-level="5.1" data-path="suspect-screening.html"><a href="suspect-screening.html#lib2nist"><i class="fa fa-check"></i><b>5.1</b> LIB2NIST</a></li>
 <li class="chapter" data-level="5.2" data-path="suspect-screening.html"><a href="suspect-screening.html#listing-suspects"><i class="fa fa-check"></i><b>5.2</b> Listing suspects</a></li>
 <li class="chapter" data-level="5.3" data-path="suspect-screening.html"><a href="suspect-screening.html#suspect-scoring"><i class="fa fa-check"></i><b>5.3</b> Suspect scoring</a></li>
 </ul></li>
@@ -249,42 +249,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="suspect_screening" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> <strong>Suspect screening</strong></h1>
 <p><br><br></p>
-<div id="hrms-spectra-library-setup" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> HRMS spectra library setup</h2>
-<ol style="list-style-type: decimal">
-<li>Copy the template excel sheet for your analytical run (LC, GC, ESI, EI, POS, NEG,..) to the ”1_Standard_infosheets” folder.<br />
-</li>
-<li>The ”Spectral_FileName” cell will autogenerate the name for the msp file based on the filled cells. Copy this file name later for the msp file.<br />
-</li>
-<li>Open MS-DIAL<br />
-</li>
-<li>Perform peak peaking,….<br />
-</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Xxx<br />
-</li>
-<li>Xxx<br />
-</li>
-<li>Xxx<br />
-</li>
-<li>Xxx<br />
-</li>
-</ol>
-<ol start="5" style="list-style-type: decimal">
-<li>Double click on the individual file at the file navigator (click on the text of the file name)<br />
-</li>
-<li>In the ”peak spot viewer” find the peak of the standard chemical. Click on the triangle to show the deconvoluted spectrum.<br />
-</li>
-<li>Retention time index is not exported to MS-FINDER. NEED TO FIX or MANUALLY COPY FROM EXCEL INFO SHEET.<br />
-..<br />
-X. Use LIB2NIST to convert combined msp file to NIST library. NEED TO ADD RETENTIONINDEX in comment
-Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.</li>
-</ol>
-<p>COMMAND:<br />
+<div id="lib2nist" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> LIB2NIST</h2>
+<p>X. Use LIB2NIST to convert combined msp file to NIST library.<br />
+NEED TO ADD RETENTIONINDEX in comment field (see p31. of <a href="https://www.nist.gov/system/files/documents/srd/NIST1aVer22Man.pdf" class="uri">https://www.nist.gov/system/files/documents/srd/NIST1aVer22Man.pdf</a>)</p>
+<p>Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass since the GUI tool only convert to nominal mass) <strong>NOTE TO SELF: CHECK IF THIS IS TRUE</strong>. See command line help file for arguments.</p>
+<p>IN WINDOWS: open ‘cmd,’ go to the folder where LIB2NIST is and type:</p>
+<p>COMMAND: <strong>NOTE TO SELF: VERIFY THAT THE COMMAND IS CORRECT, ALSO IS IT POSSIBLE TO ADD RI?</strong><br />
 <code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code></p>
 <p>EXAMPLES:<br />
-<code>lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\RECETOX_GC-EI_MS_20201028.msp D:\Program\NIST14\ =RECETOX_GC-EI_MS_20201028</code></p>
+<code>lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\2021-05-28_MTM_HRMS_RECETOX_THERMO.msp D:\Program\NIST14\ =MTM_HRMS_RECETOX_THERMO_20210528</code></p>
 <p><br><br><br></p>
 </div>
 <div id="listing-suspects" class="section level2" number="5.2">
