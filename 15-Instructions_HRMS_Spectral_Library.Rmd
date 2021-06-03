@@ -5,7 +5,7 @@ This tutorial will guide you through the different steps to export the spectra i
 
 We first start with the raw data file from the HRMS analysis of a standard and we want to generate a __.msp__ file as a final file format. The msp file is a file format developed by NIST to store mass spectral data. For more information about this format, please see this [document](https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf).  
   
-The overall goal can be seen in Figure 
+The overall goal can be seen in Figure \@ref(fig:combineMSP)
 
 ```{r combineMSP, echo=FALSE, fig.cap= "Overall goal of the msp suspect list library"}
 
@@ -16,7 +16,7 @@ knitr::include_graphics("images/chap15/combineMSP.png", dpi = 100)
   
 If compounds were analyzed using GC, then you also need to include an __alkane mix__ to be able to calculate the retention index (RI). In our lab, we use a mix consisting of C7-C40 alkanes. Ask Thanh for the alkane mix. You can find some representative chromatograms with retention times of the alkane mix for a 30 m DB-5ms column in the file "_/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/AlkaneMixRT.pptx_". A solvent blank also needs to be analyzed together with the standards in order to subtract any blank signals at a later stage.
   
-The main steps of this procedure can be seen in below Figure \@ref(fig:MSDIALPeakdetection).
+The main steps of this procedure can be seen in below Figure \@ref(fig:diagramSpeclib).
   
 ```{r diagramSpeclib, echo=FALSE, fig.cap= "General workflow for spectral library", fig.align='center'}
 
@@ -124,10 +124,12 @@ You should also inject a _solvent blank_ to perform blank subtraction later in M
 Most vendor software record the mass spectra in profile mode, but data processing of this format is usually very time consuming as well as producing very large files. Therefore, during file conversion we will also perform centroiding to make data processing faster as well as reducing the size of the mzML file. 1.  
 Click "Browse" and choose the raw file(s) you want to include and add.  
 
-2. Choose mzML as the output format.  Make sure the "Output Directory" is correctly set to the folder you want to store the mzML file. For this library task, you can directly choose the "/MTM_HRMS_LIB/MSDIAL_PROJECT" in the library folder as temporary storage.  
-3. In the "Filters" dropdown menu, select the "Peak Picking. For "Algorithm", use "Vendor" for most raw files. Choose appropriate MS Levels you want to include. Use "1 - " to choose all MS levels. For GC data, this is fine. Press add and then make sure to move the "peakPicking" filter as the first filter as seen in below figure. 
-4. If you have many files, it would be wise to increase the "Files to convert in parallel" to speed up the process. However, this depends on your computer processing power the number of cores it has. The other parameters should be set as seen in below Figure \@ref(fig:MSConvert).  
-
+2. Choose mzML as the output format.  Make sure the "Output Directory" is correctly set to the folder you want to store the mzML file. For this library task, you can directly choose the "/MTM_HRMS_LIB/MSDIAL_PROJECT" in the library folder as temporary storage.
+  
+3. In the "Filters" dropdown menu, select the "Peak Picking. For "Algorithm", use "Vendor" for most raw files. Choose appropriate MS Levels you want to include. Use "1 - " to choose all MS levels. For GC data, this is fine. Press add and then make sure to move the "peakPicking" filter as the first filter as seen in below figure.
+  
+4. If you have many files, it would be wise to increase the "Files to convert in parallel" to speed up the process. However, this depends on your computer processing power the number of cores it has. The other parameters should be set as seen in below Figure \@ref(fig:MSConvert).
+  
 ```{r MSConvert, echo = FALSE, fig.cap= "MSConvert"}
 
 knitr::include_graphics("images/MSConvert.png", dpi = 100)

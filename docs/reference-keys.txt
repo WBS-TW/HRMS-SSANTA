@@ -1,5 +1,6 @@
 fig:rumsfeldt
 fig:spectrum1
+fig:combineMSP
 fig:diagramSpeclib
 fig:MSConvert
 fig:MSDIALStartup
