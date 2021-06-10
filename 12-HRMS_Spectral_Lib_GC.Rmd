@@ -1,4 +1,4 @@
-# Tutorial on generating msp files from raw HRMS files to contribute to MTM HRMS library  
+# MTM HRMS Library: GC-HRMS  
   
 
 This tutorial will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library. The project is organized in different subfolders within the main folder folder named "_MTM_HRMS_LIB"_. Do not change the name of any folders.   
@@ -186,7 +186,7 @@ knitr::include_graphics("images/chap15/MSDIAL_startproject.png", dpi = 100)
 Click on the "Advanced: add further meta data" tab. The information for different instruments in our lab can be found in the file "/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/Metadata.txt". If your instrument is not present then you can input these by yourself. This metadata is optional but the information will be added to the msp file later.  
 When you are finished, click on next.  
 
-__2.__ Click on the browse button and then you will select the files to process. The default file format is .abf but we want to process .mzML so choose this file format instead. You will now see the mzML file(s) in your working directory. If you want to process multiple files use _Shift/Ctrl + select_. Make sure your standards are designated as "Sample". You should include a solvent blank which will be designated as "Blank". The pther columns are for post processing and not important for this spectral database workflow. You can learn more about these in the [tutorial](https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html).  
+__2.__ Click on the browse button and then you will select the files to process. The default file format is .abf but we want to process .mzML so choose this file format instead. You will now see the mzML file(s) in your working directory. If you want to process multiple files use _Shift/Ctrl + select_. Make sure your standards are designated as "Sample". You should include a solvent blank which will be designated as "Blank". The other columns are for post processing and not important for this spectral database workflow. You can learn more about these in the [tutorial](https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html).  
 
 ```{r MSDIALChoosefiles, echo = FALSE, fig.cap= "Choosing files"}
 

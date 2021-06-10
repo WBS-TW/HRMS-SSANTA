@@ -53,7 +53,24 @@ xx
 
 ## MsnBase and XCMS
 xx
-<br><br>
+<br>
+
+### XCMS
+
+### CAMERA
+
+http://www.metabolomics-forum.com/index.php?topic=278.0
+calcCiS: Calculate correlation inside samples
+That means correlation across the peak = is it really coeluting or not?
+It is correlation inside the sample; not inside a sample group. This means that camera goes back to the raw data and compares extracted ion chromatograms.
+The illutration in Carsten's paper show this: http://pubs.acs.org/doi/abs/10.1021/ac202450g
+This will fail if compounds are perfectly coeluting.
+
+calcCaS: Calculate correlation accross samples
+They are correlated if high intensity of feature A means high intensity of feature B. The study design or sample groups are not used for this information.
+Look at these plots. Each dot is a sample.
+
+
 
 ## PatRoon
 xx
@@ -66,6 +83,12 @@ https://rickhelmus.github.io/patRoon/articles/tutorial.html
 
 OpenMS performs peak picking and isotope grouping in one step (any idea how to turn off this?), while XCMS does not perform this step here. 
 From Rick: For OpenMS: you can use a trick for this by setting localMZRange=0, this way OpenMS won’t be able to look for isotopes. Note that its detection was more developed for ‘natural compounds’ (eg proteomics, metabolomics) in mind, and that it isn’t really good in grouping halogenated peaks anyway.
+
+PatRoon Docker:  
+In linux, run:  
+docker run --rm -p 8787:8787 -u 0 -e PASSWORD=yourpasswordhere -v /home/ORUNET.ORU.SE/twg/Raw_data:/home/rstudio/Raw_data patroonorg/patroonrs /init
+  
+
 
 
 ## MS-DIAL

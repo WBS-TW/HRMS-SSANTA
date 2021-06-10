@@ -31,6 +31,8 @@ peak-picking
 open-tools-for-preprocessing
 openms-and-toppview
 msnbase-and-xcms
+xcms
+camera
 patroon
 ms-dial
 output-formats
@@ -59,10 +61,15 @@ workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2
 first-convert-unifi-data-using-msconvert
 centroiding-raw-data-from-mzml-using-msnbase
 example_pfas
-a-handbook-on-gc-q-exactive-orbitrap-use
-terminologies-1
-tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library
+mtm-hrms-library-gc-hrms
 analyze-the-standards-using-hrms
 convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx
 fill-in-the-standard-infosheet
 use-md-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound
+mtm-hrms-library-lc-hrms
+analyze-the-standards-using-hrms-1
+convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx-1
+fill-in-the-standard-infosheet-1
+use-md-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound-1
+a-handbook-on-gc-q-exactive-orbitrap-use
+terminologies-1
