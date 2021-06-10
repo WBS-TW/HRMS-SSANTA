@@ -9,7 +9,7 @@ The overall goal can be seen in Figure \@ref(fig:combineMSP)
 
 ```{r combineMSP, echo=FALSE, fig.cap= "Overall goal of the msp suspect list library"}
 
-knitr::include_graphics("images/chap15/combineMSP.png", dpi = 100)
+knitr::include_graphics("images/speclib/combineMSP.png", dpi = 100)
 
 ```
 
@@ -113,7 +113,7 @@ Several software and packages are needed to generate the spectra library. All ar
 - _MS-FINDER_: used to annotate the individual peaks in the spectrum and export to msp file.  
   
 ## Analyze the standards using HRMS  
-It is recommended to analyze single standards but mixtures are also feasible to analyze if the analytes are not coeluting too close to each other. The deconvolution algorithm of MS-DIAL is able to distinguish between two peaks that are closely eluted but still have slightly different retention times.  
+It is recommended to analyze single standards but mixtures are also feasible to analyze if the analytes are not coeluting too close to each other. The deconvolution algorithm of MS-DIAL is able to distinguish between two peaks that are closely eluted but still have slightly different retention times and peak shapes.  
 You should also inject a _solvent blank_ to perform blank subtraction later in MS-DIAL.  
   
   
@@ -180,7 +180,7 @@ __1.__ In the File menu, start a new project. You must choose a file path where 
 
 ```{r MSDIALStartup, echo = FALSE, fig.cap= "Starting a new project for GC analysis"}
 
-knitr::include_graphics("images/chap15/MSDIAL_startproject.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_startproject.png", dpi = 100)
 ```
   
 Click on the "Advanced: add further meta data" tab. The information for different instruments in our lab can be found in the file "/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/Metadata.txt". If your instrument is not present then you can input these by yourself. This metadata is optional but the information will be added to the msp file later.  
@@ -190,7 +190,7 @@ __2.__ Click on the browse button and then you will select the files to process.
 
 ```{r MSDIALChoosefiles, echo = FALSE, fig.cap= "Choosing files"}
 
-knitr::include_graphics("images/chap15/MSDIAL_choosefiles.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_choosefiles.png", dpi = 100)
 ```
 
 Click on next to the Analysis parameter settings.
@@ -200,7 +200,7 @@ __3.__ The following instructions are for GC-EI orbitrap data, but the other pro
 
 ```{r MSDIALPeakdetection, echo = FALSE, fig.cap= "Peak detection parameters"}
 
-knitr::include_graphics("images/chap15/MSDIAL_peakdetection.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_peakdetection.png", dpi = 100)
 ```
   
 Continue to the "MS1Dec" tab.
@@ -210,7 +210,7 @@ __4.__ The sigma window value is an important parameter which determines the eff
 
 ```{r MSDIALMS1Dec, echo = FALSE, fig.cap= "MS1Dec parameters"}
 
-knitr::include_graphics("images/chap15/MSDIAL_MS1Dec.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_MS1Dec.png", dpi = 100)
 ```
   
 
@@ -221,7 +221,7 @@ __5.__ If you process GC data, we mainly want to "Use retention index (RI)". If 
 
 ```{r MSDIALIdentification, echo = FALSE, fig.cap= "Identification parameters"}
 
-knitr::include_graphics("images/chap15/MSDIAL_identification.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_identification.png", dpi = 100)
 ```
   
 
@@ -232,7 +232,7 @@ Select the "Remove features based on blank information"and choose 5 fold change.
 
 ```{r MSDIALFiltering, echo = FALSE, fig.cap= "Filtering parameters"}
 
-knitr::include_graphics("images/chap15/MSDIAL_filtering.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_filtering.png", dpi = 100)
 ```
   
 Now you are done and click on "Finish".  
@@ -242,7 +242,7 @@ After the peak detection and deconvolution process is finished, you should see b
 
 ```{r MSDIALSample, echo = FALSE, fig.cap= "x"}
 
-knitr::include_graphics("images/chap15/MSDIAL_7.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_7.png", dpi = 100)
 ```
   
 Double click on the sample name where your standard was analyzed (see 1 in Figure \@ref(fig:MSDIALSample)). Your screen will be switched to the "Peak spot viewer" tab. Each detected component will be seen as a downward pointing triangle (see 2 in Figure \@ref(fig:MSDIALSample)). You should zoom in to the peak by moving you pointer to below the x-axis and scroll to zoom in the retention time axis (3). You should now be able to see the peak more clear and click on the peak as seen in 4 in Figure \@ref(fig:MSDIALPeak).
@@ -250,7 +250,7 @@ Double click on the sample name where your standard was analyzed (see 1 in Figur
 
 ```{r MSDIALPeak, echo = FALSE, fig.cap= "x"}
 
-knitr::include_graphics("images/chap15/MSDIAL_8.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_8.png", dpi = 100)
 ```
   
 You can then see the EIC (5) of the chosen peak to check if the peak shape is good. The extracted spectrum will be shown in (6), and the retention time and retention index can be seen in (7). This is the deconvoluted spectrum and you can see the peak shape of the ion fragments with the highest intensities by choosing the "EI chrom" tab (8) which allows you to see if the deconvolution process has been successful (9). When you feel that the quality is good, then you can export the spectrum to MS-FINDER by clicking on the "MS FINDER search" button (10).  
@@ -258,7 +258,7 @@ You can then see the EIC (5) of the chosen peak to check if the peak shape is go
 
 ```{r MSFINDER, echo = FALSE, fig.cap= "x"}
 
-knitr::include_graphics("images/chap15/MSDIAL_9.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_9.png", dpi = 100)
 ```
   
 In the new MS-FINDER window, fill in the information in (10) in Figure \@ref(fig:MSFINDER) for your compound. For GC-MS, in most cases the monoisotopic peak (somewhat equivalent to the precursor ion in LC mode) and you can choose the ion closest to the monoisotopic mass of your standard compound. Then choose the precursor type. For GC-MS: choose [M]+. (M plus dot). After you are done, select "Fragment annotation (single)" in the ""Analysis" menu (11). Afterwards, select the "Fragment annotation (batch job)" under the same menu. The _in silico_ annotation of the fragment ions should now be calculated (12) and you can thereafter export the annotated spectrum as an ".msp" file (see 13). Use the file name that was generated in the standard infosheet you filled at the "COMMENT: msp file name" row. Save the file in the "3_MSP" subfolder.
@@ -272,7 +272,7 @@ The mainlib excel file as well as the combined msp file will be updated on a reg
 The final msp file will look something like below (not including the ## sign). A note is that the retention index is not included by MS-FINDER when you export to msp file. This will be later automatically added to the combined database based on the retention index value in the infosheet for the specific standard. Therefore, it is important to check that all files have consistent MTM IDs for the same measured compound. 
 ```{r mspfile, echo=FALSE, fig.cap= "Example of msp file"}
 
-msp_table <- readLines("images/chap15/MTM00029.txt")
+msp_table <- readLines("images/speclib/MTM00029.txt")
 
 cat(msp_table, sep = "\n")
 

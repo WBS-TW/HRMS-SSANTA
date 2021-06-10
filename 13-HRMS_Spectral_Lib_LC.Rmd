@@ -1,4 +1,4 @@
-# MTM HRMS Library: LC-HRMS  
+# MTM HRMS Library: LC-HRMS in MSe mode  
   
 
 This tutorial will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library. The project is organized in different subfolders within the main folder folder named "_MTM_HRMS_LIB"_. Do not change the name of any folders.   
@@ -9,12 +9,12 @@ The overall goal can be seen in Figure \@ref(fig:LCcombineMSP)
 
 ```{r LCcombineMSP, echo=FALSE, fig.cap= "Overall goal of the msp suspect list library"}
 
-knitr::include_graphics("images/chap15/combineMSP.png", dpi = 100)
+knitr::include_graphics("images/speclib/combineMSP.png", dpi = 100)
 
 ```
 
   
-If compounds were analyzed using GC, then you also need to include an __alkane mix__ to be able to calculate the retention index (RI). In our lab, we use a mix consisting of C7-C40 alkanes. Ask Thanh for the alkane mix. You can find some representative chromatograms with retention times of the alkane mix for a 30 m DB-5ms column in the file "_/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/AlkaneMixRT.pptx_". A solvent blank also needs to be analyzed together with the standards in order to subtract any blank signals at a later stage.
+At least one solvent blank needs to be analyzed together with the standards in order to subtract any blank signals at a later stage.
   
 The main steps of this procedure can be seen in below Figure \@ref(fig:LCdiagramSpeclib).
   
@@ -113,30 +113,31 @@ Several software and packages are needed to generate the spectra library. All ar
 - _MS-FINDER_: used to annotate the individual peaks in the spectrum and export to msp file.  
   
 ## Analyze the standards using HRMS  
-It is recommended to analyze single standards but mixtures are also feasible to analyze if the analytes are not coeluting too close to each other. The deconvolution algorithm of MS-DIAL is able to distinguish between two peaks that are closely eluted but still have slightly different retention times.  
+It is recommended to analyze single standards but mixtures are also feasible to analyze if the analytes are not coeluting too close to each other. The deconvolution algorithm of MS-DIAL is able to distinguish between two peaks that are closely eluted but still have slightly different retention times and peak shapes.  
 You should also inject a _solvent blank_ to perform blank subtraction later in MS-DIAL.  
   
   
-## Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX)  
+## Convert the raw data file from LC-HRMS in unifi to mzML using MSconvert  
   
     
-1. The first step is to convert the vendor software format to the open mass spectrometric data format mzML. We use MSConvert to perform this. After installing Proteowizard, open the MSConvert program.
-Most vendor software record the mass spectra in profile mode, but data processing of this format is usually very time consuming as well as producing very large files. Therefore, during file conversion we will also perform centroiding to make data processing faster as well as reducing the size of the mzML file. 1.  
-Click "Browse" and choose the raw file(s) you want to include and add.  
+1. The first step is to convert the vendor software format to the open mass spectrometric data format mzML. We use MSConvert to perform this. The Proteowizard should be already installed in the computer connected the G2 XS qtof instrument. In Windows, search for MSConvertin the search bar and open it. Click on the _"Browse network resource"_ and choose _UNIFI_. A new window will open which you will see the folders where all raw files are located. Choose the files you want to convert (it might take a couple of minutes before all files are loaded if the folder contain a lot of analysis files). After selecting the files, click on _"Open"_ button.
+  
 
-2. Choose mzML as the output format.  Make sure the "Output Directory" is correctly set to the folder you want to store the mzML file. For this library task, you can directly choose the "/MTM_HRMS_LIB/MSDIAL_PROJECT" in the library folder as temporary storage.
+2. If you only choose one file, then you should also click on _"Add"_ to add the raw file to the list (see XX). Choose mzML as the output format.  Make sure the "Output Directory" is correctly set to the folder you want to store the mzML file.
   
-3. In the "Filters" dropdown menu, select the "Peak Picking. For "Algorithm", use "Vendor" for most raw files. Choose appropriate MS Levels you want to include. Use "1 - " to choose all MS levels. For GC data, this is fine. Press add and then make sure to move the "peakPicking" filter as the first filter as seen in below figure.
+Most vendor software record the mass spectra in profile mode, but data processing of this format is usually very time consuming as well as producing very large files. Therefore, during file conversion we will also perform centroiding to make data processing faster as well as reducing the size of the mzML file.
   
-4. If you have many files, it would be wise to increase the "Files to convert in parallel" to speed up the process. However, this depends on your computer processing power the number of cores it has. The other parameters should be set as seen in below Figure \@ref(fig:MSConvert_LC).
+3. In the "Filters" dropdown menu, select the "Peak Picking. For "Algorithm", use "Vendor" for most raw files. Choose appropriate MS Levels you want to include. Use "1 - 2" to choose all MS1 (channel 1, low energy scan) and MS2 (channel 2, high energy scan). For the G2 XS qtof, there is also channel 3 which is the lock mass and not needed in this case. Click on _"Add"_ and then make sure to move the "peakPicking" filter as the first filter as seen in below Figure \@ref(fig:LCMSConvert).
+  
+4. If you have many files, it would be wise to increase the "Files to convert in parallel" to speed up the process. However, this depends on your computer processing power the number of cores it has. The other parameters should be set as seen in below Figure \@ref(fig:LCMSConvert). _NOTE: Unfortunately, the conversion to mzML files takes a very long time for unifi files in the current computer and you should convert max 2 files. We might find a better solution for this problem in the future._
   
 ```{r LCMSConvert, echo = FALSE, fig.cap= "MSConvert"}
 
-knitr::include_graphics("images/MSConvert.png", dpi = 100)
+knitr::include_graphics("images/speclib/LCMSConvert.png", dpi = 100)
 ```
 
 Now you can proceed with the conversion by clicking "Start".    
-After you have finished with the conversion, copy the mzML file(s) to the designated folder in MTM_HRMS_LIB/2_mzML_data/../ (where ".." is the folder depending on your instrument type and analysis mode).
+After you have finished with the conversion, copy or move the mzML file(s) to the designated folder in MTM_HRMS_LIB/2_mzML_data/LC_ESI../ (where ".." is the folder depending on the analysis mode, POS or NEG).
 
 
 ## Fill in the standard infosheet
@@ -165,8 +166,6 @@ The other rows should be quite straightforward to fill in. If you use the same m
 
 The _AC\$CHROMATOGRAPHY: RETENTION_TIME_ row will be obtained later using MS-DIAL.  
 
-If you use GC-MS, then you also need to fill in the _AC\$CHROMATOGRAPHY: KOVATS_RTI_ which will also be available later using MS-DIAL.  
-  
 Now that you have filled in most information about the compound, we can proceed to process the mzML file to extract the spectra using MS-DIAL (although you can also first process the mzML files and then fill in the information afterwards).
   
 
@@ -174,13 +173,15 @@ Now that you have filled in most information about the compound, we can proceed 
   
 The graphical user interface of MS-DIAL takes some time to get used to since it is centered around detected peaks. It is important that you choose the correct parameters in the beginning since the parameters can affect the peak detection and alignment, or else you need to redo the data preprocessing again which could take long time if you are analyzing a lot of samples. When you run a large number of real samples, it is recommended to first optimize the parameters using e.g. QC samples. In this case where we analyze standards, then the default parameters with some instrument specific parameters can be used. These are found in the subfolder _MSDIAL_PROJECT/MSDIAL_params/_. If you want to know more details about data processing using MS-DIAL, please check the [MS-DIAL online tutorial](https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html). 
   
-The below steps are based on the workflow for GC-EI orbitrap data described by [Price et al.](https://www.frontiersin.org/articles/10.3389/fpubh.2021.622558/full).  
-
-__1.__ In the File menu, start a new project. You must choose a file path where the mzML file(s) are located. When the data analysis is finished, several files associated with the analysis is created in the same folder. Depending on GC or LC analysis, then different parameters needs to be selected. Below Figure \@ref(fig:LCMSDIALStartup) shows parameters for GC analysis. GC-EI is a hard ionization and we also centroided the mzML file so these paramters needs to be specified.  
+The below steps are based on the workflow for GC-EI orbitrap data described by [Price et al.](https://www.frontiersin.org/articles/10.3389/fpubh.2021.622558/full) and adapted to LC-HRMS.
+  
+__IN THIS EXAMPLE HERE, I WILL USE ONE STANDARD OF PFAS ANALYZED IN LC-ESI IN NEGATIVE MODE__
+  
+__1.__ In the File menu, start a new project. You must choose a file path where the mzML file(s) are located. When the data analysis is finished, several files associated with the analysis is created in the same folder. Depending on GC or LC analysis, then different parameters needs to be selected. Below Figure \@ref(fig:LCMSDIALStartup) shows parameters for __LC analysis__. LC-ESI is a soft ionization and the Waters G2 XS  qtof instrument uses MSe which has an alternating low energy scan and high energy scan. Choose _"SWATH-MS"_ and then browse to the _"MSDIAL_PROJECT\MSDIAL_params\MSDIAL_MSe_50_1200_params.txt"_ file. This specifies the parameters for the MSe experiment. Since we also centroided the mzML file for both MS1 and MSMS so these parameters needs to be specified. In this example, we ran a PFAS standard in negative mode, so this ion mode was choosen in this case.  
 
 ```{r LCMSDIALStartup, echo = FALSE, fig.cap= "Starting a new project for LC analysis"}
 
-knitr::include_graphics("images/chap15/MSDIAL_startproject.png", dpi = 100)
+knitr::include_graphics("images/speclib/LC_MSDIAL_start.png", dpi = 100)
 ```
   
 Click on the "Advanced: add further meta data" tab. The information for different instruments in our lab can be found in the file "/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/Metadata.txt". If your instrument is not present then you can input these by yourself. This metadata is optional but the information will be added to the msp file later.  
@@ -190,51 +191,51 @@ __2.__ Click on the browse button and then you will select the files to process.
 
 ```{r LCMSDIALChoosefiles, echo = FALSE, fig.cap= "Choosing files"}
 
-knitr::include_graphics("images/chap15/MSDIAL_choosefiles.png", dpi = 100)
+knitr::include_graphics("images/speclib/LC_MSDIAL_choosefiles.png", dpi = 100)
 ```
 
 Click on next to the Analysis parameter settings.
   
-__3.__ The following instructions are for GC-EI orbitrap data, but the other processing methods are similar. Click on the "Load" button and select the "GC_EI_Orbitrap.med2" (for GC-EI-orbtrap files) file located in the "/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/" folder. This will load the preset parameters for this instrument. You can set the parameters that are suitable for your specific analysis. Click on the "Advanced" tab and you can also choose how many samples (threads) to process in parallel. Continue with the "Peak detection" tab and set an appropriate minimum peak height. This is instrument specific and also depends on the concentration of the analytes. If the "Accurate MS" box is not checked, then select it. Below Figure \@ref(fig:LCMSDIALPeakdetection) shows the parameters for the GC-EI orbitrap. The smoothing levels and width can be set as 3 and 10 respectively for GC analysis. 
-
-
+__3.__ The following instructions are for LC-ESI data, but the other processing methods are similar. Below Figure \@ref(fig:LCMSDIALPeakdetection) shows the parameters for the XS qtof instrument. The MS1 and MS2 tolerance is set on _0.01 Da_. Click on the "Advanced" tab and check the _"Consider Cl and Br elements"_. You can also choose how many samples (threads) to process in parallel. Continue with the "Peak detection" tab and set an appropriate minimum peak height. Use the following parameters for our spectral library purpose:  
+Minimum peak height: 1000 amplitude.  
+Mass slice width: 0.05 Da.
+  
+This is instrument specific and also depends on the concentration of the analytes. The advanced tab can be left as default.
+  
 ```{r LCMSDIALPeakdetection, echo = FALSE, fig.cap= "Peak detection parameters"}
 
-knitr::include_graphics("images/chap15/MSDIAL_peakdetection.png", dpi = 100)
+knitr::include_graphics("images/speclib/LC_MSDIAL_peakdetection.png", dpi = 100)
 ```
   
-Continue to the "MS1Dec" tab.
+Continue to the "MS2Dec" tab.
   
-__4.__ The sigma window value is an important parameter which determines the efficiency of the deconvolution algorithm. The parameter depends on the instrument and Figure \@ref(fig:LCMSDIALMS1Dec) shows the recommended ones for the GC orbitrap analysis of standards. From the [online tutorial](https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html#chapter-4): "The sigma window value is highly affected by the resolution of deconvolution. A higher value (0.7-1.0) will reduce the peak top resolutions, i.e. the number of resolved chromatographic peaks will be decreased. On the other hand, a lower value (0.1-0.3) may also recognize many noise chromatographic peaks. In addition, you may set a cutoff value to reduce the MS noises (see Section 3-3 of Chapter 3). This is the same as LC/MS part."
+__4.__ The sigma window value is an important parameter which determines the efficiency of the deconvolution algorithm. The parameter depends on the instrument and Figure \@ref(fig:LCMSDIALMS2Dec) shows the recommended ones for the GC orbitrap analysis of standards. From the [online tutorial](https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html#chapter-4): "The sigma window value is highly affected by the resolution of deconvolution. A higher value (0.7-1.0) will reduce the peak top resolutions, i.e. the number of resolved chromatographic peaks will be decreased. On the other hand, a lower value (0.1-0.3) may also recognize many noise chromatographic peaks.."
 
 
-```{r LCMSDIALMS1Dec, echo = FALSE, fig.cap= "MS1Dec parameters"}
+```{r LCMSDIALMS2Dec, echo = FALSE, fig.cap= "MS1Dec parameters"}
 
-knitr::include_graphics("images/chap15/MSDIAL_MS1Dec.png", dpi = 100)
-```
-  
-
-Continue to the "Identification" tab. 
-  
-__5.__ If you process GC data, we mainly want to "Use retention index (RI)". If the below "Set" button cannot be clicked, then first click on the "Use retention time (min)" button and the back again to the "Use retention index (RI)" button and then you will be able to click on the "Set" button next to the Index file (Figure \@ref(fig:LCMSDIALIdentification)). The "Index type" should be set to "Alkanes" since we analyzed an alkane mix. If you are using LC, then you should choose "Use retention time (min)", since no retention index mix is used (yet). After you clicked the Set button, you will then choose a retention index file that include the retention time (in minutes) of the different alkanes in the mixture. A template of how the format should be can be found in the file "/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/xxxxxx_RTI_MSDIAL.txt". Adjust the retention time depending on your specific analysis after checking the chromatogram of the alkane mix. An example of the retention times of alkane mix can be found in the "_/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/AlkaneMixRT.pptx_" file. After you chosen the RTI file, _right click on the mouse_ on the other rows and choose autofill.
-  
-
-```{r LCMSDIALIdentification, echo = FALSE, fig.cap= "Identification parameters"}
-
-knitr::include_graphics("images/chap15/MSDIAL_identification.png", dpi = 100)
+knitr::include_graphics("images/speclib/LC_MSDIAL_MS2Dec.png", dpi = 100)
 ```
   
 
-The other parameters are not important for this standard library generation workflow and you can click on the "Alignment" tab. The purpose of alignment is to align all individual samples so the retention times for the same for the same compound between all samples. This is because the chromatographic separation will change between runs and batches and needs to be aligned. You do not need to pay attention to this tab for the spectral library purpose. continue to the last tab "Filtering".
+The _"Identification"_ tab is not necessary to modify for our purpose and mainly important when processing real samples (using the HRMS library as suspect list).
   
-Select the "Remove features based on blank information"and choose 5 fold change. This will remove any features that are lower than five times the blank samples (solvent blank in this case).  
+Go on to the _"Adduct"_ tab. 
 
+__5._ The adduct should be chosen based on your knowledge of the ionization behavior of the standards. Most common is the [M-H]- ion for negative mode and [M+H]+ ion for positive mode. some compounds have much higher ion abundance for other adducts and therefore these can be included also. You also define your own adducts in the _"User-defined adduct"_ subtab if it is not present in the list.
+  
 
-```{r LCMSDIALFiltering, echo = FALSE, fig.cap= "Filtering parameters"}
+```{r LCMSDIALAdduct, echo = FALSE, fig.cap= "Adduct parameters"}
 
-knitr::include_graphics("images/chap15/MSDIAL_filtering.png", dpi = 100)
+knitr::include_graphics("images/speclib/LC_MSDIAL_Adduct.png", dpi = 100)
 ```
   
+_"Alignment"_ tab. The purpose of alignment is to align all individual samples so the retention times for the same for the same compound between all samples. This is because the chromatographic separation will change between runs and batches and needs to be aligned. In the _"Advanced"_ subtab, check the _"Remove features based on blank information"_. A sample/blank ratio of 5 should be ok. This will remove any features that are lower than five times the blank samples (solvent blank in this case). Everything else can be as default. 
+  
+The _"Isotope tracking"_ tab does not need to be modified in this workflow.
+  
+Press __Finish__ and the process will begin. This might take some time depending on how many samples you are processing and the processing power of the computer.
+
 Now you are done and click on "Finish".  
   
   
@@ -242,7 +243,7 @@ After the peak detection and deconvolution process is finished, you should see b
 
 ```{r LCMSDIALSample, echo = FALSE, fig.cap= "x"}
 
-knitr::include_graphics("images/chap15/MSDIAL_7.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_7.png", dpi = 100)
 ```
   
 Double click on the sample name where your standard was analyzed (see 1 in Figure \@ref(fig:LCMSDIALSample)). Your screen will be switched to the "Peak spot viewer" tab. Each detected component will be seen as a downward pointing triangle (see 2 in Figure \@ref(fig:LCMSDIALSample)). You should zoom in to the peak by moving you pointer to below the x-axis and scroll to zoom in the retention time axis (3). You should now be able to see the peak more clear and click on the peak as seen in 4 in Figure \@ref(fig:LCMSDIALPeak).
@@ -250,7 +251,7 @@ Double click on the sample name where your standard was analyzed (see 1 in Figur
 
 ```{r LCMSDIALPeak, echo = FALSE, fig.cap= "x"}
 
-knitr::include_graphics("images/chap15/MSDIAL_8.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_8.png", dpi = 100)
 ```
   
 You can then see the EIC (5) of the chosen peak to check if the peak shape is good. The extracted spectrum will be shown in (6), and the retention time and retention index can be seen in (7). This is the deconvoluted spectrum and you can see the peak shape of the ion fragments with the highest intensities by choosing the "EI chrom" tab (8) which allows you to see if the deconvolution process has been successful (9). When you feel that the quality is good, then you can export the spectrum to MS-FINDER by clicking on the "MS FINDER search" button (10).  
@@ -258,7 +259,7 @@ You can then see the EIC (5) of the chosen peak to check if the peak shape is go
 
 ```{r LCMSFINDER, echo = FALSE, fig.cap= "x"}
 
-knitr::include_graphics("images/chap15/MSDIAL_9.png", dpi = 100)
+knitr::include_graphics("images/speclib/MSDIAL_9.png", dpi = 100)
 ```
   
 In the new MS-FINDER window, fill in the information in (10) in Figure \@ref(fig:LCMSFINDER) for your compound. For GC-MS, in most cases the monoisotopic peak (somewhat equivalent to the precursor ion in LC mode) and you can choose the ion closest to the monoisotopic mass of your standard compound. Then choose the precursor type. For GC-MS: choose [M]+. (M plus dot). After you are done, select "Fragment annotation (single)" in the ""Analysis" menu (11). Afterwards, select the "Fragment annotation (batch job)" under the same menu. The _in silico_ annotation of the fragment ions should now be calculated (12) and you can thereafter export the annotated spectrum as an ".msp" file (see 13). Use the file name that was generated in the standard infosheet you filled at the "COMMENT: msp file name" row. Save the file in the "3_MSP" subfolder.
@@ -272,7 +273,7 @@ The mainlib excel file as well as the combined msp file will be updated on a reg
 The final msp file will look something like below (not including the ## sign). A note is that the retention index is not included by MS-FINDER when you export to msp file. This will be later automatically added to the combined database based on the retention index value in the infosheet for the specific standard. Therefore, it is important to check that all files have consistent MTM IDs for the same measured compound. 
 ```{r LCmspfile, echo=FALSE, fig.cap= "Example of msp file"}
 
-msp_table <- readLines("images/chap15/MTM00029.txt")
+msp_table <- readLines("images/speclib/MTM00029.txt")
 
 cat(msp_table, sep = "\n")
 
