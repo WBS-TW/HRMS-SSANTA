@@ -129,7 +129,9 @@ Most vendor software record the mass spectra in profile mode, but data processin
   
 3. In the "Filters" dropdown menu, select the "Peak Picking. For "Algorithm", use "Vendor" for most raw files. Choose appropriate MS Levels you want to include. Use "1 - 2" to choose all MS1 (channel 1, low energy scan) and MS2 (channel 2, high energy scan). For the G2 XS qtof, there is also channel 3 which is the lock mass and not needed in this case. Click on _"Add"_ and then make sure to move the "peakPicking" filter as the first filter as seen in below Figure \@ref(fig:LCMSConvert).
   
-4. If you have many files, it would be wise to increase the "Files to convert in parallel" to speed up the process. However, this depends on your computer processing power the number of cores it has. The other parameters should be set as seen in below Figure \@ref(fig:LCMSConvert). _NOTE: Unfortunately, the conversion to mzML files takes a very long time for unifi files in the current computer and you should convert max 2 files. We might find a better solution for this problem in the future._
+4. If you have many files, it would be wise to increase the "Files to convert in parallel" to speed up the process. However, this depends on your computer processing power the number of cores it has. The other parameters should be set as seen in below Figure \@ref(fig:LCMSConvert).
+  
+__NOTE:__ _Unfortunately, the conversion to mzML files takes a very long time for unifi files in the current computer and you should convert max 2 files. We might find a better solution for this problem in the future._
   
 ```{r LCMSConvert, echo = FALSE, fig.cap= "MSConvert"}
 
@@ -146,16 +148,16 @@ In the main folder, choose one of the standard information sheets depending on w
 The infosheet is organized in accordance to the format used by [Massbank Europe](https://massbank.eu//MassBank/). A description on the Massbank record format can be found [here](https://github.com/MassBank/MassBank-web/blob/main/Documentation/MassBankRecordFormat.md). It is important that you do not change any of the titles in the first column in the infosheet, as the format requirement is quite strict. Also, try not to copy text from one cell to another as it might change the underlying format of the cells (if you think you made an error, copy the template and redo again).  
 The rows that are in bold are information that are mandatory to fill in.  
 
-The "ACCESSION" row is the MTM id.  
-
-The "RECORD_TITLE" will be automatically generated based on the information you filled in so you should not fill this row.  
-
-"COMMENT: centroided mzML file name" is for internal purposes and refers to the name of the mzML file you converted and copied to the "MTM_HRMS_LIB/2_mzML_data/../" folder.  
-
-"COMMENT: msp file name" is automatically generated and will be used later to name the msp file.  
-
-"COMMENT: CONFIDENCE" refers to how confident you are of the identification of your standard according to the ["Schymanski scale"](https://pubs.acs.org/doi/abs/10.1021/es5002105). Leave it as "Reference Standard (Level 1)", unless there are standards where you cannot distinguish or identify between different isomers in a standard. In this case, you should use "Level 3". An example is "Technical mixture (Level 3)", where we analyzed a technical standard (usually <90% purity) and several isomeric peaks can be seen in the chromatogram. In this case, I usually individually register each isomer in its own infosheet.  
-
+The "ACCESSION" row is the MTM id.
+  
+The "RECORD_TITLE" will be automatically generated based on the information you filled in so you should not fill this row.
+  
+"COMMENT: centroided mzML file name" is for internal purposes and refers to the name of the mzML file you converted and copied to the "MTM_HRMS_LIB/2_mzML_data/../" folder.
+  
+"COMMENT: msp file name" is automatically generated and will be used later to name the msp file.
+  
+"COMMENT: CONFIDENCE" refers to how confident you are of the identification of your standard according to the ["Schymanski scale"](https://pubs.acs.org/doi/abs/10.1021/es5002105). Leave it as "Reference Standard (Level 1)", unless there are standards where you cannot distinguish or identify between different isomers in a standard. In this case, you should use "Level 3". An example is "Technical mixture (Level 3)", where we analyzed a technical standard (usually <90% purity) and several isomeric peaks can be seen in the chromatogram. In this case, I usually individually register each isomer in its own infosheet.
+  
 "CH\$NAME:" occurs twice which means you have to input two different names for the compound in the standard, because a compound can have different names. It could be the common name specified in PubChem, the IUPAC name, trade name or the abbreviation.  
 
 "CH\$IUPAC" is the InChI and always starts with "InChI=". You can find all these information for the compound by searching in [PubChem](https://pubchem.ncbi.nlm.nih.gov/).  
