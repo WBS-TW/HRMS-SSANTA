@@ -198,7 +198,9 @@ knitr::include_graphics("images/speclib/LC_MSDIAL_choosefiles.png", dpi = 100)
 
 Click on next to the Analysis parameter settings.
   
-__3.__ The following instructions are for LC-ESI data, but the other processing methods are similar. Below Figure \@ref(fig:LCMSDIALPeakdetection) shows the parameters for the XS qtof instrument. The MS1 and MS2 tolerance is set on _0.01 Da_. Click on the "Advanced" tab and check the _"Consider Cl and Br elements"_. You can also choose how many samples (threads) to process in parallel. Continue with the "Peak detection" tab and set an appropriate minimum peak height. Use the following parameters for our spectral library purpose:  
+__3.__ The following instructions are for Waters G2 XS qtof in ESI negative mode, but the other processing methods are similar. Below Figure \@ref(fig:LCMSDIALPeakdetection) shows the parameters for the XS qtof instrument. The MS1 and MS2 tolerance was set to _0.05 Da_. Click on the "Advanced" tab and check the _"Consider Cl and Br elements"_. You can also choose how many samples (threads) to process in parallel. 
+  
+Continue with the _"Peak detection"_ tab and set an appropriate minimum peak height. Use the following parameters for our spectral library purpose:  
 Minimum peak height: 1000 amplitude.  
 Mass slice width: 0.05 Da.
   

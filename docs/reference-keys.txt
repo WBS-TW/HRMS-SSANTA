@@ -18,9 +18,8 @@ fig:LCMSConvert
 fig:LCMSDIALStartup
 fig:LCMSDIALChoosefiles
 fig:LCMSDIALPeakdetection
-fig:LCMSDIALMS1Dec
-fig:LCMSDIALIdentification
-fig:LCMSDIALFiltering
+fig:LCMSDIALMS2Dec
+fig:LCMSDIALAdduct
 fig:LCMSDIALSample
 fig:LCMSDIALPeak
 fig:LCMSFINDER
