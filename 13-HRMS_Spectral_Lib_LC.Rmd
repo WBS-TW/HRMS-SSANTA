@@ -5,15 +5,8 @@ This tutorial will guide you through the different steps to export the spectra i
 
 We first start with the raw data file from the HRMS analysis of a standard and we want to generate a __.msp__ file as a final file format. The msp file is a file format developed by NIST to store mass spectral data. For more information about this format, please see this [document](https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf).  
   
-The overall goal can be seen in Figure \@ref(fig:LCcombineMSP)
+The overall goal can be seen in Figure \@ref(fig:combineMSP)
 
-```{r LCcombineMSP, echo=FALSE, fig.cap= "Overall goal of the msp suspect list library"}
-
-knitr::include_graphics("images/speclib/combineMSP.png", dpi = 100)
-
-```
-
-  
 At least one solvent blank needs to be analyzed together with the standards in order to subtract any blank signals at a later stage.
   
 The main steps of this procedure can be seen in below Figure \@ref(fig:LCdiagramSpeclib).
@@ -177,7 +170,7 @@ The graphical user interface of MS-DIAL takes some time to get used to since it 
   
 The below steps are based on the workflow for GC-EI orbitrap data described by [Price et al.](https://www.frontiersin.org/articles/10.3389/fpubh.2021.622558/full) and adapted to LC-HRMS.
   
-__IN THIS EXAMPLE HERE, I WILL USE ONE STANDARD OF PFAS ANALYZED IN LC-ESI IN NEGATIVE MODE__
+__IN THIS EXAMPLE HERE, I WILL USE ONE STANDARD OF PFAS ANALYZED IN LC-ESI IN POSITIVE MODE__
   
 __1.__ In the File menu, start a new project. You must choose a file path where the mzML file(s) are located. When the data analysis is finished, several files associated with the analysis is created in the same folder. Depending on GC or LC analysis, then different parameters needs to be selected. Below Figure \@ref(fig:LCMSDIALStartup) shows parameters for __LC analysis__. LC-ESI is a soft ionization and the Waters G2 XS  qtof instrument uses MSe which has an alternating low energy scan and high energy scan. Choose _"SWATH-MS"_ and then browse to the _"MSDIAL_PROJECT\MSDIAL_params\MSDIAL_MSe_50_1200_params.txt"_ file. This specifies the parameters for the MSe experiment. Since we also centroided the mzML file for both MS1 and MSMS so these parameters needs to be specified. In this example, we ran a PFAS standard in negative mode, so this ion mode was choosen in this case.  
 
@@ -216,7 +209,7 @@ Continue to the "MS2Dec" tab.
 __4.__ The sigma window value is an important parameter which determines the efficiency of the deconvolution algorithm. The parameter depends on the instrument and Figure \@ref(fig:LCMSDIALMS2Dec) shows the recommended ones for the GC orbitrap analysis of standards. From the [online tutorial](https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html#chapter-4): "The sigma window value is highly affected by the resolution of deconvolution. A higher value (0.7-1.0) will reduce the peak top resolutions, i.e. the number of resolved chromatographic peaks will be decreased. On the other hand, a lower value (0.1-0.3) may also recognize many noise chromatographic peaks.."
 
 
-```{r LCMSDIALMS2Dec, echo = FALSE, fig.cap= "MS1Dec parameters"}
+```{r LCMSDIALMS2Dec, echo = FALSE, fig.cap= "MS2Dec parameters"}
 
 knitr::include_graphics("images/speclib/LC_MSDIAL_MS2Dec.png", dpi = 100)
 ```

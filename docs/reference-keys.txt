@@ -12,7 +12,6 @@ fig:MSDIALFiltering
 fig:MSDIALSample
 fig:MSDIALPeak
 fig:MSFINDER
-fig:LCcombineMSP
 fig:LCdiagramSpeclib
 fig:LCMSConvert
 fig:LCMSDIALStartup
