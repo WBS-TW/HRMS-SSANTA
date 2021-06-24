@@ -1,2 +1,2 @@
 # WBS-TW.github.io
-Tutorial for SSA/NTA
+Handbook for SSA/NTA
