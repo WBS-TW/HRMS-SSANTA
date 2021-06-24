@@ -65,6 +65,12 @@ cfm-id
 neims
 deepei
 qceims
+reading-mgf-files-in-r
+lib2nist-1
+mspepsearch
+postprocessing
+hierarchical-clustering
+example_dust
 gc-orbitrap-hrms-workflow
 lc-hrms-using-waters-mse-dia-workflow
 workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2
@@ -75,11 +81,11 @@ mtm-hrms-library-gc-hrms
 analyze-the-standards-using-hrms
 convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx
 fill-in-the-standard-infosheet
-use-md-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound
+use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound
 mtm-hrms-library-lc-hrms-in-mse-mode
 analyze-the-standards-using-hrms-1
 convert-the-raw-data-file-from-lc-hrms-in-unifi-to-mzml-using-msconvert
 fill-in-the-standard-infosheet-1
-use-md-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound-1
+use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound-1
 a-handbook-on-gc-q-exactive-orbitrap-use
 terminologies-1

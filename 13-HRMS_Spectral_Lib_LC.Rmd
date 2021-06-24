@@ -269,7 +269,7 @@ The mainlib excel file as well as the combined msp file will be updated on a reg
 
 The final msp file will look something like below (not including the ## sign). A note is that the retention index is not included by MS-FINDER when you export to msp file. This will be later automatically added to the combined database based on the retention index value in the infosheet for the specific standard. Therefore, it is important to check that all files have consistent MTM IDs for the same measured compound. 
   
-style="color: red;">NEED TO UPDATE TO LC msp</span>
+<span style="color: red;">NEED TO UPDATE TO LC msp</span>
 ```{r LCmspfile, echo=FALSE, fig.cap= "Example of msp file"}
 
 # msp_table <- readLines("images/speclib/MTM00029.txt")

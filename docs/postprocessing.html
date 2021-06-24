@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Data post-processing | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
+  <title>10 Data post-processing | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
   <meta name="description" content="SSANTA." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Data post-processing | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta property="og:title" content="10 Data post-processing | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Data post-processing | Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta name="twitter:title" content="10 Data post-processing | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   
   <meta name="twitter:description" content="SSANTA." />
   <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2021-05-28" />
+<meta name="date" content="2021-06-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="library.html"/>
 <link rel="next" href="example-dust.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -169,14 +169,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html"><i class="fa fa-check"></i><b>4</b> Open tools for preprocessing</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#openms-and-toppview"><i class="fa fa-check"></i><b>4.1</b> OpenMS and Toppview</a></li>
-<li class="chapter" data-level="4.2" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#msnbase-and-xcms"><i class="fa fa-check"></i><b>4.2</b> MsnBase and XCMS</a></li>
+<li class="chapter" data-level="4.2" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#msnbase-and-xcms"><i class="fa fa-check"></i><b>4.2</b> MsnBase and XCMS</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#xcms"><i class="fa fa-check"></i><b>4.2.1</b> XCMS</a></li>
+<li class="chapter" data-level="4.2.2" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#camera"><i class="fa fa-check"></i><b>4.2.2</b> CAMERA</a></li>
+</ul></li>
 <li class="chapter" data-level="4.3" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#patroon"><i class="fa fa-check"></i><b>4.3</b> PatRoon</a></li>
 <li class="chapter" data-level="4.4" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#ms-dial"><i class="fa fa-check"></i><b>4.4</b> MS-DIAL</a></li>
 <li class="chapter" data-level="4.5" data-path="open-tools-for-preprocessing.html"><a href="open-tools-for-preprocessing.html#output-formats"><i class="fa fa-check"></i><b>4.5</b> Output formats</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="suspect-screening.html"><a href="suspect-screening.html"><i class="fa fa-check"></i><b>5</b> <strong>Suspect screening</strong></a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="suspect-screening.html"><a href="suspect-screening.html#hrms-spectra-library-setup"><i class="fa fa-check"></i><b>5.1</b> HRMS spectra library setup</a></li>
+<li class="chapter" data-level="5.1" data-path="suspect-screening.html"><a href="suspect-screening.html#lib2nist"><i class="fa fa-check"></i><b>5.1</b> LIB2NIST</a></li>
 <li class="chapter" data-level="5.2" data-path="suspect-screening.html"><a href="suspect-screening.html#listing-suspects"><i class="fa fa-check"></i><b>5.2</b> Listing suspects</a></li>
 <li class="chapter" data-level="5.3" data-path="suspect-screening.html"><a href="suspect-screening.html#suspect-scoring"><i class="fa fa-check"></i><b>5.3</b> Suspect scoring</a></li>
 </ul></li>
@@ -206,11 +210,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="library.html"><a href="library.html#neims"><i class="fa fa-check"></i><b>9.1</b> NEIMS</a></li>
 <li class="chapter" data-level="9.2" data-path="library.html"><a href="library.html#deepei"><i class="fa fa-check"></i><b>9.2</b> DeepEI</a></li>
 <li class="chapter" data-level="9.3" data-path="library.html"><a href="library.html#qceims"><i class="fa fa-check"></i><b>9.3</b> QCEIMS</a></li>
-<li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>9.4</b> LIBRARY SEARCH</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="library.html"><a href="library.html#lib2nist"><i class="fa fa-check"></i><b>9.4.1</b> LIB2NIST</a></li>
-<li class="chapter" data-level="9.4.2" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>9.4.2</b> MSPepSearch</a></li>
-</ul></li>
+<li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#reading-mgf-files-in-r"><i class="fa fa-check"></i><b>9.4</b> Reading mgf files in R</a></li>
+<li class="chapter" data-level="9.5" data-path="library.html"><a href="library.html#lib2nist-1"><i class="fa fa-check"></i><b>9.5</b> LIB2NIST</a></li>
+<li class="chapter" data-level="9.6" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>9.6</b> MSPepSearch</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="postprocessing.html"><a href="postprocessing.html"><i class="fa fa-check"></i><b>10</b> <strong>Data post-processing</strong></a>
 <ul>
@@ -227,16 +229,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.2" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#centroiding-raw-data-from-mzml-using-msnbase"><i class="fa fa-check"></i><b>12.2</b> Centroiding raw data from mzML using MSnbase</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="example-pfas.html"><a href="example-pfas.html"><i class="fa fa-check"></i><b>13</b> Example workflow: PFASs</a></li>
-<li class="chapter" data-level="14" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>14</b> A handbook on GC Q Exactive orbitrap use</a>
+<li class="chapter" data-level="14" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html"><i class="fa fa-check"></i><b>14</b> MTM HRMS Library: GC-HRMS</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#terminologies-1"><i class="fa fa-check"></i><b>14.1</b> Terminologies</a></li>
+<li class="chapter" data-level="14.1" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#analyze-the-standards-using-hrms"><i class="fa fa-check"></i><b>14.1</b> Analyze the standards using HRMS</a></li>
+<li class="chapter" data-level="14.2" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx"><i class="fa fa-check"></i><b>14.2</b> Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX)</a></li>
+<li class="chapter" data-level="14.3" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#fill-in-the-standard-infosheet"><i class="fa fa-check"></i><b>14.3</b> Fill in the standard infosheet</a></li>
+<li class="chapter" data-level="14.4" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound"><i class="fa fa-check"></i><b>14.4</b> Use MS-DIAL to perform spectral deconvolution and generate spectra for each compound</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><i class="fa fa-check"></i><b>15</b> Tutorial on generating msp files from raw HRMS files to contribute to MTM HRMS library</a>
+<li class="chapter" data-level="15" data-path="mtm-hrms-library-lc-hrms-in-mse-mode.html"><a href="mtm-hrms-library-lc-hrms-in-mse-mode.html"><i class="fa fa-check"></i><b>15</b> MTM HRMS Library: LC-HRMS in MSe mode</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html#analyze-the-standards-using-hrms"><i class="fa fa-check"></i><b>15.1</b> Analyze the standards using HRMS</a></li>
-<li class="chapter" data-level="15.2" data-path="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html#convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx"><i class="fa fa-check"></i><b>15.2</b> Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX)</a></li>
-<li class="chapter" data-level="15.3" data-path="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html#fill-in-the-standard-infosheet"><i class="fa fa-check"></i><b>15.3</b> Fill in the standard infosheet</a></li>
-<li class="chapter" data-level="15.4" data-path="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html"><a href="tutorial-on-generating-msp-files-from-raw-hrms-files-to-contribute-to-mtm-hrms-library.html#use-md-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound"><i class="fa fa-check"></i><b>15.4</b> Use MD-DIAL to perform spectral deconvolution and generate spectra for each compound</a></li>
+<li class="chapter" data-level="15.1" data-path="mtm-hrms-library-lc-hrms-in-mse-mode.html"><a href="mtm-hrms-library-lc-hrms-in-mse-mode.html#analyze-the-standards-using-hrms-1"><i class="fa fa-check"></i><b>15.1</b> Analyze the standards using HRMS</a></li>
+<li class="chapter" data-level="15.2" data-path="mtm-hrms-library-lc-hrms-in-mse-mode.html"><a href="mtm-hrms-library-lc-hrms-in-mse-mode.html#convert-the-raw-data-file-from-lc-hrms-in-unifi-to-mzml-using-msconvert"><i class="fa fa-check"></i><b>15.2</b> Convert the raw data file from LC-HRMS in unifi to mzML using MSconvert</a></li>
+<li class="chapter" data-level="15.3" data-path="mtm-hrms-library-lc-hrms-in-mse-mode.html"><a href="mtm-hrms-library-lc-hrms-in-mse-mode.html#fill-in-the-standard-infosheet-1"><i class="fa fa-check"></i><b>15.3</b> Fill in the standard infosheet</a></li>
+<li class="chapter" data-level="15.4" data-path="mtm-hrms-library-lc-hrms-in-mse-mode.html"><a href="mtm-hrms-library-lc-hrms-in-mse-mode.html#use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound-1"><i class="fa fa-check"></i><b>15.4</b> Use MS-DIAL to perform spectral deconvolution and generate spectra for each compound</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>16</b> A handbook on GC Q Exactive orbitrap use</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#terminologies-1"><i class="fa fa-check"></i><b>16.1</b> Terminologies</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
@@ -250,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</a>
           </h1>
         </div>
 
@@ -305,7 +314,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/11-data_post_processing.Rmd",
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/09-data_post_processing.Rmd",
 "text": "Edit"
 },
 "history": {
