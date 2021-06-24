@@ -176,6 +176,9 @@ iseed <int>     (random number initialization to start different runs)
   
 ## LIBRARY SEARCH  
 xx
+```
+
+## Reading mgf files in R
 
 ```{r readMGF, eval=FALSE, include=FALSE, echo=TRUE}
 
@@ -233,7 +236,7 @@ unknown1 <- test$sp[[1]]
 
   
   
-### LIB2NIST  
+## LIB2NIST  
 Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.  
   
 COMMAND:  
@@ -244,7 +247,7 @@ EXAMPLES:
   
 <br><br><br>
 
-### MSPepSearch  
+## MSPepSearch  
     
 Use MSPepSearch to find similar spectra  
   
