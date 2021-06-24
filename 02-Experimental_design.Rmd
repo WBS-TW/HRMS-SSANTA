@@ -211,7 +211,7 @@ node [color = black, fillcolor = white, fixedsize = false]
 F1 [label = 'Mass defect plots']
 
 node [color = black, fillcolor = white, fixedsize = false]
-G1 [label = 'In silico transformation product list for identified compounds]
+G1 [label = 'In silico transformation product list for identified compounds']
 
       
       
