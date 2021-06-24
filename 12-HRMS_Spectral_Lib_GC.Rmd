@@ -1,9 +1,9 @@
 # MTM HRMS Library: GC-HRMS  
   
 
-This tutorial will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library. The project is organized in different subfolders within the main folder folder named "_MTM_HRMS_LIB"_. Do not change the name of any folders.   
-
-We first start with the raw data file from the HRMS analysis of a standard and we want to generate a __.msp__ file as a final file format. The msp file is a file format developed by NIST to store mass spectral data. For more information about this format, please see this [document](https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf).  
+This tutorial will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library. The overall goal is to analyze chemical standards to generate spectral fingerprints so we can combined all spectra of different standards into one spectral library. This can then be used as a suspect list which we can use to match any unknown compounds. This is a very common concept within GC screening, and the most commonly used spectral library is the NIST which has more than 100,000 compounds. The main drawback of NIST is that most of the GC spectra was recorded with nominal mass resolution. This makes spectral matching uncertain and false positives are common. The use of HRMS can reduce the uncertainty in spectral matching as well as provide clean deconvoluted spectra for real samples thus greatly reduce false positives and false negatives.
+  
+To build the spectral library, we first start with the raw data file generated from the HRMS analysis of a standard and the we want to convert this to an __.msp__ file as a final file format. The msp file is a file format developed by NIST to store mass spectral data. For more information about this format, please see this [document](https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf).  
   
 The overall goal can be seen in Figure \@ref(fig:combineMSP)
 
@@ -60,7 +60,7 @@ E -> {F}
 ```
   
   
-The template folder for the spectral library is organized as follows:  
+The project is organized in different subfolders within the main folder folder named "_MTM_HRMS_LIB"_. Do not change the name of any folders. The template folder for the spectral library is organized as follows:  
 
 
 ```{}
@@ -170,7 +170,7 @@ If you use GC-MS, then you also need to fill in the _AC\$CHROMATOGRAPHY: KOVATS_
 Now that you have filled in most information about the compound, we can proceed to process the mzML file to extract the spectra using MS-DIAL (although you can also first process the mzML files and then fill in the information afterwards).
   
 
-## Use MD-DIAL to perform spectral deconvolution and generate spectra for each compound
+## Use MS-DIAL to perform spectral deconvolution and generate spectra for each compound
   
 The graphical user interface of MS-DIAL takes some time to get used to since it is centered around detected peaks. It is important that you choose the correct parameters in the beginning since the parameters can affect the peak detection and alignment, or else you need to redo the data preprocessing again which could take long time if you are analyzing a lot of samples. When you run a large number of real samples, it is recommended to first optimize the parameters using e.g. QC samples. In this case where we analyze standards, then the default parameters with some instrument specific parameters can be used. These are found in the subfolder _MSDIAL_PROJECT/MSDIAL_params/_. If you want to know more details about data processing using MS-DIAL, please check the [MS-DIAL online tutorial](https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html). 
   
