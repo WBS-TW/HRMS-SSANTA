@@ -10,28 +10,24 @@ Below figure shows a relatively good spectral match for a standard if only nomin
 
 knitr::include_graphics("images/Spectra_CFBP_MePDA.PNG", dpi = 100)
 ```
-
-
-<br><br>  
+  
+  
 ## IN SILICO FRAGMENTATION  
-
-There are three different models that have recently been published to prdict the fragmentation patterns of GC-EI MS. 
-
-<br><br>
-### MEtfrag 
-<br><br>
-
-
+There are several openly available models that have recently been published to predict the fragmentation patterns of GC-EI MS. 
+  
+  
+### Metfrag 
+  
+  
+  
 ### Sirius CSI FingerID 
-<br><br>
-
-
-
+  
+  
+  
 ### CFM-ID  
 In silico fragmentation:  
 Help file: https://sourceforge.net/p/cfm-id/wiki/Home/  
-
-<br>
+  
 _Use instructions:_
   
 - If you are using EI-MS (GC-MS) data, please use the ei_ms_model provided.  

@@ -60,6 +60,8 @@ molecular_networks
 metgem
 gc-data
 library
+in-silico-fragmentation
+metfrag
 sirius-csi-fingerid
 cfm-id
 neims

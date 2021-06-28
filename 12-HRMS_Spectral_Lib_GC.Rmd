@@ -3,7 +3,7 @@
 
 This tutorial will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library. The overall goal is to analyze chemical standards to generate spectral fingerprints so we can combined all spectra of different standards into one spectral library. This can then be used as a suspect list which we can use to match any unknown compounds. This is a very common concept within GC screening, and the most commonly used spectral library is the NIST which has more than 100,000 compounds. The main drawback of NIST is that most of the GC spectra was recorded with nominal mass resolution. This makes spectral matching uncertain and false positives are common. The use of HRMS can reduce the uncertainty in spectral matching as well as provide clean deconvoluted spectra for real samples thus greatly reduce false positives and false negatives.
   
-To build the spectral library, we first start with the raw data file generated from the HRMS analysis of a standard and the we want to convert this to an __.msp__ file as a final file format. The msp file is a file format developed by NIST to store mass spectral data. For more information about this format, please see this [document](https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf).  
+To build the spectral library, we first start with the raw data file from the HRMS analysis of a standard (.raw for Thermo, etc) and then we want to generate an __.msp__ file as the final file format. The msp file is a file format developed by NIST to store mass spectral data. For more information about this format, please see this [document](https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf).  
   
 The overall goal can be seen in Figure \@ref(fig:combineMSP)
 
@@ -37,7 +37,7 @@ B [label = 'Convert raw data from \\n vendor format to mzML file format', fontsi
 
 C [label = 'Fill in compound and \\n method information in template', fontsize = 24]
 
-D [label = 'Use MD-DIAL to perform spectral \\n deconvolution and generate \\n spectra for each compound', fontsize = 24]
+D [label = 'Use MS-DIAL to perform spectral \\n deconvolution and generate \\n spectra for each compound', fontsize = 24]
 
 E [label = 'Export the spectra to MS-FINDER \\n to annotate spectral peaks', fontsize = 24]
 
@@ -102,15 +102,16 @@ MTM_HRMS_LIB
     
 ```
   
-The main folder (MTM_HRMS_LIB) contain some template information sheet that are used to fill in information about the standard and the analysis method. The MTM id number (MTMxxxxx) for each standard infosheet is in numeric order and must contain 8 character in total. Check the MTM_HRMS_MAINLIB.xlsx for the latest id number and use the next one as the new MTM id. 
+The main folder (MTM_HRMS_LIB) contain some template info sheet that needs to be filled to provide information about the chemical standard and the analysis method. The MTM id number (MTMxxxxx) for each standard infosheet is in numeric order and must contain 8 character in total (e.g. MTM00001). Check the MTM_HRMS_MAINLIB.xlsx for the latest id number and use the next one as the new MTM id. 
   
 __INSTALL REQUIRED SOFTWARE__
   
 Several software and packages are needed to generate the spectra library. All are open access and free to use for academic purposes.
   
-- _Proteowizard_: We mainly use MSConvert which is bundled in the Proteowizard software package and you can download it [here](http://proteowizard.sourceforge.net/download.html).  
+- _Proteowizard_: We mainly use __MSConvert__ which is bundled in the Proteowizard software package and you can download it [here](http://proteowizard.sourceforge.net/download.html).  
 - _MS-DIAL_: used to analyze the mzML file and generate spectra. Download the latest version [here](http://prime.psc.riken.jp/compms/msdial/main.html). No installation is necessary so you only need to extract the downloaded zip file to your folder of choice.  
-- _MS-FINDER_: used to annotate the individual peaks in the spectrum and export to msp file.  
+- _MS-FINDER_: used to annotate the individual peaks in the spectrum and export to msp file. No installation is necessary so you only need to extract the downloaded zip file to your folder of choice.
+  
   
 ## Analyze the standards using HRMS  
 It is recommended to analyze single standards but mixtures are also feasible to analyze if the analytes are not coeluting too close to each other. The deconvolution algorithm of MS-DIAL is able to distinguish between two peaks that are closely eluted but still have slightly different retention times and peak shapes.  
@@ -119,14 +120,15 @@ You should also inject a _solvent blank_ to perform blank subtraction later in M
   
 ## Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX)  
   
-    
-1. The first step is to convert the vendor software format to the open mass spectrometric data format mzML. We use MSConvert to perform this. After installing Proteowizard, open the MSConvert program.
-Most vendor software record the mass spectra in profile mode, but data processing of this format is usually very time consuming as well as producing very large files. Therefore, during file conversion we will also perform centroiding to make data processing faster as well as reducing the size of the mzML file. 1.  
-Click "Browse" and choose the raw file(s) you want to include and add.  
+  
+1. The first step is to convert the vendor software format to the open mass spectrometric data format mzML. We use MSConvert to perform this. After installing Proteowizard, open the MSConvert program. Most vendor software record the mass spectra in profile mode, but data processing of this format is usually very time consuming as well as producing very large files. Therefore, during file conversion we will also perform centroiding to make data processing faster as well as reducing the size of the mzML file.
+  
+- Open MSConvert.  
+- Click "Browse" and choose the raw file(s) you want to include and add.  
 
 2. Choose mzML as the output format.  Make sure the "Output Directory" is correctly set to the folder you want to store the mzML file. For this library task, you can directly choose the "/MTM_HRMS_LIB/MSDIAL_PROJECT" in the library folder as temporary storage.
   
-3. In the "Filters" dropdown menu, select the "Peak Picking. For "Algorithm", use "Vendor" for most raw files. Choose appropriate MS Levels you want to include. Use "1 - " to choose all MS levels. For GC data, this is fine. Press add and then make sure to move the "peakPicking" filter as the first filter as seen in below figure.
+3. In the "Filters" drop down menu, select "Peak Picking". For "Algorithm", use "Vendor" for most raw files. Choose appropriate MS Levels you want to include. Use "1 - " to choose all MS levels. For GC data, this is fine (since we are using EI there is only MS1). Press add and then make sure to move the "peakPicking" filter as the first filter as seen in below figure.
   
 4. If you have many files, it would be wise to increase the "Files to convert in parallel" to speed up the process. However, this depends on your computer processing power the number of cores it has. The other parameters should be set as seen in below Figure \@ref(fig:MSConvert).
   
@@ -136,9 +138,9 @@ knitr::include_graphics("images/MSConvert.png", dpi = 100)
 ```
 
 Now you can proceed with the conversion by clicking "Start".    
-After you have finished with the conversion, copy the mzML file(s) to the designated folder in MTM_HRMS_LIB/2_mzML_data/../ (where ".." is the folder depending on your instrument type and analysis mode).
-
-
+After you have finished with the conversion, copy the mzML file(s) to the designated folder in MTM_HRMS_LIB/2_mzML_data/../ (where ".." is the folder depending on your instrument type and analysis mode). If you want, you can now delete the original .raw file if you want to save disk space (although a copy should be available in the analysis instrument or on the server).
+  
+  
 ## Fill in the standard infosheet
   
 In the main folder, choose one of the standard information sheets depending on whether you used LC or GC and the ionization mode. The content of the information sheet looks slightly different depending on LC or GC. Copy the chosen infosheet to the "1_Standard_infosheets" folder. In that folder, rename the copied infosheet to the new MTM id as mentioned in previous section.  
@@ -153,10 +155,10 @@ The "RECORD_TITLE" will be automatically generated based on the information you 
 
 "COMMENT: msp file name" is automatically generated and will be used later to name the msp file.  
 
-"COMMENT: CONFIDENCE" refers to how confident you are of the identification of your standard according to the ["Schymanski scale"](https://pubs.acs.org/doi/abs/10.1021/es5002105). Leave it as "Reference Standard (Level 1)", unless there are standards where you cannot distinguish or identify between different isomers in a standard. In this case, you should use "Level 3". An example is "Technical mixture (Level 3)", where we analyzed a technical standard (usually <90% purity) and several isomeric peaks can be seen in the chromatogram. In this case, I usually individually register each isomer in its own infosheet.  
+"COMMENT: CONFIDENCE" refers to how confident you are of the identification of your standard according to the ["Schymanski scale"](https://pubs.acs.org/doi/abs/10.1021/es5002105). Leave it as "Reference Standard (Level 1)", unless there are standards where you cannot distinguish or identify between different isomers in a standard. In this case, you should use "Level 3". An example is "Technical mixture (Level 3)", where we analyzed a technical standard (usually <90% purity) and several isomeric peaks can be seen in the chromatogram. In this case, I usually individually register each isomer in its own infosheet (spectral peak patterns will look very similar with slight differences and retention time is different).  
 
-"CH\$NAME:" occurs twice which means you have to input two different names for the compound in the standard, because a compound can have different names. It could be the common name specified in PubChem, the IUPAC name, trade name or the abbreviation.  
-
+"CH\$NAME:" occurs twice which means you have to input two different names for the compound in the standard, because a compound can have different names. It could be the common name specified in PubChem, the IUPAC name, trade name or the abbreviation.
+  
 "CH\$IUPAC" is the InChI and always starts with "InChI=". You can find all these information for the compound by searching in [PubChem](https://pubchem.ncbi.nlm.nih.gov/).  
 
 For GC compounds, you also need to fill in the "AC\$CHROMATOGRAPHY: KOVATS_RTI" and "AC\$CHROMATOGRAPHY: RETENTION_TIME". These will be available later in MS-DIAL.
@@ -183,7 +185,8 @@ __1.__ In the File menu, start a new project. You must choose a file path where 
 knitr::include_graphics("images/speclib/MSDIAL_startproject.png", dpi = 100)
 ```
   
-Click on the "Advanced: add further meta data" tab. The information for different instruments in our lab can be found in the file "/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/Metadata.txt". If your instrument is not present then you can input these by yourself. This metadata is optional but the information will be added to the msp file later.  
+Click on the "Advanced: add further meta data" tab. The information for different instruments in our lab can be found in the file "/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/Metadata.txt". If your instrument is not present then you can input these by yourself. This metadata is optional but the information will be added to the msp file later so please fill this in.
+  
 When you are finished, click on next.  
 
 __2.__ Click on the browse button and then you will select the files to process. The default file format is .abf but we want to process .mzML so choose this file format instead. You will now see the mzML file(s) in your working directory. If you want to process multiple files use _Shift/Ctrl + select_. Make sure your standards are designated as "Sample". You should include a solvent blank which will be designated as "Blank". The other columns are for post processing and not important for this spectral database workflow. You can learn more about these in the [tutorial](https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html).  
@@ -205,18 +208,16 @@ knitr::include_graphics("images/speclib/MSDIAL_peakdetection.png", dpi = 100)
   
 Continue to the "MS1Dec" tab.
   
-__4.__ The sigma window value is an important parameter which determines the efficiency of the deconvolution algorithm. The parameter depends on the instrument and Figure \@ref(fig:MSDIALMS1Dec) shows the recommended ones for the GC orbitrap analysis of standards. From the [online tutorial](https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html#chapter-4): "The sigma window value is highly affected by the resolution of deconvolution. A higher value (0.7-1.0) will reduce the peak top resolutions, i.e. the number of resolved chromatographic peaks will be decreased. On the other hand, a lower value (0.1-0.3) may also recognize many noise chromatographic peaks. In addition, you may set a cutoff value to reduce the MS noises (see Section 3-3 of Chapter 3). This is the same as LC/MS part."
-
-
+__4.__ The sigma window value is an important parameter which determines the efficiency of the deconvolution algorithm. The parameter depends on the instrument and Figure \@ref(fig:MSDIALMS1Dec) shows the recommended ones for the GC orbitrap analysis of standards. From the [online tutorial](https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial.html#chapter-4): _"The sigma window value is highly affected by the resolution of deconvolution. A higher value (0.7-1.0) will reduce the peak top resolutions, i.e. the number of resolved chromatographic peaks will be decreased. On the other hand, a lower value (0.1-0.3) may also recognize many noise chromatographic peaks. In addition, you may set a cutoff value to reduce the MS noises (see Section 3-3 of Chapter 3 of the online manual). This is the same as LC/MS part."_
+  
 ```{r MSDIALMS1Dec, echo = FALSE, fig.cap= "MS1Dec parameters"}
 
 knitr::include_graphics("images/speclib/MSDIAL_MS1Dec.png", dpi = 100)
 ```
   
-
 Continue to the "Identification" tab. 
   
-__5.__ If you process GC data, we mainly want to "Use retention index (RI)". If the below "Set" button cannot be clicked, then first click on the "Use retention time (min)" button and the back again to the "Use retention index (RI)" button and then you will be able to click on the "Set" button next to the Index file (Figure \@ref(fig:MSDIALIdentification)). The "Index type" should be set to "Alkanes" since we analyzed an alkane mix. If you are using LC, then you should choose "Use retention time (min)", since no retention index mix is used (yet). After you clicked the Set button, you will then choose a retention index file that include the retention time (in minutes) of the different alkanes in the mixture. A template of how the format should be can be found in the file "/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/xxxxxx_RTI_MSDIAL.txt". Adjust the retention time depending on your specific analysis after checking the chromatogram of the alkane mix. An example of the retention times of alkane mix can be found in the "_/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/AlkaneMixRT.pptx_" file. After you chosen the RTI file, _right click on the mouse_ on the other rows and choose autofill.
+__5.__ If you process GC data, we mainly want to "Use retention index (RI)". If the below "Set" button cannot be clicked, then first click on the "Use retention time (min)" button and the back again to the "Use retention index (RI)" button and then you will be able to click on the "Set" button next to the Index file (Figure \@ref(fig:MSDIALIdentification)). The "Index type" should be set to "Alkanes" since we analyzed an alkane mix. If you are using LC, then you should choose "Use retention time (min)", since no retention index mix is used (yet). After you clicked the Set button, you will then choose a retention index file that include the retention time (in minutes) of the different alkanes in the mixture. A template of how the format should be can be found in the file "/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/xxxxxx_RTI_MSDIAL.txt". Adjust the retention time depending on your specific analysis after checking the chromatogram of the alkane mix. An example of the retention times of alkane mix can be found in the "_/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/AlkaneMixRT.pptx_" file. After you chosen the RTI file, _right click on the mouse_ on the cell and choose autofill.
   
 
 ```{r MSDIALIdentification, echo = FALSE, fig.cap= "Identification parameters"}
@@ -224,8 +225,7 @@ __5.__ If you process GC data, we mainly want to "Use retention index (RI)". If 
 knitr::include_graphics("images/speclib/MSDIAL_identification.png", dpi = 100)
 ```
   
-
-The other parameters are not important for this standard library generation workflow and you can click on the "Alignment" tab. The purpose of alignment is to align all individual samples so the retention times for the same for the same compound between all samples. This is because the chromatographic separation will change between runs and batches and needs to be aligned. You do not need to pay attention to this tab for the spectral library purpose. continue to the last tab "Filtering".
+The other parameters are not important for this standard library generation workflow and you can click on the "Alignment" tab. The purpose of alignment is to align all individual samples so the retention times for the same for the same compound between all samples. This is because the chromatographic retention time will slightly change between runs and batches and needs to be aligned for downstream data processing. You do not need to pay attention to this tab for the spectral library purpose. continue to the last tab "Filtering".
   
 Select the "Remove features based on blank information"and choose 5 fold change. This will remove any features that are lower than five times the blank samples (solvent blank in this case).  
 
@@ -235,10 +235,10 @@ Select the "Remove features based on blank information"and choose 5 fold change.
 knitr::include_graphics("images/speclib/MSDIAL_filtering.png", dpi = 100)
 ```
   
-Now you are done and click on "Finish".  
+Now you are done and click on "Finish". Sample processing might take a while depending on the processing power and the number of samples.
   
   
-After the peak detection and deconvolution process is finished, you should see below screen.
+After the peak detection and deconvolution process has finished, you should see below screen.
 
 ```{r MSDIALSample, echo = FALSE, fig.cap= "x"}
 
@@ -253,7 +253,7 @@ Double click on the sample name where your standard was analyzed (see 1 in Figur
 knitr::include_graphics("images/speclib/MSDIAL_8.png", dpi = 100)
 ```
   
-You can then see the EIC (5) of the chosen peak to check if the peak shape is good. The extracted spectrum will be shown in (6), and the retention time and retention index can be seen in (7). This is the deconvoluted spectrum and you can see the peak shape of the ion fragments with the highest intensities by choosing the "EI chrom" tab (8) which allows you to see if the deconvolution process has been successful (9). When you feel that the quality is good, then you can export the spectrum to MS-FINDER by clicking on the "MS FINDER search" button (10).  
+You can then see the EIC (5) of the chosen peak to check if the peak shape is good. The extracted spectrum is shown in (6), and the retention time and retention index can be seen in (7). This is the deconvoluted spectrum and you can see the peak shape of the ion fragments with the highest intensities by choosing the "EI chrom" tab (8) which allows you to see if the deconvolution process has been successful (9). A note here is that the EIC shown in (5) is usually for the most intense spectral peak in the deconvoluted spectrum. When you feel that the quality is satisfactory, then you can export the spectrum to MS-FINDER by clicking on the "MS FINDER search" button (10).  
   
 
 ```{r MSFINDER, echo = FALSE, fig.cap= "x"}
