@@ -1,0 +1,14 @@
+# Reproducible research using Docker containers and similar tools
+
+A list of commonly used Docker commands.
+
+```{r dockercommands, echo=FALSE}
+
+dockertable <- readxl::read_xlsx("images/reproducible/dockercommands.xlsx")
+
+DT::datatable(dockertable,rownames = FALSE,  escape = FALSE)
+
+
+```
+
+
