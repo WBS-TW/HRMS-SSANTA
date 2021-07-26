@@ -10,7 +10,18 @@ Below figure shows a relatively good spectral match for a standard if only nomin
 
 knitr::include_graphics("images/Spectra_CFBP_MePDA.PNG", dpi = 100)
 ```
+    
   
+```{r forwardreverse, echo = FALSE}
+
+
+knitr::include_graphics("images/forward_reverse_lib_search.png", dpi = 100)
+
+
+```
+
+
+
   
 ## IN SILICO FRAGMENTATION  
 There are several openly available models that have recently been published to predict the fragmentation patterns of GC-EI MS. 

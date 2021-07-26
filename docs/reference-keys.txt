@@ -36,6 +36,8 @@ collection-of-metadata
 chemical-analysis
 data-analysis
 workflow-examples
+Sample_pretreatment
+accelerated-solvent-extraction-ase
 MS_preprocess
 peak-picking
 open-tools-for-preprocessing
