@@ -1,7 +1,6 @@
 # **Suspect screening** {#suspect_screening}
-
-<br><br>
-
+  
+  
 
 ## LIB2NIST
 X. Use LIB2NIST to convert combined msp file to NIST library.  
@@ -17,39 +16,41 @@ COMMAND: __NOTE TO SELF: VERIFY THAT THE COMMAND IS CORRECT, ALSO IS IT POSSIBLE
 EXAMPLES:  
 `lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\2021-05-28_MTM_HRMS_RECETOX_THERMO.msp D:\Program\NIST14\ =MTM_HRMS_RECETOX_THERMO_20210528`  
   
-<br><br><br>
-
-
-
+  
+  
 ## Listing suspects
 <br><br>
 
 
 
 ## Suspect scoring
-<br>
+  
 https://www.waters.com/waters/fr_FR/Mass-Accuracy-and-Resolution/nav.htm?locale=fr_FR&cid=10091028
-<br>
+  
 
-Mass error (ppm): <br>
-
+Mass error (ppm):
+  
 \begin{equation} 
   ME_{ppm} = \frac{mz_{theor} - mz_{meas}}{mz_{theor}} * 10^6
 \end{equation} <br>
 
 where *mz~theor~* is the theoretical exact mass (in u or Da) of the isotope, and *mz~meas~* is the measured accurate mass from the instrument.
 
-<br>
+  
 
 
-RMS of isotope mz error ppm: <br>
+RMS of isotope mz error ppm:
+  
 \begin{equation} 
   RMS_{mz} = \sqrt{\frac{\sum_{i=1}^n (ME_{ppm})^2}{n}}
 \end{equation} <br>
 
-At least mz of isotopes M, M+1, M+2 (n > 3) should be included in the calculations to give good estimate of the average 
+At least mz of isotopes M+1, M+2 (n >= 2) should be included in the calculations to give good estimate of the average 
 
-RMS of isotope intensities (%): <br>
+RMS of isotope intensities (%):
+  
 \begin{equation} 
   RMS_{Ab} = \sqrt{\frac{\sum_{i=1}^n (Ab_{theor} - Ab_{meas})^2}{n}}
-\end{equation} <br>
+\end{equation}
+  
+
