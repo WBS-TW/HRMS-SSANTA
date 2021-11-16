@@ -39,28 +39,29 @@ knitr::include_graphics("images/rumsfeldt_quadrant.png")
 
 - Blank solvent  
 
-- Data-dependent analysis (DDA)  
+- DDA: data-dependent analysis  
 
-- Data-independent analysis (DIA)  
+- DIA: data-independent analysis  
 
-- Extracted ion chromatogram (EIC)  
+- EIC: extracted ion chromatogram  
 
 - Field blanks  
 
-- High resolution mass spectrometry (HRMS) 
+- HRMS: high resolution mass spectrometry 
 
-- Non-target analysis (NTA)  
+- NTA: non-target analysis  
 
 - Procedural blanks  
 
 - Pseudo-quantification  
 
-- Quality assurance (QA) sample  
+- QA sample: quality assurance sample  
 
-- Semi-quantification  
+- Semi-quantification
+
 - Solvent blank
 
-- Suspect screening analysis (SSA)  
+- SSA: suspect screening analysis  
  
 
 

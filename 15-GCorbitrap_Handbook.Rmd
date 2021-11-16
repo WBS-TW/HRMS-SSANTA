@@ -25,3 +25,12 @@ _Automatic Gain Control (AGC):_ Sets the ion injection time to maintain the opti
 
 _Chemical Ionization (CI):_ Gas flow 
 
+
+
+
+## XCMS preprocessing
+Check: A scalable workflow to characterize the human exposome, SI-11, https://www.nature.com/articles/s41467-021-25840-9#MOESM14
+
+IPO optimization
+
+

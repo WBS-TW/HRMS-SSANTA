@@ -97,7 +97,7 @@ where Ai, Bi and Si are the chromatographic peak areas of the analyte (i) in sub
 
 ## Data directory structure  
 
-Before we continue with chemical and data analysis, you should first structure the project folder in your computer where you store all the raw and metadata.Below is a suggestion for file directory structure for your project folder. Try to use underscore(_) in your folder names as space causes some errors in various systems and software.  
+Before starting with chemical and data analysis, you should first structure the project folder in your computer where you store all the raw and metadata. Below is a suggestion for file directory structure for your project folder. Try to use [snake_case](https://en.wikipedia.org/wiki/Snake_case) for folder and file names as space or other special characters can cause errors in various computer systems and software.  
 
 ```{}
 YOUR_PROJECT_NAME
