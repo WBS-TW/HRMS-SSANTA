@@ -91,9 +91,11 @@ Copy the ".XTBPARAM" folder and the ".mass_raw.agr" file to /home/ORUNET.ORU.SE/
 1. Prepare a file with the equilibrium structure of your desired molecule M.
 Important: This file has to be named coord and should have the TURBOMOLE coord format (tmol).
 In most cases you will have an .xyz file. This file can be easily converted by typing:
-  
+
+```
 > x2t <xyzfile> > coord
-  
+```
+
 if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a
 script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has
 to be in atomic units.  
@@ -132,7 +134,7 @@ Run `qceims` again and check the ouput if all is ok.
 
 5. Executing production runs.
 Running qceims locally, use: pqceims <#cores>, where <#cores> is the number of cores requested. 
-e.g for 10 cores: 
+E.g for 10 cores: 
 ```
 pqceims 10
 ```
@@ -147,8 +149,8 @@ and typing
 ```
 getres
 ```
-, which will provide an output of the form:
-_XXX runs done and written to tmpqceims.res/out_
+, which will provide an output of the form:  
+_XXX runs done and written to tmpqceims.res/out_  
 which gathers the runs already finished (creates tmpqceims.res and tmpqceims.out). 
 The final results are on qceims.out and qceims.res
 
@@ -171,7 +173,7 @@ plotms -f <name_of_res_file>
 any other res file. Check the consistency of the total charge.
 
 7.2. if high resolution spectrum is needed then copy the plotms executable from the QCEIMS-HRMSplotMS folder and replace. Rename the _qceims.res_ file to _qcxms.res_ and run `plotms`.
-
+  
 
 8. if the ratio of fragment to M+ signals is too large decrease the IEE by increasing the parameter 
 ieeatm (default is 0.6 eV/atom) by inserting
@@ -179,22 +181,22 @@ ieeatm (default is 0.6 eV/atom) by inserting
 ieeatm  <value>
 ```
 in qceims.in and do the parallel run again (requires an additional qceims pre-run).
-
+  
 9. if the IEE is ok, increase ntraj to get better statistics and re-run 
 (note: qceims.res is appended so delete it at this point).
-
+  
 VERY IMPORTANT: EVERY CHANGE IN THE INPUT REQUIRES A RUN OF QCEIMS IN THE WORKING DIR
 BEFORE THE PARALLEL SCRIPT IS STARTED IN ORDER TO BE IN EFFECT!
-
+  
 10. trajectories are in TMPQCEIMS/TMP.<run_number>
 they are numbered by the run and the ion tracking number.
 (something like gmolden TMPQCEIMS/TMP.$1/trj.$1.$2
 gives trajectory $1, track $2)
-
+  
 11. for more QCEIMS code options (model parameters) see manual
-
+  
 useful options for qceims:
-
+  
 -c     : check IEE but do nothing (requires M trajectory)
 -p     : normal production (fragmentation) mode. Possible in any
          existing TMPQCEIMS/TMP.$1 directory.
