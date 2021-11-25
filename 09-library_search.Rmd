@@ -172,7 +172,7 @@ plotms -f <name_of_res_file>
 ```
 any other res file. Check the consistency of the total charge.
 
-7.2. if high resolution spectrum is needed then copy the plotms executable from the QCEIMS-HRMSplotMS folder and replace. Rename the _qceims.res_ file to _qcxms.res_ and run ```plotms```.
+7.2. if high resolution spectrum is needed then copy the plotms executable from the QCEIMS-HRMSplotMS folder and replace. Rename the _qceims.res_ file to _qcxms.res_ and run `plotms`.
 
 
 8. if the ratio of fragment to M+ signals is too large decrease the IEE by increasing the parameter 
@@ -216,7 +216,7 @@ iseed <int>     (random number initialization to start different runs)
   
 ## LIBRARY SEARCH  
 xx
-```
+
 
 ## Reading mgf files in R
 
