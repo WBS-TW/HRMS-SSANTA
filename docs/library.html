@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="molecular_networks.html"/>
-<link rel="next" href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"/>
+<link rel="next" href="postprocessing.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -224,35 +224,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="library.html"><a href="library.html#deepei"><i class="fa fa-check"></i><b>9.3</b> DeepEI</a></li>
 <li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#qceims"><i class="fa fa-check"></i><b>9.4</b> QCEIMS</a></li>
 <li class="chapter" data-level="9.5" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>9.5</b> LIBRARY SEARCH</a></li>
-<li class="chapter" data-level="9.6" data-path="library.html"><a href="library.html#gc-orbitrap-hrms-workflow"><i class="fa fa-check"></i><b>9.6</b> <strong>GC orbitrap HRMS workflow</strong></a></li>
-<li class="chapter" data-level="9.7" data-path="library.html"><a href="library.html#lc-hrms-using-waters-mse-dia-workflow"><i class="fa fa-check"></i><b>9.7</b> <strong>LC-HRMS using Waters MSe DIA workflow</strong></a></li>
+<li class="chapter" data-level="9.6" data-path="library.html"><a href="library.html#reading-mgf-files-in-r"><i class="fa fa-check"></i><b>9.6</b> Reading mgf files in R</a></li>
+<li class="chapter" data-level="9.7" data-path="library.html"><a href="library.html#lib2nist-1"><i class="fa fa-check"></i><b>9.7</b> LIB2NIST</a></li>
+<li class="chapter" data-level="9.8" data-path="library.html"><a href="library.html#mspepsearch"><i class="fa fa-check"></i><b>9.8</b> MSPepSearch</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><i class="fa fa-check"></i><b>10</b> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</a>
+<li class="chapter" data-level="10" data-path="postprocessing.html"><a href="postprocessing.html"><i class="fa fa-check"></i><b>10</b> <strong>Data post-processing</strong></a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#first-convert-unifi-data-using-msconvert"><i class="fa fa-check"></i><b>10.1</b> First convert unifi data using MSConvert</a></li>
-<li class="chapter" data-level="10.2" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#centroiding-raw-data-from-mzml-using-msnbase"><i class="fa fa-check"></i><b>10.2</b> Centroiding raw data from mzML using MSnbase</a></li>
+<li class="chapter" data-level="10.1" data-path="postprocessing.html"><a href="postprocessing.html#hierarchical-clustering"><i class="fa fa-check"></i><b>10.1</b> Hierarchical clustering</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="example_pfas.html"><a href="example_pfas.html"><i class="fa fa-check"></i><b>11</b> Example workflow: PFASs</a></li>
-<li class="chapter" data-level="12" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html"><i class="fa fa-check"></i><b>12</b> MTM HRMS Library: GC-HRMS</a>
+<li class="chapter" data-level="11" data-path="example_dust.html"><a href="example_dust.html"><i class="fa fa-check"></i><b>11</b> Example workflow: indoor dust</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#analyze-the-standards-using-hrms"><i class="fa fa-check"></i><b>12.1</b> Analyze the standards using HRMS</a></li>
-<li class="chapter" data-level="12.2" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx"><i class="fa fa-check"></i><b>12.2</b> Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX)</a></li>
-<li class="chapter" data-level="12.3" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#fill-in-the-standard-infosheet"><i class="fa fa-check"></i><b>12.3</b> Fill in the standard infosheet</a></li>
-<li class="chapter" data-level="12.4" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound"><i class="fa fa-check"></i><b>12.4</b> Use MS-DIAL to perform spectral deconvolution and generate spectra for each compound</a></li>
+<li class="chapter" data-level="11.1" data-path="example_dust.html"><a href="example_dust.html#gc-orbitrap-hrms-workflow"><i class="fa fa-check"></i><b>11.1</b> <strong>GC orbitrap HRMS workflow</strong></a></li>
+<li class="chapter" data-level="11.2" data-path="example_dust.html"><a href="example_dust.html#lc-hrms-using-waters-mse-dia-workflow"><i class="fa fa-check"></i><b>11.2</b> <strong>LC-HRMS using Waters MSe DIA workflow</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="mtm-hrms-library-lc-hrms.html"><a href="mtm-hrms-library-lc-hrms.html"><i class="fa fa-check"></i><b>13</b> MTM HRMS Library: LC-HRMS</a>
+<li class="chapter" data-level="12" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><i class="fa fa-check"></i><b>12</b> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="mtm-hrms-library-lc-hrms.html"><a href="mtm-hrms-library-lc-hrms.html#analyze-the-standards-using-hrms-1"><i class="fa fa-check"></i><b>13.1</b> Analyze the standards using HRMS</a></li>
-<li class="chapter" data-level="13.2" data-path="mtm-hrms-library-lc-hrms.html"><a href="mtm-hrms-library-lc-hrms.html#convert-the-raw-data-file-from-lc-hrms-in-unifi-to-mzml-using-msconvert"><i class="fa fa-check"></i><b>13.2</b> Convert the raw data file from LC-HRMS in unifi to mzML using MSconvert</a></li>
-<li class="chapter" data-level="13.3" data-path="mtm-hrms-library-lc-hrms.html"><a href="mtm-hrms-library-lc-hrms.html#fill-in-the-standard-infosheet-1"><i class="fa fa-check"></i><b>13.3</b> Fill in the standard infosheet</a></li>
-<li class="chapter" data-level="13.4" data-path="mtm-hrms-library-lc-hrms.html"><a href="mtm-hrms-library-lc-hrms.html#use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound-1"><i class="fa fa-check"></i><b>13.4</b> Use MS-DIAL to perform spectral deconvolution and generate spectra for each compound</a></li>
+<li class="chapter" data-level="12.1" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#first-convert-unifi-data-using-msconvert"><i class="fa fa-check"></i><b>12.1</b> First convert unifi data using MSConvert</a></li>
+<li class="chapter" data-level="12.2" data-path="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"><a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html#centroiding-raw-data-from-mzml-using-msnbase"><i class="fa fa-check"></i><b>12.2</b> Centroiding raw data from mzML using MSnbase</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>14</b> A handbook on GC Q Exactive orbitrap use</a>
+<li class="chapter" data-level="13" data-path="example_pfas.html"><a href="example_pfas.html"><i class="fa fa-check"></i><b>13</b> Example workflow: PFASs</a></li>
+<li class="chapter" data-level="14" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html"><i class="fa fa-check"></i><b>14</b> MTM HRMS Library: GC-HRMS</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#terminologies-1"><i class="fa fa-check"></i><b>14.1</b> Terminologies</a></li>
-<li class="chapter" data-level="14.2" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#xcms-preprocessing"><i class="fa fa-check"></i><b>14.2</b> XCMS preprocessing</a></li>
+<li class="chapter" data-level="14.1" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#analyze-the-standards-using-hrms"><i class="fa fa-check"></i><b>14.1</b> Analyze the standards using HRMS</a></li>
+<li class="chapter" data-level="14.2" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-xx"><i class="fa fa-check"></i><b>14.2</b> Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX)</a></li>
+<li class="chapter" data-level="14.3" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#fill-in-the-standard-infosheet"><i class="fa fa-check"></i><b>14.3</b> Fill in the standard infosheet</a></li>
+<li class="chapter" data-level="14.4" data-path="mtm-hrms-library-gc-hrms.html"><a href="mtm-hrms-library-gc-hrms.html#use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound"><i class="fa fa-check"></i><b>14.4</b> Use MS-DIAL to perform spectral deconvolution and generate spectra for each compound</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="reproducible-research-using-docker-containers-and-similar-tools.html"><a href="reproducible-research-using-docker-containers-and-similar-tools.html"><i class="fa fa-check"></i><b>15</b> Reproducible research using Docker containers and similar tools</a></li>
+<li class="chapter" data-level="15" data-path="mtm-hrms-library-lc-hrms.html"><a href="mtm-hrms-library-lc-hrms.html"><i class="fa fa-check"></i><b>15</b> MTM HRMS Library: LC-HRMS</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="mtm-hrms-library-lc-hrms.html"><a href="mtm-hrms-library-lc-hrms.html#analyze-the-standards-using-hrms-1"><i class="fa fa-check"></i><b>15.1</b> Analyze the standards using HRMS</a></li>
+<li class="chapter" data-level="15.2" data-path="mtm-hrms-library-lc-hrms.html"><a href="mtm-hrms-library-lc-hrms.html#convert-the-raw-data-file-from-lc-hrms-in-unifi-to-mzml-using-msconvert"><i class="fa fa-check"></i><b>15.2</b> Convert the raw data file from LC-HRMS in unifi to mzML using MSconvert</a></li>
+<li class="chapter" data-level="15.3" data-path="mtm-hrms-library-lc-hrms.html"><a href="mtm-hrms-library-lc-hrms.html#fill-in-the-standard-infosheet-1"><i class="fa fa-check"></i><b>15.3</b> Fill in the standard infosheet</a></li>
+<li class="chapter" data-level="15.4" data-path="mtm-hrms-library-lc-hrms.html"><a href="mtm-hrms-library-lc-hrms.html#use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound-1"><i class="fa fa-check"></i><b>15.4</b> Use MS-DIAL to perform spectral deconvolution and generate spectra for each compound</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html"><i class="fa fa-check"></i><b>16</b> A handbook on GC Q Exactive orbitrap use</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#terminologies-1"><i class="fa fa-check"></i><b>16.1</b> Terminologies</a></li>
+<li class="chapter" data-level="16.2" data-path="a-handbook-on-gc-q-exactive-orbitrap-use.html"><a href="a-handbook-on-gc-q-exactive-orbitrap-use.html#xcms-preprocessing"><i class="fa fa-check"></i><b>16.2</b> XCMS preprocessing</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="reproducible-research-using-docker-containers-and-similar-tools.html"><a href="reproducible-research-using-docker-containers-and-similar-tools.html"><i class="fa fa-check"></i><b>17</b> Reproducible research using Docker containers and similar tools</a></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
 
@@ -354,8 +364,7 @@ run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntr
 <ol style="list-style-type: decimal">
 <li>Enable overwriting files:</li>
 </ol>
-<pre><code>set +o noclobber
-</code></pre>
+<pre><code>set +o noclobber</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Enable the QCEIMS executables in the path:</li>
 </ol>
@@ -376,31 +385,34 @@ e.g for 10 cores:</li>
 <p>You might want to leave your work station and even log out in the meantime. In this case, type (for 10 cores):</p>
 <pre><code>pqceims 10 &amp;</code></pre>
 <p>Optionally, check the status of your QCEIMS run by changing to your working directory
-and typing <code>getres</code>
-, which will provide an output of the form:
-XXX runs done and written to tmpqceims.res/out
+and typing</p>
+<pre><code>getres</code></pre>
+<p>, which will provide an output of the form:
+<em>XXX runs done and written to tmpqceims.res/out</em>
 which gathers the runs already finished (creates tmpqceims.res and tmpqceims.out).
 The final results are on qceims.out and qceims.res</p>
 <ol start="6" style="list-style-type: decimal">
 <li><p>download an exp. EI-MS from the NIST if available and copy it to the working dir as exp.dat
 (take the JCAMP-DX format from their web page). - Useful for testing but not necessary. -</p></li>
-<li><p>get spectrum by
-plotms
-and plot it with
-xmgrace mass.agr
-the file “.mass.agr” should be in your home dir.
-plotms reads by default &lt;qceims.res&gt; or by
-plotms -f <name_of_res_file>
-any other res file. Check the consistency of the total charge.</p></li>
+<li><p>get spectrum by</p></li>
 </ol>
-<p>7.2. if high resolution spectrum is needed then copy the plotms executable from the QCEIMS-HRMSplotMS folder and replace. Rename the qceims.res file to qcxms.res and run plotms.</p>
+<pre><code>plotms</code></pre>
+<p>and plot it with</p>
+<pre><code>xmgrace mass.agr</code></pre>
+<p>the file “.mass.agr” should be in your home dir.
+plotms reads by default &lt;qceims.res&gt; or by</p>
+<pre><code>plotms -f &lt;name_of_res_file&gt;</code></pre>
+<p>any other res file. Check the consistency of the total charge.</p>
+<p>7.2. if high resolution spectrum is needed then copy the plotms executable from the QCEIMS-HRMSplotMS folder and replace. Rename the <em>qceims.res</em> file to <em>qcxms.res</em> and run <code>plotms</code>.</p>
 <ol start="8" style="list-style-type: decimal">
-<li><p>if the ratio of fragment to M+ signals is too large decrease the IEE by increasing the parameter
-ieeatm (default is 0.6 eV/atom) by inserting
-ieeatm <value>
-in qceims.in and do the parallel run again (requires an additional qceims pre-run).</p></li>
-<li><p>if the IEE is ok, increase ntraj to get better statistics and re-run
-(note: qceims.res is appended so delete it at this point).</p></li>
+<li>if the ratio of fragment to M+ signals is too large decrease the IEE by increasing the parameter
+ieeatm (default is 0.6 eV/atom) by inserting</li>
+</ol>
+<pre><code>ieeatm  &lt;value&gt;</code></pre>
+<p>in qceims.in and do the parallel run again (requires an additional qceims pre-run).</p>
+<ol start="9" style="list-style-type: decimal">
+<li>if the IEE is ok, increase ntraj to get better statistics and re-run
+(note: qceims.res is appended so delete it at this point).</li>
 </ol>
 <p>VERY IMPORTANT: EVERY CHANGE IN THE INPUT REQUIRES A RUN OF QCEIMS IN THE WORKING DIR
 BEFORE THE PARALLEL SCRIPT IS STARTED IN ORDER TO BE IN EFFECT!</p>
@@ -411,7 +423,7 @@ they are numbered by the run and the ion tracking number.
 gives trajectory $1, track $2)</p></li>
 <li><p>for more QCEIMS code options (model parameters) see manual</p></li>
 </ol>
-<p>usefull options for qceims:</p>
+<p>useful options for qceims:</p>
 <p>-c : check IEE but do nothing (requires M trajectory)
 -p : normal production (fragmentation) mode. Possible in any
 existing TMPQCEIMS/TMP.$1 directory.
@@ -430,632 +442,29 @@ iseed <int> (random number initialization to start different runs)</p>
 <div id="library-search" class="section level2" number="9.5">
 <h2><span class="header-section-number">9.5</span> LIBRARY SEARCH</h2>
 <p>xx</p>
-<pre><code>
-## Reading mgf files in R
-
-
-
-  
-  
-## LIB2NIST  
-Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.  
-  
-COMMAND:  
-`lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;`  
-    
-EXAMPLES:  
-`lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\RECETOX_GC-EI_MS_20201028.msp D:\Program\NIST14\ =RECETOX_GC-EI_MS_20201028`  
-  
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-## MSPepSearch  
-    
-Use MSPepSearch to find similar spectra  
-  
-  
-EXAMPLES:  
-`MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 10 /OnlyFound /HITS 5 /LIB D:\Raw_data\Dust_Florian\GC\test\Mylib /INP D:\Raw_data\Dust_Florian\GC\test\input.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv /OutMW`
-  
-  
-`MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 100 /OnlyFound /HITS 5 /LIB C:\NIST14\NIST_contaminants_orbitrap /INP D:\Projects\Mexico_Air\NIST_Mexico.msp /OUTMGF D:\Projects\Mexico_Air\test\test.mgf /OUTTAB D:\Projects\Mexico_Air\test\test.tsv`  
-  
-  
-`MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\NIST14\LCMs_GC_Orbitrap /INP D:\Raw_data\Dust_Florian\GC\test\11.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv`  
-
-
-More info on commands on:
-https://pubs.acs.org/doi/suppl/10.1021/acs.analchem.9b03415/suppl_file/ac9b03415_si_001.pdf
-
-
-
-
-
-&lt;!--chapter:end:09-library_search.Rmd--&gt;
-
-# **Data post-processing** {#postprocessing}
-
-
-
-&lt;br&gt;&lt;br&gt;  
-## Classyfire  
-
-
-
-
-
-## Hierarchical clustering  
-
-&lt;!--chapter:end:10-data_post_processing.Rmd--&gt;
-
-# Example workflow: indoor dust {#example_dust}
-
-A walkthrough for indoor dust analysis
-
-&lt;br&gt;&lt;br&gt;  
-
-
-
-
-&lt;div class=&quot;figure&quot; style=&quot;text-align: center&quot;&gt;
-
-```{=html}
-&lt;div id=&quot;htmlwidget-944a1785ac4963b4c23c&quot; style=&quot;width:672px;height:480px;&quot; class=&quot;grViz html-widget&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;application/json&quot; data-for=&quot;htmlwidget-944a1785ac4963b4c23c&quot;&gt;{&quot;x&quot;:{&quot;diagram&quot;:&quot;\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = false]\n# A [label = \&quot;Indoor dust collected \\n among different \\n use categories\&quot;]\n# \n# node [color = black, fillcolor = white, fixedsize = false]\n# B1 [label = \&quot;Collect different groups\&quot;]\n# B2 [label = \&quot;QA/QC\&quot;]\n# \n# \n# node [color = black, fillcolor = white, fixedsize = false]\n# C1 [label = \&quot;Sample different groups\&quot;]\n# C2 [label = \&quot;Suspect list of Cl/Br compounds\&quot;]\n\nnode [color = black, fillcolor = white, fixedsize = false]\nD1 [label = \&quot;Sample extraction\&quot;]\nD1_1 [label = \&quot;Hexane 3 mL\&quot;]\nD1_2 [label = \&quot;Hexane: Acetone (1:1) 3 mL\&quot;]\nD1_3 [label = \&quot;Toluene 3 mL\&quot;]\nD2 [label = \&quot;Combine and split 1:1\&quot;]\nD3_1 [label = \&quot;GC\&quot;]\nD3_2 [label = \&quot;LC\&quot;]\nD4 [label = \&quot;split 1:1\&quot;]\n\n\n\nE1 [label = \&quot;GC-HRMS\&quot;]\nE2 [label = \&quot;LC-HRMS\&quot;]\n# \n# \n# node [color = black, fillcolor = white, fixedsize = false]\n# F1 [label = \&quot;Suspect screening\&quot;]\n# F2 [label = \&quot;Nontarget\&quot;]\n# \n# G1 [label = \&quot;Mass defect plots\&quot;]\n\n      \n      \n# edge statements\nedge [color = black]\n# A -&gt; {B1}\n# B2 -&gt; {C1}\n# B1 -&gt; {C1 C2}\n# C1 -&gt; {D1}\n\nD1 -&gt; {D1_1}\nD1_1 -&gt; {D1_2}\nD1_2 -&gt; {D1_3}\nD1_1 -&gt; {D2}\nD1_2 -&gt; {D2}\nD2 -&gt; {D3_1}\nD2 -&gt; {D3_2}\nD3_1 -&gt; {D4}\nD1_3 -&gt; {D4}\n\nD3_2 -&gt; {E2}\nD4 -&gt; {E1}\nD1_3 -&gt; {E1}\n      \n      }\n      &quot;,&quot;config&quot;:{&quot;engine&quot;:&quot;dot&quot;,&quot;options&quot;:null}},&quot;evals&quot;:[],&quot;jsHooks&quot;:[]}&lt;/script&gt;</code></pre>
-<p class="caption">
-(#fig:example_workflows_dust)Workflow for nontarget using XX
-</p>
 </div>
-<div id="htmlwidget-aff30042729cc554b85f" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-aff30042729cc554b85f">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = false]\n\nZERO [label = \"Deconvolution\"]\n\nA [label = \"Target analysis\"]\nB [label = \"Suspect list screening\"]\n\nC [label = \"NIST library screening\"]\nC1 [label = \"Molecular ion confirmation\"]\nC2 [label = \"Retention time index\"]\n\n\nD [label = \"Mass defect \\n (selected mz, rt and int of annotated compounds\"]\n\nsubgraph cluster2 {\nE [label = \"Annotation\"]\nID1 [label = \"Confirm EIC peaks\"]\n}\n\nF [label = \"Molecular networking\"]\nG [label = \"Multivariate statistics\"]\n\nID2 [label = \"Peak/Component list with \\n partial annotation\"]\n\nQ1 [label = \"Semiquantify across samples\"]      \n      \n# edge statements\n\nedge [color = black]\n\nZERO -> {A B C}\nA -> {E}\nB -> {E}\n\n{C1 C2} -> {C}\nC -> {E}\n\nE -> {ID1}\nID1 -> {ID2}\nID2 -> {F}\nID2 -> {G}\nID2 -> {D}\nID2 -> {Q1}\n\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<p><br></p>
+<div id="reading-mgf-files-in-r" class="section level2" number="9.6">
+<h2><span class="header-section-number">9.6</span> Reading mgf files in R</h2>
 </div>
-<div id="gc-orbitrap-hrms-workflow" class="section level2" number="9.6">
-<h2><span class="header-section-number">9.6</span> <strong>GC orbitrap HRMS workflow</strong></h2>
-<p>This code uses XCMS with MF -&gt; CAMERA preprocessing used in : Stettin, D.; Poulin, R.X.; Pohnert, G. Metabolomics Benefits from Orbitrap GC–MS—Comparison of Low- and High-Resolution GC–MS. Metabolites 2020, 10, 143. See the supplementary material for original code. The code was modified here to also include retention time index and also remove zero intensity peaks after peak grouping. Additional metainformation for the msp file can also be added in the “extra” object.</p>
-<p><br></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="library.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(processx)</span>
-<span id="cb11-2"><a href="library.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xcms)</span>
-<span id="cb11-3"><a href="library.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(CAMERA)</span>
-<span id="cb11-4"><a href="library.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metaMS)</span>
-<span id="cb11-5"><a href="library.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb11-6"><a href="library.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb11-7"><a href="library.html#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="library.html#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#first define the working directory (folder with experimental group folders inside)</span></span>
-<span id="cb11-9"><a href="library.html#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># mzMLfiles &lt;- list.files(path = &quot;/home/ORUNET.ORU.SE/twg/Dioxinlab/GC-Orbitrap data/Florian/Dust NTA 20200513/mzXML/&quot;,pattern = &quot;.mzXML&quot;, recursive = TRUE, full.names = TRUE)</span></span>
-<span id="cb11-10"><a href="library.html#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove files containing &quot;Hex&quot;, blank samples</span></span>
-<span id="cb11-11"><a href="library.html#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># mzMLfiles &lt;- mzMLfiles[-grep(&quot;Hex&quot;, mzMLfiles)]</span></span>
-<span id="cb11-12"><a href="library.html#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="library.html#cb11-13" aria-hidden="true" tabindex="-1"></a>sample_info <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">&quot;/home/ORUNET.ORU.SE/twg/Windows_home/Dust_Florian/Sample_list_NTA_dust.xlsx&quot;</span>,</span>
-<span id="cb11-14"><a href="library.html#cb11-14" aria-hidden="true" tabindex="-1"></a>                               <span class="at">sheet =</span> <span class="st">&quot;Sample&quot;</span>)</span>
-<span id="cb11-15"><a href="library.html#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co"># filter only samples</span></span>
-<span id="cb11-16"><a href="library.html#cb11-16" aria-hidden="true" tabindex="-1"></a>sample_info <span class="ot">&lt;-</span> sample_info <span class="sc">%&gt;%</span></span>
-<span id="cb11-17"><a href="library.html#cb11-17" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span>(group <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;blank_solvent&quot;</span>)))</span>
-<span id="cb11-18"><a href="library.html#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-19"><a href="library.html#cb11-19" aria-hidden="true" tabindex="-1"></a>mzXMLfiles <span class="ot">&lt;-</span> <span class="fu">as.character</span>(sample_info<span class="sc">$</span>filename)</span>
-<span id="cb11-20"><a href="library.html#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-21"><a href="library.html#cb11-21" aria-hidden="true" tabindex="-1"></a>pd <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sample_name =</span> <span class="fu">paste0</span>(sample_info<span class="sc">$</span>new_codes, <span class="st">&quot;.mzXML&quot;</span>),</span>
-<span id="cb11-22"><a href="library.html#cb11-22" aria-hidden="true" tabindex="-1"></a>                 <span class="at">class =</span> sample_info<span class="sc">$</span>group,</span>
-<span id="cb11-23"><a href="library.html#cb11-23" aria-hidden="true" tabindex="-1"></a>                 <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-24"><a href="library.html#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co"># pd &lt;- pd %&gt;% dplyr::filter(sample_group != &quot;IS&quot;) %&gt;% dplyr::filter(sample_group != &quot;RTI&quot;)</span></span>
-<span id="cb11-25"><a href="library.html#cb11-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-26"><a href="library.html#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-27"><a href="library.html#cb11-27" aria-hidden="true" tabindex="-1"></a>min.clustersize <span class="ot">&lt;-</span> <span class="dv">17</span> <span class="co">#how many fragments need to be in a group for it to be included in the results. 5 - trace compounds; 20 - mostly high quality spectra</span></span>
-<span id="cb11-28"><a href="library.html#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="fu">useOriginalCode</span>(<span class="cn">TRUE</span>) <span class="co">#otherwise matchedFilter will allocate a huge amount of RAM when using step = 0.001</span></span>
-<span id="cb11-29"><a href="library.html#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-30"><a href="library.html#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co">#Refer to XCMS and CAMERA documentation for information about parameters and functions</span></span>
-<span id="cb11-31"><a href="library.html#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="co">#These are the parameters used for high rez GC-Orbitrap data</span></span>
-<span id="cb11-32"><a href="library.html#cb11-32" aria-hidden="true" tabindex="-1"></a>xs1 <span class="ot">&lt;-</span> <span class="fu">xcmsSet</span>(mzXMLfiles, </span>
-<span id="cb11-33"><a href="library.html#cb11-33" aria-hidden="true" tabindex="-1"></a>               <span class="at">phenoData =</span> pd,</span>
-<span id="cb11-34"><a href="library.html#cb11-34" aria-hidden="true" tabindex="-1"></a>               <span class="at">method =</span> <span class="st">&quot;matchedFilter&quot;</span>, </span>
-<span id="cb11-35"><a href="library.html#cb11-35" aria-hidden="true" tabindex="-1"></a>               <span class="at">fwhm =</span> <span class="dv">3</span>, <span class="at">step =</span> <span class="fl">0.001</span>, </span>
-<span id="cb11-36"><a href="library.html#cb11-36" aria-hidden="true" tabindex="-1"></a>               <span class="at">steps =</span> <span class="dv">2</span>, <span class="at">max =</span> <span class="dv">1000</span>, </span>
-<span id="cb11-37"><a href="library.html#cb11-37" aria-hidden="true" tabindex="-1"></a>               <span class="at">snthresh =</span> <span class="dv">3</span>, <span class="at">mzdiff =</span> <span class="fl">0.002</span>)</span>
-<span id="cb11-38"><a href="library.html#cb11-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-39"><a href="library.html#cb11-39" aria-hidden="true" tabindex="-1"></a>xs2 <span class="ot">&lt;-</span> <span class="fu">group</span>(xs1, <span class="at">method =</span> <span class="st">&quot;density&quot;</span>, <span class="at">bw =</span> <span class="dv">5</span>, <span class="at">mzwid =</span> <span class="fl">0.002</span>, <span class="at">minsamp =</span> <span class="dv">1</span>, <span class="at">minfrac =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1000</span>)</span>
-<span id="cb11-40"><a href="library.html#cb11-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-41"><a href="library.html#cb11-41" aria-hidden="true" tabindex="-1"></a>xs3 <span class="ot">&lt;-</span> <span class="fu">retcor</span>(xs2, <span class="at">method =</span> <span class="st">&quot;obiwarp&quot;</span>)</span>
-<span id="cb11-42"><a href="library.html#cb11-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-43"><a href="library.html#cb11-43" aria-hidden="true" tabindex="-1"></a>xs4 <span class="ot">&lt;-</span> <span class="fu">group</span>(xs3, <span class="at">method =</span> <span class="st">&quot;density&quot;</span>, <span class="at">bw =</span> <span class="dv">2</span>, <span class="at">mzwid =</span> <span class="fl">0.6</span>, <span class="at">minsamp =</span> <span class="dv">1</span>, <span class="at">minfrac =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1000</span>)</span>
-<span id="cb11-44"><a href="library.html#cb11-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-45"><a href="library.html#cb11-45" aria-hidden="true" tabindex="-1"></a>xs4 <span class="ot">&lt;-</span> <span class="fu">group</span>(xs3, <span class="at">method =</span> <span class="st">&quot;density&quot;</span>, <span class="at">bw =</span> <span class="dv">2</span>, <span class="at">mzwid =</span> <span class="fl">0.002</span>, <span class="at">minsamp =</span> <span class="dv">1</span>, <span class="at">minfrac =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1000</span>)</span>
-<span id="cb11-46"><a href="library.html#cb11-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-47"><a href="library.html#cb11-47" aria-hidden="true" tabindex="-1"></a>xs5 <span class="ot">&lt;-</span> <span class="fu">fillPeaks</span>(xs4)</span>
-<span id="cb11-48"><a href="library.html#cb11-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-49"><a href="library.html#cb11-49" aria-hidden="true" tabindex="-1"></a>xs6 <span class="ot">&lt;-</span> <span class="fu">xsAnnotate</span>(<span class="at">xs =</span> xs5, <span class="at">sample=</span><span class="cn">NA</span>, <span class="at">polarity =</span> <span class="st">&quot;positive&quot;</span>)</span>
-<span id="cb11-50"><a href="library.html#cb11-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-51"><a href="library.html#cb11-51" aria-hidden="true" tabindex="-1"></a>xs7 <span class="ot">&lt;-</span> <span class="fu">groupFWHM</span>(xs6, <span class="at">sigma =</span> <span class="dv">6</span> , <span class="at">perfwhm =</span> <span class="dv">2</span>, <span class="at">intval =</span> <span class="st">&quot;maxo&quot;</span>)</span>
-<span id="cb11-52"><a href="library.html#cb11-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-53"><a href="library.html#cb11-53" aria-hidden="true" tabindex="-1"></a>xs8 <span class="ot">&lt;-</span> <span class="fu">groupCorr</span>(xs7, <span class="at">cor_eic_th =</span> <span class="fl">0.8</span>, <span class="at">calcCaS =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb11-54"><a href="library.html#cb11-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-55"><a href="library.html#cb11-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-56"><a href="library.html#cb11-56" aria-hidden="true" tabindex="-1"></a>peaktable <span class="ot">&lt;-</span> <span class="fu">getPeaklist</span>(xs8, <span class="at">intval=</span><span class="st">&quot;into&quot;</span>)</span>
-<span id="cb11-57"><a href="library.html#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(peaktable, <span class="at">file =</span> <span class="st">&quot;untreated_peaktable_MatchedFilter.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with all m/z features sorted into &quot;compounds&quot;</span></span>
-<span id="cb11-58"><a href="library.html#cb11-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-59"><a href="library.html#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="co">#the following script identifies all &quot;compounds&quot; considered too small according to min.clustersize</span></span>
-<span id="cb11-60"><a href="library.html#cb11-60" aria-hidden="true" tabindex="-1"></a><span class="co">#you don&#39;t need to modify anything, that run the next part as is</span></span>
-<span id="cb11-61"><a href="library.html#cb11-61" aria-hidden="true" tabindex="-1"></a>peaktable <span class="ot">&lt;-</span> <span class="fu">getPeaklist</span>(xs8, <span class="at">intval=</span><span class="st">&quot;maxo&quot;</span>)</span>
-<span id="cb11-62"><a href="library.html#cb11-62" aria-hidden="true" tabindex="-1"></a>pcgroups <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">unique</span>(<span class="fu">as.numeric</span>(peaktable<span class="sc">$</span>pcgroup)))</span>
-<span id="cb11-63"><a href="library.html#cb11-63" aria-hidden="true" tabindex="-1"></a>lspectra <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb11-64"><a href="library.html#cb11-64" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb11-65"><a href="library.html#cb11-65" aria-hidden="true" tabindex="-1"></a>small.clusters <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb11-66"><a href="library.html#cb11-66" aria-hidden="true" tabindex="-1"></a>big.clusters <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb11-67"><a href="library.html#cb11-67" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb11-68"><a href="library.html#cb11-68" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> pcgroups) {</span>
-<span id="cb11-69"><a href="library.html#cb11-69" aria-hidden="true" tabindex="-1"></a>  clustersize <span class="ot">&lt;-</span> <span class="fu">length</span>(peaktable[peaktable<span class="sc">$</span>pcgroup<span class="sc">==</span>x,<span class="fu">ncol</span>(peaktable)])</span>
-<span id="cb11-70"><a href="library.html#cb11-70" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(clustersize <span class="sc">&lt;</span> <span class="fu">as.numeric</span>(min.clustersize))</span>
-<span id="cb11-71"><a href="library.html#cb11-71" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb11-72"><a href="library.html#cb11-72" aria-hidden="true" tabindex="-1"></a>    small.clusters <span class="ot">&lt;-</span> <span class="fu">c</span>(small.clusters, x)</span>
-<span id="cb11-73"><a href="library.html#cb11-73" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb11-74"><a href="library.html#cb11-74" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
-<span id="cb11-75"><a href="library.html#cb11-75" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb11-76"><a href="library.html#cb11-76" aria-hidden="true" tabindex="-1"></a>    big.clusters <span class="ot">&lt;-</span> <span class="fu">c</span>(big.clusters, x)</span>
-<span id="cb11-77"><a href="library.html#cb11-77" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> peaktable[peaktable<span class="sc">$</span>pcgroup<span class="sc">==</span>x,]</span>
-<span id="cb11-78"><a href="library.html#cb11-78" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> gruppe1[, <span class="sc">-</span>(<span class="dv">2</span><span class="sc">:</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">-</span><span class="dv">3</span><span class="sc">-</span>(<span class="fu">length</span>(mzXMLfiles))))]</span>
-<span id="cb11-79"><a href="library.html#cb11-79" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> gruppe1[, <span class="sc">-</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">:</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">-</span><span class="dv">2</span>))]</span>
-<span id="cb11-80"><a href="library.html#cb11-80" aria-hidden="true" tabindex="-1"></a>    decider <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb11-81"><a href="library.html#cb11-81" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(gruppe1))</span>
-<span id="cb11-82"><a href="library.html#cb11-82" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb11-83"><a href="library.html#cb11-83" aria-hidden="true" tabindex="-1"></a>      decider <span class="ot">&lt;-</span> <span class="fu">c</span>(decider, <span class="fu">sum</span>(gruppe1[, i]))</span>
-<span id="cb11-84"><a href="library.html#cb11-84" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb11-85"><a href="library.html#cb11-85" aria-hidden="true" tabindex="-1"></a>    highest <span class="ot">&lt;-</span> <span class="fu">which</span>(decider<span class="sc">==</span><span class="fu">max</span>(decider), <span class="at">arr.ind =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb11-86"><a href="library.html#cb11-86" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(gruppe1[, <span class="dv">1</span>], gruppe1[, highest[<span class="dv">1</span>]<span class="sc">+</span><span class="dv">1</span>])</span>
-<span id="cb11-87"><a href="library.html#cb11-87" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(gruppe1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mz&quot;</span>, <span class="st">&quot;int&quot;</span>)</span>
-<span id="cb11-88"><a href="library.html#cb11-88" aria-hidden="true" tabindex="-1"></a>    lspectra[[n]] <span class="ot">&lt;-</span> gruppe1</span>
-<span id="cb11-89"><a href="library.html#cb11-89" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb11-90"><a href="library.html#cb11-90" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb11-91"><a href="library.html#cb11-91" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-92"><a href="library.html#cb11-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-93"><a href="library.html#cb11-93" aria-hidden="true" tabindex="-1"></a><span class="co"># remove peaks with zero intensities</span></span>
-<span id="cb11-94"><a href="library.html#cb11-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-95"><a href="library.html#cb11-95" aria-hidden="true" tabindex="-1"></a>lspectra <span class="ot">&lt;-</span> <span class="fu">lapply</span>(lspectra, <span class="cf">function</span>(x) {x[x<span class="sc">$</span>int <span class="sc">!=</span> <span class="dv">0</span>,]})</span>
-<span id="cb11-96"><a href="library.html#cb11-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-97"><a href="library.html#cb11-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-98"><a href="library.html#cb11-98" aria-hidden="true" tabindex="-1"></a>reduced.peaktable <span class="ot">&lt;-</span> <span class="fu">getReducedPeaklist</span>(xs8, <span class="at">method =</span> <span class="st">&quot;sum&quot;</span>, <span class="at">intval =</span> <span class="st">&quot;into&quot;</span>, <span class="at">default.adduct.info =</span> <span class="st">&quot;maxint&quot;</span>, <span class="at">mzrt.range =</span> <span class="cn">FALSE</span>, <span class="at">npeaks.sum =</span> <span class="cn">FALSE</span>, <span class="at">cleanup =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-99"><a href="library.html#cb11-99" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">is.null</span>(small.clusters)<span class="sc">==</span><span class="cn">FALSE</span>) {</span>
-<span id="cb11-100"><a href="library.html#cb11-100" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(z <span class="cf">in</span> small.clusters)</span>
-<span id="cb11-101"><a href="library.html#cb11-101" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb11-102"><a href="library.html#cb11-102" aria-hidden="true" tabindex="-1"></a>    reduced.peaktable <span class="ot">&lt;-</span> reduced.peaktable[<span class="sc">-</span>(<span class="fu">which</span>(reduced.peaktable[, <span class="fu">ncol</span>(reduced.peaktable)]<span class="sc">==</span>z)), ]</span>
-<span id="cb11-103"><a href="library.html#cb11-103" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb11-104"><a href="library.html#cb11-104" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-105"><a href="library.html#cb11-105" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(reduced.peaktable, <span class="at">file =</span> <span class="st">&quot;peaktable_MatchedFilter.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with only &quot;compounds&quot; instead of m/z features</span></span>
-<span id="cb11-106"><a href="library.html#cb11-106" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Name =</span> <span class="fu">paste</span>(<span class="st">&quot;Unknown&quot;</span>, big.clusters, <span class="st">&quot;RT =&quot;</span>,<span class="fu">round</span>(reduced.peaktable<span class="sc">$</span>rt<span class="sc">/</span><span class="dv">60</span>, <span class="dv">2</span>) ), <span class="at">Class =</span> <span class="st">&quot;Unknown&quot;</span>, <span class="at">RT =</span> <span class="fu">round</span>(reduced.peaktable<span class="sc">$</span>rt<span class="sc">/</span><span class="dv">60</span>, <span class="dv">2</span>),  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-107"><a href="library.html#cb11-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-108"><a href="library.html#cb11-108" aria-hidden="true" tabindex="-1"></a><span class="do">####KOVATS#####</span></span>
-<span id="cb11-109"><a href="library.html#cb11-109" aria-hidden="true" tabindex="-1"></a><span class="co">#Adding Kovats retention index to the extra obejct to write to msp</span></span>
-<span id="cb11-110"><a href="library.html#cb11-110" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">rt =</span> extra<span class="sc">$</span>RT)</span>
-<span id="cb11-111"><a href="library.html#cb11-111" aria-hidden="true" tabindex="-1"></a>alkaneSeries <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Num =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>),</span>
-<span id="cb11-112"><a href="library.html#cb11-112" aria-hidden="true" tabindex="-1"></a>                           <span class="at">rt =</span> <span class="fu">c</span>(<span class="fl">4.90</span>, <span class="fl">8.00</span>, <span class="fl">11.13</span>, <span class="fl">14.05</span>, <span class="fl">16.70</span>, <span class="fl">19.37</span>, <span class="fl">22.45</span>, <span class="fl">25.77</span>))</span>
-<span id="cb11-113"><a href="library.html#cb11-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-114"><a href="library.html#cb11-114" aria-hidden="true" tabindex="-1"></a>RI <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="fu">nrow</span>(data))</span>
-<span id="cb11-115"><a href="library.html#cb11-115" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(data))) {</span>
-<span id="cb11-116"><a href="library.html#cb11-116" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
-<span id="cb11-117"><a href="library.html#cb11-117" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">1</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">1</span>],</span>
-<span id="cb11-118"><a href="library.html#cb11-118" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">2</span>],</span>
-<span id="cb11-119"><a href="library.html#cb11-119" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">3</span>],</span>
-<span id="cb11-120"><a href="library.html#cb11-120" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">4</span>],</span>
-<span id="cb11-121"><a href="library.html#cb11-121" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">5</span>],</span>
-<span id="cb11-122"><a href="library.html#cb11-122" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">6</span>],</span>
-<span id="cb11-123"><a href="library.html#cb11-123" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">8</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">7</span>]</span>
-<span id="cb11-124"><a href="library.html#cb11-124" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb11-125"><a href="library.html#cb11-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-126"><a href="library.html#cb11-126" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
-<span id="cb11-127"><a href="library.html#cb11-127" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">1</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">2</span>],</span>
-<span id="cb11-128"><a href="library.html#cb11-128" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">3</span>],</span>
-<span id="cb11-129"><a href="library.html#cb11-129" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">4</span>],</span>
-<span id="cb11-130"><a href="library.html#cb11-130" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">5</span>],</span>
-<span id="cb11-131"><a href="library.html#cb11-131" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">6</span>],</span>
-<span id="cb11-132"><a href="library.html#cb11-132" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">7</span>],</span>
-<span id="cb11-133"><a href="library.html#cb11-133" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">8</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">8</span>]</span>
-<span id="cb11-134"><a href="library.html#cb11-134" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb11-135"><a href="library.html#cb11-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-136"><a href="library.html#cb11-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-137"><a href="library.html#cb11-137" aria-hidden="true" tabindex="-1"></a>RI[i] <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>n <span class="sc">+</span> <span class="dv">100</span><span class="sc">*</span>(m<span class="sc">-</span>n) <span class="sc">*</span> (data<span class="sc">$</span>rt[i] <span class="sc">-</span> alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> n,]<span class="sc">$</span>rt)<span class="sc">/</span>(alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> m,]<span class="sc">$</span>rt <span class="sc">-</span> alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> n,]<span class="sc">$</span>rt), <span class="dv">0</span>)</span>
-<span id="cb11-138"><a href="library.html#cb11-138" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-139"><a href="library.html#cb11-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-140"><a href="library.html#cb11-140" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="fu">cbind</span>(extra, RI)</span>
-<span id="cb11-141"><a href="library.html#cb11-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-142"><a href="library.html#cb11-142" aria-hidden="true" tabindex="-1"></a><span class="do">######</span><span class="re">END</span><span class="do"> KOVATS######</span></span>
-<span id="cb11-143"><a href="library.html#cb11-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-144"><a href="library.html#cb11-144" aria-hidden="true" tabindex="-1"></a><span class="co"># create the msp object with spectra and all meta information in the extra object (NAME, RETENTIONTIME, RETENTIONINDEX)</span></span>
-<span id="cb11-145"><a href="library.html#cb11-145" aria-hidden="true" tabindex="-1"></a>export.msp <span class="ot">&lt;-</span> <span class="fu">construct.msp</span>(lspectra, extra)</span>
-<span id="cb11-146"><a href="library.html#cb11-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-147"><a href="library.html#cb11-147" aria-hidden="true" tabindex="-1"></a><span class="fu">write.msp</span>(export.msp, <span class="at">file =</span> <span class="st">&quot;spectra_MatchedFilter20201030.msp&quot;</span>) <span class="co">#This creates a NIST MS Search compatible .msp file with all compound pseudospectra</span></span></code></pre></div>
-<p>This code uses XCMS with centWave. Check differences and skip first steps to combine both workflows</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="library.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#first define the working directory (folder with experimental group folders inside)</span></span>
-<span id="cb12-2"><a href="library.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mzMLfiles &lt;- list.files(path = &quot;/mzXML/&quot;,pattern = &quot;.mzXML&quot;, recursive = TRUE, full.names = TRUE)</span></span>
-<span id="cb12-3"><a href="library.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove files containing &quot;Hex&quot;, blank samples</span></span>
-<span id="cb12-4"><a href="library.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># mzMLfiles &lt;- mzMLfiles[-grep(&quot;Hex&quot;, mzMLfiles)]</span></span>
-<span id="cb12-5"><a href="library.html#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="library.html#cb12-6" aria-hidden="true" tabindex="-1"></a>sample_info <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">&quot;Sample_list_NTA_dust.xlsx&quot;</span>,</span>
-<span id="cb12-7"><a href="library.html#cb12-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">sheet =</span> <span class="st">&quot;Sample_xcms&quot;</span>)</span>
-<span id="cb12-8"><a href="library.html#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># filter only samples</span></span>
-<span id="cb12-9"><a href="library.html#cb12-9" aria-hidden="true" tabindex="-1"></a>sample_info <span class="ot">&lt;-</span> sample_info <span class="sc">%&gt;%</span></span>
-<span id="cb12-10"><a href="library.html#cb12-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span>(group <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;blank_solvent&quot;</span>)))</span>
-<span id="cb12-11"><a href="library.html#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="library.html#cb12-12" aria-hidden="true" tabindex="-1"></a>pd <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sample_name =</span> <span class="fu">paste0</span>(sample_info<span class="sc">$</span>analysis, <span class="st">&quot;.mzXML&quot;</span>),</span>
-<span id="cb12-13"><a href="library.html#cb12-13" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sample_group =</span> sample_info<span class="sc">$</span>group,</span>
-<span id="cb12-14"><a href="library.html#cb12-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb12-15"><a href="library.html#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="library.html#cb12-16" aria-hidden="true" tabindex="-1"></a>mzXMLfiles <span class="ot">&lt;-</span> <span class="fu">paste0</span>(sample_info<span class="sc">$</span>path, <span class="st">&quot;/&quot;</span>, sample_info<span class="sc">$</span>analysis, <span class="st">&quot;.mzXML&quot;</span>)</span>
-<span id="cb12-17"><a href="library.html#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-18"><a href="library.html#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="library.html#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-20"><a href="library.html#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Use subset to test</span></span>
-<span id="cb12-21"><a href="library.html#cb12-21" aria-hidden="true" tabindex="-1"></a>pd <span class="ot">&lt;-</span> pd[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span>
-<span id="cb12-22"><a href="library.html#cb12-22" aria-hidden="true" tabindex="-1"></a>mzXMLfiles <span class="ot">&lt;-</span> mzXMLfiles[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
-<span id="cb12-23"><a href="library.html#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-24"><a href="library.html#cb12-24" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">readMSData</span>(mzXMLfiles, </span>
-<span id="cb12-25"><a href="library.html#cb12-25" aria-hidden="true" tabindex="-1"></a>                         <span class="at">pdata =</span> <span class="fu">new</span>(<span class="st">&quot;NAnnotatedDataFrame&quot;</span>, pd),</span>
-<span id="cb12-26"><a href="library.html#cb12-26" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mode =</span> <span class="st">&quot;onDisk&quot;</span>)</span>
-<span id="cb12-27"><a href="library.html#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-28"><a href="library.html#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co"># pd &lt;- pd %&gt;% dplyr::filter(sample_group != &quot;IS&quot;) %&gt;% dplyr::filter(sample_group != &quot;RTI&quot;)</span></span>
-<span id="cb12-29"><a href="library.html#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-30"><a href="library.html#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co">#-----Find features----#</span></span>
-<span id="cb12-31"><a href="library.html#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-32"><a href="library.html#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co"># centWave params</span></span>
-<span id="cb12-33"><a href="library.html#cb12-33" aria-hidden="true" tabindex="-1"></a>cwp <span class="ot">&lt;-</span> <span class="fu">CentWaveParam</span>(<span class="at">ppm =</span> <span class="dv">5</span>,</span>
-<span id="cb12-34"><a href="library.html#cb12-34" aria-hidden="true" tabindex="-1"></a>                     <span class="at">peakwidth =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">45</span>),</span>
-<span id="cb12-35"><a href="library.html#cb12-35" aria-hidden="true" tabindex="-1"></a>                     <span class="at">snthresh =</span> <span class="dv">10</span>,</span>
-<span id="cb12-36"><a href="library.html#cb12-36" aria-hidden="true" tabindex="-1"></a>                     <span class="at">prefilter =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">30000</span>),</span>
-<span id="cb12-37"><a href="library.html#cb12-37" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mzCenterFun =</span> <span class="st">&quot;wMean&quot;</span>,</span>
-<span id="cb12-38"><a href="library.html#cb12-38" aria-hidden="true" tabindex="-1"></a>                     <span class="at">integrate =</span> 1L,</span>
-<span id="cb12-39"><a href="library.html#cb12-39" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mzdiff =</span> <span class="sc">-</span><span class="fl">0.001</span>,</span>
-<span id="cb12-40"><a href="library.html#cb12-40" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fitgauss =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb12-41"><a href="library.html#cb12-41" aria-hidden="true" tabindex="-1"></a>                     <span class="at">noise =</span> <span class="dv">30000</span>,</span>
-<span id="cb12-42"><a href="library.html#cb12-42" aria-hidden="true" tabindex="-1"></a>                     <span class="at">verboseColumns =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb12-43"><a href="library.html#cb12-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-44"><a href="library.html#cb12-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-45"><a href="library.html#cb12-45" aria-hidden="true" tabindex="-1"></a>xs1 <span class="ot">&lt;-</span> <span class="fu">findChromPeaks</span>(mzXMLfiles, <span class="at">param =</span> cwp)</span>
-<span id="cb12-46"><a href="library.html#cb12-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-47"><a href="library.html#cb12-47" aria-hidden="true" tabindex="-1"></a><span class="co"># use model peak to evaluate process</span></span>
-<span id="cb12-48"><a href="library.html#cb12-48" aria-hidden="true" tabindex="-1"></a>rtr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1440</span>, <span class="dv">1460</span>)</span>
-<span id="cb12-49"><a href="library.html#cb12-49" aria-hidden="true" tabindex="-1"></a>mzr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">340.238</span>, <span class="fl">340.242</span>)</span>
-<span id="cb12-50"><a href="library.html#cb12-50" aria-hidden="true" tabindex="-1"></a>chr_raw <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(mzXMLfiles, <span class="at">mz =</span> mzr, <span class="at">rt =</span> rtr)</span>
-<span id="cb12-51"><a href="library.html#cb12-51" aria-hidden="true" tabindex="-1"></a>chr_mzr <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(xs1, <span class="at">mz =</span> mzr, <span class="at">rt =</span> rtr)</span>
-<span id="cb12-52"><a href="library.html#cb12-52" aria-hidden="true" tabindex="-1"></a>group_colors <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">brewer.pal</span>(<span class="dv">3</span>, <span class="st">&quot;Set1&quot;</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="st">&quot;60&quot;</span>)</span>
-<span id="cb12-53"><a href="library.html#cb12-53" aria-hidden="true" tabindex="-1"></a>sample_colors <span class="ot">&lt;-</span> group_colors[xs1<span class="sc">$</span>sample_group]</span>
-<span id="cb12-54"><a href="library.html#cb12-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-55"><a href="library.html#cb12-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-56"><a href="library.html#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="co">#----Group features 1----#</span></span>
-<span id="cb12-57"><a href="library.html#cb12-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-58"><a href="library.html#cb12-58" aria-hidden="true" tabindex="-1"></a>pdp <span class="ot">&lt;-</span> <span class="fu">PeakDensityParam</span>(</span>
-<span id="cb12-59"><a href="library.html#cb12-59" aria-hidden="true" tabindex="-1"></a>  <span class="at">sampleGroups =</span> pd<span class="sc">$</span>sample_group,</span>
-<span id="cb12-60"><a href="library.html#cb12-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">bw =</span> <span class="dv">10</span>,</span>
-<span id="cb12-61"><a href="library.html#cb12-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">minFraction =</span> <span class="dv">0</span>,</span>
-<span id="cb12-62"><a href="library.html#cb12-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">minSamples =</span> <span class="dv">1</span>,</span>
-<span id="cb12-63"><a href="library.html#cb12-63" aria-hidden="true" tabindex="-1"></a>  <span class="at">binSize =</span> <span class="fl">0.002</span>,</span>
-<span id="cb12-64"><a href="library.html#cb12-64" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxFeatures =</span> <span class="dv">1000</span>)</span>
-<span id="cb12-65"><a href="library.html#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-66"><a href="library.html#cb12-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-67"><a href="library.html#cb12-67" aria-hidden="true" tabindex="-1"></a>xs2 <span class="ot">&lt;-</span> <span class="fu">groupChromPeaks</span>(xs1, <span class="at">param =</span> pdp)</span>
-<span id="cb12-68"><a href="library.html#cb12-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-69"><a href="library.html#cb12-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-70"><a href="library.html#cb12-70" aria-hidden="true" tabindex="-1"></a><span class="fu">plotChromPeakDensity</span>(chr_mzr, <span class="at">col =</span> sample_colors, <span class="at">param =</span> pdp)</span>
-<span id="cb12-71"><a href="library.html#cb12-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-72"><a href="library.html#cb12-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-73"><a href="library.html#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="co">#----retention time correction----#</span></span>
-<span id="cb12-74"><a href="library.html#cb12-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-75"><a href="library.html#cb12-75" aria-hidden="true" tabindex="-1"></a>obip <span class="ot">&lt;-</span> <span class="fu">ObiwarpParam</span>(<span class="at">binSize =</span> <span class="fl">0.05</span>,  <span class="co"># need to check optimal binSize</span></span>
-<span id="cb12-76"><a href="library.html#cb12-76" aria-hidden="true" tabindex="-1"></a>                     <span class="at">centerSample =</span> <span class="fu">integer</span>(),</span>
-<span id="cb12-77"><a href="library.html#cb12-77" aria-hidden="true" tabindex="-1"></a>                     <span class="at">response =</span> 1L,</span>
-<span id="cb12-78"><a href="library.html#cb12-78" aria-hidden="true" tabindex="-1"></a>                     <span class="at">distFun =</span> <span class="st">&quot;cor_opt&quot;</span>,</span>
-<span id="cb12-79"><a href="library.html#cb12-79" aria-hidden="true" tabindex="-1"></a>                     <span class="at">gapInit =</span> <span class="fu">numeric</span>(),</span>
-<span id="cb12-80"><a href="library.html#cb12-80" aria-hidden="true" tabindex="-1"></a>                     <span class="at">gapExtend =</span> <span class="fu">numeric</span>(),</span>
-<span id="cb12-81"><a href="library.html#cb12-81" aria-hidden="true" tabindex="-1"></a>                     <span class="at">factorDiag =</span> <span class="dv">2</span>,</span>
-<span id="cb12-82"><a href="library.html#cb12-82" aria-hidden="true" tabindex="-1"></a>                     <span class="at">factorGap =</span> <span class="dv">1</span>,</span>
-<span id="cb12-83"><a href="library.html#cb12-83" aria-hidden="true" tabindex="-1"></a>                     <span class="at">localAlignment =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb12-84"><a href="library.html#cb12-84" aria-hidden="true" tabindex="-1"></a>                     <span class="at">initPenalty =</span> <span class="dv">0</span>,</span>
-<span id="cb12-85"><a href="library.html#cb12-85" aria-hidden="true" tabindex="-1"></a>                     <span class="at">subset =</span> <span class="fu">integer</span>(),</span>
-<span id="cb12-86"><a href="library.html#cb12-86" aria-hidden="true" tabindex="-1"></a>                     <span class="at">subsetAdjust =</span> <span class="fu">c</span>(<span class="st">&quot;average&quot;</span>, <span class="st">&quot;previous&quot;</span>))</span>
-<span id="cb12-87"><a href="library.html#cb12-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-88"><a href="library.html#cb12-88" aria-hidden="true" tabindex="-1"></a>xs3 <span class="ot">&lt;-</span> <span class="fu">adjustRtime</span>(xs2, <span class="at">param =</span> obip)</span>
-<span id="cb12-89"><a href="library.html#cb12-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-90"><a href="library.html#cb12-90" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the base peak chromatograms</span></span>
-<span id="cb12-91"><a href="library.html#cb12-91" aria-hidden="true" tabindex="-1"></a>bpis_adj <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(xs3, <span class="at">aggregationFun =</span> <span class="st">&quot;max&quot;</span>, <span class="at">include =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb12-92"><a href="library.html#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="fl">4.5</span>, <span class="fl">4.2</span>, <span class="dv">1</span>, <span class="fl">0.5</span>))</span>
-<span id="cb12-93"><a href="library.html#cb12-93" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bpis_adj)</span>
-<span id="cb12-94"><a href="library.html#cb12-94" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot also the difference of adjusted to raw retention time.</span></span>
-<span id="cb12-95"><a href="library.html#cb12-95" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAdjustedRtime</span>(xs3)</span>
-<span id="cb12-96"><a href="library.html#cb12-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-97"><a href="library.html#cb12-97" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span>
-<span id="cb12-98"><a href="library.html#cb12-98" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the raw data</span></span>
-<span id="cb12-99"><a href="library.html#cb12-99" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(chr_raw)</span>
-<span id="cb12-100"><a href="library.html#cb12-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-101"><a href="library.html#cb12-101" aria-hidden="true" tabindex="-1"></a><span class="do">## Extract the chromatogram from the adjusted object</span></span>
-<span id="cb12-102"><a href="library.html#cb12-102" aria-hidden="true" tabindex="-1"></a>chr_adj <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(xs3, <span class="at">rt =</span> rtr, <span class="at">mz =</span> mzr)</span>
-<span id="cb12-103"><a href="library.html#cb12-103" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(chr_adj, <span class="at">peakType =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb12-104"><a href="library.html#cb12-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-105"><a href="library.html#cb12-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-106"><a href="library.html#cb12-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-107"><a href="library.html#cb12-107" aria-hidden="true" tabindex="-1"></a><span class="co">#----Group features 2----#</span></span>
-<span id="cb12-108"><a href="library.html#cb12-108" aria-hidden="true" tabindex="-1"></a><span class="co"># After retention time correction, the rt values are modified and additional grouping is needed.</span></span>
-<span id="cb12-109"><a href="library.html#cb12-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-110"><a href="library.html#cb12-110" aria-hidden="true" tabindex="-1"></a>pdp2 <span class="ot">&lt;-</span> <span class="fu">PeakDensityParam</span>(</span>
-<span id="cb12-111"><a href="library.html#cb12-111" aria-hidden="true" tabindex="-1"></a>  <span class="at">sampleGroups =</span> pd<span class="sc">$</span>sample_group,</span>
-<span id="cb12-112"><a href="library.html#cb12-112" aria-hidden="true" tabindex="-1"></a>  <span class="at">bw =</span> <span class="dv">5</span>,</span>
-<span id="cb12-113"><a href="library.html#cb12-113" aria-hidden="true" tabindex="-1"></a>  <span class="at">minFraction =</span> <span class="dv">0</span>,</span>
-<span id="cb12-114"><a href="library.html#cb12-114" aria-hidden="true" tabindex="-1"></a>  <span class="at">minSamples =</span> <span class="dv">1</span>,</span>
-<span id="cb12-115"><a href="library.html#cb12-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">binSize =</span> <span class="fl">0.2</span>,</span>
-<span id="cb12-116"><a href="library.html#cb12-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxFeatures =</span> <span class="dv">1000</span>)</span>
-<span id="cb12-117"><a href="library.html#cb12-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-118"><a href="library.html#cb12-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-119"><a href="library.html#cb12-119" aria-hidden="true" tabindex="-1"></a>xs4 <span class="ot">&lt;-</span> <span class="fu">groupChromPeaks</span>(xs3, <span class="at">param =</span> pdp2)</span>
-<span id="cb12-120"><a href="library.html#cb12-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-121"><a href="library.html#cb12-121" aria-hidden="true" tabindex="-1"></a>xs4_chrom <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(xs4, <span class="at">mz =</span> mzr, <span class="at">rt =</span> rtr)</span>
-<span id="cb12-122"><a href="library.html#cb12-122" aria-hidden="true" tabindex="-1"></a><span class="fu">plotChromPeakDensity</span>(xs4_chrom, <span class="at">col =</span> sample_colors, <span class="at">param =</span> pdp2)</span>
-<span id="cb12-123"><a href="library.html#cb12-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-124"><a href="library.html#cb12-124" aria-hidden="true" tabindex="-1"></a><span class="co"># iteratively decrease the binSize</span></span>
-<span id="cb12-125"><a href="library.html#cb12-125" aria-hidden="true" tabindex="-1"></a>pdp3 <span class="ot">&lt;-</span> <span class="fu">PeakDensityParam</span>(</span>
-<span id="cb12-126"><a href="library.html#cb12-126" aria-hidden="true" tabindex="-1"></a>  <span class="at">sampleGroups =</span> pd<span class="sc">$</span>sample_group,</span>
-<span id="cb12-127"><a href="library.html#cb12-127" aria-hidden="true" tabindex="-1"></a>  <span class="at">bw =</span> <span class="dv">2</span>,</span>
-<span id="cb12-128"><a href="library.html#cb12-128" aria-hidden="true" tabindex="-1"></a>  <span class="at">minFraction =</span> <span class="dv">0</span>,</span>
-<span id="cb12-129"><a href="library.html#cb12-129" aria-hidden="true" tabindex="-1"></a>  <span class="at">minSamples =</span> <span class="dv">1</span>,</span>
-<span id="cb12-130"><a href="library.html#cb12-130" aria-hidden="true" tabindex="-1"></a>  <span class="at">binSize =</span> <span class="fl">0.002</span>,</span>
-<span id="cb12-131"><a href="library.html#cb12-131" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxFeatures =</span> <span class="dv">1000</span>)</span>
-<span id="cb12-132"><a href="library.html#cb12-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-133"><a href="library.html#cb12-133" aria-hidden="true" tabindex="-1"></a>xs4 <span class="ot">&lt;-</span> <span class="fu">groupChromPeaks</span>(xs4, <span class="at">param =</span> pdp3)</span>
-<span id="cb12-134"><a href="library.html#cb12-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-135"><a href="library.html#cb12-135" aria-hidden="true" tabindex="-1"></a>xs4_chrom <span class="ot">&lt;-</span> <span class="fu">chromatogram</span>(xs4, <span class="at">mz =</span> mzr, <span class="at">rt =</span> rtr)</span>
-<span id="cb12-136"><a href="library.html#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="fu">plotChromPeakDensity</span>(xs4_chrom, <span class="at">col =</span> sample_colors, <span class="at">param =</span> pdp3)</span>
-<span id="cb12-137"><a href="library.html#cb12-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-138"><a href="library.html#cb12-138" aria-hidden="true" tabindex="-1"></a><span class="co">#----Fill missing features----#</span></span>
-<span id="cb12-139"><a href="library.html#cb12-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-140"><a href="library.html#cb12-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-141"><a href="library.html#cb12-141" aria-hidden="true" tabindex="-1"></a>xs5 <span class="ot">&lt;-</span> <span class="fu">fillChromPeaks</span>(xs4)</span>
-<span id="cb12-142"><a href="library.html#cb12-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-143"><a href="library.html#cb12-143" aria-hidden="true" tabindex="-1"></a><span class="do">## Check missing values before filling in peaks</span></span>
-<span id="cb12-144"><a href="library.html#cb12-144" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(<span class="fu">featureValues</span>(xs5, <span class="at">filled =</span> <span class="cn">FALSE</span>), <span class="at">MARGIN =</span> <span class="dv">2</span>,</span>
-<span id="cb12-145"><a href="library.html#cb12-145" aria-hidden="true" tabindex="-1"></a>      <span class="at">FUN =</span> <span class="cf">function</span>(z) <span class="fu">sum</span>(<span class="fu">is.na</span>(z)))</span>
-<span id="cb12-146"><a href="library.html#cb12-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-147"><a href="library.html#cb12-147" aria-hidden="true" tabindex="-1"></a><span class="do">## Missing values after filling in peaks</span></span>
-<span id="cb12-148"><a href="library.html#cb12-148" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(<span class="fu">featureValues</span>(xs5), <span class="at">MARGIN =</span> <span class="dv">2</span>,</span>
-<span id="cb12-149"><a href="library.html#cb12-149" aria-hidden="true" tabindex="-1"></a>      <span class="at">FUN =</span> <span class="cf">function</span>(z) <span class="fu">sum</span>(<span class="fu">is.na</span>(z)))</span>
-<span id="cb12-150"><a href="library.html#cb12-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-151"><a href="library.html#cb12-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-152"><a href="library.html#cb12-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-153"><a href="library.html#cb12-153" aria-hidden="true" tabindex="-1"></a><span class="co">#---- QC ----#</span></span>
-<span id="cb12-154"><a href="library.html#cb12-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-155"><a href="library.html#cb12-155" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract chromatograms of 4 features</span></span>
-<span id="cb12-156"><a href="library.html#cb12-156" aria-hidden="true" tabindex="-1"></a>feature_chroms <span class="ot">&lt;-</span> <span class="fu">featureChromatograms</span>(xs5, <span class="at">features =</span> <span class="dv">10000</span><span class="sc">:</span><span class="dv">10004</span>)</span>
-<span id="cb12-157"><a href="library.html#cb12-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-158"><a href="library.html#cb12-158" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(feature_chroms)</span>
-<span id="cb12-159"><a href="library.html#cb12-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-160"><a href="library.html#cb12-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-161"><a href="library.html#cb12-161" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">featureValues</span>(xs5, <span class="at">value=</span><span class="st">&quot;into&quot;</span>) <span class="sc">+</span><span class="dv">1</span>, </span>
-<span id="cb12-162"><a href="library.html#cb12-162" aria-hidden="true" tabindex="-1"></a>        <span class="co">#col=as.numeric(sampclass(mtbls2Set))+1, </span></span>
-<span id="cb12-163"><a href="library.html#cb12-163" aria-hidden="true" tabindex="-1"></a>        <span class="at">log=</span><span class="st">&quot;y&quot;</span>, <span class="at">las=</span><span class="dv">2</span>)</span>
-<span id="cb12-164"><a href="library.html#cb12-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-165"><a href="library.html#cb12-165" aria-hidden="true" tabindex="-1"></a>sdThresh <span class="ot">&lt;-</span> <span class="fl">4.0</span> <span class="do">## Filter low-standard deviation rows for plot</span></span>
-<span id="cb12-166"><a href="library.html#cb12-166" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">featureValues</span>(xs5))<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb12-167"><a href="library.html#cb12-167" aria-hidden="true" tabindex="-1"></a>pca.result <span class="ot">&lt;-</span> <span class="fu">pca</span>(data, <span class="at">nPcs=</span><span class="dv">3</span>)</span>
-<span id="cb12-168"><a href="library.html#cb12-168" aria-hidden="true" tabindex="-1"></a><span class="fu">plotPcs</span>(pca.result, <span class="at">type=</span><span class="st">&quot;loadings&quot;</span>, </span>
-<span id="cb12-169"><a href="library.html#cb12-169" aria-hidden="true" tabindex="-1"></a>        <span class="co">#col=as.numeric(sampclass(mtbls2Set))+1</span></span>
-<span id="cb12-170"><a href="library.html#cb12-170" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb12-171"><a href="library.html#cb12-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-172"><a href="library.html#cb12-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-173"><a href="library.html#cb12-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-174"><a href="library.html#cb12-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-175"><a href="library.html#cb12-175" aria-hidden="true" tabindex="-1"></a><span class="co"># It is possible to use the retention time correction and grouping step in an iterative way if needed. </span></span>
-<span id="cb12-176"><a href="library.html#cb12-176" aria-hidden="true" tabindex="-1"></a><span class="co"># Once you perform your last adjustRtime step and thus your last grouping step, you will obtain your final peak list (i.e. final list of ions)</span></span>
-<span id="cb12-177"><a href="library.html#cb12-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-178"><a href="library.html#cb12-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-179"><a href="library.html#cb12-179" aria-hidden="true" tabindex="-1"></a><span class="co">#----Annotation using CAMERA----#</span></span>
-<span id="cb12-180"><a href="library.html#cb12-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-181"><a href="library.html#cb12-181" aria-hidden="true" tabindex="-1"></a><span class="co"># Since CAMERA has not yet been ported to XCMSnExp,we need to convert to xcmsSet. </span></span>
-<span id="cb12-182"><a href="library.html#cb12-182" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the conversion only makes sense for somple XCMSnSets, </span></span>
-<span id="cb12-183"><a href="library.html#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="co"># without e.g. MS level filtering (where CAMERA would then extract the wrong peaks)</span></span>
-<span id="cb12-184"><a href="library.html#cb12-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-185"><a href="library.html#cb12-185" aria-hidden="true" tabindex="-1"></a>xs6 <span class="ot">&lt;-</span> <span class="fu">as</span>(xs5, <span class="st">&quot;xcmsSet&quot;</span>)</span>
-<span id="cb12-186"><a href="library.html#cb12-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-187"><a href="library.html#cb12-187" aria-hidden="true" tabindex="-1"></a>xs6 <span class="ot">&lt;-</span> <span class="fu">xsAnnotate</span>(<span class="at">xs =</span> xs6, <span class="at">sample=</span><span class="cn">NA</span>, <span class="at">polarity =</span> <span class="st">&quot;positive&quot;</span>)</span>
-<span id="cb12-188"><a href="library.html#cb12-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-189"><a href="library.html#cb12-189" aria-hidden="true" tabindex="-1"></a>xs7 <span class="ot">&lt;-</span> <span class="fu">groupFWHM</span>(xs6, <span class="at">sigma =</span> <span class="dv">6</span> , <span class="at">perfwhm =</span> <span class="dv">2</span>, <span class="at">intval =</span> <span class="st">&quot;maxo&quot;</span>)</span>
-<span id="cb12-190"><a href="library.html#cb12-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-191"><a href="library.html#cb12-191" aria-hidden="true" tabindex="-1"></a>xs8 <span class="ot">&lt;-</span> <span class="fu">groupCorr</span>(xs7, <span class="at">cor_eic_th =</span> <span class="fl">0.8</span>, <span class="at">calcCaS =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-192"><a href="library.html#cb12-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-193"><a href="library.html#cb12-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-194"><a href="library.html#cb12-194" aria-hidden="true" tabindex="-1"></a><span class="co">#how many fragments need to be in a group for it to be included in the results. 5 - trace compounds; 20 - mostly high quality spectra</span></span>
-<span id="cb12-195"><a href="library.html#cb12-195" aria-hidden="true" tabindex="-1"></a>min.clustersize <span class="ot">&lt;-</span> <span class="dv">20</span> </span>
-<span id="cb12-196"><a href="library.html#cb12-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-197"><a href="library.html#cb12-197" aria-hidden="true" tabindex="-1"></a>peaktable <span class="ot">&lt;-</span> <span class="fu">getPeaklist</span>(xs8, <span class="at">intval=</span><span class="st">&quot;into&quot;</span>)</span>
-<span id="cb12-198"><a href="library.html#cb12-198" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(peaktable, <span class="at">file =</span> <span class="st">&quot;test_peaktable.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with all m/z features sorted into &quot;compounds&quot;</span></span>
-<span id="cb12-199"><a href="library.html#cb12-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-200"><a href="library.html#cb12-200" aria-hidden="true" tabindex="-1"></a><span class="co">#the following script identifies all &quot;compounds&quot; considered too small according to min.clustersize</span></span>
-<span id="cb12-201"><a href="library.html#cb12-201" aria-hidden="true" tabindex="-1"></a>peaktable <span class="ot">&lt;-</span> <span class="fu">getPeaklist</span>(xs8, <span class="at">intval=</span><span class="st">&quot;maxo&quot;</span>)</span>
-<span id="cb12-202"><a href="library.html#cb12-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-203"><a href="library.html#cb12-203" aria-hidden="true" tabindex="-1"></a><span class="co"># Replaces NA in intensities with zero</span></span>
-<span id="cb12-204"><a href="library.html#cb12-204" aria-hidden="true" tabindex="-1"></a>peaktable <span class="ot">&lt;-</span> peaktable <span class="sc">%&gt;%</span></span>
-<span id="cb12-205"><a href="library.html#cb12-205" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(dplyr<span class="sc">::</span><span class="fu">across</span>(dplyr<span class="sc">::</span><span class="fu">starts_with</span>(<span class="st">&quot;X&quot;</span>), <span class="sc">~</span>tidyr<span class="sc">::</span><span class="fu">replace_na</span>(., <span class="dv">0</span>)))</span>
-<span id="cb12-206"><a href="library.html#cb12-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-207"><a href="library.html#cb12-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-208"><a href="library.html#cb12-208" aria-hidden="true" tabindex="-1"></a>pcgroups <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">unique</span>(<span class="fu">as.numeric</span>(peaktable<span class="sc">$</span>pcgroup)))</span>
-<span id="cb12-209"><a href="library.html#cb12-209" aria-hidden="true" tabindex="-1"></a>lspectra <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb12-210"><a href="library.html#cb12-210" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb12-211"><a href="library.html#cb12-211" aria-hidden="true" tabindex="-1"></a>small.clusters <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb12-212"><a href="library.html#cb12-212" aria-hidden="true" tabindex="-1"></a>big.clusters <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb12-213"><a href="library.html#cb12-213" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb12-214"><a href="library.html#cb12-214" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> <span class="fu">seq_along</span>(pcgroups)) {</span>
-<span id="cb12-215"><a href="library.html#cb12-215" aria-hidden="true" tabindex="-1"></a>  clustersize <span class="ot">&lt;-</span> <span class="fu">length</span>(peaktable[peaktable<span class="sc">$</span>pcgroup<span class="sc">==</span>x,<span class="fu">ncol</span>(peaktable)])</span>
-<span id="cb12-216"><a href="library.html#cb12-216" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(clustersize <span class="sc">&lt;</span> <span class="fu">as.numeric</span>(min.clustersize))</span>
-<span id="cb12-217"><a href="library.html#cb12-217" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb12-218"><a href="library.html#cb12-218" aria-hidden="true" tabindex="-1"></a>    small.clusters <span class="ot">&lt;-</span> <span class="fu">c</span>(small.clusters, x)</span>
-<span id="cb12-219"><a href="library.html#cb12-219" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb12-220"><a href="library.html#cb12-220" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
-<span id="cb12-221"><a href="library.html#cb12-221" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb12-222"><a href="library.html#cb12-222" aria-hidden="true" tabindex="-1"></a>    big.clusters <span class="ot">&lt;-</span> <span class="fu">c</span>(big.clusters, x)</span>
-<span id="cb12-223"><a href="library.html#cb12-223" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> peaktable[peaktable<span class="sc">$</span>pcgroup<span class="sc">==</span>x,]</span>
-<span id="cb12-224"><a href="library.html#cb12-224" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> gruppe1[, <span class="sc">-</span>(<span class="dv">2</span><span class="sc">:</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">-</span><span class="dv">3</span><span class="sc">-</span>(<span class="fu">length</span>(mzXMLfiles))))]</span>
-<span id="cb12-225"><a href="library.html#cb12-225" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> gruppe1[, <span class="sc">-</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">:</span>(<span class="fu">ncol</span>(gruppe1)<span class="sc">-</span><span class="dv">2</span>))]</span>
-<span id="cb12-226"><a href="library.html#cb12-226" aria-hidden="true" tabindex="-1"></a>    decider <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb12-227"><a href="library.html#cb12-227" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-228"><a href="library.html#cb12-228" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(gruppe1))</span>
-<span id="cb12-229"><a href="library.html#cb12-229" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb12-230"><a href="library.html#cb12-230" aria-hidden="true" tabindex="-1"></a>      decider <span class="ot">&lt;-</span> <span class="fu">c</span>(decider, <span class="fu">sum</span>(gruppe1[, i]))</span>
-<span id="cb12-231"><a href="library.html#cb12-231" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb12-232"><a href="library.html#cb12-232" aria-hidden="true" tabindex="-1"></a>    highest <span class="ot">&lt;-</span> <span class="fu">which</span>(decider<span class="sc">==</span><span class="fu">max</span>(decider), <span class="at">arr.ind =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-233"><a href="library.html#cb12-233" aria-hidden="true" tabindex="-1"></a>    gruppe1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(gruppe1[, <span class="dv">1</span>], gruppe1[, highest[<span class="dv">1</span>]<span class="sc">+</span><span class="dv">1</span>])</span>
-<span id="cb12-234"><a href="library.html#cb12-234" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(gruppe1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mz&quot;</span>, <span class="st">&quot;int&quot;</span>)</span>
-<span id="cb12-235"><a href="library.html#cb12-235" aria-hidden="true" tabindex="-1"></a>    lspectra[[n]] <span class="ot">&lt;-</span> gruppe1</span>
-<span id="cb12-236"><a href="library.html#cb12-236" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb12-237"><a href="library.html#cb12-237" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb12-238"><a href="library.html#cb12-238" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-239"><a href="library.html#cb12-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-240"><a href="library.html#cb12-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-241"><a href="library.html#cb12-241" aria-hidden="true" tabindex="-1"></a><span class="co"># remove peaks with zero intensities</span></span>
-<span id="cb12-242"><a href="library.html#cb12-242" aria-hidden="true" tabindex="-1"></a>lspectra <span class="ot">&lt;-</span> <span class="fu">lapply</span>(lspectra, <span class="cf">function</span>(x) {x[x<span class="sc">$</span>int <span class="sc">!=</span> <span class="dv">0</span>,]})</span>
-<span id="cb12-243"><a href="library.html#cb12-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-244"><a href="library.html#cb12-244" aria-hidden="true" tabindex="-1"></a>reduced.peaktable <span class="ot">&lt;-</span> <span class="fu">getReducedPeaklist</span>(xs8, <span class="at">method =</span> <span class="st">&quot;sum&quot;</span>, <span class="at">intval =</span> <span class="st">&quot;into&quot;</span>, <span class="at">default.adduct.info =</span> <span class="st">&quot;maxint&quot;</span>, <span class="at">mzrt.range =</span> <span class="cn">FALSE</span>, <span class="at">npeaks.sum =</span> <span class="cn">FALSE</span>, <span class="at">cleanup =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb12-245"><a href="library.html#cb12-245" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">is.null</span>(small.clusters)<span class="sc">==</span><span class="cn">FALSE</span>) {</span>
-<span id="cb12-246"><a href="library.html#cb12-246" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(z <span class="cf">in</span> small.clusters)</span>
-<span id="cb12-247"><a href="library.html#cb12-247" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb12-248"><a href="library.html#cb12-248" aria-hidden="true" tabindex="-1"></a>    reduced.peaktable <span class="ot">&lt;-</span> reduced.peaktable[<span class="sc">-</span>(<span class="fu">which</span>(reduced.peaktable[, <span class="fu">ncol</span>(reduced.peaktable)]<span class="sc">==</span>z)), ]</span>
-<span id="cb12-249"><a href="library.html#cb12-249" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb12-250"><a href="library.html#cb12-250" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-251"><a href="library.html#cb12-251" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(reduced.peaktable, <span class="at">file =</span> <span class="st">&quot;test_peaktable.csv&quot;</span>) <span class="co">#This creates a peaktable .csv file with only &quot;compounds&quot; instead of m/z features</span></span>
-<span id="cb12-252"><a href="library.html#cb12-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-253"><a href="library.html#cb12-253" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Name =</span> <span class="fu">paste</span>(<span class="st">&quot;Unknown&quot;</span>, big.clusters, <span class="st">&quot;RT =&quot;</span>,<span class="fu">round</span>(reduced.peaktable<span class="sc">$</span>rt<span class="sc">/</span><span class="dv">60</span>, <span class="dv">2</span>) ), <span class="at">Class =</span> <span class="st">&quot;Unknown&quot;</span>, <span class="at">RT =</span> <span class="fu">round</span>(reduced.peaktable<span class="sc">$</span>rt<span class="sc">/</span><span class="dv">60</span>, <span class="dv">2</span>),  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb12-254"><a href="library.html#cb12-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-255"><a href="library.html#cb12-255" aria-hidden="true" tabindex="-1"></a><span class="do">####KOVATS#####</span></span>
-<span id="cb12-256"><a href="library.html#cb12-256" aria-hidden="true" tabindex="-1"></a><span class="co">#Adding Kovats retention index to the extra obejct to write to msp</span></span>
-<span id="cb12-257"><a href="library.html#cb12-257" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">rt =</span> extra<span class="sc">$</span>RT)</span>
-<span id="cb12-258"><a href="library.html#cb12-258" aria-hidden="true" tabindex="-1"></a>alkaneSeries <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Num =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>),</span>
-<span id="cb12-259"><a href="library.html#cb12-259" aria-hidden="true" tabindex="-1"></a>                           <span class="at">rt =</span> <span class="fu">c</span>(<span class="fl">4.90</span>, <span class="fl">8.00</span>, <span class="fl">11.13</span>, <span class="fl">14.05</span>, <span class="fl">16.70</span>, <span class="fl">19.37</span>, <span class="fl">22.45</span>, <span class="fl">25.77</span>))</span>
-<span id="cb12-260"><a href="library.html#cb12-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-261"><a href="library.html#cb12-261" aria-hidden="true" tabindex="-1"></a>RI <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="fu">nrow</span>(data))</span>
-<span id="cb12-262"><a href="library.html#cb12-262" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(data))) {</span>
-<span id="cb12-263"><a href="library.html#cb12-263" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
-<span id="cb12-264"><a href="library.html#cb12-264" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">1</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">1</span>],</span>
-<span id="cb12-265"><a href="library.html#cb12-265" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">2</span>],</span>
-<span id="cb12-266"><a href="library.html#cb12-266" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">3</span>],</span>
-<span id="cb12-267"><a href="library.html#cb12-267" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">4</span>],</span>
-<span id="cb12-268"><a href="library.html#cb12-268" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">5</span>],</span>
-<span id="cb12-269"><a href="library.html#cb12-269" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">6</span>],</span>
-<span id="cb12-270"><a href="library.html#cb12-270" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">8</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">7</span>]</span>
-<span id="cb12-271"><a href="library.html#cb12-271" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-272"><a href="library.html#cb12-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-273"><a href="library.html#cb12-273" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
-<span id="cb12-274"><a href="library.html#cb12-274" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">1</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">2</span>],</span>
-<span id="cb12-275"><a href="library.html#cb12-275" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">2</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">3</span>],</span>
-<span id="cb12-276"><a href="library.html#cb12-276" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">3</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">4</span>],</span>
-<span id="cb12-277"><a href="library.html#cb12-277" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">4</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">5</span>],</span>
-<span id="cb12-278"><a href="library.html#cb12-278" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">5</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">6</span>],</span>
-<span id="cb12-279"><a href="library.html#cb12-279" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">6</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">7</span>],</span>
-<span id="cb12-280"><a href="library.html#cb12-280" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>rt[i] <span class="sc">&gt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">7</span>] <span class="sc">&amp;</span> data<span class="sc">$</span>rt[i] <span class="sc">&lt;=</span> alkaneSeries<span class="sc">$</span>rt[<span class="dv">8</span>] <span class="sc">~</span> alkaneSeries<span class="sc">$</span>Num[<span class="dv">8</span>]</span>
-<span id="cb12-281"><a href="library.html#cb12-281" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-282"><a href="library.html#cb12-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-283"><a href="library.html#cb12-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-284"><a href="library.html#cb12-284" aria-hidden="true" tabindex="-1"></a>RI[i] <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>n <span class="sc">+</span> <span class="dv">100</span><span class="sc">*</span>(m<span class="sc">-</span>n) <span class="sc">*</span> (data<span class="sc">$</span>rt[i] <span class="sc">-</span> alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> n,]<span class="sc">$</span>rt)<span class="sc">/</span>(alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> m,]<span class="sc">$</span>rt <span class="sc">-</span> alkaneSeries[alkaneSeries<span class="sc">$</span>Num <span class="sc">==</span> n,]<span class="sc">$</span>rt), <span class="dv">0</span>)</span>
-<span id="cb12-285"><a href="library.html#cb12-285" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-286"><a href="library.html#cb12-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-287"><a href="library.html#cb12-287" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="fu">cbind</span>(extra, RI)</span>
-<span id="cb12-288"><a href="library.html#cb12-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-289"><a href="library.html#cb12-289" aria-hidden="true" tabindex="-1"></a><span class="do">######</span><span class="re">END</span><span class="do"> KOVATS######</span></span>
-<span id="cb12-290"><a href="library.html#cb12-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-291"><a href="library.html#cb12-291" aria-hidden="true" tabindex="-1"></a><span class="co"># create the msp object with spectra and all meta information in the extra object (NAME, RETENTIONTIME, RETENTIONINDEX)</span></span>
-<span id="cb12-292"><a href="library.html#cb12-292" aria-hidden="true" tabindex="-1"></a>export.msp <span class="ot">&lt;-</span> <span class="fu">construct.msp</span>(lspectra, extra)</span>
-<span id="cb12-293"><a href="library.html#cb12-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-294"><a href="library.html#cb12-294" aria-hidden="true" tabindex="-1"></a><span class="fu">write.msp</span>(export.msp, <span class="at">file =</span> <span class="st">&quot;test_spectra.msp&quot;</span>) <span class="co">#This creates a NIST MS Search compatible .msp file with all compound pseudospectra</span></span></code></pre></div>
+<div id="lib2nist-1" class="section level2" number="9.7">
+<h2><span class="header-section-number">9.7</span> LIB2NIST</h2>
+<p>Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.</p>
+<p>COMMAND:<br />
+<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code></p>
+<p>EXAMPLES:<br />
+<code>lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\RECETOX_GC-EI_MS_20201028.msp D:\Program\NIST14\ =RECETOX_GC-EI_MS_20201028</code></p>
+<p><br><br><br></p>
 </div>
-<div id="lc-hrms-using-waters-mse-dia-workflow" class="section level2" number="9.7">
-<h2><span class="header-section-number">9.7</span> <strong>LC-HRMS using Waters MSe DIA workflow</strong></h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="library.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xcms)</span></code></pre></div>
-<pre><code>## Loading required package: BiocParallel</code></pre>
-<pre><code>## Loading required package: MSnbase</code></pre>
-<pre><code>## Loading required package: BiocGenerics</code></pre>
-<pre><code>## Loading required package: parallel</code></pre>
-<pre><code>## 
-## Attaching package: &#39;BiocGenerics&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:parallel&#39;:
-## 
-##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-##     clusterExport, clusterMap, parApply, parCapply, parLapply,
-##     parLapplyLB, parRapply, parSapply, parSapplyLB</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     combine, intersect, setdiff, union</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     IQR, mad, sd, var, xtabs</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     anyDuplicated, append, as.data.frame, basename, cbind, colnames,
-##     dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
-##     grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget,
-##     order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
-##     rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply,
-##     union, unique, unsplit, which.max, which.min</code></pre>
-<pre><code>## Loading required package: Biobase</code></pre>
-<pre><code>## Welcome to Bioconductor
-## 
-##     Vignettes contain introductory material; view with
-##     &#39;browseVignettes()&#39;. To cite Bioconductor, see
-##     &#39;citation(&quot;Biobase&quot;)&#39;, and for packages &#39;citation(&quot;pkgname&quot;)&#39;.</code></pre>
-<pre><code>## Loading required package: mzR</code></pre>
-<pre><code>## Loading required package: Rcpp</code></pre>
-<pre><code>## Warning in fun(libname, pkgname): mzR has been built against a different Rcpp version (1.0.6)
-## than is installed on your system (1.0.7). This might lead to errors
-## when loading mzR. If you encounter such issues, please send a report,
-## including the output of sessionInfo() to the Bioc support forum at 
-## https://support.bioconductor.org/. For details see also
-## https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre>
-<pre><code>## Loading required package: S4Vectors</code></pre>
-<pre><code>## Loading required package: stats4</code></pre>
-<pre><code>## 
-## Attaching package: &#39;S4Vectors&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:plotly&#39;:
-## 
-##     rename</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     first, rename</code></pre>
-<pre><code>## The following object is masked from &#39;package:tidyr&#39;:
-## 
-##     expand</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     expand.grid, I, unname</code></pre>
-<pre><code>## Loading required package: ProtGenerics</code></pre>
-<pre><code>## 
-## Attaching package: &#39;ProtGenerics&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:stats&#39;:
-## 
-##     smooth</code></pre>
-<pre><code>## 
-## This is MSnbase version 2.18.0 
-##   Visit https://lgatto.github.io/MSnbase/ to get started.</code></pre>
-<pre><code>## 
-## Attaching package: &#39;MSnbase&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:base&#39;:
-## 
-##     trimws</code></pre>
-<pre><code>## 
-## This is xcms version 3.14.1</code></pre>
-<pre><code>## 
-## Attaching package: &#39;xcms&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:plotly&#39;:
-## 
-##     groups</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     collect, groups</code></pre>
-<pre><code>## The following object is masked from &#39;package:stats&#39;:
-## 
-##     sigma</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="library.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;magrittr&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:purrr&#39;:
-## 
-##     set_names</code></pre>
-<pre><code>## The following object is masked from &#39;package:tidyr&#39;:
-## 
-##     extract</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="library.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RAMClustR)</span></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;RAMClustR&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
-## 
-##     annotate</code></pre>
+<div id="mspepsearch" class="section level2" number="9.8">
+<h2><span class="header-section-number">9.8</span> MSPepSearch</h2>
+<p>Use MSPepSearch to find similar spectra</p>
+<p>EXAMPLES:<br />
+<code>MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 10 /OnlyFound /HITS 5 /LIB D:\Raw_data\Dust_Florian\GC\test\Mylib /INP D:\Raw_data\Dust_Florian\GC\test\input.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv /OutMW</code></p>
+<p><code>MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 100 /OnlyFound /HITS 5 /LIB C:\NIST14\NIST_contaminants_orbitrap /INP D:\Projects\Mexico_Air\NIST_Mexico.msp /OUTMGF D:\Projects\Mexico_Air\test\test.mgf /OUTTAB D:\Projects\Mexico_Air\test\test.tsv</code></p>
+<p><code>MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\NIST14\LCMs_GC_Orbitrap /INP D:\Raw_data\Dust_Florian\GC\test\11.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv</code></p>
+<p>More info on commands on:
+<a href="https://pubs.acs.org/doi/suppl/10.1021/acs.analchem.9b03415/suppl_file/ac9b03415_si_001.pdf" class="uri">https://pubs.acs.org/doi/suppl/10.1021/acs.analchem.9b03415/suppl_file/ac9b03415_si_001.pdf</a></p>
+
 </div>
 </div>
             </section>
@@ -1064,7 +473,7 @@ A walkthrough for indoor dust analysis
         </div>
       </div>
 <a href="molecular_networks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="postprocessing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -1095,7 +504,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/11-Example_Dust.Rmd",
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/09-library_search.Rmd",
 "text": "Edit"
 },
 "history": {

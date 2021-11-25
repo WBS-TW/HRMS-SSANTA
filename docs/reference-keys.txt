@@ -70,6 +70,12 @@ neims
 deepei
 qceims
 library-search
+reading-mgf-files-in-r
+lib2nist-1
+mspepsearch
+postprocessing
+hierarchical-clustering
+example_dust
 gc-orbitrap-hrms-workflow
 lc-hrms-using-waters-mse-dia-workflow
 workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2
