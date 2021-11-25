@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
+  <title>5 Suspect screening | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
   <meta name="description" content="SSANTA." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta property="og:title" content="5 Suspect screening | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta name="twitter:title" content="5 Suspect screening | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   
   <meta name="twitter:description" content="SSANTA." />
   <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="library.html"/>
-<link rel="next" href="example_pfas.html"/>
+<link rel="prev" href="MS_preprocess.html"/>
+<link rel="next" href="mass_defect.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -273,23 +273,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</h1>
-<div id="first-convert-unifi-data-using-msconvert" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> First convert unifi data using MSConvert</h2>
-<p>Options:
-output format: mzML
-binary encoding precision: 64-bit
-Write index: check
-TPP compatibility: check
-use zlib compression: uncheck
-package in gzip: uncheck</p>
-<p>Filters:
-1. TitleMaker
-2. msLevel: 1-2 (need to click “Add” to add filter)</p>
+<div id="suspect_screening" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> <strong>Suspect screening</strong></h1>
+<div id="lib2nist" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> LIB2NIST</h2>
+<p>X. Use LIB2NIST to convert combined msp file to NIST library.<br />
+NEED TO ADD RETENTIONINDEX in comment field (see p31. of <a href="https://www.nist.gov/system/files/documents/srd/NIST1aVer22Man.pdf" class="uri">https://www.nist.gov/system/files/documents/srd/NIST1aVer22Man.pdf</a>)</p>
+<p>Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass since the GUI tool only convert to nominal mass) <strong>NOTE TO SELF: CHECK IF THIS IS TRUE</strong>. See command line help file for arguments.</p>
+<p>IN WINDOWS: open ‘cmd,’ go to the folder where LIB2NIST is and type:</p>
+<p>COMMAND: <strong>NOTE TO SELF: VERIFY THAT THE COMMAND IS CORRECT, ALSO IS IT POSSIBLE TO ADD RI?</strong><br />
+<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code></p>
+<p>EXAMPLES:<br />
+<code>lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\2021-05-28_MTM_HRMS_RECETOX_THERMO.msp D:\Program\NIST14\ =MTM_HRMS_RECETOX_THERMO_20210528</code></p>
 </div>
-<div id="centroiding-raw-data-from-mzml-using-msnbase" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Centroiding raw data from mzML using MSnbase</h2>
+<div id="listing-suspects" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Listing suspects</h2>
+<p><br><br></p>
+</div>
+<div id="suspect-scoring" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Suspect scoring</h2>
+<p><a href="https://www.waters.com/waters/fr_FR/Mass-Accuracy-and-Resolution/nav.htm?locale=fr_FR&amp;cid=10091028" class="uri">https://www.waters.com/waters/fr_FR/Mass-Accuracy-and-Resolution/nav.htm?locale=fr_FR&amp;cid=10091028</a></p>
+<p>Mass error (ppm):</p>
+<p><span class="math display">\[\begin{equation} 
+  ME_{ppm} = \frac{mz_{theor} - mz_{meas}}{mz_{theor}} * 10^6
+\end{equation}\]</span> <br></p>
+<p>where <em>mz<sub>theor</sub></em> is the theoretical exact mass (in u or Da) of the isotope, and <em>mz<sub>meas</sub></em> is the measured accurate mass from the instrument.</p>
+<p>RMS of isotope mz error ppm:</p>
+<p><span class="math display">\[\begin{equation} 
+  RMS_{mz} = \sqrt{\frac{\sum_{i=1}^n (ME_{ppm})^2}{n}}
+\end{equation}\]</span> <br></p>
+<p>At least mz of isotopes M+1, M+2 (n &gt;= 2) should be included in the calculations to give good estimate of the average</p>
+<p>RMS of isotope intensities (%):</p>
+<p><span class="math display">\[\begin{equation} 
+  RMS_{Ab} = \sqrt{\frac{\sum_{i=1}^n (Ab_{theor} - Ab_{meas})^2}{n}}
+\end{equation}\]</span></p>
 
 </div>
 </div>
@@ -298,8 +315,8 @@ package in gzip: uncheck</p>
           </div>
         </div>
       </div>
-<a href="library.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="example_pfas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="MS_preprocess.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mass_defect.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -330,7 +347,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/11-Example_Dust.Rmd",
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/05-Suspect_screening.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
+  <title>11 Example workflow: PFASs | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
   <meta name="description" content="SSANTA." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta property="og:title" content="11 Example workflow: PFASs | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta name="twitter:title" content="11 Example workflow: PFASs | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   
   <meta name="twitter:description" content="SSANTA." />
   <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="library.html"/>
-<link rel="next" href="example_pfas.html"/>
+<link rel="prev" href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html"/>
+<link rel="next" href="mtm-hrms-library-gc-hrms.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -273,33 +273,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</h1>
-<div id="first-convert-unifi-data-using-msconvert" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> First convert unifi data using MSConvert</h2>
-<p>Options:
-output format: mzML
-binary encoding precision: 64-bit
-Write index: check
-TPP compatibility: check
-use zlib compression: uncheck
-package in gzip: uncheck</p>
-<p>Filters:
-1. TitleMaker
-2. msLevel: 1-2 (need to click “Add” to add filter)</p>
+<div id="example_pfas" class="section level1" number="11">
+<h1><span class="header-section-number">11</span> Example workflow: PFASs</h1>
+<p>A walkthrough for PFAS analysis</p>
+<p><br><br></p>
+<div class="figure">
+<div id="htmlwidget-a1d9621297a8c837833f" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a1d9621297a8c837833f">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = false]\nA [label = \"a\"]\n\nnode [color = blue, fillcolor = white, fixedsize = false]\nB [label = \"b\"]\n\n\n\nnode [color = black, fillcolor = white, fixedsize = false]\nC [label = \"c\"]\n\n\nnode [color = black, fillcolor = white, fixedsize = false]\nD [label = \"d\"]\n\nE [label = \"e\"]\n\n\n      \n      \n# edge statements\nedge [color = black]\nA -> {B}\n\n      \n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+(#fig:example_workflows_PFASs)Workflow for nontarget using XX
+</p>
 </div>
-<div id="centroiding-raw-data-from-mzml-using-msnbase" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Centroiding raw data from mzML using MSnbase</h2>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="library.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="example_pfas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mtm-hrms-library-gc-hrms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -330,7 +323,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/11-Example_Dust.Rmd",
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/12-Example_PFASs.Rmd",
 "text": "Edit"
 },
 "history": {

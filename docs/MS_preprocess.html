@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
+  <title>4 Pre-processing HRMS data | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
   <meta name="description" content="SSANTA." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta property="og:title" content="4 Pre-processing HRMS data | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta name="twitter:title" content="4 Pre-processing HRMS data | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   
   <meta name="twitter:description" content="SSANTA." />
   <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="library.html"/>
-<link rel="next" href="example_pfas.html"/>
+<link rel="prev" href="Sample_pretreatment.html"/>
+<link rel="next" href="suspect_screening.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -273,23 +273,98 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</h1>
-<div id="first-convert-unifi-data-using-msconvert" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> First convert unifi data using MSConvert</h2>
-<p>Options:
-output format: mzML
-binary encoding precision: 64-bit
-Write index: check
-TPP compatibility: check
-use zlib compression: uncheck
-package in gzip: uncheck</p>
-<p>Filters:
-1. TitleMaker
-2. msLevel: 1-2 (need to click “Add” to add filter)</p>
+<div id="MS_preprocess" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> <strong>Pre-processing HRMS data</strong></h1>
+<p><br><br></p>
+<div id="peak-picking" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Peak picking</h2>
+<br>
+<div class="figure">
+<img src="images/isotopic_pattern_PFOS.PNG" alt="PFOS isotopic patterns" width="724" />
+<p class="caption">
+(#fig:PFOS isotopes)PFOS isotopic patterns
+</p>
 </div>
-<div id="centroiding-raw-data-from-mzml-using-msnbase" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Centroiding raw data from mzML using MSnbase</h2>
+<p><br></p>
+<div class="figure">
+<img src="images/mass_traces_PFOS_IS_RS.PNG" alt="Mass traces of PFOS and labelled standards" width="631" />
+<p class="caption">
+(#fig:peak picking)Mass traces of PFOS and labelled standards
+</p>
+</div>
+<p><br><br>
+## Alignment</p>
+<p><br><br>
+## Componentization</p>
+<p><br><br>
+## Proprietary and standardized MS data format
+<br>
+See: <a href="https://en.wikipedia.org/wiki/Mass_spectrometry_data_format" class="uri">https://en.wikipedia.org/wiki/Mass_spectrometry_data_format</a></p>
+<p><br><br></p>
+</div>
+<div id="open-tools-for-preprocessing" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Open tools for preprocessing</h2>
+</div>
+<div id="openms-and-toppview" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> OpenMS and Toppview</h2>
+<p>xx</p>
+<p><br>
+<a href="https://www.youtube.com/watch?v=GuK1daIc6vo&amp;list=PL2u38g_AG4MH7yCMF06N2VW7eZOJcglh7&amp;index=5" class="uri">https://www.youtube.com/watch?v=GuK1daIc6vo&amp;list=PL2u38g_AG4MH7yCMF06N2VW7eZOJcglh7&amp;index=5</a></p>
+<p><br><br>
+## MSConvert
+xx
+<br><br></p>
+</div>
+<div id="msnbase-and-xcms" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> MsnBase and XCMS</h2>
+<p>xx
+<br></p>
+<div id="xcms" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> XCMS</h3>
+</div>
+<div id="camera" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> CAMERA</h3>
+<p><a href="http://www.metabolomics-forum.com/index.php?topic=278.0" class="uri">http://www.metabolomics-forum.com/index.php?topic=278.0</a>
+calcCiS: Calculate correlation inside samples
+That means correlation across the peak = is it really coeluting or not?
+It is correlation inside the sample; not inside a sample group. This means that camera goes back to the raw data and compares extracted ion chromatograms.
+The illutration in Carsten’s paper show this: <a href="http://pubs.acs.org/doi/abs/10.1021/ac202450g" class="uri">http://pubs.acs.org/doi/abs/10.1021/ac202450g</a>
+This will fail if compounds are perfectly coeluting.</p>
+<p>calcCaS: Calculate correlation accross samples
+They are correlated if high intensity of feature A means high intensity of feature B. The study design or sample groups are not used for this information.
+Look at these plots. Each dot is a sample.</p>
+</div>
+</div>
+<div id="patroon" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> PatRoon</h2>
+<p>xx
+<br><br></p>
+<p><a href="https://www.researchsquare.com/article/rs-36675/v1" class="uri">https://www.researchsquare.com/article/rs-36675/v1</a>
+<br>
+<a href="https://rickhelmus.github.io/patRoon/articles/tutorial.html" class="uri">https://rickhelmus.github.io/patRoon/articles/tutorial.html</a>
+<br></p>
+<p>OpenMS performs peak picking and isotope grouping in one step (any idea how to turn off this?), while XCMS does not perform this step here.
+From Rick: For OpenMS: you can use a trick for this by setting localMZRange=0, this way OpenMS won’t be able to look for isotopes. Note that its detection was more developed for ‘natural compounds’ (eg proteomics, metabolomics) in mind, and that it isn’t really good in grouping halogenated peaks anyway.</p>
+<p>PatRoon Docker:<br />
+In linux, run:<br />
+docker run –rm -p 8787:8787 -u 0 -e PASSWORD=yourpasswordhere -v /home/ORUNET.ORU.SE/twg/Raw_<a href="data:/home/rstudio/Raw_data" class="uri">data:/home/rstudio/Raw_data</a> patroonorg/patroonrs /init</p>
+</div>
+<div id="ms-dial" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> MS-DIAL</h2>
+<p>MS2Dec: <br>
+Sigma window value: 0.1 - 1.0. Smaller value will avoid clustering of peaks that are far from each other (false positive grouping).<br />
+In GC-HRMS, try 0.8 to separate and deconvolute very closely coeluting peak in GC (+-1). These parameters should be tested with e.g. QC samples with known compounds to get best deconvolution parameter for your samples.
+<br>
+MS/MS abundance cut off: increase to remove background noise</p>
+<p><br><br></p>
+</div>
+<div id="output-formats" class="section level2" number="4.7">
+<h2><span class="header-section-number">4.7</span> Output formats</h2>
+<p><br>
+- MSnExp and XCMSnExp <br>
+- MSP <br>
+- MFG <br>
+- CSV (for both output data or metadata) <br></p>
 
 </div>
 </div>
@@ -298,8 +373,8 @@ package in gzip: uncheck</p>
           </div>
         </div>
       </div>
-<a href="library.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="example_pfas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Sample_pretreatment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="suspect_screening.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -330,7 +405,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/11-Example_Dust.Rmd",
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/04-MS_preprocess.Rmd",
 "text": "Edit"
 },
 "history": {

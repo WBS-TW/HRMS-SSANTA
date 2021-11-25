@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
+  <title>3 Sample pretreatment for nontarget and suspect screening | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
   <meta name="description" content="SSANTA." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta property="og:title" content="3 Sample pretreatment for nontarget and suspect screening | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2 | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta name="twitter:title" content="3 Sample pretreatment for nontarget and suspect screening | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   
   <meta name="twitter:description" content="SSANTA." />
   <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wang/images/OUR.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="library.html"/>
-<link rel="next" href="example_pfas.html"/>
+<link rel="prev" href="Exp_design.html"/>
+<link rel="next" href="MS_preprocess.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -273,23 +273,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="workflow-for-centroiding-of-raw-file-peak-picking-and-correlation-of-ms1-and-ms2" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2</h1>
-<div id="first-convert-unifi-data-using-msconvert" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> First convert unifi data using MSConvert</h2>
-<p>Options:
-output format: mzML
-binary encoding precision: 64-bit
-Write index: check
-TPP compatibility: check
-use zlib compression: uncheck
-package in gzip: uncheck</p>
-<p>Filters:
-1. TitleMaker
-2. msLevel: 1-2 (need to click “Add” to add filter)</p>
-</div>
-<div id="centroiding-raw-data-from-mzml-using-msnbase" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Centroiding raw data from mzML using MSnbase</h2>
+<div id="Sample_pretreatment" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> <strong>Sample pretreatment for nontarget and suspect screening</strong></h1>
+<p><br><br></p>
+<div id="accelerated-solvent-extraction-ase" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Accelerated solvent extraction (ASE)</h2>
+<p><a href="https://tools.thermofisher.com/content/sfs/brochures/36395-TN209_V28_releasedJC042606.pdf" class="uri">https://tools.thermofisher.com/content/sfs/brochures/36395-TN209_V28_releasedJC042606.pdf</a><br />
+<a href="http://apps.thermoscientific.com/media/cmd/rafa2013/13%20Galbiatti%20RAFA%202013.pdf" class="uri">http://apps.thermoscientific.com/media/cmd/rafa2013/13%20Galbiatti%20RAFA%202013.pdf</a></p>
+<p>In some samples containing moisture or water such as soil samples or food samples (animal tissue, fruits, vegetables, and so on) an additional step may be needed either before the extraction step or as a post extraction step to remove the moisture. Sample drying can be accomplished in several ways such as air drying and oven drying prior to extraction. However, these approaches are not suited when analyzing volatile or semi-volatile components as they would be removed from the sample prior to extraction or analysis.
+Another common method for moisture removal is by using salts such as sodium sulfate, calcium chloride, magnesium sulfate, calcium sulfate and the like. These salts tend to associate to water molecules to form hydrated salts. Sodium sulfate for example tends to clump together when water is present.<br />
+Sodium sulfate is not suitable for in-cell moisture removal and accelerated solvent extraction. Sodium sulfate can dissolve in hot solvent to a certain extent and can precipitate downstream in some instances clogging the outlet frit, tubes and valves. Moreover, sodium sulfate becomes an aggregate hard lump upon water absorption and is not easy to process during sample preparation for in-cell moisture removal and extraction.</p>
 
 </div>
 </div>
@@ -298,8 +291,8 @@ package in gzip: uncheck</p>
           </div>
         </div>
       </div>
-<a href="library.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="example_pfas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Exp_design.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="MS_preprocess.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -330,7 +323,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/11-Example_Dust.Rmd",
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/03-Sample_pretreatment.Rmd",
 "text": "Edit"
 },
 "history": {
