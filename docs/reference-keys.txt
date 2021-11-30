@@ -68,7 +68,7 @@ sirius-csi-fingerid
 cfm-id
 neims
 deepei
-qceims
+qcxms-this-version-superseeds-previous-qceims
 library-search
 reading-mgf-files-in-r
 lib2nist-1

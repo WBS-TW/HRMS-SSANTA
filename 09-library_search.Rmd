@@ -78,15 +78,19 @@ https://github.com/hcji/DeepEI/blob/master/Usage.ipynb
 <br><br><br>
 
 
-## QCEIMS
+## QCxMS (this version superseeds previous QCEIMS)
 
-RUN ON LINUX SERVER
+This program only runs on LINUX SERVER
 
-Check [online manual](https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/movies_grimme/QCEIMS.v.4.0_manual.pdf) for details
+- Check QCxMS [online manual](https://xtb-docs.readthedocs.io/en/latest/qcxms_doc/qcxms_setup.html) for details
+- Cehck PlotMS [online manual](https://xtb-docs.readthedocs.io/en/latest/qcxms_doc/qcxms_plot.html)
+
   
-PREPARATION  
-Copy the ".XTBPARAM" folder and the ".mass_raw.agr" file to /home/ORUNET.ORU.SE/twg/ 
-  
+PREPARATION
+- Download the latest version of QCxMS at: https://github.com/qcxms/QCxMS/releases/  
+- Copy the `.XTBPARAM` folder and the `.mass_raw.agr` files to `/home/ORUNET.ORU.SE/twg/` 
+- Download the lates PlotMS version at: https://github.com/qcxms/PlotMS/releases/ and copy to the same folder as QCxMS  
+
   
 1. Prepare a file with the equilibrium structure of your desired molecule M.
 Important: This file has to be named coord and should have the TURBOMOLE coord format (tmol).
@@ -99,7 +103,8 @@ In most cases you will have an .xyz file. This file can be easily converted by t
 if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a
 script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has
 to be in atomic units.  
-NOTE: this can be converted using openbabel -> tmol
+
+__NOTE__: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -> tmol. Remove the file extension .tmol to only coord. _Structure needs to be optimized?_
   
 
   
@@ -115,44 +120,33 @@ Open bash
 ```
 set +o noclobber
 ```
-2.1. Place the executables into your $HOME/bin directory or path. Enable the QCEIMS executables in the path:
+2. To place the executables into your $HOME/bin directory or path, enable the QCxMS executables in the path (change if the QCxMS executables are in another folder):
 
 ```
-export PATH=/home/ORUNET.ORU.SE/twg/QCEIMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis
-```
-
-2.2. Place the .XTBPARAM folder and .mass_raw.arg file into your $HOME directory (these files can appear to be hidden). E.g:
-  
-```
-/home/ORUNET.ORU.SE/twg/QCEIMS
+export PATH=/home/ORUNET.ORU.SE/twg/QCxMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis
 ```
 
 
 3. go to your folder, e.g:
 ```
-cd QCEIMS/example/ethanol
+cd QCxMS/example/ethanol
 ```
 
 Run:
 ```
-qceims
+qcxms
 ```
-Run `qceims` again and check the ouput if all is ok.
+Run `qcxms` again and check the ouput if all is ok.
 
-5. Executing production runs.
-Running qceims locally, use: pqceims <#cores>, where <#cores> is the number of cores requested. 
-E.g for 10 cores: 
-```
-pqceims 10
-```
+5. Executing production runs. If you want to run QCxMS locally, use the pqcxms script with -j number of parallel jobs and -t number of OMP threads:
 
-You might want to leave your work station and even log out in the meantime. In this case, type (for 10 cores):
 ```
-pqceims 10 &
-```
+pqcxms -j <integer> -t <integer> &
 
-Optionally, check the status of your QCEIMS run by changing to your working directory
-and typing
+e.g: pqcxms -j 10 -t 10 &
+```
+  
+Check the status of your QCxMS run by changing to your working directory and typing
 ```
 getres
 ```

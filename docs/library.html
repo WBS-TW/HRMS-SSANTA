@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2021-11-25" />
+<meta name="date" content="2021-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -222,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="library.html"><a href="library.html#neims"><i class="fa fa-check"></i><b>9.2</b> NEIMS</a></li>
 <li class="chapter" data-level="9.3" data-path="library.html"><a href="library.html#deepei"><i class="fa fa-check"></i><b>9.3</b> DeepEI</a></li>
-<li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#qceims"><i class="fa fa-check"></i><b>9.4</b> QCEIMS</a></li>
+<li class="chapter" data-level="9.4" data-path="library.html"><a href="library.html#qcxms-this-version-superseeds-previous-qceims"><i class="fa fa-check"></i><b>9.4</b> QCxMS (this version superseeds previous QCEIMS)</a></li>
 <li class="chapter" data-level="9.5" data-path="library.html"><a href="library.html#library-search"><i class="fa fa-check"></i><b>9.5</b> LIBRARY SEARCH</a></li>
 <li class="chapter" data-level="9.6" data-path="library.html"><a href="library.html#reading-mgf-files-in-r"><i class="fa fa-check"></i><b>9.6</b> Reading mgf files in R</a></li>
 <li class="chapter" data-level="9.7" data-path="library.html"><a href="library.html#lib2nist-1"><i class="fa fa-check"></i><b>9.7</b> LIB2NIST</a></li>
@@ -336,12 +336,17 @@ Help file: <a href="https://sourceforge.net/p/cfm-id/wiki/Home/" class="uri">htt
 <a href="https://github.com/hcji/DeepEI/blob/master/Usage.ipynb" class="uri">https://github.com/hcji/DeepEI/blob/master/Usage.ipynb</a></p>
 <p><br><br><br></p>
 </div>
-<div id="qceims" class="section level2" number="9.4">
-<h2><span class="header-section-number">9.4</span> QCEIMS</h2>
-<p>RUN ON LINUX SERVER</p>
-<p>Check <a href="https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/movies_grimme/QCEIMS.v.4.0_manual.pdf">online manual</a> for details</p>
-<p>PREPARATION<br />
-Copy the “.XTBPARAM” folder and the “.mass_raw.agr” file to /home/ORUNET.ORU.SE/twg/</p>
+<div id="qcxms-this-version-superseeds-previous-qceims" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> QCxMS (this version superseeds previous QCEIMS)</h2>
+<p>This program only runs on LINUX SERVER</p>
+<ul>
+<li>Check QCxMS <a href="https://xtb-docs.readthedocs.io/en/latest/qcxms_doc/qcxms_setup.html">online manual</a> for details</li>
+<li>Cehck PlotMS <a href="https://xtb-docs.readthedocs.io/en/latest/qcxms_doc/qcxms_plot.html">online manual</a></li>
+</ul>
+<p>PREPARATION
+- Download the latest version of QCxMS at: <a href="https://github.com/qcxms/QCxMS/releases/" class="uri">https://github.com/qcxms/QCxMS/releases/</a><br />
+- Copy the <code>.XTBPARAM</code> folder and the <code>.mass_raw.agr</code> files to <code>/home/ORUNET.ORU.SE/twg/</code>
+- Download the lates PlotMS version at: <a href="https://github.com/qcxms/PlotMS/releases/" class="uri">https://github.com/qcxms/PlotMS/releases/</a> and copy to the same folder as QCxMS</p>
 <ol style="list-style-type: decimal">
 <li>Prepare a file with the equilibrium structure of your desired molecule M.
 Important: This file has to be named coord and should have the TURBOMOLE coord format (tmol).
@@ -350,8 +355,8 @@ In most cases you will have an .xyz file. This file can be easily converted by t
 <pre><code>&gt; x2t &lt;xyzfile&gt; &gt; coord</code></pre>
 <p>if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a
 script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has
-to be in atomic units.<br />
-NOTE: this can be converted using openbabel -&gt; tmol</p>
+to be in atomic units.</p>
+<p><strong>NOTE</strong>: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -&gt; tmol. Remove the file extension .tmol to only coord. <em>Structure needs to be optimized?</em></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Prepare an input file called qceims.in. For the input options, see section 4 or the
 qceims.in file in the examples folder. If no such file is prepared, default options are:
@@ -364,26 +369,23 @@ run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntr
 </ol>
 <pre><code>set +o noclobber</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Enable the QCEIMS executables in the path:</li>
+<li>To place the executables into your $HOME/bin directory or path, enable the QCxMS executables in the path (change if the QCxMS executables are in another folder):</li>
 </ol>
-<pre><code>export PATH=/home/ORUNET.ORU.SE/twg/QCEIMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis</code></pre>
+<pre><code>export PATH=/home/ORUNET.ORU.SE/twg/QCxMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>go to your folder, e.g:</li>
 </ol>
-<pre><code>cd QCEIMS/example/ethanol</code></pre>
+<pre><code>cd QCxMS/example/ethanol</code></pre>
 <p>Run:</p>
-<pre><code>qceims</code></pre>
-<p>Run <code>qceims</code> again and check the ouput if all is ok.</p>
+<pre><code>qcxms</code></pre>
+<p>Run <code>qcxms</code> again and check the ouput if all is ok.</p>
 <ol start="5" style="list-style-type: decimal">
-<li>Executing production runs.
-Running qceims locally, use: pqceims &lt;#cores&gt;, where &lt;#cores&gt; is the number of cores requested.
-E.g for 10 cores:</li>
+<li>Executing production runs. If you want to run QCxMS locally, use the pqcxms script with -j number of parallel jobs and -t number of OMP threads:</li>
 </ol>
-<pre><code>pqceims 10</code></pre>
-<p>You might want to leave your work station and even log out in the meantime. In this case, type (for 10 cores):</p>
-<pre><code>pqceims 10 &amp;</code></pre>
-<p>Optionally, check the status of your QCEIMS run by changing to your working directory
-and typing</p>
+<pre><code>pqcxms -j &lt;integer&gt; -t &lt;integer&gt; &amp;
+
+e.g: pqcxms -j 10 -t 10 &amp;</code></pre>
+<p>Check the status of your QCxMS run by changing to your working directory and typing</p>
 <pre><code>getres</code></pre>
 <p>, which will provide an output of the form:<br />
 <em>XXX runs done and written to tmpqceims.res/out</em><br />
