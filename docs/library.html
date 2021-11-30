@@ -348,7 +348,7 @@ Help file: <a href="https://sourceforge.net/p/cfm-id/wiki/Home/" class="uri">htt
 - Copy the <code>.XTBPARAM</code> folder and the <code>.mass_raw.agr</code> files to <code>/home/ORUNET.ORU.SE/twg/</code>
 - Download the lates PlotMS version at: <a href="https://github.com/qcxms/PlotMS/releases/" class="uri">https://github.com/qcxms/PlotMS/releases/</a> and copy to the same folder as QCxMS</p>
 <ol style="list-style-type: decimal">
-<li>Prepare a file with the equilibrium structure of your desired molecule M.
+<li>Prepare a file with the <em>equilibrium structure</em> of your desired molecule M.
 Important: This file has to be named coord and should have the TURBOMOLE coord format (tmol).
 In most cases you will have an .xyz file. This file can be easily converted by typing:</li>
 </ol>
@@ -359,17 +359,16 @@ to be in atomic units.</p>
 <p><strong>NOTE</strong>: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -&gt; tmol. Remove the file extension .tmol to only coord. <em>Structure needs to be optimized?</em></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Prepare an input file called qceims.in. For the input options, see section 4 or the
-qceims.in file in the examples folder. If no such file is prepared, default options are:
-run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntraj).</li>
+qceims.in file in the examples folder. <em>If no such file is prepared, default options are: run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntraj)</em>.</li>
 </ol>
 <p>TO RUN QCEIMS</p>
 <p>Open bash</p>
 <ol style="list-style-type: decimal">
-<li>Enable overwriting files:</li>
+<li>Enable overwriting files in your Linux:</li>
 </ol>
 <pre><code>set +o noclobber</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>To place the executables into your $HOME/bin directory or path, enable the QCxMS executables in the path (change if the QCxMS executables are in another folder):</li>
+<li>Place the executables into your $HOME/bin directory or path. Easiest is to enable the QCxMS executables in the path as seen below (replace the names if the QCxMS executables are in another folder):</li>
 </ol>
 <pre><code>export PATH=/home/ORUNET.ORU.SE/twg/QCxMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis</code></pre>
 <ol start="3" style="list-style-type: decimal">
@@ -384,7 +383,7 @@ run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntr
 </ol>
 <pre><code>pqcxms -j &lt;integer&gt; -t &lt;integer&gt; &amp;
 
-e.g: pqcxms -j 10 -t 10 &amp;</code></pre>
+e.g: pqcxms -j 16 -t 4  &amp;</code></pre>
 <p>Check the status of your QCxMS run by changing to your working directory and typing</p>
 <pre><code>getres</code></pre>
 <p>, which will provide an output of the form:<br />

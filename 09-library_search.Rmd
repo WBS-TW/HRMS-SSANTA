@@ -92,7 +92,7 @@ PREPARATION
 - Download the lates PlotMS version at: https://github.com/qcxms/PlotMS/releases/ and copy to the same folder as QCxMS  
 
   
-1. Prepare a file with the equilibrium structure of your desired molecule M.
+1. Prepare a file with the _equilibrium structure_ of your desired molecule M.
 Important: This file has to be named coord and should have the TURBOMOLE coord format (tmol).
 In most cases you will have an .xyz file. This file can be easily converted by typing:
 
@@ -109,18 +109,17 @@ __NOTE__: download the 3D conformer structure in pubchem in sdf format and then 
 
   
 2. Prepare an input file called qceims.in. For the input options, see section 4 or the
-qceims.in file in the examples folder. If no such file is prepared, default options are:
-run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntraj).
+qceims.in file in the examples folder. _If no such file is prepared, default options are: run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntraj)_.
 
 TO RUN QCEIMS
-
+  
 Open bash
 
-1. Enable overwriting files:
+1. Enable overwriting files in your Linux:
 ```
 set +o noclobber
 ```
-2. To place the executables into your $HOME/bin directory or path, enable the QCxMS executables in the path (change if the QCxMS executables are in another folder):
+2. Place the executables into your $HOME/bin directory or path. Easiest is to enable the QCxMS executables in the path as seen below (replace the names if the QCxMS executables are in another folder):
 
 ```
 export PATH=/home/ORUNET.ORU.SE/twg/QCxMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis
@@ -143,8 +142,11 @@ Run `qcxms` again and check the ouput if all is ok.
 ```
 pqcxms -j <integer> -t <integer> &
 
-e.g: pqcxms -j 10 -t 10 &
+e.g: pqcxms -j 16 -t 4  &
 ```
+  
+You can check how any CPUs and threads are used by opening a new bash and type `top`.
+  
   
 Check the status of your QCxMS run by changing to your working directory and typing
 ```
