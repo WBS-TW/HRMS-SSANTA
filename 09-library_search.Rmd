@@ -144,11 +144,12 @@ pqcxms -j <integer> -t <integer> &
 
 e.g: pqcxms -j 16 -t 4  &
 ```
+
   
 You can check how any CPUs and threads are used by opening a new bash and type `top`.
   
   
-Check the status of your QCxMS run by changing to your working directory and typing
+Check the status of your QCxMS run by changing to your working directory (first press Enter to get back the prompt) and typing
 ```
 getres
 ```
