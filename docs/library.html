@@ -356,7 +356,12 @@ In most cases you will have an .xyz file. This file can be easily converted by t
 <p>if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a
 script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has
 to be in atomic units.</p>
-<p><strong>NOTE</strong>: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -&gt; tmol. Remove the file extension .tmol to only coord. <em>Structure needs to be optimized?</em></p>
+<p>1.1. <strong>Simple</strong>: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -&gt; tmol. Remove the file extension .tmol to only coord.
+1.2. <strong>Advanced optimized 3D conformer by Wang et al</strong> (<a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00470-3" class="uri">https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00470-3</a>):<br />
+- Download the 3D conformer in Pubchem as sdf.<br />
+- Import into Avogadro (<a href="https://avogadro.cc/" class="uri">https://avogadro.cc/</a>).<br />
+- Use the auto-optimize tool (<a href="https://avogadro.cc/docs/tools/auto-optimize-tool/" class="uri">https://avogadro.cc/docs/tools/auto-optimize-tool/</a>); Force field (MMFF94), Steps per update (10), Steepest Descent. When dE=0 then it is optimized and you can save as a <code>.mol</code> file.<br />
+- Use Openbabel to convert <code>.mol</code> to <code>.tmol</code> file. Rename as <code>coord</code> without the extension.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Prepare an input file called qceims.in. For the input options, see section 4 or the
 qceims.in file in the examples folder. <em>If no such file is prepared, default options are: run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntraj)</em>.</li>
@@ -393,7 +398,7 @@ which gathers the runs already finished (creates tmpqceims.res and tmpqceims.out
 The final results are on qceims.out and qceims.res</p>
 <ol start="6" style="list-style-type: decimal">
 <li><p>download an exp. EI-MS from the NIST if available and copy it to the working dir as exp.dat
-(take the JCAMP-DX format from their web page). - Useful for testing but not necessary. -</p></li>
+(take the JCAMP-DX format from their web page). <strong>NOTE: this doesnt work anymore with the new QCxMS version 6</strong></p></li>
 <li><p>get spectrum by</p></li>
 </ol>
 <pre><code>plotms</code></pre>
@@ -403,16 +408,15 @@ The final results are on qceims.out and qceims.res</p>
 plotms reads by default &lt;qceims.res&gt; or by</p>
 <pre><code>plotms -f &lt;name_of_res_file&gt;</code></pre>
 <p>any other res file. Check the consistency of the total charge.</p>
-<p>7.2. if high resolution spectrum is needed then copy the plotms executable from the QCEIMS-HRMSplotMS folder and replace. Rename the <em>qceims.res</em> file to <em>qcxms.res</em> and run <code>plotms</code>.</p>
 <ol start="8" style="list-style-type: decimal">
 <li>if the ratio of fragment to M+ signals is too large decrease the IEE by increasing the parameter
 ieeatm (default is 0.6 eV/atom) by inserting</li>
 </ol>
 <pre><code>ieeatm  &lt;value&gt;</code></pre>
-<p>in qceims.in and do the parallel run again (requires an additional qceims pre-run).</p>
+<p>in the qceims.in file and do the parallel run again (requires an additional qcxms pre-run).</p>
 <ol start="9" style="list-style-type: decimal">
 <li>if the IEE is ok, increase ntraj to get better statistics and re-run
-(note: qceims.res is appended so delete it at this point).</li>
+(note: qcxms.res is appended so delete it at this point).</li>
 </ol>
 <p>VERY IMPORTANT: EVERY CHANGE IN THE INPUT REQUIRES A RUN OF QCEIMS IN THE WORKING DIR
 BEFORE THE PARALLEL SCRIPT IS STARTED IN ORDER TO BE IN EFFECT!</p>
