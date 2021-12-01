@@ -78,34 +78,27 @@ https://github.com/hcji/DeepEI/blob/master/Usage.ipynb
 <br><br><br>
 
 
-## QCxMS (this version superseeds previous QCEIMS)
+## QCxMS  
 
-This program only runs on LINUX SERVER
-
+This program only runs on LINUX SERVER.
+  
 - Check QCxMS [online manual](https://xtb-docs.readthedocs.io/en/latest/qcxms_doc/qcxms_setup.html) for details
-- Cehck PlotMS [online manual](https://xtb-docs.readthedocs.io/en/latest/qcxms_doc/qcxms_plot.html)
+- Check PlotMS [online manual](https://xtb-docs.readthedocs.io/en/latest/qcxms_doc/qcxms_plot.html)
 
   
 PREPARATION
 - Download the latest version of QCxMS at: https://github.com/qcxms/QCxMS/releases/  
-- Copy the `.XTBPARAM` folder and the `.mass_raw.agr` files to `/home/ORUNET.ORU.SE/twg/` 
 - Download the lates PlotMS version at: https://github.com/qcxms/PlotMS/releases/ and copy to the same folder as QCxMS  
-
+- Copy the `.XTBPARAM` folder and the `.mass_raw.agr` files to `/home/ORUNET.ORU.SE/twg/` 
   
-1. Prepare a file with the _equilibrium structure_ of your desired molecule M.
-Important: This file has to be named coord and should have the TURBOMOLE coord format (tmol).
-In most cases you will have an .xyz file. This file can be easily converted by typing:
+1. Prepare a file with the _equilibrium structure_ of your desired molecule.
+Important: This file has to be named `coord` (without file extension) and should have the TURBOMOLE coord format (tmol).
 
-```
-> x2t <xyzfile> > coord
-```
-if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a
-script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has
-to be in atomic units.  
+__SKIP__: In most cases you will have an .xyz file. This file can be easily converted by typing `> x2t <xyzfile> > coord` if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has to be in atomic units.  
 
 
 1.1. __Simple__: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -> tmol. Remove the file extension .tmol to only coord.  
-1.2. __Advanced optimized 3D conformer by Wang et al__ (https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00470-3):  
+1.2. __Optimized 3D conformer according to steps by__ [Wang et al](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00470-3):  
 - Download the 3D conformer in Pubchem as sdf.  
 - Import into Avogadro (https://avogadro.cc/).  
 - Use the auto-optimize tool (https://avogadro.cc/docs/tools/auto-optimize-tool/); Force field (MMFF94), Steps per update (10), Steepest Descent. When dE=0 then it is optimized and you can save as a `.mol` file.  
@@ -162,26 +155,20 @@ _XXX runs done and written to tmpqceims.res/out_
 which gathers the runs already finished (creates tmpqceims.res and tmpqceims.out). 
 The final results are on qceims.out and qceims.res
 
-6. download an exp. EI-MS from the NIST if available and copy it to the working dir as exp.dat 
-(take the JCAMP-DX format from their web page). __NOTE: this doesnt work anymore with the new QCxMS version 6__
+6. __SKIP: this doesnt work anymore with the new QCxMS version 6__. (Download an exp. EI-MS from the NIST if available and copy it to the working dir as exp.dat; take the JCAMP-DX format from their web page). 
 
 7. get spectrum by 
 ```
 plotms
 ```
-and plot it with
-```
-xmgrace mass.agr
-```
-the file ".mass.agr" should be in your home dir.
-plotms reads by default <qceims.res> or by
-```
-plotms -f <name_of_res_file>
-```
-any other res file. Check the consistency of the total charge.
+__SKIP__: and plot it with `xmgrace mass.agr`. the file ".mass.agr" should be in your home dir. plotms reads by default <qceims.res> or by `plotms -f <name_of_res_file>` any other res file. Check the consistency of the total charge.
 
+  
+8. Clean the csv file to remove low abundance ions and then copy the m/z and rel abundance to an msp file. Run `MS-LIMA` to compare the spectra.
 
-8. if the ratio of fragment to M+ signals is too large decrease the IEE by increasing the parameter 
+  
+__ADDITIONAL_OPTIMIZATION__:
+if the ratio of fragment to M+ signals is too large decrease the IEE by increasing the parameter 
 ieeatm (default is 0.6 eV/atom) by inserting
 ```
 ieeatm  <value>
