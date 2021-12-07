@@ -139,7 +139,7 @@ Run `qcxms` again and check the ouput if all is ok.
 ```
 pqcxms -j <integer> -t <integer> &
 
-e.g: pqcxms -j 16 -t 4  &
+e.g: pqcxms -j 6 -t 4  &
 ```
 
   
@@ -207,6 +207,18 @@ ntraj <int>
 ieeatm <real>
 iseed <int>     (random number initialization to start different runs)
   
+
+__In silico photodegradation product generation__  
+Use the US EPA CTS: Chemical Transformation Simulator to predict photodegradation products by the [Generate Transformation Products Module](https://qed.epacdx.net/cts/gentrans/).  
+- Enter the lookup structure.  
+- Select: User selected -> Direct Photolysis.  
+- Choose number of generations of transformation products.  
+
+
+
+
+
+
 ## LIBRARY SEARCH  
 xx
 

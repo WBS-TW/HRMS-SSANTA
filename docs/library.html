@@ -353,7 +353,7 @@ Important: This file has to be named <code>coord</code> (without file extension)
 </ol>
 <p><strong>SKIP</strong>: In most cases you will have an .xyz file. This file can be easily converted by typing <code>&gt; x2t &lt;xyzfile&gt; &gt; coord</code> if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has to be in atomic units.</p>
 <p>1.1. <strong>Simple</strong>: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -&gt; tmol. Remove the file extension .tmol to only coord.<br />
-1.2. <strong>Advanced optimized 3D conformer by Wang et al</strong> (<a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00470-3" class="uri">https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00470-3</a>):<br />
+1.2. <strong>Optimized 3D conformer according to steps by</strong> <a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00470-3">Wang et al</a>:<br />
 - Download the 3D conformer in Pubchem as sdf.<br />
 - Import into Avogadro (<a href="https://avogadro.cc/" class="uri">https://avogadro.cc/</a>).<br />
 - Use the auto-optimize tool (<a href="https://avogadro.cc/docs/tools/auto-optimize-tool/" class="uri">https://avogadro.cc/docs/tools/auto-optimize-tool/</a>); Force field (MMFF94), Steps per update (10), Steepest Descent. When dE=0 then it is optimized and you can save as a <code>.mol</code> file.<br />
