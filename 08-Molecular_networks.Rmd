@@ -5,17 +5,16 @@ This is a chapter about molecular networks
 <br><br>  
 
 ## MetGem
-xx
-<br><br>
-
-### GC data
-xx
-<br><br>
-
-<br>
-
+  
+The documentation for MetGem can be found here:  
 _Metgem webpage:_ https://metgem.github.io/ <br>
 _Metgem handbook:_ https://metgem.readthedocs.io/en/latest/index.html <br>
+
+Main steps for the dataset is to generate a combined msp or mgf file (such as from MS-DIAL or xcms) and import it to MetGem. Additional metadata should also be added to relate the ID of different compounds or unknowns.  
+
+### GC data
+<br>
+
 
 A new option was added to the input data file dialogue. When this option is activated, input spectra are treated as MS1, and thus, the parent m/z ratio is fully ignored.
 

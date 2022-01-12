@@ -116,7 +116,8 @@ E [label = 'Annotation']
 ID1 [label = 'Confirm EIC peaks']
 }
 
-F [label = 'Molecular networking']
+F [label = 'Molecular networking \\n combine both suspect list msp with unknown msp. \\n
+High partial correlation gives indication on similar structure']
 G [label = 'Multivariate statistics']
 
 ID2 [label = 'Peak/Component list with \\n partial annotation']

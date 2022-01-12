@@ -1,4 +1,4 @@
-# **Library search** {#library}
+# **Spectral libraries** {#library}
 
 In environmental analysis, NIST MS library is widely used to match a spectrum to a list of standard spectra. However, a major drawback of the NIST MS Search is that now all chemicals are included and all spectral ions are at unit mass (for EI spectra library, also called mainlib)
 
@@ -141,7 +141,7 @@ pqcxms -j <integer> -t <integer> &
 
 e.g: pqcxms -j 6 -t 4  &
 ```
-
+Make sure you add the `&`at the end so you can return to the prompt by hitting `Enter`.  
   
 You can check how any CPUs and threads are used by opening a new bash and type `top`.
   

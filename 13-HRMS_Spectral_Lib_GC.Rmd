@@ -1,4 +1,4 @@
-# MTM HRMS Library: GC-HRMS  
+# MTM HRMS Library: GC-HRMS {#GC_lib}
   
 
 This tutorial will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library. The overall goal is to analyze chemical standards to generate spectral fingerprints so we can combined all spectra of different standards into one spectral library. This can then be used as a suspect list which we can use to match any unknown compounds. This is a very common concept within GC screening, and the most commonly used spectral library is the NIST which has more than 100,000 compounds. The main drawback of NIST is that most of the GC spectra was recorded with nominal mass resolution. This makes spectral matching uncertain and false positives are common. The use of HRMS can reduce the uncertainty in spectral matching as well as provide clean deconvoluted spectra for real samples thus greatly reduce false positives and false negatives.
