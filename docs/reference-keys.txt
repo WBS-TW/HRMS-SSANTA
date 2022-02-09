@@ -34,10 +34,12 @@ data-directory-structure
 sampling-design-and-collection
 collection-of-metadata
 chemical-analysis
+data-recording-modes
 data-analysis
 workflow-examples
 SamplePretreatment
 accelerated-solvent-extraction-ase
+ultrasonic-extraction
 MSPreprocess
 raw-data-conversion
 peak-picking
@@ -88,6 +90,7 @@ MSConvertGC
 MSConvertunifi
 GClib
 analyze-the-standards-using-hrms
+convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-refmsconvertgc
 fill-in-the-standard-infosheet
 use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound
 mtm-hrms-library-lc-hrms
@@ -96,6 +99,7 @@ convert-the-raw-data-file-from-lc-hrms-in-unifi-to-mzml-using-msconvert
 fill-in-the-standard-infosheet-1
 use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound-1
 GCMSDIAL
+further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial
 GCOrbitrapHandbook
 chemical-ionization
 terminologies-1

@@ -118,7 +118,7 @@ It is recommended to analyze single standards but mixtures are also feasible to 
 You should also inject a _solvent blank_ to perform blank subtraction later in MS-DIAL.  
   
   
-## Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section XX) {#MSConvertGC}  
+## Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section \@ref(MSConvertGC)  
   
 Follow the steps in section \@ref(MSConvertGC)  
 
