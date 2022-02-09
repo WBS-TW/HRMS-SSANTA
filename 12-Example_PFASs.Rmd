@@ -1,4 +1,4 @@
-# Example workflow: PFASs {#example_pfas}
+# Example workflow: PFASs {#ExamplePFAS}
 
 A walkthrough for PFAS analysis
 

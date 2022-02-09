@@ -1,4 +1,4 @@
-# **Sample pretreatment for nontarget and suspect screening** {#Sample_pretreatment}
+# **Sample pretreatment for nontarget and suspect screening** {#SamplePretreatment}
 
 <br><br>
 
@@ -12,6 +12,9 @@ In some samples containing moisture or water such as soil samples or food sample
 Another common method for moisture removal is by using salts such as sodium sulfate, calcium chloride, magnesium sulfate, calcium sulfate and the like. These salts tend to associate to water molecules to form hydrated salts. Sodium sulfate for example tends to clump together when water is present.  
 Sodium sulfate is not suitable for in-cell moisture removal and accelerated solvent extraction. Sodium sulfate can dissolve in hot solvent to a certain extent and can precipitate downstream in some instances clogging the outlet frit, tubes and valves. Moreover, sodium sulfate becomes an aggregate hard lump upon water absorption and is not easy to process during sample preparation for in-cell moisture removal and extraction.
   
+## Ultrasonic extraction
+  
+
 
 
 

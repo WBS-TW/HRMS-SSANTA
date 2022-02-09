@@ -1,6 +1,0 @@
-# GC-HRMS raw data preprocessing with MS-DIAL {#GC_MSDIAL}
-  
-
-This tutorial will guide you through the different steps to process raw data from GC orbitrap HRMS using MS-DIAL. You should familiarize yourself with the workflow on GC-HRMS spectral library in the previous section.  
-
-

@@ -1,4 +1,4 @@
-# **Mass defect plots** {#mass_defect}
+# **Mass defect plots** {#MassDefect}
 
 This is a chapter about using mass defect plots to help with nontarget data
 

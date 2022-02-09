@@ -1,4 +1,4 @@
-# Example workflow: indoor dust {#example_dust}
+# Example workflow: indoor dust {#ExampleDust}
 
 A walkthrough for indoor dust analysis
 
@@ -151,7 +151,7 @@ ID2 -> {Q1}
 
 <br>
 
-## **GC orbitrap HRMS workflow**
+## GC orbitrap HRMS workflow
 This code uses XCMS with MF -> CAMERA preprocessing used in : Stettin, D.; Poulin, R.X.; Pohnert, G. Metabolomics Benefits from Orbitrap GC–MS—Comparison of Low- and High-Resolution GC–MS. Metabolites 2020, 10, 143. See the supplementary material for original code. The code was modified here to also include retention time index and also remove zero intensity peaks after peak grouping. Additional metainformation for the msp file can also be added in the "extra" object.
 
 
@@ -617,35 +617,35 @@ write.msp(export.msp, file = "test_spectra.msp") #This creates a NIST MS Search 
 
 
 
-## **LC-HRMS using Waters MSe DIA workflow**
+## LC-HRMS using Waters MSe DIA workflow
 
 
-```{r load_package_12}
+```{r load_package_12, eval=FALSE, include=FALSE, echo=TRUE}
 library(xcms)
 library(magrittr)
 library(RAMClustR)
 ```
 
-# Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2
+## Workflow for centroiding of raw file, peak picking and correlation of MS1 and MS2
 
 
 ## First convert unifi data using MSConvert
-
+  
 Options: 
-output format: mzML
-binary encoding precision: 64-bit
-Write index: check
-TPP compatibility: check
-use zlib compression: uncheck
-package in gzip: uncheck
+output format: mzML  
+binary encoding precision: 64-bit  
+Write index: check  
+TPP compatibility: check  
+use zlib compression: uncheck  
+package in gzip: uncheck  
+  
 
-
-Filters:
-1. TitleMaker
-2. msLevel: 1-2  (need to click "Add" to add filter)
+Filters:  
+1. TitleMaker  
+2. msLevel: 1-2  (need to click "Add" to add filter)  
 
 ## Centroiding raw data from mzML using MSnbase
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE, include=FALSE, echo=TRUE}
 
 library(xcms)
 library(magrittr)
@@ -667,7 +667,7 @@ writeMSData(data_sg_cent, file = "D:/Raw_data/Test_centroidingMSnbase/STD1_1_A,3
 
 
 
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE, include=FALSE, echo=TRUE}
 
 ## B1. Read the centroided data.
 

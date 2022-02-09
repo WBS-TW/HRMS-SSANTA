@@ -17,7 +17,7 @@ site: bookdown::bookdown_site
 description: "SSANTA."
 url: 'https\https://www.oru.se/personal/thanh_wang'
 github-repo: WBS-TW/WBS-TW.github.io
-cover-image: images/OUR.png
+cover-image: images/ORU.png
 ---
 <!-- If you need PDF output, uncomment bookdown::pdf_book above in YAML. You will need a LaTeX installation, e.g., https://yihui.name/tinytex/ -->
 

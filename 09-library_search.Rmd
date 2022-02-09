@@ -1,4 +1,4 @@
-# **Spectral libraries** {#library}
+# **Spectral libraries** {#Library}
 
 In environmental analysis, NIST MS library is widely used to match a spectrum to a list of standard spectra. However, a major drawback of the NIST MS Search is that now all chemicals are included and all spectral ions are at unit mass (for EI spectra library, also called mainlib)
 
@@ -6,7 +6,7 @@ In environmental analysis, NIST MS library is widely used to match a spectrum to
 Below figure shows a relatively good spectral match for a standard if only nominal or even at 0.1 decimal m/z:
 
 
-```{r spectrum1, echo = FALSE, fig.cap= "Spectral matching (using MS-DIAL)"}
+```{r spectrum1, echo = FALSE, fig.cap= "Spectral matching using MS-DIAL"}
 
 knitr::include_graphics("images/Spectra_CFBP_MePDA.PNG", dpi = 100)
 ```
@@ -93,19 +93,17 @@ PREPARATION
   
 1. Prepare a file with the _equilibrium structure_ of your desired molecule.
 Important: This file has to be named `coord` (without file extension) and should have the TURBOMOLE coord format (tmol).
-
-__SKIP__: In most cases you will have an .xyz file. This file can be easily converted by typing `> x2t <xyzfile> > coord` if you have installed TURBOMOLE. If you do not have TURBOMOLE, you may have to write a script converting .xyz files to TUROBOMOLE coord files. Be advised that the coord file has to be in atomic units.  
-
+  
 
 1.1. __Simple__: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -> tmol. Remove the file extension .tmol to only coord.  
 1.2. __Optimized 3D conformer according to steps by__ [Wang et al](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00470-3):  
-- Download the 3D conformer in Pubchem as sdf.  
-- Import into Avogadro (https://avogadro.cc/).  
+- Download the 3D conformer in Pubchem as sdf. 
+- Import into Avogadro (https://avogadro.cc/). If 3d-struture is not available, then use "build"-> "insert SMILES". This will take longer time to optimize.  
 - Use the auto-optimize tool (https://avogadro.cc/docs/tools/auto-optimize-tool/); Force field (MMFF94), Steps per update (10), Steepest Descent. When dE=0 then it is optimized and you can save as a `.mol` file.  
 - Use Openbabel to convert `.mol` to `.tmol` file. Rename as `coord` without the extension.  
   
   
-2. Prepare an input file called qceims.in. For the input options, see section 4 or the
+2. Prepare an input file called "_qceims.in_". For the input options, see the online manual or the
 qceims.in file in the examples folder. _If no such file is prepared, default options are: run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntraj)_.
 
 TO RUN QCEIMS
@@ -143,7 +141,7 @@ e.g: pqcxms -j 6 -t 4  &
 ```
 Make sure you add the `&`at the end so you can return to the prompt by hitting `Enter`.  
   
-You can check how any CPUs and threads are used by opening a new bash and type `top`.
+You can check how any CPUs and threads are used by opening a new console and type `top` and then press `1` followed by `t` for visual bar chart.
   
   
 Check the status of your QCxMS run by changing to your working directory (first press Enter to get back the prompt) and typing

@@ -1,4 +1,4 @@
-# **Experimental design** {#Exp_design}
+# **Experimental design** {#ExpDesign}
 
 <br><br>
 
@@ -162,6 +162,13 @@ Examples could be the location, group,
 ## Chemical analysis  
 Sample order is important and should be noted in the sample information sheet. This can be important in downstream data analysis, e.g. retention time correction can be more efficiently corrected if the sample order are correctly set.
 
+### Data recording modes  
+From https://doi.org/10.1093/bioinformatics/btab279:
+"DDA strategy acquires a survey full-scan mass spectrum to select top N most abundant precursor ions for fragmentation spectra acquisition in the next several MS2 scans. (b) DIA fragments all the available precursors for MS2 scans in large predefined m/z and RT windows. he resulting MS2 are typically multiplexed and require further spectral deconvolution.  
+Data-independent acquisition (DIA) systematically fragments all the available precursors for MS2 scans in large predefined m/z windows over time. Due to its large precursor ion isolation window, the resulting MS2 are typically multiplexed (several molecules captured in the same spectrum) (Bilbao et al., 2015; Doerr, 2015). The post analysis of these fragmentation spectra requires advanced spectral deconvolution methods."
+  
+A good comparison between DDA and DIA can be seen in [Guo and Huan](https://doi.org/10.1021/acs.analchem.9b05135)
+  
 
 
 

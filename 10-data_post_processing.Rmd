@@ -1,10 +1,11 @@
-# **Data post-processing** {#postprocessing}
+# **Data post-processing** {#PostProcessing}
 
 
 
 <br><br>  
 ## Classyfire  
-
+  
+NOTE: better to use Classyfire batch instead of below script: https://cfb.fiehnlab.ucdavis.edu/
 
 ```{r eval=FALSE, include=FALSE, echo=TRUE}
 library(readxl)
