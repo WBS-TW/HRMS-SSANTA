@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2022-02-10" />
+<meta name="date" content="2022-02-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -298,6 +298,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="GClib" class="section level1" number="14">
 <h1><span class="header-section-number">14</span> MTM HRMS Library: GC-HRMS</h1>
+<p><em>This tutorial is based on the research paper by Price et al (Open, High-Resolution EI+ Spectral Library of Anthropogenic Compounds, Frontiers in Public Health, 2021, DOI=10.3389/fpubh.2021.622558).</em></p>
 <p>This tutorial will guide you through the different steps to export the spectra information for each compound from a standard to contribute to the MTM HRMS spectral library. The overall goal is to analyze chemical standards to generate spectral fingerprints so we can combined all spectra of different standards into one spectral library. This can then be used as a suspect list which we can use to match any unknown compounds. This is a very common concept within GC screening, and the most commonly used spectral library is the NIST which has more than 100,000 compounds. The main drawback of NIST is that most of the GC spectra was recorded with nominal mass resolution. This makes spectral matching uncertain and false positives are common. The use of HRMS can reduce the uncertainty in spectral matching as well as provide clean deconvoluted spectra for real samples thus greatly reduce false positives and false negatives.</p>
 <p>To build the spectral library, we first start with the raw data file from the HRMS analysis of a standard (.raw for Thermo, etc) and then we want to generate an <strong>.msp</strong> file as the final file format. The msp file is a file format developed by NIST to store mass spectral data. For more information about this format, please see this <a href="https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:nist17:nistms_ver23man.pdf">document</a>. Here, we use a slightly different format commonly called “RIKEN MSP,” but both can usually be used for most software that read msp files (although if you get error then different .msp formats could be a reason).</p>
 <p>The overall goal can be seen in Figure <a href="GClib.html#fig:combineMSP">14.1</a></p>
