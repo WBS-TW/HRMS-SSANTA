@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Spectral libraries | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
+  <title>18 Acquisition parameters | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
   <meta name="description" content="SSANTA." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Spectral libraries | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta property="og:title" content="18 Acquisition parameters | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wang/images/ORU.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Spectral libraries | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta name="twitter:title" content="18 Acquisition parameters | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   
   <meta name="twitter:description" content="SSANTA." />
   <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wang/images/ORU.png" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="MolecularNetworks.html"/>
-<link rel="next" href="PostProcessing.html"/>
+<link rel="prev" href="GCOrbitrapHandbook.html"/>
+<link rel="next" href="reproducible-research-using-docker-containers-and-similar-tools.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -269,14 +269,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="16.1" data-path="GCMSDIAL.html"><a href="GCMSDIAL.html#further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial"><i class="fa fa-check"></i><b>16.1</b> Further explanation for some terminologies apart from the tutorial (<span>https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial</span>)</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html"><i class="fa fa-check"></i><b>17</b> A handbook on GC Q Exactive orbitrap use</a>
+<li class="chapter" data-level="17" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html"><i class="fa fa-check"></i><b>17</b> A handbook on GC Q Exactive orbitrap use</a></li>
+<li class="chapter" data-level="18" data-path="acquisition-parameters.html"><a href="acquisition-parameters.html"><i class="fa fa-check"></i><b>18</b> Acquisition parameters</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html#acquisition-parameters"><i class="fa fa-check"></i><b>17.1</b> Acquisition parameters</a></li>
-<li class="chapter" data-level="17.2" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html#chemical-ionization"><i class="fa fa-check"></i><b>17.2</b> Chemical ionization</a></li>
-<li class="chapter" data-level="17.3" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html#terminologies-1"><i class="fa fa-check"></i><b>17.3</b> Terminologies</a></li>
-<li class="chapter" data-level="17.4" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html#xcms-preprocessing"><i class="fa fa-check"></i><b>17.4</b> XCMS preprocessing</a></li>
+<li class="chapter" data-level="18.1" data-path="acquisition-parameters.html"><a href="acquisition-parameters.html#chemical-ionization"><i class="fa fa-check"></i><b>18.1</b> Chemical ionization</a></li>
+<li class="chapter" data-level="18.2" data-path="acquisition-parameters.html"><a href="acquisition-parameters.html#terminologies-1"><i class="fa fa-check"></i><b>18.2</b> Terminologies</a></li>
+<li class="chapter" data-level="18.3" data-path="acquisition-parameters.html"><a href="acquisition-parameters.html#xcms-preprocessing"><i class="fa fa-check"></i><b>18.3</b> XCMS preprocessing</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="reproducible-research-using-docker-containers-and-similar-tools.html"><a href="reproducible-research-using-docker-containers-and-similar-tools.html"><i class="fa fa-check"></i><b>18</b> Reproducible research using Docker containers and similar tools</a></li>
+<li class="chapter" data-level="19" data-path="reproducible-research-using-docker-containers-and-similar-tools.html"><a href="reproducible-research-using-docker-containers-and-similar-tools.html"><i class="fa fa-check"></i><b>19</b> Reproducible research using Docker containers and similar tools</a></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
 
@@ -297,188 +297,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Library" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> <strong>Spectral libraries</strong></h1>
-<p>In environmental analysis, NIST MS library is widely used to match a spectrum to a list of standard spectra. However, a major drawback of the NIST MS Search is that now all chemicals are included and all spectral ions are at unit mass (for EI spectra library, also called mainlib)</p>
-<p>Below figure shows a relatively good spectral match for a standard if only nominal or even at 0.1 decimal m/z:</p>
-<div class="figure"><span style="display:block;" id="fig:spectrum1"></span>
-<img src="images/Spectra_CFBP_MePDA.PNG" alt="Spectral matching using MS-DIAL" width="696" />
-<p class="caption">
-Figure 9.1: Spectral matching using MS-DIAL
-</p>
-</div>
-<p><img src="images/forward_reverse_lib_search.png" width="1779" /></p>
-<div id="in-silico-fragmentation" class="section level2" number="9.1">
-<h2><span class="header-section-number">9.1</span> IN SILICO FRAGMENTATION</h2>
-<p>There are several openly available models that have recently been published to predict the fragmentation patterns of GC-EI MS.</p>
-<div id="metfrag" class="section level3" number="9.1.1">
-<h3><span class="header-section-number">9.1.1</span> Metfrag</h3>
-</div>
-<div id="sirius-csi-fingerid" class="section level3" number="9.1.2">
-<h3><span class="header-section-number">9.1.2</span> Sirius CSI FingerID</h3>
-</div>
-<div id="cfm-id" class="section level3" number="9.1.3">
-<h3><span class="header-section-number">9.1.3</span> CFM-ID</h3>
-<p>In silico fragmentation:<br />
-Help file: <a href="https://sourceforge.net/p/cfm-id/wiki/Home/" class="uri">https://sourceforge.net/p/cfm-id/wiki/Home/</a></p>
-<p><em>Use instructions:</em></p>
+<div id="acquisition-parameters" class="section level1" number="18">
+<h1><span class="header-section-number">18</span> Acquisition parameters</h1>
+<p>From: <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/full/10.1002/rcm.8609?campaign=wolacceptedarticle" class="uri">https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/full/10.1002/rcm.8609?campaign=wolacceptedarticle</a>
+Orbitrap technology is based on ion oscillation frequency measurements around a central electrode, detected on a receiver plate.26 The mass spectrum is obtained after Fourier transformation of the oscillation signal with a two-point calibration. The longer the signal acquisition time, the better is the resolution.27 During this time, ions generated in the EI source are stored in an IT, the C-TRAP. The storage of ions in the C-TRAP plays a vital role in prematurely analysing discontinuous ions produced continuously by the chromatographic separation and the ionisation source. The ions introduced into the C-TRAP lose their energy in contact with N2 at approximately 1 mTorr.26 During an acquisition in full scan mode, it is possible to set the detector with different parameters: acquisition mass range, resolution, AGC target and tune values. The tune files gather the different settings of the mass spectrometer aiming to produce the ions of the EI source, but also the different voltages applied to the lenses in the ion path from the source to the C-TRAP. It is also possible to change the value of the C-TRAP energy offset (−5 to +5 V). For this study, we used standard conditions of EI (70 eV) in order to have the ideal conditions for reproducibility of the spectra. By default, the Orbitrap system acquires data in the range m/z 50–500 at 60 000 resolution mode and 70 eV for EI. The C-TRAP tune value was set to 0 V and AGT target to 1 × 106 ions with an automatic filling limit.</p>
 <ul>
-<li>If you are using EI-MS (GC-MS) data, please use the ei_ms_model provided.<br />
-</li>
-<li>Note that lpsolve55.dll must also be included in the same directory as the executables. This file can be found in the development version of LPSolve (e.g. lp_solve_5.5.2.0_dev_win32.zip), which can be downloaded from <a href="https://sourceforge.net/projects/lpsolve/files/lpsolve/5.5.2.5/lp_solve_5.5.2.5_dev_win32.zip/download" class="uri">https://sourceforge.net/projects/lpsolve/files/lpsolve/5.5.2.5/lp_solve_5.5.2.5_dev_win32.zip/download</a>.</li>
+<li>Recommended to have about 10-12 scans per peak.</li>
 </ul>
-<p>Cfm-predict</p>
-<p>COMMAND:<br />
-<code>cfm-predict.exe &lt;smiles_or_inchi_or_file&gt; &lt;prob_thresh&gt; &lt;param_file&gt; &lt;config_file&gt; &lt;annotate_fragments&gt; &lt;output_file_or_dir&gt; &lt;apply_postproc&gt; &lt;suppress_exceptions&gt;</code></p>
-<p><br></p>
-<p>EXAMPLE (naphthalene):<br />
-<code>cfm-predict.exe InChI=1S/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp</code></p>
-<p><br></p>
-<p>EXAMPLE (.txt file as input):<br />
-<code>cfm-predict.exe D:/Program/cfm-id-2.4_win32/test/input.txt 0.001 D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_output.log D:/Program/cfm-id-2.4_win32/ei_nn_iso_new/param_config.txt 0 D:/Program/cfm-id-2.4_win32/test/output.msp</code></p>
-<p><br><br><br></p>
+<div id="htmlwidget-bf13b93be9b637c847aa" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bf13b93be9b637c847aa">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11"],["Repeller voltage (8-11 V)","Source offset","Lens 1","Lens 2","Lens 3","Electron lens voltage","Emission current (50-60 uA)","IT (&lt; 1)","Normalized target level (NL) (clean source 1E9)","Fore vacuum (&lt; 6E-2 mbar)","Ultrahigh vacuum (&lt; 9E-10 mbar)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Parameter<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+<div id="chemical-ionization" class="section level2" number="18.1">
+<h2><span class="header-section-number">18.1</span> Chemical ionization</h2>
+<p>If the instrument is in CI mode, choose the right Calibration gas and Ionization mode (“CI”), as well as the CI gas flow (typically 1-2), gas port (Port B as of 20210429, actual CI gas flow should indicate the correct port), and gas type (likely Methane, but check the cylinder). Open the CI gas flow at 2ml/min before opening anything else (before the calibration gas, filament, MS), otherwise the flow can be unstable. Afterwards the CI can be adjusted to lower flow</p>
 </div>
+<div id="terminologies-1" class="section level2" number="18.2">
+<h2><span class="header-section-number">18.2</span> Terminologies</h2>
+<p><em>Automatic Gain Control (AGC):</em> Sets the ion injection time to maintain the optimum quantity of ions for each scan. With AGC on, the scan function consists of a prescan and an analytical scan. The split lens is used to start and stop the injection of ions into the mass analyzer. It provides a high deflection voltage most of the time so that ions are deflected into a baffle except when they are to be allowed into the C-Trap. The fast switching of the ion beam ensures the precise determination of the ion injection time that is required for AGC. This is since if too many ion are in the ion cloud going in to the orbitrap, then it will oversaturate the detector.</p>
+<p><em>Chemical Ionization (CI):</em></p>
+<p><em>Nitrogen gas:</em> Nitrogen gas is used for the purging of the ion source when removing the ion volume. It is also used in the C-Trap, when the ions are accumulated and their energy is dampened using a bath gas (nitrogen).</p>
 </div>
-<div id="neims" class="section level2" number="9.2">
-<h2><span class="header-section-number">9.2</span> NEIMS</h2>
-<p>Help files: <a href="https://github.com/brain-research/deep-molecular-massspec" class="uri">https://github.com/brain-research/deep-molecular-massspec</a></p>
-<p><br><br><br></p>
-</div>
-<div id="deepei" class="section level2" number="9.3">
-<h2><span class="header-section-number">9.3</span> DeepEI</h2>
-<p>Help files: <a href="https://github.com/hcji/DeepEI" class="uri">https://github.com/hcji/DeepEI</a><br />
-<a href="https://github.com/hcji/DeepEI/blob/master/Usage.ipynb" class="uri">https://github.com/hcji/DeepEI/blob/master/Usage.ipynb</a></p>
-<p><br><br><br></p>
-</div>
-<div id="qcxms" class="section level2" number="9.4">
-<h2><span class="header-section-number">9.4</span> QCxMS</h2>
-<p>This program only runs on LINUX SERVER.</p>
-<ul>
-<li>Check QCxMS <a href="https://xtb-docs.readthedocs.io/en/latest/qcxms_doc/qcxms_setup.html">online manual</a> for details</li>
-<li>Check PlotMS <a href="https://xtb-docs.readthedocs.io/en/latest/qcxms_doc/qcxms_plot.html">online manual</a></li>
-</ul>
-<p>PREPARATION
-- Download the latest version of QCxMS at: <a href="https://github.com/qcxms/QCxMS/releases/" class="uri">https://github.com/qcxms/QCxMS/releases/</a><br />
-- Download the lates PlotMS version at: <a href="https://github.com/qcxms/PlotMS/releases/" class="uri">https://github.com/qcxms/PlotMS/releases/</a> and copy to the same folder as QCxMS<br />
-- Copy the <code>.XTBPARAM</code> folder and the <code>.mass_raw.agr</code> files to <code>/home/ORUNET.ORU.SE/twg/</code></p>
-<ol style="list-style-type: decimal">
-<li>Prepare a file with the <em>equilibrium structure</em> of your desired molecule.
-Important: This file has to be named <code>coord</code> (without file extension) and should have the TURBOMOLE coord format (tmol).</li>
-</ol>
-<p>1.1. <strong>Simple</strong>: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -&gt; tmol. Remove the file extension .tmol to only coord.<br />
-1.2. <strong>Optimized 3D conformer according to steps by</strong> <a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00470-3">Wang et al</a>:<br />
-- Download the 3D conformer in Pubchem as sdf.
-- Import into Avogadro (<a href="https://avogadro.cc/" class="uri">https://avogadro.cc/</a>). If 3d-struture is not available, then use “build”-&gt; “insert SMILES.” This will take longer time to optimize.<br />
-- Use the auto-optimize tool (<a href="https://avogadro.cc/docs/tools/auto-optimize-tool/" class="uri">https://avogadro.cc/docs/tools/auto-optimize-tool/</a>); Force field (MMFF94), Steps per update (10), Steepest Descent. When dE=0 then it is optimized and you can save as a <code>.mol</code> file.<br />
-- Use Openbabel to convert <code>.mol</code> to <code>.tmol</code> file. Rename as <code>coord</code> without the extension.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Prepare an input file called “<em>qceims.in</em>.” For the input options, see the online manual or the
-qceims.in file in the examples folder. <em>If no such file is prepared, default options are: run GFN1-xTB with 25 times the number of atoms in the molecule trajectories (ntraj)</em>.</li>
-</ol>
-<p>TO RUN QCEIMS</p>
-<p>Open bash</p>
-<ol style="list-style-type: decimal">
-<li>Enable overwriting files in your Linux:</li>
-</ol>
-<pre><code>set +o noclobber</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Place the executables into your $HOME/bin directory or path. Easiest is to enable the QCxMS executables in the path as seen below (replace the names if the QCxMS executables are in another folder):</li>
-</ol>
-<pre><code>export PATH=/home/ORUNET.ORU.SE/twg/QCxMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>go to your folder, e.g:</li>
-</ol>
-<pre><code>cd QCxMS/example/ethanol</code></pre>
-<p>Run:</p>
-<pre><code>qcxms</code></pre>
-<p>Run <code>qcxms</code> again and check the ouput if all is ok.</p>
-<ol start="5" style="list-style-type: decimal">
-<li>Executing production runs. If you want to run QCxMS locally, use the pqcxms script with -j number of parallel jobs and -t number of OMP threads:</li>
-</ol>
-<pre><code>pqcxms -j &lt;integer&gt; -t &lt;integer&gt; &amp;
-
-e.g: pqcxms -j 6 -t 4  &amp;</code></pre>
-<p>Make sure you add the <code>&amp;</code>at the end so you can return to the prompt by hitting <code>Enter</code>.</p>
-<p>You can check how any CPUs and threads are used by opening a new console and type <code>top</code> and then press <code>1</code> followed by <code>t</code> for visual bar chart.</p>
-<p>Check the status of your QCxMS run by changing to your working directory (first press Enter to get back the prompt) and typing</p>
-<pre><code>getres</code></pre>
-<p>, which will provide an output of the form:<br />
-<em>XXX runs done and written to tmpqceims.res/out</em><br />
-which gathers the runs already finished (creates tmpqceims.res and tmpqceims.out).
-The final results are on qceims.out and qceims.res</p>
-<ol start="6" style="list-style-type: decimal">
-<li><p><strong>SKIP: this doesnt work anymore with the new QCxMS version 6</strong>. (Download an exp. EI-MS from the NIST if available and copy it to the working dir as exp.dat; take the JCAMP-DX format from their web page).</p></li>
-<li><p>get spectrum by</p></li>
-</ol>
-<pre><code>plotms</code></pre>
-<p><strong>SKIP</strong>: and plot it with <code>xmgrace mass.agr</code>. the file “.mass.agr” should be in your home dir. plotms reads by default &lt;qceims.res&gt; or by <code>plotms -f &lt;name_of_res_file&gt;</code> any other res file. Check the consistency of the total charge.</p>
-<ol start="8" style="list-style-type: decimal">
-<li>Clean the csv file to remove low abundance ions and then copy the m/z and rel abundance to an msp file. Run <code>MS-LIMA</code> to compare the spectra.</li>
-</ol>
-<p><strong>ADDITIONAL_OPTIMIZATION</strong>:
-if the ratio of fragment to M+ signals is too large decrease the IEE by increasing the parameter
-ieeatm (default is 0.6 eV/atom) by inserting</p>
-<pre><code>ieeatm  &lt;value&gt;</code></pre>
-<p>in the qceims.in file and do the parallel run again (requires an additional qcxms pre-run).</p>
-<ol start="9" style="list-style-type: decimal">
-<li>if the IEE is ok, increase ntraj to get better statistics and re-run
-(note: qcxms.res is appended so delete it at this point).</li>
-</ol>
-<p>VERY IMPORTANT: EVERY CHANGE IN THE INPUT REQUIRES A RUN OF QCEIMS IN THE WORKING DIR
-BEFORE THE PARALLEL SCRIPT IS STARTED IN ORDER TO BE IN EFFECT!</p>
-<ol start="10" style="list-style-type: decimal">
-<li><p>trajectories are in TMPQCEIMS/TMP.<run_number>
-they are numbered by the run and the ion tracking number.
-(something like gmolden TMPQCEIMS/TMP.$1/trj.$1.$2
-gives trajectory $1, track $2)</p></li>
-<li><p>for more QCEIMS code options (model parameters) see manual</p></li>
-</ol>
-<p>useful options for qceims:</p>
-<p>-c : check IEE but do nothing (requires M trajectory)
--p : normal production (fragmentation) mode. Possible in any
-existing TMPQCEIMS/TMP.$1 directory.
--eonly : use the requested QC (as specified in qceims.in)
-and do a single-point energy
--e0 : same as above, charge = 0
--e1 : same as above, charge = 1
--qcp <string>
-: string = path to the QC code /usr/local/bin is default)</p>
-<p>other important options in &lt;qceims.in&gt;:</p>
-<p>ip-<method>
-ntraj <int>
-ieeatm <real>
-iseed <int> (random number initialization to start different runs)</p>
-<p><strong>In silico photodegradation product generation</strong><br />
-Use the US EPA CTS: Chemical Transformation Simulator to predict photodegradation products by the <a href="https://qed.epacdx.net/cts/gentrans/">Generate Transformation Products Module</a>.<br />
-- Enter the lookup structure.<br />
-- Select: User selected -&gt; Direct Photolysis.<br />
-- Choose number of generations of transformation products.</p>
-</div>
-<div id="library-search" class="section level2" number="9.5">
-<h2><span class="header-section-number">9.5</span> LIBRARY SEARCH</h2>
-<p>xx</p>
-</div>
-<div id="reading-mgf-files-in-r" class="section level2" number="9.6">
-<h2><span class="header-section-number">9.6</span> Reading mgf files in R</h2>
-</div>
-<div id="lib2nist-1" class="section level2" number="9.7">
-<h2><span class="header-section-number">9.7</span> LIB2NIST</h2>
-<p>Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.</p>
-<p>COMMAND:<br />
-<code>lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N &lt;path to msp file&gt; &lt;output path&gt; =&lt;new name of library&gt;</code></p>
-<p>EXAMPLES:<br />
-<code>lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\RECETOX_GC-EI_MS_20201028.msp D:\Program\NIST14\ =RECETOX_GC-EI_MS_20201028</code></p>
-<p><br><br><br></p>
-</div>
-<div id="mspepsearch" class="section level2" number="9.8">
-<h2><span class="header-section-number">9.8</span> MSPepSearch</h2>
-<p>Use MSPepSearch to find similar spectra</p>
-<p>EXAMPLES:<br />
-<code>MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 10 /OnlyFound /HITS 5 /LIB D:\Raw_data\Dust_Florian\GC\test\Mylib /INP D:\Raw_data\Dust_Florian\GC\test\input.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv /OutMW</code></p>
-<p><code>MSPepSearch64.exe Gusviqh /ZI 0.1 /ZIPPM 20 /MPPM 30 /MzLimits 50 -1 /MinMF 100 /OnlyFound /HITS 5 /LIB C:\NIST14\NIST_contaminants_orbitrap /INP D:\Projects\Mexico_Air\NIST_Mexico.msp /OUTMGF D:\Projects\Mexico_Air\test\test.mgf /OUTTAB D:\Projects\Mexico_Air\test\test.tsv</code></p>
-<p><code>MSPepSearch64.exe Gusviqh /ZI 0.01 /ZIPPM 10 /MPPM 10 /MzLimits 50 -1 /MinMF 500 /OnlyFound /HITS 5 /LIB C:\NIST14\LCMs_GC_Orbitrap /INP D:\Raw_data\Dust_Florian\GC\test\11.msp /OUTMGF D:\Raw_data\Dust_Florian\GC\test\test.mgf /OUTTAB D:\Raw_data\Dust_Florian\GC\test\test.tsv</code></p>
-<p>More info on commands on:
-<a href="https://pubs.acs.org/doi/suppl/10.1021/acs.analchem.9b03415/suppl_file/ac9b03415_si_001.pdf" class="uri">https://pubs.acs.org/doi/suppl/10.1021/acs.analchem.9b03415/suppl_file/ac9b03415_si_001.pdf</a></p>
+<div id="xcms-preprocessing" class="section level2" number="18.3">
+<h2><span class="header-section-number">18.3</span> XCMS preprocessing</h2>
+<p>Check: A scalable workflow to characterize the human exposome, SI-11, <a href="https://www.nature.com/articles/s41467-021-25840-9#MOESM14" class="uri">https://www.nature.com/articles/s41467-021-25840-9#MOESM14</a></p>
+<p>IPO optimization</p>
 
 </div>
 </div>
@@ -487,8 +328,8 @@ Use the US EPA CTS: Chemical Transformation Simulator to predict photodegradatio
           </div>
         </div>
       </div>
-<a href="MolecularNetworks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="PostProcessing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="GCOrbitrapHandbook.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reproducible-research-using-docker-containers-and-similar-tools.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -519,7 +360,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/09-library_search.Rmd",
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/20-GCorbitrap_Handbook.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -101,6 +101,7 @@ use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-comp
 GCMSDIAL
 further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial
 GCOrbitrapHandbook
+acquisition-parameters
 chemical-ionization
 terminologies-1
 xcms-preprocessing
