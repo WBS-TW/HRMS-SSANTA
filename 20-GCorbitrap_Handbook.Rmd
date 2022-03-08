@@ -70,9 +70,9 @@ _Nitrogen gas:_ Nitrogen gas is used for the purging of the ion source when remo
 
 
 
-## XCMS preprocessing
-Check: A scalable workflow to characterize the human exposome, SI-11, https://www.nature.com/articles/s41467-021-25840-9#MOESM14
+## Cleaning source
+https://www.sisweb.com/referenc/tips/msclean.htm
 
-IPO optimization
+
 
 

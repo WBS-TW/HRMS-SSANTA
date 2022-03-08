@@ -115,8 +115,11 @@ Open bash
 set +o noclobber
 ```
 2. Place the executables into your $HOME/bin directory or path. Easiest is to enable the QCxMS executables in the path as seen below (replace the names if the QCxMS executables are in another folder):
-
+  
+Check: https://linuxize.com/post/how-to-add-directory-to-path-in-linux/
 ```
+echo $PATH
+
 export PATH=/home/ORUNET.ORU.SE/twg/QCxMS/:/home/ORUNET.ORU.SE/twg/bin:/home/ORUNET.ORU.SE/twg/.local/bin:/bin:/usr/bin:/opt/thinlinc/bin:/usr/local/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin:/opt/thinlinc/bin:/opt/SPAdes/SPAdes-3.13.0-Linux/bin:/opt/mauve/mauve_snapshot_2015-02-13:/opt/parsnp/Parsnp-Linux64-v1.2:/opt/prokka/prokka-master/bin:/opt/artemis/artemis
 ```
 
@@ -204,7 +207,22 @@ ip-<method>
 ntraj <int>
 ieeatm <real>
 iseed <int>     (random number initialization to start different runs)
+
   
+__Vizualize trajectories__
+  
+Export VMDMovie folder to Path, go first to the folder with VMDMovie then enter:  
+```
+export PATH=$PATH:$(pwd)
+```
+  
+Go to the working directory and enter:
+```
+msmovie X Y
+
+```
+to load the trajectory TMPQCEIMS/TMP.X/trj.X.Y. For instance, `msmovie 1 1` loads the first trajectory of the first folder. Some adjustments according to personal preferences for movie-making may have to be made in these scripts.
+
 
 __In silico photodegradation product generation__  
 Use the US EPA CTS: Chemical Transformation Simulator to predict photodegradation products by the [Generate Transformation Products Module](https://qed.epacdx.net/cts/gentrans/).  
