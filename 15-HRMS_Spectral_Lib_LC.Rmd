@@ -2,6 +2,8 @@
   
 
 <span style="color: red;">REWRITE SECTION TO ONLY USE DDA OR RUN BOTH DDA AND DIA? </span>
+  
+<span style="color: red;"> THIS SECTION IS INCOMPLETE AND SOME TEXT AND FIGURES ARE COPIED FROM GC TUTORIAL. NEED UPDATE! </span>
 
 Please see the introductory section in the previous chapter regarding the MTM HRMS library using GC-HRMS.
   
