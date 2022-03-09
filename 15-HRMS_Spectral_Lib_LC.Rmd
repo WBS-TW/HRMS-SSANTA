@@ -1,6 +1,7 @@
 # MTM HRMS Library: LC-HRMS 
   
 
+<span style="color: red;">REWRITE SECTION TO ONLY USE DDA OR RUN BOTH DDA AND DIA? </span>
 
 Please see the introductory section in the previous chapter regarding the MTM HRMS library using GC-HRMS.
   

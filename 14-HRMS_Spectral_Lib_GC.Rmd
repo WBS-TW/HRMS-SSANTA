@@ -155,9 +155,7 @@ For GC compounds, you also need to fill in the _COMMENT: QUANTMASS_, _AC\$CHROMA
   
 The other rows should be quite straightforward to fill in. If you use the same method for many standards, then you can save a copy of an infosheet to use as a method template, while only updating information for each specific compound: ACCESSION, DATE, COMMENT: centroided mzML file name, CH\$NAME, CH\$NAME, CH\$FORMULA, CH\$EXACT_MASS:, CH\$SMILES:, CH\$IUPAC:, CH\$LINK: CAS, CH\$LINK: INCHIKEY  
 
-The _AC\$CHROMATOGRAPHY: RETENTION_TIME_ row will be obtained later using MS-DIAL.  
-
-If you use GC-MS, then you also need to fill in the _AC\$CHROMATOGRAPHY: KOVATS_RTI_ which will also be available later using MS-DIAL.  
+The _AC\$CHROMATOGRAPHY: RETENTION_TIME_ row will be obtained later using MS-DIAL.
   
 Now that you have filled in most information about the compound, we can proceed to process the mzML file to extract the spectra using MS-DIAL (although you can also first process the mzML files and then fill in the information afterwards).
   
