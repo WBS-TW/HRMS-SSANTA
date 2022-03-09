@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2022-03-08" />
+<meta name="date" content="2022-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -310,7 +310,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Figure 14.1: Overall goal of the msp suspect list library
 </p>
 </div>
-<p>If compounds were analyzed using GC, then you also need to include an <strong>alkane mix</strong> to be able to calculate the retention index (RI). In our lab, we use a mix consisting of C7-C40 alkanes. Ask Thanh for the alkane mix. You can find some representative chromatograms with retention times of the alkane mix for a 30 m DB-5ms column in the file “<em>/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/AlkaneMixRT.pptx</em>.” A solvent blank also needs to be analyzed together with the standards in order to subtract any blank signals at a later stage.</p>
+<p>If compounds were analyzed using GC, then you also need to include an <strong>alkane mix</strong> to be able to calculate the retention index (RI). In our lab, we use a mix consisting of C7-C40 alkanes. Ask Thanh for the alkane mix. You can find some representative chromatograms with retention times of the alkane mix for a 30 m DB-5ms column in the file “<em>/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/AlkaneMixRT.pptx</em>.” If you are using a new GC method or new column, then it is recommended to also run an odd alkane chain standard to specifically identify the alkanes in the C7-C40 mix. The metabolimics lab has an C11-C25 odd alkane mix we can use.<br />
+A <strong>solvent blank</strong> also needs to be analyzed together with the standards in order to subtract any blank signals at a later stage.</p>
 <p>The main steps of this procedure can be seen in below Figure <a href="GClib.html#fig:diagramSpeclib">14.2</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:diagramSpeclib"></span>
 <div id="htmlwidget-f7dd67e70bd980c8815c" style="width:672px;height:480px;" class="grViz html-widget"></div>
@@ -366,10 +367,11 @@ Figure 14.2: General workflow for spectral library
 </li>
 <li><em>MS-FINDER</em>: used to annotate the individual peaks in the spectrum and export to msp file. No installation is necessary so you only need to extract the downloaded zip file to your folder of choice.</li>
 </ul>
+<p><strong>NOTE</strong>: MSDIAL could crash when starting a new project. One fix could be to change the system langugage of Windows to English.</p>
 <div id="analyze-the-standards-using-hrms" class="section level2 hasAnchor" number="14.1">
 <h2><span class="header-section-number">14.1</span> Analyze the standards using HRMS<a href="GClib.html#analyze-the-standards-using-hrms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>It is recommended to analyze single standards but mixtures are also feasible to analyze if the analytes are not coeluting too close to each other. The deconvolution algorithm of MS-DIAL is able to distinguish between two peaks that are closely eluted but still have slightly different retention times and peak shapes.<br />
-You should also inject a <em>solvent blank</em> to perform blank subtraction later in MS-DIAL.</p>
+<p>It is recommended to analyze single standards but mixtures are also feasible to analyze if the analytes are not coeluting too close to each other. The deconvolution algorithm of MS-DIAL is able to distinguish between two peaks that are closely eluted but still have slightly different retention times and peak shapes. Around 1 ppm is sufficient to get a good peak shape and ion intensities in the GC-orbitrap HRMS, but this depends of course on each specific compound. If you don’t see any peaks, then check if there is any solubility issues or that the analytes are GC compatible (boiling point, polarity,..).</p>
+<p>You should also inject a <em>solvent blank</em> to perform blank subtraction later in MS-DIAL.</p>
 </div>
 <div id="convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-refmsconvertgc" class="section level2 hasAnchor" number="14.2">
 <h2><span class="header-section-number">14.2</span> Convert the raw data file from GC-HRMS analysis to .mzML using MSconvert (For unifi conversion, see section <a href="DataConversion.html#MSConvertGC">13.1</a><a href="GClib.html#convert-the-raw-data-file-from-gc-hrms-analysis-to-.mzml-using-msconvert-for-unifi-conversion-see-section-refmsconvertgc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -388,7 +390,7 @@ The rows that are in bold are information that are mandatory to fill in.</p>
 <p>“COMMENT: QUANTMASS.” This is the quantification mass for MSDIAL to find for EIC of model ions to compare different samples and groups. Choose the monoisotopic ion if possible or the highest peak at the higher end of the mass range. Copy this m/z directly from the msp file so the decimals matches.</p>
 <p>“CH$NAME:” occurs twice which means you have to input two different names for the compound in the standard, because a compound can have different names. It could be the common name specified in PubChem, the IUPAC name, trade name or the abbreviation.</p>
 <p>“CH$IUPAC” is the InChI and always starts with “InChI=.” You can find all these information for the compound by searching in <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a>.</p>
-<p>For GC compounds, you also need to fill in the “AC$CHROMATOGRAPHY: KOVATS_RTI” and “AC$CHROMATOGRAPHY: RETENTION_TIME.” These will be available later in MS-DIAL.</p>
+<p>For GC compounds, you also need to fill in the <em>COMMENT: QUANTMASS</em>, <em>AC$CHROMATOGRAPHY: KOVATS_RTI</em> and <em>AC$CHROMATOGRAPHY: RETENTION_TIME</em>. These will be made available later in MS-DIAL.</p>
 <p>The other rows should be quite straightforward to fill in. If you use the same method for many standards, then you can save a copy of an infosheet to use as a method template, while only updating information for each specific compound: ACCESSION, DATE, COMMENT: centroided mzML file name, CH$NAME, CH$NAME, CH$FORMULA, CH$EXACT_MASS:, CH$SMILES:, CH$IUPAC:, CH$LINK: CAS, CH$LINK: INCHIKEY</p>
 <p>The <em>AC$CHROMATOGRAPHY: RETENTION_TIME</em> row will be obtained later using MS-DIAL.</p>
 <p>If you use GC-MS, then you also need to fill in the <em>AC$CHROMATOGRAPHY: KOVATS_RTI</em> which will also be available later using MS-DIAL.</p>
@@ -468,14 +470,17 @@ Figure 14.10: x
 Figure 14.11: x
 </p>
 </div>
-<p><strong>ADD INFO ABOUT MS-FINDER PARAMETERS</strong></p>
+<p><span style="color: red;"> ADD INFO ABOUT MS-FINDER PARAMETERS </span></p>
 <p>In the new MS-FINDER window, go to “Settings” -&gt; “Parameter settings.” In the “Methods” tab, check the “Formula prediction..” and “Use internal experimental..” options. The rest should be unchecked. Other parameters are:<br />
 Basic tab -&gt; Mass tolerance type (ppm), Mass tolerance MS1 and MS2 (5 ppm), Relative ab cutoff (1%)<br />
 Formula finder -&gt; check “Lewis and Senior check,” check all elements suitable for your compounds.<br />
 Structure finder -&gt; tree depth (2), check “Use the fragment..for EI.”</p>
 <p>Fill in the information in (10) in Figure <a href="GClib.html#fig:MSFINDER">14.11</a> for your compound. For GC-MS, in most cases the monoisotopic peak (somewhat equivalent to the precursor ion in LC mode) is not present and you can choose the fragment ion closest to the monoisotopic mass as the “precursor m/z.” Then choose the precursor type. For GC-EI-MS: choose [M]+. (M plus dot). After you are done, select “Fragment annotation (single)” in the “Analysis” menu (11). Afterwards, select the “Fragment annotation (batch job)” under the same menu. The <em>in silico</em> annotation of the fragment ions should now be calculated (12) and you can thereafter export the annotated spectrum as an “.msp” file (see 13). Copy and paste the file name that was generated in the standard infosheet you find at the “COMMENT: msp file name” row. Save the file in the “3_MSP” subfolder.</p>
-<p>Open and check the .msp file by right click and open with e.g. Notepad (dont double click as .msp is also a program installation format in Windows). <strong>NOTE:</strong> if you have processed other files in MS-FINDER before this (these will show in the “File navigator” tab), then these are all saved into the same msp file. You can either delete the old ones at the subfolder “MS-FINDER xxx/MSDIAL_TEMP/” before you process the standard, or you can manually delete the other compounds in the generated msp file.</p>
+<p>Open and check the .msp file by right click and open with e.g. Notepad (dont double click as .msp is also a program installation format in Windows).<br />
+<strong>NOTE:</strong> if you have processed other files in MS-FINDER before this (these will show in the “File navigator” tab), then these are all saved into the same msp file. You can either delete the old ones at the subfolder “MS-FINDER xxx/MSDIAL_TEMP/” before you process the standard, or you can manually delete the other compounds in the generated msp file.</p>
+<p><strong>NOTE:</strong> Sometimes MSFINDER will also include peaks that have much higher m/z values than the monoisotopic peak and its isotopic peaks. This is due to interferences that MSDIAL could not deconvolute. In this case, you can open the .msp file and manually delete the rows with the m/z and intensity of these peaks. YOU NEED ALSO TO UPDATE THE <strong>Num Peaks:</strong> row in the .msp file since you have now deleted some peaks. Also make sure that there is two empty rows at the end of the .msp document.</p>
 <p>Now you are finished with generating the msp file for your standard spectrum.</p>
+<p>You can also fill in the missing information in the infosheet: <em>COMMENT: QUANTMASS</em>, <em>AC$CHROMATOGRAPHY: KOVATS_RTI</em> and <em>AC$CHROMATOGRAPHY: RETENTION_TIME</em>. The <em>COMMENT: QUANTMASS</em> is the representative mass of the standard analyte which MSDIAL will use to quantify and compare amongst different samples. If this is not indicated then MSDIAL chooses the base peak (or the silanized peaks based on parameters choosen) and these are not always representative for the analytes. Importantly, if the monoisotopic peak is present in the spectrum at a fairly high abundance (even if it is not the highest intensity peak), then this should be chosen as the <em>COMMENT: QUANTMASS</em> instead of the base peak.</p>
 <p><strong>Send the newly created files to Thanh:</strong></p>
 <ul>
 <li>Individual infosheet(s)<br />
