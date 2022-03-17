@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2022-03-09" />
+<meta name="date" content="2022-03-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -276,6 +276,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.2" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html#chemical-ionization"><i class="fa fa-check"></i><b>17.2</b> Chemical ionization<span></span></a></li>
 <li class="chapter" data-level="17.3" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html#terminologies-1"><i class="fa fa-check"></i><b>17.3</b> Terminologies<span></span></a></li>
 <li class="chapter" data-level="17.4" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html#cleaning-source"><i class="fa fa-check"></i><b>17.4</b> Cleaning source<span></span></a></li>
+<li class="chapter" data-level="17.5" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html#performance-mixture"><i class="fa fa-check"></i><b>17.5</b> Performance mixture<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="18" data-path="reproducible-research-using-docker-containers-and-similar-tools.html"><a href="reproducible-research-using-docker-containers-and-similar-tools.html"><i class="fa fa-check"></i><b>18</b> Reproducible research using Docker containers and similar tools<span></span></a></li>
 <li class="divider"></li>
@@ -471,7 +472,7 @@ Figure 14.11: x
 </div>
 <p><span style="color: red;"> ADD INFO ABOUT MS-FINDER PARAMETERS </span></p>
 <p>In the new MS-FINDER window, go to “Settings” -&gt; “Parameter settings.” In the “Methods” tab, check the “Formula prediction..” and “Use internal experimental..” options. The rest should be unchecked. Other parameters are:<br />
-Basic tab -&gt; Mass tolerance type (ppm), Mass tolerance MS1 and MS2 (5 ppm), Relative ab cutoff (1%)<br />
+Basic tab -&gt; Mass tolerance type (ppm), Mass tolerance MS1 and MS2 (5 ppm), Relative ab cutoff (0.5%) to further remove background noise.<br />
 Formula finder -&gt; check “Lewis and Senior check,” check all elements suitable for your compounds.<br />
 Structure finder -&gt; tree depth (2), check “Use the fragment..for EI.”</p>
 <p>Fill in the information in (10) in Figure <a href="GClib.html#fig:MSFINDER">14.11</a> for your compound. For GC-MS, in most cases the monoisotopic peak (somewhat equivalent to the precursor ion in LC mode) is not present and you can choose the fragment ion closest to the monoisotopic mass as the “precursor m/z.” Then choose the precursor type. For GC-EI-MS: choose [M]+. (M plus dot). After you are done, select “Fragment annotation (single)” in the “Analysis” menu (11). Afterwards, select the “Fragment annotation (batch job)” under the same menu. The <em>in silico</em> annotation of the fragment ions should now be calculated (12) and you can thereafter export the annotated spectrum as an “.msp” file (see 13). Copy and paste the file name that was generated in the standard infosheet you find at the “COMMENT: msp file name” row. Save the file in the “3_MSP” subfolder.</p>

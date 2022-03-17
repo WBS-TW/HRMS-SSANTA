@@ -69,10 +69,22 @@ _Chemical Ionization (CI):_
 _Nitrogen gas:_ Nitrogen gas is used for the purging of the ion source when removing the ion volume. It is also used in the C-Trap, when the ions are accumulated and their energy is dampened using a bath gas (nitrogen).
 
 
-
 ## Cleaning source
 https://www.sisweb.com/referenc/tips/msclean.htm
 
+
+## Performance mixture  
+
+<span style="color: red;">
+QC standard mix (100 fg OFN, 10 pg HCB, 10 pg DDT and 10 pg Endrin)  
+In NCI, OFN (100 fg) should give you around 800 000 – 1 000 000 area counts with an optimal system. This can vary based on the tune parameters and column condition.  
+
+Alkane mix C7-C40  
+Odd chain alkane mix C11-C25 to help find peaks in the C7-C40 mixture  
+Check if 4,4'-Dibromooctafluorobiphenyl can be used in PCI/NCI
+
+Alkane only visible in PCI so if using CI then run alkane mix in PCI even for NCI runs.  
+</span>
 
 
 

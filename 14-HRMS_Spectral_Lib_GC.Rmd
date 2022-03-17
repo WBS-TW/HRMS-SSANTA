@@ -252,7 +252,7 @@ knitr::include_graphics("images/speclib/MSDIAL_9.png", dpi = 100)
 <span style="color: red;"> ADD INFO ABOUT MS-FINDER PARAMETERS </span>
     
 In the new MS-FINDER window, go to "Settings" -> "Parameter settings". In the "Methods" tab, check the "Formula prediction.." and "Use internal experimental.." options. The rest should be unchecked. Other parameters are:  
-Basic tab -> Mass tolerance type (ppm), Mass tolerance MS1 and MS2 (5 ppm), Relative ab cutoff (1%)  
+Basic tab -> Mass tolerance type (ppm), Mass tolerance MS1 and MS2 (5 ppm), Relative ab cutoff (0.5%) to further remove background noise.  
 Formula finder -> check "Lewis and Senior check", check all elements suitable for your compounds.  
 Structure finder -> tree depth (2), check "Use the fragment..for EI".
   
