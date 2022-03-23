@@ -12,6 +12,33 @@ _Metgem handbook:_ https://metgem.readthedocs.io/en/latest/index.html <br>
 
 Main steps for the dataset is to generate a combined msp or mgf file (such as from MS-DIAL or xcms) and import it to MetGem. Additional metadata should also be added to relate the ID of different compounds or unknowns.  
 
+
+
+### Metgem parameters
+
+__LC__
+https://pubs.acs.org/doi/10.1021/acs.analchem.8b03099
+MS2 spectra were window-filtered by choosing only the top six peaks in the ±50 Da window throughout the spectrum. The data were filtered by removing all peaks in the ±17 Da range around the precursor m/z. The m/z tolerance windows used to find the matching peaks was set to 0.01 Da, and cosine scores were kept under consideration for spectra sharing three matching peaks at least.
+The molecular network was created where edges were filtered to have a cosine score of >0.7. Further edges between two nodes were kept in the network if and only if each of the nodes appeared in each other’s respective top 10 most similar nodes. With regard to the t-SNE output, nodes were kept under consideration only if they share at least one cosine score above 0.6 with others (“at least one cosine score above 0.6” parameter). The number of iterations, perplexity, learning rate, and early exaggeration parameters were set to 1000, 6, 200, and 12, respectively. The Barnes-Hut approximation was activated using a θ angle of 0.5°. These values were initially used as a first approximation based on the scikit-learn t-SNE package default parameters. Except for the perplexity that has been reduced from 30 to 6, which was more adapted for small data sets, all these parameters looked appropriate as very well-defined clusters were clearly perceptible and the data organization was consistent with the observed fragmentation patterns.
+
+
+Group mapping files can be used in MetGem to create groups within sample datasets depending on any observation or user’s specification (biological activity, origin of a sample, taxonomy, analytical details or whatever). These groups can further be mapped in both MNs and t-SNE graphs to ease the visualization and the analysis of data. Group mapping files must be submitted as .txt files and follow the GNPS-style format:   GROUP_Active=Sample1.mzXML;Sample2.mzXML GROUP_Inactive=Sample3.mzXML;Sample4.mzXML GROUP_Blanks=Blank1.mzXML   GROUP_Samples=Sample1.mzXML;Sample2.mzXML;Sample3.mzXML;Sample4.mzXML 
+GROUP_Active signifies that this group contains the two samples 1 and 2, MetGem will then sum up the peak area values of these two samples for each feature and display the result in a new dedicated “Active” column in the metadata table. Note that a sample can be assigned to several groups and at least one sample must appear in a specified group.
+
+  
+```{r MetGem_tsneParams, echo = FALSE, fig.cap= "Description of the parameters available for the t-SNE visualization"}
+
+knitr::include_graphics("images/Metgem_tsneParams.png", dpi = 100)
+
+```
+
+  
+Small datasets: up to 2 000 nodes  
+Medium Datasets: 2 000 to 10 000 nodes  
+Large Datasets: > 10 000 nodes 
+  
+For more information, please see : https://lvdmaaten.github.io/tsne/ ; http://scikit-learn.org/stable/modules/manifold.html#t-sne. 
+
 ### GC data
 <br>
 

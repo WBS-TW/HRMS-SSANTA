@@ -24,7 +24,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2022-03-17" />
+<meta name="date" content="2022-03-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -215,7 +215,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.1" data-path="MolecularNetworks.html"><a href="MolecularNetworks.html#metgem"><i class="fa fa-check"></i><b>8.1</b> MetGem<span></span></a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="MolecularNetworks.html"><a href="MolecularNetworks.html#gc-data"><i class="fa fa-check"></i><b>8.1.1</b> GC data<span></span></a></li>
+<li class="chapter" data-level="8.1.1" data-path="MolecularNetworks.html"><a href="MolecularNetworks.html#metgem-parameters"><i class="fa fa-check"></i><b>8.1.1</b> Metgem parameters<span></span></a></li>
+<li class="chapter" data-level="8.1.2" data-path="MolecularNetworks.html"><a href="MolecularNetworks.html#gc-data"><i class="fa fa-check"></i><b>8.1.2</b> GC data<span></span></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="Library.html"><a href="Library.html"><i class="fa fa-check"></i><b>9</b> <strong>Spectral libraries</strong><span></span></a>
@@ -309,8 +310,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <em>Metgem webpage:</em> <a href="https://metgem.github.io/" class="uri">https://metgem.github.io/</a> <br>
 <em>Metgem handbook:</em> <a href="https://metgem.readthedocs.io/en/latest/index.html" class="uri">https://metgem.readthedocs.io/en/latest/index.html</a> <br></p>
 <p>Main steps for the dataset is to generate a combined msp or mgf file (such as from MS-DIAL or xcms) and import it to MetGem. Additional metadata should also be added to relate the ID of different compounds or unknowns.</p>
-<div id="gc-data" class="section level3 hasAnchor" number="8.1.1">
-<h3><span class="header-section-number">8.1.1</span> GC data<a href="MolecularNetworks.html#gc-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="metgem-parameters" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Metgem parameters<a href="MolecularNetworks.html#metgem-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>LC</strong>
+<a href="https://pubs.acs.org/doi/10.1021/acs.analchem.8b03099" class="uri">https://pubs.acs.org/doi/10.1021/acs.analchem.8b03099</a>
+MS2 spectra were window-filtered by choosing only the top six peaks in the ±50 Da window throughout the spectrum. The data were filtered by removing all peaks in the ±17 Da range around the precursor m/z. The m/z tolerance windows used to find the matching peaks was set to 0.01 Da, and cosine scores were kept under consideration for spectra sharing three matching peaks at least.
+The molecular network was created where edges were filtered to have a cosine score of &gt;0.7. Further edges between two nodes were kept in the network if and only if each of the nodes appeared in each other’s respective top 10 most similar nodes. With regard to the t-SNE output, nodes were kept under consideration only if they share at least one cosine score above 0.6 with others (“at least one cosine score above 0.6” parameter). The number of iterations, perplexity, learning rate, and early exaggeration parameters were set to 1000, 6, 200, and 12, respectively. The Barnes-Hut approximation was activated using a θ angle of 0.5°. These values were initially used as a first approximation based on the scikit-learn t-SNE package default parameters. Except for the perplexity that has been reduced from 30 to 6, which was more adapted for small data sets, all these parameters looked appropriate as very well-defined clusters were clearly perceptible and the data organization was consistent with the observed fragmentation patterns.</p>
+<p>Group mapping files can be used in MetGem to create groups within sample datasets depending on any observation or user’s specification (biological activity, origin of a sample, taxonomy, analytical details or whatever). These groups can further be mapped in both MNs and t-SNE graphs to ease the visualization and the analysis of data. Group mapping files must be submitted as .txt files and follow the GNPS-style format: GROUP_Active=Sample1.mzXML;Sample2.mzXML GROUP_Inactive=Sample3.mzXML;Sample4.mzXML GROUP_Blanks=Blank1.mzXML GROUP_Samples=Sample1.mzXML;Sample2.mzXML;Sample3.mzXML;Sample4.mzXML
+GROUP_Active signifies that this group contains the two samples 1 and 2, MetGem will then sum up the peak area values of these two samples for each feature and display the result in a new dedicated “Active” column in the metadata table. Note that a sample can be assigned to several groups and at least one sample must appear in a specified group.</p>
+<div class="figure">
+<img src="images/Metgem_tsneParams.png" alt="Description of the parameters available for the t-SNE visualization" width="900" />
+<p class="caption">
+(#fig:MetGem_tsneParams)Description of the parameters available for the t-SNE visualization
+</p>
+</div>
+<p>Small datasets: up to 2 000 nodes<br />
+Medium Datasets: 2 000 to 10 000 nodes<br />
+Large Datasets: &gt; 10 000 nodes</p>
+<p>For more information, please see : <a href="https://lvdmaaten.github.io/tsne/" class="uri">https://lvdmaaten.github.io/tsne/</a> ; <a href="http://scikit-learn.org/stable/modules/manifold.html#t-sne" class="uri">http://scikit-learn.org/stable/modules/manifold.html#t-sne</a>.</p>
+</div>
+<div id="gc-data" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> GC data<a href="MolecularNetworks.html#gc-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><br></p>
 <p>A new option was added to the input data file dialogue. When this option is activated, input spectra are treated as MS1, and thus, the parent m/z ratio is fully ignored.</p>
 <p>The molecular networks were created using MetGem 1.2.2 software (<a href="https://metgem.github.io/" class="uri">https://metgem.github.io/</a>). EI-MS spectra were window filtered by choosing only the top 6 peaks in the ±50 Da window throughout the spectrum. Cosine scores were calculated using a m/z tolerance of 0.3 Th. Networks were then created where edges were filtered to have a cosine score above 0.7 (or 0.75 in the case of GC-EI-MS data from perfumes) and more than six matched peaks. Furthermore, edges between two nodes were kept in the network if and only if each of the nodes appeared in each other’s respective top 10 most similar nodes. The library spectra were filtered in the same manner as the input data.</p>
