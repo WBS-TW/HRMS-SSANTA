@@ -42,6 +42,8 @@ accelerated-solvent-extraction-ase
 ultrasonic-extraction
 MSPreprocess
 raw-data-conversion
+msconvert
+waters-mse
 peak-picking
 open-tools-for-preprocessing
 openms-and-toppview
@@ -64,7 +66,7 @@ retip---retention-time-prediction-for-metabolomics
 MolecularNetworks
 metgem
 metgem-parameters
-gc-data
+gnps
 Library
 in-silico-fragmentation
 metfrag
@@ -100,6 +102,8 @@ convert-the-raw-data-file-from-lc-hrms-in-unifi-to-mzml-using-msconvert
 fill-in-the-standard-infosheet-1
 use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound-1
 GCMSDIAL
+post-processing
+convert-riken-msp-to-nist-to-be-compatible-with-mspepsearch
 further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial
 GCOrbitrapHandbook
 acquisition-parameters

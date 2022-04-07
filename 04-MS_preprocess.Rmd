@@ -3,7 +3,19 @@
 <br><br>
 
 ## Raw data conversion
+
+
+### MSConvert  
+
+```{r MSConvertCommands, echo = FALSE}
+knitr::kable(read_excel("images/MSConvert.xlsx"))
+
+```
+
+
+### Waters MSe
   
+https://ccms-ucsd.github.io/GNPSDocumentation/fileconversion_waters/
 
 
 ## Peak picking

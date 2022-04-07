@@ -8,6 +8,14 @@ You first need to convert the .raw files from GC orbitrap HRMS to the open .mzml
 
 
 
+## Post processing  
+
+### Convert RIKEN msp to NIST to be compatible with MSPepSearch
+Import RIKEN msp to NIST MS Search. No need to wait until the search is finished (press abort after the import is finished). Then select all individual queries and export as msp. It has been found that Lib2NIST is not working properly for some RIKEN dataset and therefore the NIST MS Search protocol is more compatible with MSPePSearch.  
+
+
+
+
 ## Further explanation for some terminologies apart from the tutorial (https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial)
   
 _Gap fill_: The peak less than "minimum abundance" parameter of peak detection tab will be not detected even though there is a peak, and it can be gap-filled for the alignment process if the peak having the same RT and m/z is detected in other samples.

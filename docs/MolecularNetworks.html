@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Molecular networks | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
   <meta name="description" content="SSANTA." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Molecular networks | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://www.oru.se/personal/thanh_wang" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wang/images/ORU.png" />
   <meta property="og:description" content="SSANTA." />
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2022-03-23" />
+<meta name="date" content="2022-04-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="RetentionTime.html"/>
 <link rel="next" href="Library.html"/>
-<script src="libs/header-attrs-2.12/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -57,9 +55,9 @@
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.8/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.21/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -180,7 +178,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="MSPreprocess.html"><a href="MSPreprocess.html"><i class="fa fa-check"></i><b>4</b> <strong>Pre-processing HRMS data</strong><span></span></a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="MSPreprocess.html"><a href="MSPreprocess.html#raw-data-conversion"><i class="fa fa-check"></i><b>4.1</b> Raw data conversion<span></span></a></li>
+<li class="chapter" data-level="4.1" data-path="MSPreprocess.html"><a href="MSPreprocess.html#raw-data-conversion"><i class="fa fa-check"></i><b>4.1</b> Raw data conversion<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="MSPreprocess.html"><a href="MSPreprocess.html#msconvert"><i class="fa fa-check"></i><b>4.1.1</b> MSConvert<span></span></a></li>
+<li class="chapter" data-level="4.1.2" data-path="MSPreprocess.html"><a href="MSPreprocess.html#waters-mse"><i class="fa fa-check"></i><b>4.1.2</b> Waters MSe<span></span></a></li>
+</ul></li>
 <li class="chapter" data-level="4.2" data-path="MSPreprocess.html"><a href="MSPreprocess.html#peak-picking"><i class="fa fa-check"></i><b>4.2</b> Peak picking<span></span></a></li>
 <li class="chapter" data-level="4.3" data-path="MSPreprocess.html"><a href="MSPreprocess.html#open-tools-for-preprocessing"><i class="fa fa-check"></i><b>4.3</b> Open tools for preprocessing<span></span></a></li>
 <li class="chapter" data-level="4.4" data-path="MSPreprocess.html"><a href="MSPreprocess.html#openms-and-toppview"><i class="fa fa-check"></i><b>4.4</b> OpenMS and Toppview<span></span></a></li>
@@ -216,8 +218,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="MolecularNetworks.html"><a href="MolecularNetworks.html#metgem"><i class="fa fa-check"></i><b>8.1</b> MetGem<span></span></a>
 <ul>
 <li class="chapter" data-level="8.1.1" data-path="MolecularNetworks.html"><a href="MolecularNetworks.html#metgem-parameters"><i class="fa fa-check"></i><b>8.1.1</b> Metgem parameters<span></span></a></li>
-<li class="chapter" data-level="8.1.2" data-path="MolecularNetworks.html"><a href="MolecularNetworks.html#gc-data"><i class="fa fa-check"></i><b>8.1.2</b> GC data<span></span></a></li>
 </ul></li>
+<li class="chapter" data-level="8.2" data-path="MolecularNetworks.html"><a href="MolecularNetworks.html#gnps"><i class="fa fa-check"></i><b>8.2</b> GNPS<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="Library.html"><a href="Library.html"><i class="fa fa-check"></i><b>9</b> <strong>Spectral libraries</strong><span></span></a>
 <ul>
@@ -269,7 +271,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="16" data-path="GCMSDIAL.html"><a href="GCMSDIAL.html"><i class="fa fa-check"></i><b>16</b> GC-HRMS raw data preprocessing with MS-DIAL<span></span></a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="GCMSDIAL.html"><a href="GCMSDIAL.html#further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial"><i class="fa fa-check"></i><b>16.1</b> Further explanation for some terminologies apart from the tutorial (<span>https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial</span>)<span></span></a></li>
+<li class="chapter" data-level="16.1" data-path="GCMSDIAL.html"><a href="GCMSDIAL.html#post-processing"><i class="fa fa-check"></i><b>16.1</b> Post processing<span></span></a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="GCMSDIAL.html"><a href="GCMSDIAL.html#convert-riken-msp-to-nist-to-be-compatible-with-mspepsearch"><i class="fa fa-check"></i><b>16.1.1</b> Convert RIKEN msp to NIST to be compatible with MSPepSearch<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="GCMSDIAL.html"><a href="GCMSDIAL.html#further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial"><i class="fa fa-check"></i><b>16.2</b> Further explanation for some terminologies apart from the tutorial (<span>https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial</span>)<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="GCOrbitrapHandbook.html"><a href="GCOrbitrapHandbook.html"><i class="fa fa-check"></i><b>17</b> A handbook on GC Q Exactive orbitrap use<span></span></a>
 <ul>
@@ -328,14 +334,37 @@ GROUP_Active signifies that this group contains the two samples 1 and 2, MetGem 
 Medium Datasets: 2 000 to 10 000 nodes<br />
 Large Datasets: &gt; 10 000 nodes</p>
 <p>For more information, please see : <a href="https://lvdmaaten.github.io/tsne/" class="uri">https://lvdmaaten.github.io/tsne/</a> ; <a href="http://scikit-learn.org/stable/modules/manifold.html#t-sne" class="uri">http://scikit-learn.org/stable/modules/manifold.html#t-sne</a>.</p>
-</div>
-<div id="gc-data" class="section level3 hasAnchor" number="8.1.2">
-<h3><span class="header-section-number">8.1.2</span> GC data<a href="MolecularNetworks.html#gc-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><br></p>
-<p>A new option was added to the input data file dialogue. When this option is activated, input spectra are treated as MS1, and thus, the parent m/z ratio is fully ignored.</p>
+<p><strong>GC data</strong>
+<br></p>
+<ol style="list-style-type: decimal">
+<li>From MSDIAL: Export “Alignment result.” check “Raw data matrix (Area)” and “Representative spectra.” Check “Filter by..blank samples.” Export format “msp.”<br />
+</li>
+<li>Copy the .txt file to excel. Copy the content to a new sheet. Remove top rows, select only: “Alignment ID,” “Metabolite name,” “Average Rt(min),”Quant mass”, and the areas of selected samples. Save sheet as tab delimited file (.txt). The number of rows should be the same as the number of individual queries in the msp file.</li>
+</ol>
+<p><strong>NOTE</strong>: For GC orbitrap data:
+- When importing metadata, have the “index column” empty, instead of Alignment ID. Otherwise ID will be incorrectly assigned.
+- check the treat as MS1 data<br />
+- m/z tolerance: 0.01 Da<br />
+- Minimum matched peaks: 6<br />
+- uncheck the “Keep peaks outside of the…” box<br />
+- uncheck the “Keep each peak in top…” or use a low setting such as “top 10 in the 5 Th window”<br />
+- Check the “Keep peaks above 1% of maximum”<br />
+Can play around with the “% peak of maxmum” and “top n” parameters to get best parameters for your purpose. Use annotated compounds or a standards msp library to check related compounds and/or metabolites and parents.</p>
+<ul>
+<li><p>Network parameters: cosine score: 0.65</p></li>
+<li><p>t-sne parameters: cosine score: 0.6</p></li>
+</ul>
+<p><em>Text from authors GC method:</em>
+A new option was added to the input data file dialogue. When this option is activated, input spectra are treated as MS1, and thus, the parent m/z ratio is fully ignored.</p>
 <p>The molecular networks were created using MetGem 1.2.2 software (<a href="https://metgem.github.io/" class="uri">https://metgem.github.io/</a>). EI-MS spectra were window filtered by choosing only the top 6 peaks in the ±50 Da window throughout the spectrum. Cosine scores were calculated using a m/z tolerance of 0.3 Th. Networks were then created where edges were filtered to have a cosine score above 0.7 (or 0.75 in the case of GC-EI-MS data from perfumes) and more than six matched peaks. Furthermore, edges between two nodes were kept in the network if and only if each of the nodes appeared in each other’s respective top 10 most similar nodes. The library spectra were filtered in the same manner as the input data.</p>
-
 </div>
+</div>
+<div id="gnps" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> GNPS<a href="MolecularNetworks.html#gnps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://gnps.ucsd.edu/" class="uri">https://gnps.ucsd.edu/</a></p>
+<p><a href="https://ccms-ucsd.github.io/GNPSDocumentation/fileupload/" class="uri">https://ccms-ucsd.github.io/GNPSDocumentation/fileupload/</a></p>
+<p>Carbon marker table: <a href="https://ccms-ucsd.github.io/GNPSDocumentation/gc-ms-library-molecular-network/" class="uri">https://ccms-ucsd.github.io/GNPSDocumentation/gc-ms-library-molecular-network/</a></p>
+
 </div>
 </div>
             </section>

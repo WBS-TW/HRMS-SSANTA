@@ -16,6 +16,7 @@
 ```{r startup, echo=FALSE, message=FALSE, warning=FALSE}
 
 library(tidyverse)
+library(readxl)
 library(kableExtra)
 library(DiagrammeR)
 library(plotly)
