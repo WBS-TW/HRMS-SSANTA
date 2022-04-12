@@ -23,7 +23,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2022-04-07" />
+<meta name="date" content="2022-04-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -337,12 +337,20 @@ xx</p>
 </div>
 <div id="matrix-effects" class="section level3 hasAnchor" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> Matrix effects<a href="ExpDesign.html#matrix-effects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+Recovery\textrm{(%)} = \frac{C_{spiked blank} - C_{unspiked blank}}{C_{added}}
+\]</span></p>
+<p><span class="math display">\[
+Recovery\textrm{(%)} = \frac{C_{spikedsample} - C_{unspikedsample}}{C_{added}}
+\]</span></p>
 <p><strong>Spiking with and after extraction to evaluate the extraction efficiency and matrix effect.</strong></p>
 <p>Taken from (<a href="https://www.sciencedirect.com/science/article/pii/S0160412020318274#s0090" class="uri">https://www.sciencedirect.com/science/article/pii/S0160412020318274#s0090</a>)<br />
 Methodology for the evaluation of matrix effect<br />
 Dust samples (100 mg) were extracted and cleaned up using the method described previously, and with no standards spiked before extraction (Chen et al., 2012). The final extract containing the OPEs was reconstituted in 100 μL of methanol and then aliquoted into equal volume, A and B (50 μL each). Portion A was spiked with 50 μL of standard solution of OPE mixtures at a concentration of 50 ng/mL per analyte. Portion B was spiked only with 50 μL of methanol as reference control. Finally, the aforementioned 50 μL of OPE mixture containing 50 ng/mL standards was mixed with 50 μL methanol as external standard solutions (S). Six replicate dust samples were included in matrix effect assessment. By comparing the response differences of the analytes in the sub-samples A and B to the responses of the analytes in the external standard, a matrix effect (ME) value was calculated as:<br />
-ME(%)=100×((Ai-Bi))/Si<br />
-where Ai, Bi and Si are the chromatographic peak areas of the analyte (i) in sub-samples A and B and external standard solution (S), respectively. The analyte signals may be suppressed or enhanced by the co-eluted contents in the samples if ME (%) is lower or higher than 100%, respectively. The matrix effect results are shown in Table S2.</p>
+<span class="math display">\[
+ME\textrm{(%)} = \frac{A_i - B_i}{S_i} * 100
+\]</span></p>
+<p>where Ai, Bi and Si are the chromatographic peak areas of the analyte (i) in sub-samples A and B and external standard solution (S), respectively. The analyte signals may be suppressed or enhanced by the co-eluted contents in the samples if ME (%) is lower or higher than 100%, respectively. The matrix effect results are shown in Table S2.</p>
 <ul>
 <li>Dilute QC extracts to investigate potential matrix effects(?).<br />
 </li>
