@@ -105,6 +105,10 @@ GCMSDIAL
 post-processing
 convert-riken-msp-to-nist-to-be-compatible-with-mspepsearch
 further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial
+LCHRMSMSe
+some-recommended-values-for-g2-xs-qtof
+post-processing-1
+further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial-1
 GCOrbitrapHandbook
 acquisition-parameters
 chemical-ionization

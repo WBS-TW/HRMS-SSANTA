@@ -1,5 +1,8 @@
 # Reproducible research using Docker containers and similar tools
 
+
+## Docker
+
 A list of commonly used Docker commands.
 
 ```{r dockercommands, echo=FALSE}
@@ -10,5 +13,106 @@ DT::datatable(dockertable,rownames = FALSE,  escape = FALSE)
 
 
 ```
+
+
+## Python
+
+### Install Anaconda
+
+
+
+
+### Creat new python environments
+
+https://www.geeksforgeeks.org/set-up-virtual-environment-for-python-using-anaconda/  
+
+
+```{python PythonCreatEnv, echo=FALSE}
+
+# install matchms in a new virtual environment to avoid dependency clashes
+conda create --name matchms python=3.8
+conda activate matchms
+conda install --channel nlesc --channel bioconda --channel conda-forge matchms
+
+
+```
+
+
+### Deepresolution2
+
+https://github.com/XiaqiongFan/DeepResolution2  
+https://www.sciencedirect.com/science/article/pii/S0039914022002119  
+
+
+```{python DeepResolution, echo=FALSE}
+
+conda create --name deepresolution python=3.6.5
+
+# remove environment
+# conda deactivae
+# conda env remove --name deepresolution
+
+conda activate deepresolution
+
+conda install pip 
+conda install git
+
+# install jupyter
+conda install -c conda-forge notebook
+conda install -c conda-forge nb_conda_kernels
+
+conda install -c conda-forge jupyter_contrib_nbextensions
+
+# check packages in environment
+conda list
+
+
+
+# Change startup folder in Jupyter:  
+# https://www.planetofbits.com/python/change-jupyter-notebook-startup-folder-anaconda/
+jupyter notebook –generate-config
+
+# Go to the folder location C:\Users\YOUR_USERNAME\.jupyter and open the file named, jupyter_notebook_config.py in any text editor
+# Search the string: #c.NotebookApp.notebook_dir
+# Uncomment the key string by deleting the # sign and in single quotes type the location of your custom startup folder and save the changes. 
+# Use forward slashes instead of backward slashes in the folder path. As an example, I’ve entered the location D:/TEST/DeepResolution2
+
+
+
+# clone github repo
+
+
+
+
+
+# Install packages from github:  
+# https://medium.com/i-want-to-be-the-very-best/installing-packages-from-github-with-conda-commands-ebf10de396f4
+
+# Install multiple packages from file: https://www.marsja.se/pip-install-specific-version-of-python-package/  
+pip install -r D:/TEST/DeepResolution2/DeepResolution2/requirements.txt
+
+# If need to install some packages manually but versions should be as required by deepresolution
+
+h5py==2.8.0 
+numpy==1.19.2 
+tensorflow_gpu==2.0.0 
+scipy==1.1.0 
+pandas==1.1.5 
+matplotlib==3.3.4 
+scikit_learn==0.24.2 
+seaborn==0.11.2 
+
+
+
+
+# For the test dataset, use the new code with index 3599
+
+
+# https://github.com/XiaqiongFan/DeepResolution2/tree/main/DeepResolution2
+
+```
+
+
+
 
 

@@ -21,7 +21,8 @@ knitr::include_graphics("images/forward_reverse_lib_search.png", dpi = 100)
 ```
 
 
-
+## MatchMS
+https://matchms.readthedocs.io/en/latest/
   
 ## IN SILICO FRAGMENTATION  
 There are several openly available models that have recently been published to predict the fragmentation patterns of GC-EI MS. 
@@ -298,6 +299,9 @@ unknown1 <- test$sp[[1]]
   
   
 ## LIB2NIST  
+Retention index. Check: https://www.nist.gov/system/files/documents/srd/NIST1aVer22Man.pdf (Section Import and Export of Retention indices with a spectrum)  
+
+
 Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.  
   
 COMMAND:  

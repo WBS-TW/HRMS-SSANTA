@@ -5,6 +5,8 @@
   
 <span style="color: red;"> THIS SECTION IS INCOMPLETE AND SOME TEXT AND FIGURES ARE COPIED FROM GC TUTORIAL. NEED UPDATE! </span>
 
+<span style="color: red;"> UNIFI SCIENTIFIC LIBRARY: https://support.waters.com/KB_Inf/UNIFI/WKB190999_How_to_build_and_manage_a_scientific_library_in_UNIFI </span>
+
 Please see the introductory section in the previous chapter regarding the MTM HRMS library using GC-HRMS.
   
 For LC analysis, the chemical standards should be run using data dependent analysis (DDA) instead of data independent analysis (DIA). For our waters G2 XS qToF instrument, the MSe is equivalent to DIA. Main distinction of MSe is the use of a ramp of collision energy in the collision cell whereas other DIA methods use a fixed collision energy. Therefore the MS2 spectra between different instruments and collision energies will also differ, which makes spectral matching more challenging in LC-HRMS compared to GC-HRMS. It is therefore common to analys the same chemical standard using different collision energies to cover the different fragment spectra (MS2) for the same compound.
