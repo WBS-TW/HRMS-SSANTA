@@ -27,7 +27,7 @@ DT::datatable(dockertable,rownames = FALSE,  escape = FALSE)
 https://www.geeksforgeeks.org/set-up-virtual-environment-for-python-using-anaconda/  
 
 
-```{python PythonCreatEnv, echo=FALSE}
+```{python PythonCreatEnv, eval=FALSE, include=FALSE}
 
 # install matchms in a new virtual environment to avoid dependency clashes
 conda create --name matchms python=3.8
@@ -44,7 +44,7 @@ https://github.com/XiaqiongFan/DeepResolution2
 https://www.sciencedirect.com/science/article/pii/S0039914022002119  
 
 
-```{python DeepResolution, echo=FALSE}
+```{python DeepResolution, eval=FALSE, include=FALSE}
 
 conda create --name deepresolution python=3.6.5
 

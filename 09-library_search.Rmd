@@ -32,9 +32,25 @@ There are several openly available models that have recently been published to p
   
   
   
-### Sirius CSI FingerID 
+### Sirius CSI FingerID  
+<br>
+- Need to convert msp to mgf format  
+- If generating mgf file, then it needs to be saved as UTF-8 (UTF-8 with BOM doesnt work with Sirius)  
+- For GC data:  
+BEGIN IONS  
+PEPMASS=  
+NAME=  
+MOLECULARFORMULA=  
+CHARGE=1  
+ADDUCT=[M]+  
+MSLEVEL=2  
+mz "tab" intensity  
+END IONS  
+
+where the "tab" is tab key between the mz and intensity value pair  
   
-  
+when using MSLEVEL=2, then isotopes of precursor ion will not be matched. IF needed then 
+
   
 ### CFM-ID  
 In silico fragmentation:  

@@ -68,6 +68,7 @@ metgem
 metgem-parameters
 gnps
 Library
+matchms
 in-silico-fragmentation
 metfrag
 sirius-csi-fingerid
@@ -116,3 +117,8 @@ terminologies-1
 cleaning-source
 performance-mixture
 reproducible-research-using-docker-containers-and-similar-tools
+docker
+python
+install-anaconda
+creat-new-python-environments
+deepresolution2

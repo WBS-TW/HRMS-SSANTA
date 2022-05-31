@@ -86,6 +86,8 @@ $$
 
 __Spiking with and after extraction to evaluate the extraction efficiency and matrix effect.__  
 
+https://www.future-science.com/doi/10.4155/bio-2017-0214
+
 Taken from (https://www.sciencedirect.com/science/article/pii/S0160412020318274#s0090)  
 Methodology for the evaluation of matrix effect  
 Dust samples (100 mg) were extracted and cleaned up using the method described previously, and with no standards spiked before extraction (Chen et al., 2012). The final extract containing the OPEs was reconstituted in 100 μL of methanol and then aliquoted into equal volume, A and B (50 μL each). Portion A was spiked with 50 μL of standard solution of OPE mixtures at a concentration of 50 ng/mL per analyte. Portion B was spiked only with 50 μL of methanol as reference control. Finally, the aforementioned 50 μL of OPE mixture containing 50 ng/mL standards was mixed with 50 μL methanol as external standard solutions (S). Six replicate dust samples were included in matrix effect assessment. By comparing the response differences of the analytes in the sub-samples A and B to the responses of the analytes in the external standard, a matrix effect (ME) value was calculated as:  
@@ -93,7 +95,8 @@ $$
 ME\textrm{(%)} = \frac{A_i - B_i}{S_i} * 100
 $$
 
-where Ai, Bi and Si are the chromatographic peak areas of the analyte (i) in sub-samples A and B and external standard solution (S), respectively. The analyte signals may be suppressed or enhanced by the co-eluted contents in the samples if ME (%) is lower or higher than 100%, respectively. The matrix effect results are shown in Table S2.
+where Ai, Bi and Si are the chromatographic peak areas of the analyte (i) in sub-samples A and B and external standard solution (S), respectively. The analyte signals may be suppressed or enhanced by the co-eluted contents in the samples if ME (%) is lower or higher than 100%, respectively. The matrix effect results are shown in Table S2. 
+If ME ∼0%, there is no matrix effect. If ME> 0%, an ion-suppression occurs and, if ME <0%, ion-enhancement occurs.
 
 
 
