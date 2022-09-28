@@ -38,6 +38,8 @@ knitr::include_graphics("images/rumsfeldt_quadrant.png")
 
 - Blank solvent  
 
+- Chimeric spectra: (https://pubs.acs.org/doi/10.1021/pr1003856). Chimeras result from the isolation and simultaneous fragmentation of two or more distinct molecular ions within the isolation m/z range. Fragments from multiple parent ions will be present in the MS/MS spectrum, increasing the number of unidentified fragments in sequence database searches.  
+
 - DDA: data-dependent analysis  
 
 - DIA: data-independent analysis  
