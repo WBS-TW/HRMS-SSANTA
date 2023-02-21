@@ -10,12 +10,22 @@ You first need to convert the .raw files from GC orbitrap HRMS to the open .mzml
 
 ## Post processing  
 
-### Convert RIKEN msp to NIST to be compatible with MSPepSearch
-Import RIKEN msp to NIST MS Search. No need to wait until the search is finished (press abort after the import is finished). Then select all individual queries and export as msp. It has been found that Lib2NIST is not working properly for some RIKEN dataset and therefore the NIST MS Search protocol is more compatible with MSPePSearch.  
+### Additional search against NIST library using MSPepSearch and RamSearch  
+You can export the aligned results as RIKEN msp from MS-DIAL and query this again a NIST library. Although the NIST library is recorded in low resoution unit mass, the large libary is also useful complement to the in-house HRMS library. There is two ways to query against the NIST and own library; using either the command line program MSPepSearch or the GUI software RamSearch (Broeckling et al, Anal. Chem. 2016, 88, 18, 9226–9234).  
+Follow these steps:  
 
+1. In MS-DIAL: click "Export" -> "Alignment result". Check "Representative spectra", "Filter by the ion abundances of blank samples" and choose "Export format" to _msp_ and click on "Export" button.
+  
+2. Open the NIST MS Search program. Clear the results from previous search. Import the exported RIKEN msp to NIST MS Search. No need to wait until the search is finished (press abort after the import is finished). Then select all individual queries and export as msp. It has been found that Lib2NIST might not working properly for some RIKEN dataset and therefore the NIST MS Search protocol is more compatible with MSPePSearch and RamSearch.  
+  
+3. To use the command line MSPepSearch, please check \@ref(mspepsearch). For manual library query, it is recommended to use RamSearch.  First, download the software which can be found at the supplementary information of the paper by Broeckling et al (Anal. Chem. 2016, 88, 18, 9226–9234). Install the software and follow the tutorial found in the installation folder and query against for GC-MS data. RamSearch uses MSPepSearch to query the msp files against NIST libraries. An advantage of RamSearch is the GUI which allow you to compare the query spectrum with the library spectrum. Furthermore, you can also sort the hits according to the various match scores, which saves a lot of time by only look at those that have high scores.  
 
-
-
+4. You can also add own library to the NIST main folder to enable multiple library searches. To do this, follow the steps in \@ref(lib2nist).
+  
+5. In order to provide more more robust quantitative comparison, you can manually set up a quantification method in Tracefinder by choosing the suspects with high identification confidence. Make a list of the quantification ion (high abundance and at high m/z, preferably the molecular ion) and 2 qualitative ions, as well as the retention time. If available, then also choose representative ions for the RS in order to reduct the variations of intensity between different samples. The integrated peaks can be used for pseudo-quantification as well as comparative statistics of quantitative ions between samples (e.g. PCA, HCA,..).
+  
+  
+  
 ## Further explanation for some terminologies apart from the tutorial (https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial)
   
 _Gap fill_: The peak less than "minimum abundance" parameter of peak detection tab will be not detected even though there is a peak, and it can be gap-filled for the alignment process if the peak having the same RT and m/z is detected in other samples.

@@ -314,23 +314,30 @@ unknown1 <- test$sp[[1]]
 
   
   
-## LIB2NIST  
-Retention index. Check: https://www.nist.gov/system/files/documents/srd/NIST1aVer22Man.pdf (Section Import and Export of Retention indices with a spectrum)  
+## LIB2NIST  {#lib2nist}
+
+Use LIB2NIST to convert combined msp file to NIST library. Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass since the GUI tool only convert to nominal mass) __NOTE TO SELF: CHECK IF THIS IS TRUE__. See command line help file for arguments.  
+
+__NOTE TO SELF__: NEED TO CHECK IF IT IS POSSIBLE TO INCLUDE Retention index. Check: https://www.nist.gov/system/files/documents/srd/NIST1aVer22Man.pdf (Section Import and Export of Retention indices with a spectrum)  
 
 
 Convert your library list into NIST library format using LIB2NIST command line (in order to preserve the accurate mass). See command line help file for arguments.  
+IN WINDOWS: open 'cmd', go to the folder where LIB2NIST is and type:
   
 COMMAND:  
 `lib2nist.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N <path to msp file> <output path> =<new name of library>`  
     
 EXAMPLES:  
-`lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\RECETOX_GC-EI_MS_20201028.msp D:\Program\NIST14\ =RECETOX_GC-EI_MS_20201028`  
+`lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\RECETOX_GC-EI_MS_20201028.msp D:\Program\NIST14\ =RECETOX_GC-EI_MS_20201028` 
   
-<br><br><br>
+EXAMPLES:  
+`lib2nist64.exe /log9 Mylib.log /OutLib /StdRounding:N /MsmsOnly:Y /AccuratePeakMZ /PrecurMzDecPlaces=keep /PeakMzDecPlaces=keep /UseSubset:N D:\Projects\Suspect_lists\Spectral_databases\2021-05-28_MTM_HRMS_RECETOX_THERMO.msp D:\Program\NIST14\ =MTM_HRMS_RECETOX_THERMO_20210528`  
+  
+  
 
-## MSPepSearch  
+## MSPepSearch {#mspepsearch}
     
-Use MSPepSearch to find similar spectra  
+Use MSPepSearch to query NIST msp output against NIST library and own library
   
   
 EXAMPLES:  

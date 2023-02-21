@@ -54,7 +54,6 @@ patroon
 ms-dial
 output-formats
 suspectScreening
-lib2nist
 listing-suspects
 suspect-scoring
 MassDefect
@@ -78,7 +77,7 @@ deepei
 qcxms
 library-search
 reading-mgf-files-in-r
-lib2nist-1
+lib2nist
 mspepsearch
 PostProcessing
 hierarchical-clustering
@@ -104,7 +103,7 @@ fill-in-the-standard-infosheet-1
 use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound-1
 GCMSDIAL
 post-processing
-convert-riken-msp-to-nist-to-be-compatible-with-mspepsearch
+additional-search-against-nist-library-using-mspepsearch-and-ramsearch
 further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial
 LCHRMSMSe
 some-recommended-values-for-g2-xs-qtof
