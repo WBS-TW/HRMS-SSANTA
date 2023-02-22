@@ -17,7 +17,7 @@ knitr::include_graphics("images/speclib/combineMSP.png", dpi = 100)
 ```
 
   
-If compounds were analyzed using GC, then you also need to include an __alkane mix__ to be able to calculate the retention index (RI). In our lab, we use a mix consisting of C7-C40 alkanes. Ask Thanh for the alkane mix. You can find some representative chromatograms with retention times of the alkane mix for a 30 m DB-5ms column in the file "_/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/AlkaneMixRT.pptx_". If you are using a new GC method or new column, then it is recommended to also run an odd alkane chain standard to specifically identify the alkanes in the C7-C40 mix. The metabolimics lab has an C11-C25 odd alkane mix we can use.  
+If compounds were analyzed using GC, then you also need to include an __alkane mix__ to be able to calculate the retention index (RI). In our lab, we use a mix consisting of C7-C40 alkanes. Ask Thanh for the alkane mix. You can find some representative chromatograms with retention times of the alkane mix for a 30 m DB-5ms column in the file "_/MTM_HRMS_LIB/MSDIAL_PROJECT/MSDIAL_params/AlkaneMixRT.pptx_". If you are using a new GC method or new column, then it is recommended to also run an odd alkane chain standard to specifically identify the alkanes in the C7-C40 mix. The metabolomics lab has an C11-C25 odd alkane mix we can use. Alternatively, you can run standards with compounds of known RI, which enable you to check if the retention time for alkanes have been correctly picked.     
 A __solvent blank__ also needs to be analyzed together with the standards in order to subtract any blank signals at a later stage.
   
 The main steps of this procedure can be seen in below Figure \@ref(fig:diagramSpeclib).
