@@ -112,7 +112,8 @@ PREPARATION
 Important: This file has to be named `coord` (without file extension) and should have the TURBOMOLE coord format (tmol).
   
 
-1.1. __Simple__: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -> tmol. Remove the file extension .tmol to only coord.  
+1.1. __Simple__: download the 3D conformer structure in pubchem in sdf format and then convert using openbabel -> tmol. Remove the file extension .tmol so the file name is only _coord_ without any extension  
+  
 1.2. __Optimized 3D conformer according to steps by__ [Wang et al](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00470-3):  
 - Download the 3D conformer in Pubchem as sdf. 
 - Import into Avogadro (https://avogadro.cc/). If 3d-struture is not available, then use "build"-> "insert SMILES". This will take longer time to optimize.  

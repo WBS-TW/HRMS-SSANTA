@@ -1,5 +1,67 @@
 # GC-HRMS raw data preprocessing with MS-DIAL {#GCMSDIAL}
+
+## All steps
   
+
+```{r diagram_GC_workflow, echo=FALSE, fig.cap= "GC HRMS workFlow", fig.align='center'}
+
+# Diagrammer: rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html
+
+grViz("
+digraph Scheme {
+      
+# graph statement
+graph [layout = dot, overlap = false, rankdir = LR]
+
+# node statements
+node [shape = box,
+fontname = Helvetica, fontsize = 35, style = filled]
+      
+node [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]
+A [label = 'Raw mzML data']
+A1 [label = 'In-house \\n msp ibrary']
+
+node [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]
+B1 [label = 'MS-DIAL']
+B2 [label = 'RIKEN msp' ]
+B3 [label = 'NIST msp']
+node [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]
+C [label = 'MS-LIMA']
+
+node [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]
+D [label = 'ToppView (OpenMS)']
+
+node [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]
+E [label = 'Lib2Nist']
+
+node [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]
+F [label = 'NIST SearchMS']
+
+node [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]
+G [label = 'RamSearch']
+
+      
+      
+# edge statements
+edge [color = black]
+A -> B1 -> B2
+A -> D
+
+A1 -> E
+
+B2 -> F -> B3 -> G
+B2 -> C
+E -> F
+
+      }
+      ")
+
+
+```
+
+
+
+
 
 This tutorial will guide you through the different steps to process raw data from __GC orbitrap HRMS__ using MS-DIAL. You should familiarize yourself with the workflow on GC-HRMS spectral library in the previous section \@ref(GClib) as well as install the required software specified in the section. You should also check the online tutorial provided by the developers: https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial
   
@@ -18,7 +80,7 @@ Follow these steps:
   
 2. Open the NIST MS Search program. Clear the results from previous search. Import the exported RIKEN msp to NIST MS Search. No need to wait until the search is finished (press abort after the import is finished). Then select all individual queries and export as msp. It has been found that Lib2NIST might not working properly for some RIKEN dataset and therefore the NIST MS Search protocol is more compatible with MSPePSearch and RamSearch.  
   
-3. To use the command line MSPepSearch, please check \@ref(mspepsearch). For manual library query, it is recommended to use RamSearch.  First, download the software which can be found at the supplementary information of the paper by Broeckling et al (Anal. Chem. 2016, 88, 18, 9226–9234). Install the software and follow the tutorial found in the installation folder and query against for GC-MS data. RamSearch uses MSPepSearch to query the msp files against NIST libraries. An advantage of RamSearch is the GUI which allow you to compare the query spectrum with the library spectrum. Furthermore, you can also sort the hits according to the various match scores, which saves a lot of time by only look at those that have high scores.  
+3. To use the command line MSPepSearch, please check \@ref(mspepsearch). For manual library query, it is recommended to use RamSearch.  First, download the software which can be found at the supplementary information of the paper by Broeckling et al (Anal. Chem. 2016, 88, 18, 9226–9234). Install the software and follow the tutorial found in the installation folder and query against for GC-MS data. RamSearch uses MSPepSearch to query the msp files against NIST libraries. An advantage of RamSearch is the GUI which allow you to compare the query spectrum with the library spectra. Furthermore, you can also sort the hits according to the various match scores, which saves a lot of time by only look at those that have high scores.  
 
 4. You can also add own library to the NIST main folder to enable multiple library searches. To do this, follow the steps in \@ref(lib2nist).
   

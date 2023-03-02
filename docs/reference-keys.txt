@@ -102,6 +102,7 @@ convert-the-raw-data-file-from-lc-hrms-in-unifi-to-mzml-using-msconvert
 fill-in-the-standard-infosheet-1
 use-ms-dial-to-perform-spectral-deconvolution-and-generate-spectra-for-each-compound-1
 GCMSDIAL
+all-steps
 post-processing
 additional-search-against-nist-library-using-mspepsearch-and-ramsearch
 further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial

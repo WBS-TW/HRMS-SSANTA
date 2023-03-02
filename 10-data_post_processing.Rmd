@@ -133,3 +133,5 @@ write_csv(output, "/home/ORUNET.ORU.SE/twg/Windows_home/Raw_Data/PubChemLite_31O
 
 
 ## Hierarchical clustering  
+  
+NOTE: check how to extract outliers from the matrix 
