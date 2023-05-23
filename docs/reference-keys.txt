@@ -79,6 +79,10 @@ library-search
 reading-mgf-files-in-r
 lib2nist
 mspepsearch
+annotation
+high-resolution-mass-filtering
+mfassignr
+httpsgithub.comrecetoxmsmetaenhancer
 PostProcessing
 hierarchical-clustering
 ExampleDust

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>16 GC-HRMS raw data preprocessing with MS-DIAL | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
   <meta name="description" content="SSANTA." />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="16 GC-HRMS raw data preprocessing with MS-DIAL | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Thanh Wang,   MTM Research Centre, Örebro University" />
 
 
-<meta name="date" content="2023-03-02" />
+<meta name="date" content="2023-05-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,7 +52,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
@@ -236,6 +236,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.7" data-path="Library.html"><a href="Library.html#reading-mgf-files-in-r"><i class="fa fa-check"></i><b>9.7</b> Reading mgf files in R</a></li>
 <li class="chapter" data-level="9.8" data-path="Library.html"><a href="Library.html#lib2nist"><i class="fa fa-check"></i><b>9.8</b> LIB2NIST</a></li>
 <li class="chapter" data-level="9.9" data-path="Library.html"><a href="Library.html#mspepsearch"><i class="fa fa-check"></i><b>9.9</b> MSPepSearch</a></li>
+<li class="chapter" data-level="9.10" data-path="Library.html"><a href="Library.html#annotation"><i class="fa fa-check"></i><b>9.10</b> Annotation</a>
+<ul>
+<li class="chapter" data-level="9.10.1" data-path="Library.html"><a href="Library.html#high-resolution-mass-filtering"><i class="fa fa-check"></i><b>9.10.1</b> High resolution mass filtering</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="PostProcessing.html"><a href="PostProcessing.html"><i class="fa fa-check"></i><b>10</b> <strong>Data post-processing</strong></a>
 <ul>
@@ -327,8 +331,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="all-steps" class="section level2 hasAnchor" number="16.1">
 <h2><span class="header-section-number">16.1</span> All steps<a href="GCMSDIAL.html#all-steps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="figure" style="text-align: center">
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8c07bc31010bd039abad" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8c07bc31010bd039abad">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]\nA [label = \"Raw mzML data\"]\nA1 [label = \"In-house \\n msp ibrary\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nB1 [label = \"MS-DIAL\"]\nB2 [label = \"RIKEN msp\" ]\nB3 [label = \"NIST msp\"]\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nC [label = \"MS-LIMA\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nD [label = \"ToppView (OpenMS)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nE [label = \"Lib2Nist\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nF [label = \"NIST SearchMS\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nG [label = \"RamSearch\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> B1 -> B2\nA -> D\n\nA1 -> E\n\nB2 -> F -> B3 -> G\nB2 -> C\nE -> F\n\n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-678f930b24de2a85e407" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-678f930b24de2a85e407">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]\nA [label = \"Raw mzML data\"]\nA1 [label = \"In-house \\n msp ibrary\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nB1 [label = \"MS-DIAL\"]\nB2 [label = \"RIKEN msp\" ]\nB3 [label = \"NIST msp\"]\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nC [label = \"MS-LIMA\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nD [label = \"ToppView (OpenMS)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nE [label = \"Lib2Nist\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nF [label = \"NIST SearchMS\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nG [label = \"RamSearch\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> B1 -> B2\nA -> D\n\nA1 -> E\n\nB2 -> F -> B3 -> G\nB2 -> C\nE -> F\n\n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 (#fig:diagram_GC_workflow)GC HRMS workFlow
 </p>

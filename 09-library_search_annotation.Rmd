@@ -378,3 +378,14 @@ plot(spectra[[1]], spectra[[2]])
 
 ```
 
+
+## Annotation
+
+### High resolution mass filtering
+
+#### MFAssignR
+
+#### https://github.com/RECETOX/MSMetaEnhancer
+
+
+
