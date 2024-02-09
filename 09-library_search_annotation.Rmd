@@ -1,4 +1,4 @@
-# **Spectral libraries** {#Library}
+# Spectral libraries {#Library}
 
 In environmental analysis, NIST MS library is widely used to match a spectrum to a list of standard spectra. However, a major drawback of the NIST MS Search is that now all chemicals are included and all spectral ions are at unit mass (for EI spectra library, also called mainlib)
 

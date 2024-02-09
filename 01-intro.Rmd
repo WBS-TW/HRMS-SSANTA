@@ -1,4 +1,4 @@
-# **Introduction and concepts** {#Intro}
+# Introduction and concepts {#Intro}
 
 
 
@@ -36,33 +36,71 @@ knitr::include_graphics("images/rumsfeldt_quadrant.png")
 ## Terminologies
 <br><br>
 
-- Blank solvent  
+- __Blank solvent__  
 
-- Chimeric spectra: (https://pubs.acs.org/doi/10.1021/pr1003856). Chimeras result from the isolation and simultaneous fragmentation of two or more distinct molecular ions within the isolation m/z range. Fragments from multiple parent ions will be present in the MS/MS spectrum, increasing the number of unidentified fragments in sequence database searches.  
+- __Chimeric spectra__: (https://pubs.acs.org/doi/10.1021/pr1003856). Chimeras result from the isolation and simultaneous fragmentation of two or more distinct molecular ions within the isolation m/z range. Fragments from multiple parent ions will be present in the MS/MS spectrum, increasing the number of unidentified fragments in sequence database searches.  
 
-- DDA: data-dependent analysis  
+- __Deconvolution__: using algorithms to pair mass spectrometric peaks with chromatographic peaks to obtain pure mass spectra.
 
-- DIA: data-independent analysis  
+- __DDA__: data-dependent analysis  
 
-- EIC: extracted ion chromatogram  
+- __DIA__: data-independent analysis  
 
-- Field blanks  
+- __EIC__: extracted ion chromatogram  
 
-- HRMS: high resolution mass spectrometry 
+- __Field blanks__:   
 
-- NTA: non-target analysis  
+- __HRMS__: high resolution mass spectrometry  
 
-- Procedural blanks  
+- __Ion statistics__: From ChatGPT (20240204)  
+In mass spectrometry, ion statistics refers to the quantitative aspects of the ions produced and detected during the analysis. It involves the study and interpretation of the abundance and distribution of ions generated in the mass spectrometer.  
 
-- Pseudo-quantification  
+Key aspects of ion statistics include:  
 
-- QA sample: quality assurance sample  
+Ion Abundance: This refers to the relative or absolute abundance of ions at specific mass-to-charge ratios (m/z) in the mass spectrum. The intensity of peaks in a mass spectrum is a reflection of the abundance of ions with particular m/z values.  
 
-- Semi-quantification
+Signal-to-Noise Ratio: Ion statistics also consider the ratio of the signal (peak intensity) to the background noise in the mass spectrum. A higher signal-to-noise ratio indicates better sensitivity and a more reliable measurement.  
 
-- Solvent blank
+Peak Shape: The shape of the peaks in the mass spectrum can provide information about the quality of the ion signal. Well-defined and symmetric peaks are generally desirable, indicating good resolution and instrument performance.  
 
-- SSA: suspect screening analysis  
+Dynamic Range: Ion statistics may also involve evaluating the dynamic range of the mass spectrometer, which is the ability to accurately measure ions over a wide range of concentrations.  
+
+Ionization Efficiency: Ion statistics may assess the efficiency of the ionization process, which is the probability that a particular analyte molecule will be ionized. Ionization efficiency can vary for different compounds and techniques.  
+
+Understanding ion statistics is crucial for interpreting mass spectra and obtaining reliable quantitative information from mass spectrometric analyses. Researchers and analysts often use statistical methods to process and analyze mass spectrometry data, ensuring accurate and meaningful results.  
+
+- __NTA__: non-target analysis  
+
+- __Procedural blanks__:  
+
+- __Pseudo-quantification__:    
+
+- __QA sample__: quality assurance sample  
+
+- __Semi-quantification__:  
+
+- __Solvent blank__
+
+- __Space charge__: From ChatGPT (20240204).  
+In the context of mass spectrometry, "space charge" refers to the accumulation of charged particles (ions or electrons) within a confined space, such as within the ionization source or in the drift region of the mass spectrometer. The presence of space charge can have significant effects on the performance and accuracy of a mass spectrometer.  
+
+Here are some key points related to space charge in mass spectrometry:  
+
+Ionization Source: In the ionization source of a mass spectrometer, ions are generated from sample molecules. If the rate of ion production is high, a large number of ions can accumulate in the ionization region, leading to a space charge. This can affect the trajectory and behavior of ions as they move through the instrument.  
+
+Drift Region: In the drift region of a mass spectrometer, where ions are accelerated and separated based on their mass-to-charge ratios (m/z), space charge effects can cause mutual repulsion or attraction among ions. This can lead to distortions in the ion trajectories, affecting the accuracy of mass analysis.  
+
+Mass Spectrometer Performance: Space charge effects can impact the performance of a mass spectrometer by causing peak broadening, reduced sensitivity, and altered ion transmission efficiency. These effects are particularly significant in high-resolution mass spectrometry where precise mass measurement is crucial.  
+
+Mitigation Strategies: Mass spectrometers are designed with strategies to minimize or compensate for space charge effects. These strategies may include the use of ion optics to focus or guide ions, the incorporation of ion traps, or the implementation of sophisticated data correction algorithms.  
+
+Collision-Induced Dissociation (CID): In tandem mass spectrometry experiments, space charge effects can influence collision-induced dissociation. Higher ion densities may lead to increased ion-molecule collisions, affecting fragmentation patterns and the accuracy of structural information obtained.  
+
+Understanding and managing space charge effects is essential for obtaining accurate and reliable results in mass spectrometry analyses. Researchers and instrument manufacturers continually work on improving mass spectrometer designs and methodologies to minimize the impact of space charge on analytical performance.  
+  
+- _SSA__: Suspect screening analysis  
+
+
  
 
 

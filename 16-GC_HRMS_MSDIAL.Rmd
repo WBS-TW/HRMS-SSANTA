@@ -1,7 +1,7 @@
-# GC-HRMS raw data preprocessing with MS-DIAL {#GCMSDIAL}
+# GC-(LR)HRMS raw data preprocessing with MS-DIAL {#GCMSDIAL}
 
 ## All steps
-  
+Note (most of the steps can be used with GC-LRMS data, and will be documented here \@ref(GCLRMS)  
 
 ```{r diagram_GC_workflow, echo=FALSE, fig.cap= "GC HRMS workFlow", fig.align='center'}
 
@@ -140,5 +140,20 @@ MS-DIAL offers such an environment.
 (2) Go to "Quantmass browser" of "Post processing" in the msdial menu, then, you can define the m/z values for each metabolite.
 The first option should be used if many biological samples are sequentially analyzed for a long time.  
 More info: http://www.metabolomics-forum.com/index.php?topic=1412.0
+
+
+## GC-LRMS {#GCLRMS}
+  
+  
+This is a workflow for Agilent GC-LRMS single quandrupole .d data.  
+1. If you are using old Chemstation software, you need to convert the old .d format to the Masshunter .d format.  
+1.1. Download GCMS Translator from:  
+https://www.agilent.com/en/support/software-informatics/masshunter-suite/masshunter/masshunter-software/chemstation-to-masshunter-data-file-translator  
+Some supporting docs can be found here:  
+https://www.agilent.com/en/products/software-informatics/masshunter-suite/masshunter-translators  
+https://www.agilent.com/cs/library/support/Patches/SSBs/GCMS_Translator.html   https://www.agilent.com/Library/usermanuals/Public/GCMS%20Translator%20Quick%20Start%20Guide-en.pdf  
+2. Convert the new .d folders to mzML using MSConvert \@ref(DataConversion)  
+3. Follow the same steps of above GC-HRMS, with parameters more suitable for LRMS data.  
+
 
 

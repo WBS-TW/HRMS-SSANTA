@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>16 GC-(LR)HRMS raw data preprocessing with MS-DIAL | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
+  <title>18 Ion mobility HRMS | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS</title>
   <meta name="description" content="SSANTA." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="16 GC-(LR)HRMS raw data preprocessing with MS-DIAL | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta property="og:title" content="18 Ion mobility HRMS | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://www.oru.se/personal/thanh_wang/images/ORU.png" />
   <meta property="og:description" content="SSANTA." />
   <meta name="github-repo" content="WBS-TW/WBS-TW.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="16 GC-(LR)HRMS raw data preprocessing with MS-DIAL | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
+  <meta name="twitter:title" content="18 Ion mobility HRMS | Handbook of comprehensive suspect and nontarget workflows in environmental analysis using GC and LC-HRMS" />
   
   <meta name="twitter:description" content="SSANTA." />
   <meta name="twitter:image" content="https://www.oru.se/personal/thanh_wang/images/ORU.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="mtm-hrms-library-lc-hrms.html"/>
-<link rel="next" href="LCHRMSMSe.html"/>
+<link rel="prev" href="LCHRMSMSe.html"/>
+<link rel="next" href="GCOrbitrapHandbook.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -341,85 +341,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="GCMSDIAL" class="section level1 hasAnchor" number="16">
-<h1><span class="header-section-number">16</span> GC-(LR)HRMS raw data preprocessing with MS-DIAL<a href="GCMSDIAL.html#GCMSDIAL" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="all-steps" class="section level2 hasAnchor" number="16.1">
-<h2><span class="header-section-number">16.1</span> All steps<a href="GCMSDIAL.html#all-steps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Note (most of the steps can be used with GC-LRMS data, and will be documented here <a href="GCMSDIAL.html#GCLRMS">16.4</a></p>
-<div class="figure" style="text-align: center">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-31f9c1816b62d447a2bc" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-31f9c1816b62d447a2bc">{"x":{"diagram":"\ndigraph Scheme {\n      \n# graph statement\ngraph [layout = dot, overlap = false, rankdir = LR]\n\n# node statements\nnode [shape = box,\nfontname = Helvetica, fontsize = 35, style = filled]\n      \nnode [color = black, fillcolor = white, fixedsize = true, width = 4, height = 2]\nA [label = \"Raw mzML data\"]\nA1 [label = \"In-house \\n msp ibrary\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nB1 [label = \"MS-DIAL\"]\nB2 [label = \"RIKEN msp\" ]\nB3 [label = \"NIST msp\"]\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nC [label = \"MS-LIMA\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nD [label = \"ToppView (OpenMS)\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 6, height = 2]\nE [label = \"Lib2Nist\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nF [label = \"NIST SearchMS\"]\n\nnode [color = black, fillcolor = white, fixedsize = true, width = 5, height = 2]\nG [label = \"RamSearch\"]\n\n      \n      \n# edge statements\nedge [color = black]\nA -> B1 -> B2\nA -> D\n\nA1 -> E\n\nB2 -> F -> B3 -> G\nB2 -> C\nE -> F\n\n      }\n      ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<p class="caption">
-(#fig:diagram_GC_workflow)GC HRMS workFlow
-</p>
+<div id="IM" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">18</span> Ion mobility HRMS<a href="IM.html#IM" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ion-mobility-introduction" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Ion mobility introduction<a href="IM.html#ion-mobility-introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<p>This tutorial will guide you through the different steps to process raw data from <strong>GC orbitrap HRMS</strong> using MS-DIAL. You should familiarize yourself with the workflow on GC-HRMS spectral library in the previous section <a href="GClib.html#GClib">14</a> as well as install the required software specified in the section. You should also check the online tutorial provided by the developers: <a href="https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial" class="uri">https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial</a></p>
-<p>You first need to convert the .raw files from GC orbitrap HRMS to the open .mzml format using MSConvert according to <a href="DataConversion.html#MSConvertGC">13.1</a>.</p>
+<div id="recommendations-for-reporting-ion-mobility-mass-spectrometry-measurements" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> Recommendations for reporting ion mobility Mass Spectrometry measurements<a href="IM.html#recommendations-for-reporting-ion-mobility-mass-spectrometry-measurements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use recommendations from the review article: <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/mas.21585" class="uri">https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/mas.21585</a></p>
 </div>
-<div id="post-processing" class="section level2 hasAnchor" number="16.2">
-<h2><span class="header-section-number">16.2</span> Post processing<a href="GCMSDIAL.html#post-processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="additional-search-against-nist-library-using-mspepsearch-and-ramsearch" class="section level3 hasAnchor" number="16.2.1">
-<h3><span class="header-section-number">16.2.1</span> Additional search against NIST library using MSPepSearch and RamSearch<a href="GCMSDIAL.html#additional-search-against-nist-library-using-mspepsearch-and-ramsearch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>You can export the aligned results as RIKEN msp from MS-DIAL and query this again a NIST library. Although the NIST library is recorded in low resoution unit mass, the large libary is also useful complement to the in-house HRMS library. There is two ways to query against the NIST and own library; using either the command line program MSPepSearch or the GUI software RamSearch (Broeckling et al, Anal. Chem. 2016, 88, 18, 9226–9234).<br />
-Follow these steps:</p>
-<ol style="list-style-type: decimal">
-<li><p>In MS-DIAL: click “Export” -&gt; “Alignment result”. Check “Representative spectra”, “Filter by the ion abundances of blank samples” and choose “Export format” to <em>msp</em> and click on “Export” button.</p></li>
-<li><p>Open the NIST MS Search program. Clear the results from previous search. Import the exported RIKEN msp to NIST MS Search. No need to wait until the search is finished (press abort after the import is finished). Then select all individual queries and export as msp. It has been found that Lib2NIST might not working properly for some RIKEN dataset and therefore the NIST MS Search protocol is more compatible with MSPePSearch and RamSearch.</p></li>
-<li><p>To use the command line MSPepSearch, please check <a href="Library.html#mspepsearch">9.9</a>. For manual library query, it is recommended to use RamSearch. First, download the software which can be found at the supplementary information of the paper by Broeckling et al (Anal. Chem. 2016, 88, 18, 9226–9234). Install the software and follow the tutorial found in the installation folder and query against for GC-MS data. RamSearch uses MSPepSearch to query the msp files against NIST libraries. An advantage of RamSearch is the GUI which allow you to compare the query spectrum with the library spectra. Furthermore, you can also sort the hits according to the various match scores, which saves a lot of time by only look at those that have high scores.</p></li>
-<li><p>You can also add own library to the NIST main folder to enable multiple library searches. To do this, follow the steps in <a href="Library.html#lib2nist">9.8</a>.</p></li>
-<li><p>In order to provide more more robust quantitative comparison, you can manually set up a quantification method in Tracefinder by choosing the suspects with high identification confidence. Make a list of the quantification ion (high abundance and at high m/z, preferably the molecular ion) and 2 qualitative ions, as well as the retention time. If available, then also choose representative ions for the RS in order to reduct the variations of intensity between different samples. The integrated peaks can be used for pseudo-quantification as well as comparative statistics of quantitative ions between samples (e.g. PCA, HCA,..).</p></li>
-</ol>
-</div>
-</div>
-<div id="further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial" class="section level2 hasAnchor" number="16.3">
-<h2><span class="header-section-number">16.3</span> Further explanation for some terminologies apart from the tutorial (<a href="https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial" class="uri">https://mtbinfo-team.github.io/mtbinfo.github.io/MS-DIAL/tutorial</a>)<a href="GCMSDIAL.html#further-explanation-for-some-terminologies-apart-from-the-tutorial-httpsmtbinfo-team.github.iomtbinfo.github.ioms-dialtutorial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><em>Gap fill</em>: The peak less than “minimum abundance” parameter of peak detection tab will be not detected even though there is a peak, and it can be gap-filled for the alignment process if the peak having the same RT and m/z is detected in other samples.</p>
-<p>From <a href="http://www.metabolomics-forum.com/index.php?topic=1469.0" class="uri">http://www.metabolomics-forum.com/index.php?topic=1469.0</a>:</p>
-<p>In the alignment process, this program will make a master peak list (in a worst case) like:</p>
-<ol style="list-style-type: upper-alpha">
-<li>RT: 1.05 min, m/z: 100.01<br />
-</li>
-<li>RT: 1.1 min, m/z: 100.015<br />
-</li>
-<li>RT: 1.2 min, m/z: 100.03.</li>
-</ol>
-<p>Then, a peak having e.g. RT: 1.1 min and m/z: 100.02 in a file e.g. (Q) will be aligned to (B) of the master list. After that, this program will recognize that the file (Q) does not have the certain peaks for (A) and (C), and then the program will perform the gap filling method to fill the values. However, for example, when users use an RT tolerance as 0.1 min and an m/z tolerance as 0.01 Da for the alignment tolerance, newly created peak for a master list’s (A) in the file (Q) should be nearly equal to what the file (Q) has for the master peak list’s (B) because the extracted ion chromatogram for the gap fill process for peak (A) should be drawn by the tolerances of RT=1.05 min +/ 0.1 min, m/z=100.01+/- 0.01. Because of these, MS-DIAL is supposed to export very similar peak height/area values for the master peak list’s (A) and (B) in the result of file (Q). Here, (B) is recognized as “detected” and (A) is recognized as “gap-filled” although the origin of peak is the same between them.
-You can know the peak origins (detected or gap-filled) in the ‘peak id’ matrix from the alignment result export option where the “-1” value is described when the peak value is inserted by the gap-filled process.</p>
-<p><em>Mass slice width</em>:
-depending on the processing settings, sometimes we observe the same compound splitting into 2-3 different features, and we think the mass slice width (in Peak detection) may be one of the parameters driving this effect (in addition to the alignment tolerance across samples).</p>
-<p>How can we properly to choose a slice width that fits our data, i.e. neither a too wide nor too narrow?
-For high-res Orbitrap a width of 0.05 Da is suggested. As an example, attached is an internal standard run on our LC Orbitrap (acquired at 140.000 resolution, profile).</p>
-<p>From my understanding of Tsugawa et al 2015 (Peak spotting) <a href="https://www.ncbi.nlm.nih.gov/pubmed/25938372" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/25938372</a> and the math presentation describing the MS-DIAL peak detection algorithm (default 0.1 Da), it seems MS-DIAL would correct the merging of BPCs across different m/z widths, somewhat similarly to XCMS? Below, from Smith et al 2006 (Peak detection) <a href="https://pubs.acs.org/doi/10.1021/ac051437y" class="uri">https://pubs.acs.org/doi/10.1021/ac051437y</a></p>
-<p>“An important detail is the relationship between spectral peak width and slice width.</p>
+<div id="ccs-databases" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> CCS databases<a href="IM.html#ccs-databases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>if the peak width is larger than slice width: the signal from a single peak may bleed across multiple slices. Low-res MS produce peak widths greater than the XMCS default 0.1 m/z slice. The MEND peak detection algorithm uses a scoring function to assess whether a chromatographic peak is also at the maximum of a spectral peak, preemptively removing such bleed. Instead of eliminating spurious extra peaks during detection, our algorithm uses a post-processing step that descends through the peak list by intensity, eliminating any peaks in the vicinity (0.7 m/z) of higher intensity peaks.</p></li>
-<li><p>if the peak width is smaller than the slice width: high-res TOF or Fourier transform MS often exhibit such behavior. In that case, depending on the scan-to-scan precision of the instrument, the signal from an analyte may oscillate between adjacent slices over chromatographic time, making an otherwise smooth peak shape appear jagged. Based on operator knowledge of the mass spectrometer characteristics, we optionally combine the maximum signal intensity from adjacent slices into overlapping EIBPCs (i.e., 100.0/100.1, 100.1/100.2, etc.), That initial step produces both smooth and jagged chromatographic profiles, which are then used for filtration and peak detection. During the vicinity elimination postprocessing step, peaks detected from smooth profiles (integrated from the full signal) are selected over peaks detected from jagged profiles (integrated from an incomplete signal).”</p></li>
+<li><p>Baker lab: <a href="https://brcwebportal.cos.ncsu.edu/baker/" class="uri">https://brcwebportal.cos.ncsu.edu/baker/</a></p></li>
+<li><p>McLean lab: <a href="https://lab.vanderbilt.edu/mclean-group/collision-cross-section-database/" class="uri">https://lab.vanderbilt.edu/mclean-group/collision-cross-section-database/</a></p></li>
 </ul>
-<p>when many duplicate peaks occurred, I recommend to do:<br />
-1. Use larger “MS1 tolerance” of data collection tab.<br />
-2. Use lager “Mass slice width” of peak detection tab.<br />
-3. Use larger “Smoothing level” of peak detection tab.<br />
-4. Use larger “Retention time tolerance” of alignment tab.<br />
-5. Use larger “MS1 tolerance” of alignment tab.</p>
-<p>More info: <a href="http://www.metabolomics-forum.com/index.php?topic=1459.msg4350#msg4350" class="uri">http://www.metabolomics-forum.com/index.php?topic=1459.msg4350#msg4350</a>
-<em>QuantMass</em>:</p>
-<ol style="list-style-type: decimal">
-<li>First of all, the chromatogram deconvolution is performed by the information of “pure” extracted ion chromatogram of several m/z values.</li>
-<li>The quant mass is determined from such m/z values producing the singlet/no-coeluted chromatographic peak.</li>
-</ol>
-<p>At least in TMS-based GC-MS based metabolomics, m/z 147 (2xTMS moiety) becomes base peak in EI-MS spectrum for many metabolite features, and therefore, such the m/z value should not be used as the quant mass even though the m/z value is the base peak’s m/z value.
-Of course, the quant mass values can be changed by the quant mass manager of MS-DIAL.<br />
-For the data comparison in the large scaled data set, we should keep the same quant mass value for metabolite quantification.
-MS-DIAL offers such an environment.</p>
-<ol style="list-style-type: decimal">
-<li>if you put “QUANTMASS:” field in your msp format file, the metabolite is always quantified by the target m/z.</li>
-<li>Go to “Quantmass browser” of “Post processing” in the msdial menu, then, you can define the m/z values for each metabolite.
-The first option should be used if many biological samples are sequentially analyzed for a long time.<br />
-More info: <a href="http://www.metabolomics-forum.com/index.php?topic=1412.0" class="uri">http://www.metabolomics-forum.com/index.php?topic=1412.0</a></li>
-</ol>
-</div>
-<div id="GCLRMS" class="section level2 hasAnchor" number="16.4">
-<h2><span class="header-section-number">16.4</span> GC-LRMS<a href="GCMSDIAL.html#GCLRMS" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -428,8 +364,8 @@ More info: <a href="http://www.metabolomics-forum.com/index.php?topic=1412.0" cl
           </div>
         </div>
       </div>
-<a href="mtm-hrms-library-lc-hrms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="LCHRMSMSe.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="LCHRMSMSe.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="GCOrbitrapHandbook.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -460,7 +396,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/16-GC_HRMS_MSDIAL.Rmd",
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/18-Ion_Mobility_HRMS.Rmd",
 "text": "Edit"
 },
 "history": {

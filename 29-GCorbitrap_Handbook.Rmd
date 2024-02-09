@@ -20,8 +20,11 @@ DT::datatable(MSresolution)
 
   
 
-## Acquisition parameters
+## Acquisition parameters  
+  
+Check: Analytical performance of the various acquisition modes in Orbitrap MS and MS/MS. https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/full/10.1002/jms.4195  
 
+  
 From: https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/full/10.1002/rcm.8609?campaign=wolacceptedarticle
 Orbitrap technology is based on ion oscillation frequency measurements around a central electrode, detected on a receiver plate.26 The mass spectrum is obtained after Fourier transformation of the oscillation signal with a two-point calibration. The longer the signal acquisition time, the better is the resolution.27 During this time, ions generated in the EI source are stored in an IT, the C-TRAP. The storage of ions in the C-TRAP plays a vital role in prematurely analysing discontinuous ions produced continuously by the chromatographic separation and the ionisation source. The ions introduced into the C-TRAP lose their energy in contact with N2 at approximately 1 mTorr.26 During an acquisition in full scan mode, it is possible to set the detector with different parameters: acquisition mass range, resolution, AGC target and tune values. The tune files gather the different settings of the mass spectrometer aiming to produce the ions of the EI source, but also the different voltages applied to the lenses in the ion path from the source to the C-TRAP. It is also possible to change the value of the C-TRAP energy offset (−5 to +5 V). For this study, we used standard conditions of EI (70 eV) in order to have the ideal conditions for reproducibility of the spectra. By default, the Orbitrap system acquires data in the range m/z 50–500 at 60 000 resolution mode and 70 eV for EI. The C-TRAP tune value was set to 0 V and AGT target to 1 × 106 ions with an automatic filling limit. 
 
