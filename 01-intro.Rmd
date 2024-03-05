@@ -36,6 +36,8 @@ knitr::include_graphics("images/rumsfeldt_quadrant.png")
 ## Terminologies
 <br><br>
 
+https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-S7-S9
+
 - __Blank solvent__  
 
 - __Chimeric spectra__: (https://pubs.acs.org/doi/10.1021/pr1003856). Chimeras result from the isolation and simultaneous fragmentation of two or more distinct molecular ions within the isolation m/z range. Fragments from multiple parent ions will be present in the MS/MS spectrum, increasing the number of unidentified fragments in sequence database searches.  
